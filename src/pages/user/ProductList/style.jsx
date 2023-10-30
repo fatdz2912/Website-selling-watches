@@ -80,15 +80,9 @@ export const Price = styled.div`
   flex-wrap: wrap;
   gap: 1em;
 `;
-export const NewPrice = styled.div`
-  font-size: 1rem;
-  display: flex;
-`;
 export const OldPrice = styled.div`
   font-size: 1rem;
-  color: #a29f9f;
-  text-decoration: line-through;
-  display: ${(props) => (props.discount === "" ? "none" : "block")};
+  color: ${color.primary};
 `;
 export const Brands = styled.div`
   display: inline;
