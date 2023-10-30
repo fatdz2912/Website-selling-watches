@@ -1,10 +1,15 @@
 import { color } from "../../../../themes/color";
 import styled, { css } from "styled-components";
-import { Row, Col, Input, Menu, Modal } from "antd";
+import { Row, Col, Input, Menu, Modal, Card } from "antd";
 // Header Top wrapper
 const primaryText = color.primaryText;
 const primary = color.primary;
-export const HeaderWrapper = styled.div``;
+export const HeaderWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+`;
 export const HeaderTopWrapper = styled.div`
   background-color: #302e2e;
   color: ${primaryText};
@@ -89,6 +94,7 @@ export const Login = styled(Col)`
 `;
 export const HeadingLogin = styled(Col)`
   font-size: 1rem;
+  color: ${color.primary};
 `;
 // Menu Wrapper
 export const MenuDeskWrapper = styled.ul`
@@ -98,8 +104,30 @@ export const MenuDeskWrapper = styled.ul`
   gap: 3em;
   margin: 0 auto;
 
-  @media screen and (max-width: 1200px) {
+  ${(props) =>
+    props.isHiddenMenu === false
+      ? css`
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+        `
+      : css``};
+  @media screen and (max-width: 768px) {
     display: none;
+  }
+`;
+export const MenuMobileAndTabletWrapper = styled.ul`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  ${(props) => (props.isHiddenMenu === false ? css`` : css``)};
+  @media screen and (max-width: 768px) {
+    display: flex;
   }
 `;
 export const MenuModal = styled(Modal)`
@@ -112,17 +140,24 @@ export const MenuModal = styled(Modal)`
   background-color: #f8f8f8;
   padding: 0 !important;
 `;
-export const MenuMobileAndTabletWrapper = styled(Menu)`
-  padding: 16px;
-  width: 100% !important;
-  height: 100% !important;
-`;
+export const CardMenuMobileAndTablet = styled(Card)``;
 export const MenuItem = styled.li`
   font-size: 1.1rem;
   font-weight: 470;
   color: ${primary};
   border-bottom: 3px solid #fff;
   padding-bottom: 1vh;
+  ${(props) =>
+    props.isHiddenMenu === false
+      ? css`
+          width: 100%;
+          border: 1px solid ${color.primary};
+          &:hover {
+            border-bottom: 1px ${primary} solid !important;
+            background-color: #b6b6b6;
+          }
+        `
+      : css``};
 
   &:hover {
     cursor: pointer;

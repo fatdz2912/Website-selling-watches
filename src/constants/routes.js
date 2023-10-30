@@ -16,4 +16,6 @@ export const ROUTES = {
     PRODUCT_LIST: "/admin/products",
     ORDER_LIST: "/admin/orders",
   },
+  LOGIN: "/login",
+  REGISTER: "/register",
 };

@@ -1,4 +1,16 @@
 {
+  "users": [
+    {
+      "email": "ngovantri2912@gmail.com",
+      "password": "$2a$10$GwxkVKEA9yqS7dCdpOsLoOpkmMCj15rxFvtsuG7BisiDf6/SZhzFi",
+      "fullName": "Ngô Văn Trị",
+      "agree": true,
+      "role": "user",
+      "createdAt": 1698478445048,
+      "updatedAt": 1698478445048,
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -8,7 +20,16 @@
       "price": "4800",
       "limited": false,
       "discount": "29",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền cố định bằng thép không gỉ với vòng trên bằng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động tự động Omega calibre 3330 với khả năng dự trữ năng lượng trong 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 40 mm. Độ dày vỏ: 15 mm. Hình dạng vỏ tròn. Chiều rộng dải: 19 mm. Chiều dài dây: 8,5 inch. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ, máy đo tốc độ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mẫu mã: 326 30 40 50 01 001, 326-30-40-50-01-001, 326/30/40/50/01/001, 32630405001001. Đồng hồ nam Chronograph tự động Omega Speedmaster Racing 326.30.40.50.01.001"
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền cố định bằng thép không gỉ với vòng trên bằng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động tự động Omega calibre 3330 với khả năng dự trữ năng lượng trong 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 40 mm. Độ dày vỏ: 15 mm. Hình dạng vỏ tròn. Chiều rộng dải: 19 mm. Chiều dài dây: 8,5 inch. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ, máy đo tốc độ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mẫu mã: 326 30 40 50 01 001, 326-30-40-50-01-001, 326/30/40/50/01/001, 32630405001001. Đồng hồ nam Chronograph tự động Omega Speedmaster Racing 326.30.40.50.01.001",
+      "series": "Speedmaster Racing",
+      "gender": "Nam",
+      "engine": "Omega Calibre 3330",
+      "powerReserve": "52",
+      "size": "40",
+      "thickness": "15",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 2,
@@ -18,7 +39,16 @@
       "price": "12595",
       "limited": false,
       "discount": "",
-      "description": "Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO - Mẫu 2022 có hộp Rolex Vỏ thép không gỉ với vòng đeo tay bằng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Rolex calibre 3230, chứa 31 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 12,5 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M124060-0001, 124060ln. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO."
+      "description": "Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO - Mẫu 2022 có hộp Rolex Vỏ thép không gỉ với vòng đeo tay bằng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Rolex calibre 3230, chứa 31 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 12,5 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M124060-0001, 124060ln. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO.",
+      "series": "Submariner",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3230",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 3,
@@ -28,7 +58,16 @@
       "price": "725",
       "limited": false,
       "discount": "66",
-      "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Khóa triển khai. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Couturier mặt đen tự động T035.407.16.051.03"
+      "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Khóa triển khai. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Couturier mặt đen tự động T035.407.16.051.03",
+      "series": "Couturier",
+      "gender": "Nam",
+      "engine": "Tissot Calibre Powermatic 80 (C07.111)",
+      "powerReserve": "80",
+      "size": "39",
+      "thickness": "10.8",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 19,
@@ -38,7 +77,16 @@
       "price": "5200",
       "limited": false,
       "discount": "24",
-      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền thép không gỉ màu xanh xoay một chiều. Mặt số tông màu bạc với kim màu xanh lam và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt bạc tự động Breitling Superocean A17375E71G1A1."
+      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền thép không gỉ màu xanh xoay một chiều. Mặt số tông màu bạc với kim màu xanh lam và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt bạc tự động Breitling Superocean A17375E71G1A1.",
+      "series": "Superocean",
+      "gender": "Nam",
+      "engine": "Breitling Calibre 17",
+      "powerReserve": "42",
+      "size": "42",
+      "thickness": "10.8",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 25,
@@ -48,7 +96,16 @@
       "price": "5550",
       "limited": false,
       "discount": "16",
-      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Đã sửa lỗi nhôm màu đen hiển thị viền đánh dấu tốc độ kế. Màu trắng đục với mặt số màu đen với các kim có tông màu bạc sáng và vạch dấu chấm giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - hai mặt số phụ hiển thị: 60 giây và 45 phút. Bộ máy tự động Tudor Calibre MT5813, dựa trên Breitling B01, chứa 47 viên đá quý, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 41 mm, độ dày vỏ: 15 mm. Khóa triển khai. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: đồng hồ bấm giờ, bánh xe cột, giờ, phút, giây nhỏ, đồng hồ bấm giờ. Dòng Black Bay Chrono. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tudor Black Bay Chrono Chronograph tự động Chronometer M79360N-0002."
+      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Đã sửa lỗi nhôm màu đen hiển thị viền đánh dấu tốc độ kế. Màu trắng đục với mặt số màu đen với các kim có tông màu bạc sáng và vạch dấu chấm giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - hai mặt số phụ hiển thị: 60 giây và 45 phút. Bộ máy tự động Tudor Calibre MT5813, dựa trên Breitling B01, chứa 47 viên đá quý, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 41 mm, độ dày vỏ: 15 mm. Khóa triển khai. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: đồng hồ bấm giờ, bánh xe cột, giờ, phút, giây nhỏ, đồng hồ bấm giờ. Dòng Black Bay Chrono. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tudor Black Bay Chrono Chronograph tự động Chronometer M79360N-0002.",
+      "series": "Black Bay Chrono",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5813",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "15",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 31,
@@ -58,7 +115,16 @@
       "price": "1775",
       "limited": false,
       "discount": "30",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ xoay một chiều với vòng gốm màu xanh lam. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập xuất hiện ở vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines calibre L888, dựa trên ETA A31.L11, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 43 mm. Chiều rộng vòng tay: 21 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hydroconquest. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt số xanh tự động Longines HydroConquest L3.782.4.96.6"
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ xoay một chiều với vòng gốm màu xanh lam. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập xuất hiện ở vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines calibre L888, dựa trên ETA A31.L11, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 43 mm. Chiều rộng vòng tay: 21 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hydroconquest. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt số xanh tự động Longines HydroConquest L3.782.4.96.6",
+      "series": "HydroConquest",
+      "gender": "Nam",
+      "engine": "Longines Calibre L888",
+      "powerReserve": "64",
+      "size": "43",
+      "thickness": "15",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 4,
@@ -68,7 +134,16 @@
       "price": "5900",
       "limited": false,
       "discount": "23",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Vành bezel bằng thép không gỉ xoay một chiều với vành bezel trên cùng bằng gốm màu xanh lam (thời gian đã trôi qua). Mặt số màu xanh lam với kim khung mạ rhodium và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Omega calibre 8800, chứa 35 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 55 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 14 mm. Chiều rộng dải: 20 mm. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Seamaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam thép mặt số xanh tự động Omega Seamaster 210.30.42.20.03.001."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Vành bezel bằng thép không gỉ xoay một chiều với vành bezel trên cùng bằng gốm màu xanh lam (thời gian đã trôi qua). Mặt số màu xanh lam với kim khung mạ rhodium và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Omega calibre 8800, chứa 35 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 55 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 14 mm. Chiều rộng dải: 20 mm. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Seamaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam thép mặt số xanh tự động Omega Seamaster 210.30.42.20.03.001.",
+      "series": "Seamaster",
+      "gender": "Nam",
+      "engine": "Omega Calibre 8800",
+      "powerReserve": "55",
+      "size": "42",
+      "thickness": "14",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 5,
@@ -78,7 +153,16 @@
       "price": "18250",
       "limited": false,
       "discount": "",
-      "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ."
+      "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ.",
+      "series": "GMT-Master II",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3285",
+      "powerReserve": "70",
+      "size": "40",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 14,
@@ -88,7 +172,16 @@
       "price": "725",
       "limited": false,
       "discount": "22",
-      "description": "Vỏ thép không gỉ 316L tông màu bạc với vòng đeo tay bằng thép không gỉ tông màu bạc. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số màu xanh lá cây với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Tissot Calibre Powermatic 80 (C07.111), dựa trên ETA 2824-2, chứa 23 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 80 giờ. Tinh thể sapphire chống trầy xước. Ốp lưng trong suốt nhìn xuyên thấu. Hình dạng vỏ Tonneau, kích thước vỏ: 40 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Prx Powermatic 80. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot PRX Powermatic 80 mặt xanh tự động T137.407.11.091.00."
+      "description": "Vỏ thép không gỉ 316L tông màu bạc với vòng đeo tay bằng thép không gỉ tông màu bạc. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số màu xanh lá cây với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Tissot Calibre Powermatic 80 (C07.111), dựa trên ETA 2824-2, chứa 23 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 80 giờ. Tinh thể sapphire chống trầy xước. Ốp lưng trong suốt nhìn xuyên thấu. Hình dạng vỏ Tonneau, kích thước vỏ: 40 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Prx Powermatic 80. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot PRX Powermatic 80 mặt xanh tự động T137.407.11.091.00.",
+      "series": "PRX Powermatic 80",
+      "gender": "Nam",
+      "engine": "Tissot Calibre Powermatic 80 (C07.111)",
+      "powerReserve": "80",
+      "size": "40",
+      "thickness": "10.8",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt nhìn xuyên qua"
     },
     {
       "id": 20,
@@ -98,7 +191,16 @@
       "price": "8750",
       "limited": false,
       "discount": "26",
-      "description": "Stainless steel case with a brown leather strap. Fixed stainless steel bezel. Green dial with luminous silver-tone hands and Arabic numeral hour markers. Minute markers. Arabic numeral minute markers (at 5 minute intervals). Tachymeter markings around the outer rim. Dial Type: Analog. Luminescent hands and markers. Chronograph - two sub-dials displaying: 60 second and 30 minute. Breitling Calibre B09 hand wind movement with a 70-hour power reserve. Scratch resistant sapphire crystal. Pull / push crown. Transparent case back. Round case shape, case size: 40 mm, case thickness: 13 mm. Band width: 20 mm / 18 mm. Fold over clasp. Water resistant at 100 meters / 330 feet. Functions: chronograph, hour, minute, second. Premier Series. Dress watch style. Watch label: Swiss Made. Breitling Premier Chronograph Hand Wind Green Dial Men's Watch AB0930D31L1P1."
+      "description": "Stainless steel case with a brown leather strap. Fixed stainless steel bezel. Green dial with luminous silver-tone hands and Arabic numeral hour markers. Minute markers. Arabic numeral minute markers (at 5 minute intervals). Tachymeter markings around the outer rim. Dial Type: Analog. Luminescent hands and markers. Chronograph - two sub-dials displaying: 60 second and 30 minute. Breitling Calibre B09 hand wind movement with a 70-hour power reserve. Scratch resistant sapphire crystal. Pull / push crown. Transparent case back. Round case shape, case size: 40 mm, case thickness: 13 mm. Band width: 20 mm / 18 mm. Fold over clasp. Water resistant at 100 meters / 330 feet. Functions: chronograph, hour, minute, second. Premier Series. Dress watch style. Watch label: Swiss Made. Breitling Premier Chronograph Hand Wind Green Dial Men's Watch AB0930D31L1P1.",
+      "series": "Premier",
+      "gender": "Nam",
+      "engine": "Breitling Calibre B09",
+      "powerReserve": "70",
+      "size": "40",
+      "thickness": "13",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 26,
@@ -108,7 +210,16 @@
       "price": "4000",
       "limited": false,
       "discount": "14",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ xoay một chiều với vòng nhôm màu xanh lam. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor calibre MT5402, chứa 27 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 39 mm. Độ dày vỏ: 11,9 mm. Chiều rộng dải: 20 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây, Chronometer. Black Bay Năm mươi tám Series. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tudor Black Bay Fifty Eight tự động mặt số màu xanh M79030b-0001."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ xoay một chiều với vòng nhôm màu xanh lam. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor calibre MT5402, chứa 27 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 39 mm. Độ dày vỏ: 11,9 mm. Chiều rộng dải: 20 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây, Chronometer. Black Bay Năm mươi tám Series. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tudor Black Bay Fifty Eight tự động mặt số màu xanh M79030b-0001.",
+      "series": "Black Bay Fifty Eight",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5402",
+      "powerReserve": "70",
+      "size": "39",
+      "thickness": "11.9",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 32,
@@ -118,7 +229,16 @@
       "price": "3550",
       "limited": false,
       "discount": "29",
-      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng da cá sấu màu nâu sẫm. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số có kết cấu màu bạc với các kim hình dạng chiếc lá màu xanh lam và vạch chỉ giờ bằng chữ số Ả Rập màu đen. Thang đo ngày xung quanh vành ngoài. Điểm đánh dấu phút xung quanh khung bezel bên trong. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Ngày trong tuần và tháng được hiển thị ở vị trí 12 giờ. Ba mặt số phụ hiển thị: kép 24 giờ/60 giây, 30 phút và 12 giờ/pha mặt trăng. Bộ chuyển động tự động Longines Calibre L678, dựa trên Valjoux 7751, chứa 25 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Kiểu dáng vỏ tròn, kích thước vỏ: 40 mm, độ dày vỏ: 14 mm. Chiều rộng dây đeo: 19 mm, chiều dài dây đeo: 8 inch. Tang kẹp. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: đồng hồ bấm giờ, tháng, ngày, thứ, moonphase, giờ, phút, giây, 24 giờ. Bộ sưu tập tổng thể Chuỗi lịch hoàn chỉnh. Phong cách đồng hồ đeo tay. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: L2 673 4 78 3, L2-673-4-78-3, L2/673/4/78/3, L26734783. Đồng hồ nam Longines Master Collection Moonphase L2.673.4.78.3."
+      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng da cá sấu màu nâu sẫm. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số có kết cấu màu bạc với các kim hình dạng chiếc lá màu xanh lam và vạch chỉ giờ bằng chữ số Ả Rập màu đen. Thang đo ngày xung quanh vành ngoài. Điểm đánh dấu phút xung quanh khung bezel bên trong. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Ngày trong tuần và tháng được hiển thị ở vị trí 12 giờ. Ba mặt số phụ hiển thị: kép 24 giờ/60 giây, 30 phút và 12 giờ/pha mặt trăng. Bộ chuyển động tự động Longines Calibre L678, dựa trên Valjoux 7751, chứa 25 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Kiểu dáng vỏ tròn, kích thước vỏ: 40 mm, độ dày vỏ: 14 mm. Chiều rộng dây đeo: 19 mm, chiều dài dây đeo: 8 inch. Tang kẹp. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: đồng hồ bấm giờ, tháng, ngày, thứ, moonphase, giờ, phút, giây, 24 giờ. Bộ sưu tập tổng thể Chuỗi lịch hoàn chỉnh. Phong cách đồng hồ đeo tay. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: L2 673 4 78 3, L2-673-4-78-3, L2/673/4/78/3, L26734783. Đồng hồ nam Longines Master Collection Moonphase L2.673.4.78.3.",
+      "series": "Master Collection Complete Calendar",
+      "gender": "Nam",
+      "engine": "Longines Calibre L678",
+      "powerReserve": "48",
+      "size": "40",
+      "thickness": "14",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Bộ xương"
     },
     {
       "id": 6,
@@ -128,7 +248,16 @@
       "price": "4700",
       "limited": false,
       "discount": "21",
-      "description": "Vỏ thép không gỉ với dây đeo cao su màu đen. Viền cố định bằng thép không gỉ với vòng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ máy tự động Omega calibre 3330, dựa trên ETA Valjoux 7753, chứa 31 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Độ dày vỏ: 16 mm. Chiều rộng dải: 21,6 mm. Chiều dài dây: 8,5 inch. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng xe đua Speedmaster. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mã hàng: 326 32 40 50 01 001, 326-32-40-50-01-001, 326/32/40/50/01/001, 32632405001001. Đồng hồ nam Omega Speedmaster Racing Chronograph mặt đen tự động 326.32.40.50.01.001 ."
+      "description": "Vỏ thép không gỉ với dây đeo cao su màu đen. Viền cố định bằng thép không gỉ với vòng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ máy tự động Omega calibre 3330, dựa trên ETA Valjoux 7753, chứa 31 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Độ dày vỏ: 16 mm. Chiều rộng dải: 21,6 mm. Chiều dài dây: 8,5 inch. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng xe đua Speedmaster. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mã hàng: 326 32 40 50 01 001, 326-32-40-50-01-001, 326/32/40/50/01/001, 32632405001001. Đồng hồ nam Omega Speedmaster Racing Chronograph mặt đen tự động 326.32.40.50.01.001 .",
+      "series": "Speedmaster Racing",
+      "gender": "Nam",
+      "engine": "Omega Calibre 3330",
+      "powerReserve": "52",
+      "size": "40",
+      "thickness": "16",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 7,
@@ -138,7 +267,16 @@
       "price": "20500",
       "limited": false,
       "discount": "",
-      "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ."
+      "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ.",
+      "series": "GMT-Master II",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3285",
+      "powerReserve": "70",
+      "size": "40",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 15,
@@ -148,7 +286,16 @@
       "price": "825",
       "limited": false,
       "discount": "64",
-      "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim hình dạng chữ alpha tông màu bạc và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ máy tự động Tissot calibre Powermatic 80 (C07.111), dựa trên ETA 2824-2, chứa 23 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 10,89 mm. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Gấp qua móc cài. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: ngày, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Chemin Des Tourelles tự động T099.407.16.447.00."
+      "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim hình dạng chữ alpha tông màu bạc và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ máy tự động Tissot calibre Powermatic 80 (C07.111), dựa trên ETA 2824-2, chứa 23 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 10,89 mm. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Gấp qua móc cài. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: ngày, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Chemin Des Tourelles tự động T099.407.16.447.00.",
+      "series": "T-Classic Collection",
+      "gender": "Nam",
+      "engine": "Tissot Calibre Powermatic 80 (C07.111)",
+      "powerReserve": "80",
+      "size": "42",
+      "thickness": "10.89",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Bộ xương"
     },
     {
       "id": 21,
@@ -158,7 +305,16 @@
       "price": "3875",
       "limited": false,
       "discount": "47",
-      "description": "Vỏ breitlight màu đen (polyme siêu nhẹ) có dây đeo cao su màu xanh. Viền breitlight màu đen (polyme siêu nhẹ) xoay hai chiều hiển thị các vạch 360 độ (la bàn). Mặt số màu đen với kim màu bạc sáng và vạch số giờ Ả Rập. Điểm đánh dấu phút. Thang đo xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí giữa 4 và 5 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 1/10 giây. Bộ máy thạch anh Breitling Calibre 82. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 44 mm. Tang kẹp. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng chuyên nghiệp. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Breitling Professional Chronograph Quartz Chronometer mặt đen X82310D51B1S1."
+      "description": "Vỏ breitlight màu đen (polyme siêu nhẹ) có dây đeo cao su màu xanh. Viền breitlight màu đen (polyme siêu nhẹ) xoay hai chiều hiển thị các vạch 360 độ (la bàn). Mặt số màu đen với kim màu bạc sáng và vạch số giờ Ả Rập. Điểm đánh dấu phút. Thang đo xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí giữa 4 và 5 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 1/10 giây. Bộ máy thạch anh Breitling Calibre 82. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 44 mm. Tang kẹp. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng chuyên nghiệp. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Breitling Professional Chronograph Quartz Chronometer mặt đen X82310D51B1S1.",
+      "series": "Chronomat 38",
+      "gender": "Nam",
+      "engine": "Breitling Calibre 13",
+      "powerReserve": "42",
+      "size": "38",
+      "thickness": "15",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 27,
@@ -168,7 +324,16 @@
       "price": "4700",
       "limited": false,
       "discount": "5",
-      "description": "Vỏ và dây đeo bằng titan màu xám. Viền gốm đen xoay đơn hướng. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor Calibre MT5400, chứa 27 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Kiểu dáng vỏ tròn, kích thước vỏ: 39 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 600 mét / 2000 feet. Chức năng: giờ, phút, giây. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Pelagos. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: 25407N-0001. Đồng hồ nam mặt số đen tự động Tudor Pelagos 25407N-0001."
+      "description": "Vỏ và dây đeo bằng titan màu xám. Viền gốm đen xoay đơn hướng. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor Calibre MT5400, chứa 27 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Kiểu dáng vỏ tròn, kích thước vỏ: 39 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 600 mét / 2000 feet. Chức năng: giờ, phút, giây. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Pelagos. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: 25407N-0001. Đồng hồ nam mặt số đen tự động Tudor Pelagos 25407N-0001.",
+      "series": "Pelagos",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5612",
+      "powerReserve": "70",
+      "size": "42",
+      "thickness": "14",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 33,
@@ -178,7 +343,16 @@
       "price": "875",
       "limited": false,
       "discount": "30",
-      "description": "Vỏ thép không gỉ với dây đeo bằng da màu nâu. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy thạch anh Longines calibre 157. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 43 mm. Độ dày vỏ: 11,5 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Khóa triển khai. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam da nâu mặt bạc Longines Conquest L37604765."
+      "description": "Vỏ thép không gỉ với dây đeo bằng da màu nâu. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy thạch anh Longines calibre 157. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 43 mm. Độ dày vỏ: 11,5 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Khóa triển khai. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam da nâu mặt bạc Longines Conquest L37604765.",
+      "series": "Hydroconquest",
+      "gender": "Nam",
+      "engine": "Longines Calibre L619/888",
+      "powerReserve": "64",
+      "size": "43",
+      "thickness": "14",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 8,
@@ -188,7 +362,16 @@
       "price": "7000",
       "limited": false,
       "discount": "18",
-      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Cố định bằng thép không gỉ tông màu bạc với viền vòng nhôm màu đen dát. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ máy tự động Omega Calibre 3861, dựa trên Lemania 1873, chứa 26 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 50 giờ. Tinh thể pha lê hesalite chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm, độ dày vỏ: 13,58 mm. Khóa triển khai. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: đồng hồ bấm giờ, giờ, phút, giây. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Speedmaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nam Omega Speedmaster Chronograph Hand Wind Black Dial 310.30.42.50.01.001."
+      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Cố định bằng thép không gỉ tông màu bạc với viền vòng nhôm màu đen dát. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ máy tự động Omega Calibre 3861, dựa trên Lemania 1873, chứa 26 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 50 giờ. Tinh thể pha lê hesalite chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm, độ dày vỏ: 13,58 mm. Khóa triển khai. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: đồng hồ bấm giờ, giờ, phút, giây. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Speedmaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nam Omega Speedmaster Chronograph Hand Wind Black Dial 310.30.42.50.01.001.",
+      "series": "Speedmaster",
+      "gender": "Nam",
+      "engine": "Omega Calibre 3861",
+      "powerReserve": "50",
+      "size": "42",
+      "thickness": "13.58",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 9,
@@ -198,7 +381,16 @@
       "price": "14950",
       "limited": false,
       "discount": "",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Rolex calibre 3235, dựa trên Rolex 3035, chứa 31 viên đá quý, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M126610LN-0001. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 126610LNBKSO"
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Rolex calibre 3235, dựa trên Rolex 3035, chứa 31 viên đá quý, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M126610LN-0001. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 126610LNBKSO",
+      "series": "Submariner",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3285",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 16,
@@ -208,7 +400,16 @@
       "price": "1350",
       "limited": false,
       "discount": "74",
-      "description": "Vỏ thép không gỉ PVD màu vàng hồng với dây đeo bằng da màu đen. Cố định viền thép không gỉ PVD màu vàng hồng trơn. Mặt số màu đen với kim kiểu lá tông vàng hồng và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 3, 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động ETA Calibre 2824-2, dựa trên ETA 2824, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 38 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Kiểu dáng vỏ tròn, kích thước vỏ: 39 mm, độ dày vỏ: 10 mm. Chiều rộng dây đeo: 19 mm, chiều dài dây đeo: 7,75 inch. Khóa bướm. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: ngày, giờ, phút, giây. Dòng Le Locle. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: T0064083605700. Đồng hồ nam Tissot Le Locle tự động COSC đen PVD T006.408.36.057.00"
+      "description": "Vỏ thép không gỉ PVD màu vàng hồng với dây đeo bằng da màu đen. Cố định viền thép không gỉ PVD màu vàng hồng trơn. Mặt số màu đen với kim kiểu lá tông vàng hồng và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 3, 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động ETA Calibre 2824-2, dựa trên ETA 2824, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 38 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau của bộ xương. Kiểu dáng vỏ tròn, kích thước vỏ: 39 mm, độ dày vỏ: 10 mm. Chiều rộng dây đeo: 19 mm, chiều dài dây đeo: 7,75 inch. Khóa bướm. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: ngày, giờ, phút, giây. Dòng Le Locle. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: T0064083605700. Đồng hồ nam Tissot Le Locle tự động COSC đen PVD T006.408.36.057.00",
+      "series": "Le Locle",
+      "gender": "Nam",
+      "engine": "ETA Caliber 2824-2",
+      "powerReserve": "40",
+      "size": "39",
+      "thickness": "10",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Bộ xương"
     },
     {
       "id": 22,
@@ -218,7 +419,16 @@
       "price": "5000",
       "limited": false,
       "discount": "26",
-      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo cao su màu đen. Viền thép không gỉ màu đen xoay một chiều. Mặt số hai tông màu với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Chronometer tự động Breitling Superocean A17375211B1S1."
+      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo cao su màu đen. Viền thép không gỉ màu đen xoay một chiều. Mặt số hai tông màu với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Chronometer tự động Breitling Superocean A17375211B1S1.",
+      "series": "Superocean",
+      "gender": "Nam",
+      "engine": "Breitling Calibre 17",
+      "powerReserve": "42",
+      "size": "42",
+      "thickness": "12.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 28,
@@ -228,7 +438,16 @@
       "price": "4375",
       "limited": false,
       "discount": "7",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay hai chiều với vòng nhôm GMT màu đỏ và xanh lam (Pepsi). Mặt số màu đen với kim hình bông tuyết tông màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Tudor calibre MT5652, chứa 26 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 14,5 mm. Chiều rộng dải: 22 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: GMT, múi giờ thứ hai, giờ, phút, giây, ngày. Dòng Vịnh Đen. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: m79830rb-0001, m79830rb, 79830rb. Đồng hồ nam GMT Pepsi Bezel mặt số đen tự động Tudor Black Bay 79830RB-0001."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay hai chiều với vòng nhôm GMT màu đỏ và xanh lam (Pepsi). Mặt số màu đen với kim hình bông tuyết tông màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Tudor calibre MT5652, chứa 26 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 14,5 mm. Chiều rộng dải: 22 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: GMT, múi giờ thứ hai, giờ, phút, giây, ngày. Dòng Vịnh Đen. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: m79830rb-0001, m79830rb, 79830rb. Đồng hồ nam GMT Pepsi Bezel mặt số đen tự động Tudor Black Bay 79830RB-0001.",
+      "series": "Black Bay",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5652",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 34,
@@ -238,7 +457,16 @@
       "price": "1100",
       "limited": false,
       "discount": "28",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay một chiều với vòng trên cùng màu xanh lam (thời gian đã trôi qua). Mặt số màu xanh lam với kim hình bông tuyết tông màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập đánh dấu các vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy thạch anh Longines Calibre L157. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 11,9 mm. Chiều rộng dải: 20 mm. Khóa triển khai. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, e.o.l. chỉ số. Dòng Hydroconquest. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt xanh Longines HydroConquest L37404966."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay một chiều với vòng trên cùng màu xanh lam (thời gian đã trôi qua). Mặt số màu xanh lam với kim hình bông tuyết tông màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập đánh dấu các vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy thạch anh Longines Calibre L157. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 11,9 mm. Chiều rộng dải: 20 mm. Khóa triển khai. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, e.o.l. chỉ số. Dòng Hydroconquest. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt xanh Longines HydroConquest L37404966.",
+      "series": "Hydroconquest",
+      "gender": "Nam",
+      "engine": "Longines Calibre L157",
+      "powerReserve": "64",
+      "size": "41",
+      "thickness": "11.9",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 10,
@@ -248,7 +476,16 @@
       "price": "6600",
       "limited": false,
       "discount": "24",
-      "description": "Vỏ thép không gỉ với dây đeo bằng vải nylon màu đen. Viền cố định bằng thép không gỉ với vòng nhôm anod hóa màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động gió tay Omega cỡ nòng 3861 với khả năng dự trữ năng lượng trong 50 giờ. Tinh thể hesalite chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 13,58 mm. Chiều rộng dải: 20 mm. Nút triển khai bằng nút nhấn. Chống nước ở độ sâu 50 mét / 167 feet. Chức năng: đồng hồ bấm giờ, giờ, phút, giây. Dòng Speedmaster. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nam Omega Speedmaster Chronograph Hand Wind Black Dial 310.32.42.50.01.001"
+      "description": "Vỏ thép không gỉ với dây đeo bằng vải nylon màu đen. Viền cố định bằng thép không gỉ với vòng nhôm anod hóa màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động gió tay Omega cỡ nòng 3861 với khả năng dự trữ năng lượng trong 50 giờ. Tinh thể hesalite chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 13,58 mm. Chiều rộng dải: 20 mm. Nút triển khai bằng nút nhấn. Chống nước ở độ sâu 50 mét / 167 feet. Chức năng: đồng hồ bấm giờ, giờ, phút, giây. Dòng Speedmaster. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nam Omega Speedmaster Chronograph Hand Wind Black Dial 310.32.42.50.01.001",
+      "series": "Speedmaster",
+      "gender": "Nam",
+      "engine": "Omega Calibre 3861",
+      "powerReserve": "50",
+      "size": "42",
+      "thickness": "13.58",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 11,
@@ -258,7 +495,16 @@
       "price": "14950",
       "limited": false,
       "discount": "",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Rolex calibre 3235, dựa trên Rolex 3035, chứa 31 viên đá quý, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M126610LN-0001. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 126610LNBKSO."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy tự động Rolex calibre 3235, dựa trên Rolex 3035, chứa 31 viên đá quý, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M126610LN-0001. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 126610LNBKSO.",
+      "series": "Submariner",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3285",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "14.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 17,
@@ -268,7 +514,16 @@
       "price": "775",
       "limited": false,
       "discount": "62",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày phía trên vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Khóa bướm. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ mặt số bạc tự động Tissot Couturier T0354071103101"
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày phía trên vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Khóa bướm. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ mặt số bạc tự động Tissot Couturier T0354071103101",
+      "series": "Couturier",
+      "gender": "Nam",
+      "engine": "Tissot Calibre Powermatic 80 (C07.111)",
+      "powerReserve": "80",
+      "size": "39",
+      "thickness": "10.8",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 23,
@@ -278,7 +533,16 @@
       "price": "12950",
       "limited": false,
       "discount": "23",
-      "description": "Vỏ thép không gỉ với dây đeo bằng da màu nâu. Viền thép không gỉ cố định. Mặt số bằng đồng với kim màu bạc sáng và vạch số giờ Ả Rập. Điểm đánh dấu phút. Điểm đánh dấu phút bằng chữ số Ả Rập (cách nhau 5 phút). Dấu hiệu đo tốc độ xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Hiển thị ngày trong tuần và tháng bên dưới vị trí 12 giờ. Chronograph - hai mặt số phụ hiển thị: 60 giây và 30 phút. Mặt số phụ ngày / tuần trăng kết hợp. Bộ chuyển động tự động Breitling calibre 25, dựa trên ETA 2892-A2, chứa 21 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 15,3 mm. Chiều rộng dải: 22 mm. Gấp qua móc cài. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, máy đo tốc độ, ngày, thứ, tháng, giờ, phút, giây nhỏ. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Datora B25 cao cấp. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt đồng hồ tự động Breitling Premier B25 Datora Chronograph AB2510201K1P1S"
+      "description": "Vỏ thép không gỉ với dây đeo bằng da màu nâu. Viền thép không gỉ cố định. Mặt số bằng đồng với kim màu bạc sáng và vạch số giờ Ả Rập. Điểm đánh dấu phút. Điểm đánh dấu phút bằng chữ số Ả Rập (cách nhau 5 phút). Dấu hiệu đo tốc độ xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Hiển thị ngày trong tuần và tháng bên dưới vị trí 12 giờ. Chronograph - hai mặt số phụ hiển thị: 60 giây và 30 phút. Mặt số phụ ngày / tuần trăng kết hợp. Bộ chuyển động tự động Breitling calibre 25, dựa trên ETA 2892-A2, chứa 21 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Độ dày vỏ: 15,3 mm. Chiều rộng dải: 22 mm. Gấp qua móc cài. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, máy đo tốc độ, ngày, thứ, tháng, giờ, phút, giây nhỏ. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Datora B25 cao cấp. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt đồng hồ tự động Breitling Premier B25 Datora Chronograph AB2510201K1P1S",
+      "series": "Premier",
+      "gender": "Nam",
+      "engine": "Breitling Calibre B09",
+      "powerReserve": "70",
+      "size": "40",
+      "thickness": "13",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 29,
@@ -288,7 +552,16 @@
       "price": "4000",
       "limited": false,
       "discount": "10",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay một chiều với vòng nhôm màu đen (thời gian đã trôi qua). Mặt số màu đen với kim hình bông tuyết tông vàng sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor calibre MT5402, chứa 27 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 39 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây. Black Bay Năm mươi tám Series. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt số đen tự động Tudor Black Bay Fifty-Eight M79030N-0001."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ cạnh đồng xu xoay một chiều với vòng nhôm màu đen (thời gian đã trôi qua). Mặt số màu đen với kim hình bông tuyết tông vàng sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor calibre MT5402, chứa 27 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 39 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây. Black Bay Năm mươi tám Series. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt số đen tự động Tudor Black Bay Fifty-Eight M79030N-0001.",
+      "series": "Black Bay Fifty-Eight",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5402",
+      "powerReserve": "70",
+      "size": "39",
+      "thickness": "12.5",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 35,
@@ -298,7 +571,16 @@
       "price": "1775",
       "limited": false,
       "discount": "30",
-      "description": "Vỏ thép không gỉ với 1 vòng đeo tay bằng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số tia nắng màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập xuất hiện ở vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines calibre L888, dựa trên ETA A31.L11, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Chiều rộng dải: 21 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hydroconquest. Phong cách đồng hồ đeo tay. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Longines Hydroconquest L37814566."
+      "description": "Vỏ thép không gỉ với 1 vòng đeo tay bằng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số tia nắng màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập xuất hiện ở vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines calibre L888, dựa trên ETA A31.L11, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Chiều rộng dải: 21 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hydroconquest. Phong cách đồng hồ đeo tay. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Longines Hydroconquest L37814566.",
+      "series": "Hydroconquest",
+      "gender": "Nam",
+      "engine": "Longines Calibre L888",
+      "powerReserve": "64",
+      "size": "41",
+      "thickness": "11.9",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 12,
@@ -308,7 +590,16 @@
       "price": "5900",
       "limited": false,
       "discount": "25",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm đen (thời gian đã trôi qua). Mặt số màu trắng với kim khung xương màu đen và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Omega calibre 8800, chứa 35 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 55 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Chiều rộng dải: 20 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, bộ thoát đồng trục, đồng hồ bấm giờ. Dòng Seamaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt trắng Omega Seamaster 210.30.42.20.04.001."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm đen (thời gian đã trôi qua). Mặt số màu trắng với kim khung xương màu đen và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Omega calibre 8800, chứa 35 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 55 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Mặt sau trong suốt. Hình dạng vỏ tròn. Kích thước vỏ: 42 mm. Chiều rộng dải: 20 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, bộ thoát đồng trục, đồng hồ bấm giờ. Dòng Seamaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt trắng Omega Seamaster 210.30.42.20.04.001.",
+      "series": "Speedmaster",
+      "gender": "Nam",
+      "engine": "Omega Calibre 8800",
+      "powerReserve": "55",
+      "size": "42",
+      "thickness": "14",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 13,
@@ -318,7 +609,16 @@
       "price": "8995",
       "limited": false,
       "discount": "",
-      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng thép không gỉ rolex tông màu bạc. Viền thép không gỉ màu đen xoay một chiều. Mặt số màu đen với logo Mercedes tông màu bạc, hình thanh kiếm, kim hình dạng Breguet và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex Calibre 3135, chứa 31 viên Jewel, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 40 mm, độ dày vỏ: 13 mm. Chiều rộng dải: 20 mm, chiều dài dải: 6 3/4 inch. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Phong cách đồng hồ thể thao. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Rolex Submariner mặt số đen tự động Chronometer đã qua sử dụng 16610"
+      "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng thép không gỉ rolex tông màu bạc. Viền thép không gỉ màu đen xoay một chiều. Mặt số màu đen với logo Mercedes tông màu bạc, hình thanh kiếm, kim hình dạng Breguet và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex Calibre 3135, chứa 31 viên Jewel, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 40 mm, độ dày vỏ: 13 mm. Chiều rộng dải: 20 mm, chiều dài dải: 6 3/4 inch. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng tàu ngầm. Phong cách đồng hồ thể thao. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Rolex Submariner mặt số đen tự động Chronometer đã qua sử dụng 16610",
+      "series": "Submariner",
+      "gender": "Nam",
+      "engine": "Rolex Calibre 3135",
+      "powerReserve": "50",
+      "size": "40",
+      "thickness": "13",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 18,
@@ -328,7 +628,16 @@
       "price": "775",
       "limited": false,
       "discount": "62",
-      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày phía trên vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Khóa bướm. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ mặt bạc tự động Tissot Couturier T0354071103101."
+      "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày phía trên vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Khóa bướm. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ mặt bạc tự động Tissot Couturier T0354071103101.",
+      "series": "Couturier",
+      "gender": "Nam",
+      "engine": "Tissot Calibre Powermatic 80 (C07.111)",
+      "powerReserve": "80",
+      "size": "39",
+      "thickness": "10.8",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Trong suốt"
     },
     {
       "id": 24,
@@ -338,7 +647,16 @@
       "price": "6500",
       "limited": false,
       "discount": "28",
-      "description": "Vỏ thép không gỉ với dây đeo cổ điển màu đen (cao su aero). Viền bằng vàng hồng 18kt xoay một chiều với vòng gốm đen. Mặt số màu đen với kim màu vàng hồng sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Breitling calibre 20 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vương miện khóa vít. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 42 . Độ dày vỏ: 14,35 mm. Chiều rộng dải: 22 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: UB201012-BG53-279S-A20D.4. Đồng hồ nam mặt số đen tự động Breitling Superocean Heritage II UB2010121B1S1."
+      "description": "Vỏ thép không gỉ với dây đeo cổ điển màu đen (cao su aero). Viền bằng vàng hồng 18kt xoay một chiều với vòng gốm đen. Mặt số màu đen với kim màu vàng hồng sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Bộ chuyển động tự động Breitling calibre 20 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vương miện khóa vít. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 42 . Độ dày vỏ: 14,35 mm. Chiều rộng dải: 22 mm. Gấp qua khóa bằng nút nhấn. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: UB201012-BG53-279S-A20D.4. Đồng hồ nam mặt số đen tự động Breitling Superocean Heritage II UB2010121B1S1.",
+      "series": "Superocean Heritage II",
+      "gender": "Nam",
+      "engine": "Breitling Calibre 20",
+      "powerReserve": "70",
+      "size": "40",
+      "thickness": "14.35",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 30,
@@ -348,7 +666,16 @@
       "price": "4650",
       "limited": false,
       "discount": "",
-      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền nhôm màu đen xoay đơn hướng. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor Calibre MT5400, chứa 27 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Kiểu dáng vỏ tròn, kích thước vỏ: 37 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng Vịnh Đen. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: 79000N-0001. Đồng hồ nam Tudor Black Bay 54 Chronometer mặt đen tự động M79000N-0001."
+      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền nhôm màu đen xoay đơn hướng. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor Calibre MT5400, chứa 27 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Kiểu dáng vỏ tròn, kích thước vỏ: 37 mm. Gấp qua móc cài. Chống nước ở độ sâu 200 mét / 660 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng Vịnh Đen. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: 79000N-0001. Đồng hồ nam Tudor Black Bay 54 Chronometer mặt đen tự động M79000N-0001.",
+      "series": "Black Bay Chrono",
+      "gender": "Nam",
+      "engine": "Tudor Calibre MT5813",
+      "powerReserve": "70",
+      "size": "41",
+      "thickness": "15",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     },
     {
       "id": 36,
@@ -358,7 +685,16 @@
       "price": "1775",
       "limited": false,
       "discount": "30",
-      "description": "Sainless steel case with a stainless steel bracelet. Uni-directional rotating stainless steel bezel with a blue ceramic ring. Blue dial with luminous silver-tone hands and dot hour markers. Arabic numerals mark the 6, 9 and 12 o'clock positions. Minute markers around the outer rim. Dial Type: Analog. Luminescent hands and markers. Date display at the 3 o'clock position. Longines calibre L619/888 automatic movement, based upon ETA 2892, containing 21 Jewels, bitting at 25200 vph, and has a power reserve of approximately 64 hours. Scratch resistant sapphire crystal. Screw down crown. Solid case back. Round case shape. Case size: 41 mm. Band width: 21 mm. Fold over clasp with a safety release. Water resistant at 300 meters / 1000 feet. Functions: date, hour, minute, second. Hydroconquest Series. Dive watch style. Watch label: Swiss Made. Longines Hydroconquest Automatic Blue Dial Men's Watch L3.781.4.96.6."
+      "description": "Sainless steel case with a stainless steel bracelet. Uni-directional rotating stainless steel bezel with a blue ceramic ring. Blue dial with luminous silver-tone hands and dot hour markers. Arabic numerals mark the 6, 9 and 12 o'clock positions. Minute markers around the outer rim. Dial Type: Analog. Luminescent hands and markers. Date display at the 3 o'clock position. Longines calibre L619/888 automatic movement, based upon ETA 2892, containing 21 Jewels, bitting at 25200 vph, and has a power reserve of approximately 64 hours. Scratch resistant sapphire crystal. Screw down crown. Solid case back. Round case shape. Case size: 41 mm. Band width: 21 mm. Fold over clasp with a safety release. Water resistant at 300 meters / 1000 feet. Functions: date, hour, minute, second. Hydroconquest Series. Dive watch style. Watch label: Swiss Made. Longines Hydroconquest Automatic Blue Dial Men's Watch L3.781.4.96.6.",
+      "series": "Hydroconquest",
+      "gender": "Nam",
+      "engine": "Longines Calibre L888",
+      "powerReserve": "64",
+      "size": "41",
+      "thickness": "11.9",
+      "material": "Thép không gỉ",
+      "shape": "Tròn",
+      "back": "Chất rắn"
     }
   ],
   "categories": [

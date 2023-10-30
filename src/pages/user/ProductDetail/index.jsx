@@ -16,6 +16,7 @@ function ProductDetail() {
   const { description, image, name, category, discount, price } =
     productDetail.data;
   useEffect(() => {
+    document.title = `ProductDetail Page - ${params.id}`;
     dispatch(
       getProductDetailRequest({
         id: params.id,
