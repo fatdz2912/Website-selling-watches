@@ -5,9 +5,9 @@ import { AppstoreOutlined, BarsOutlined } from "@ant-design/icons";
 import { Link, generatePath, useNavigate, useLocation } from "react-router-dom";
 import qs from "qs";
 
-import { getProductListRequest } from "../../../redux/slicers/product.slice";
-import { getCategoryListRequest } from "../../../redux/slicers/category.slice";
-import { PRODUCT_LIMIT } from "../../../constants/paging";
+import { getProductListRequest } from "redux/slicers/product.slice";
+import { getCategoryListRequest } from "redux/slicers/category.slice";
+import { PRODUCT_LIMIT } from "constants/paging";
 import * as S from "./style";
 import { formatNumberWithCommaAndDecimal } from "../../../components/fomatNumber";
 import { ROUTES } from "constants/routes";
@@ -15,6 +15,7 @@ function ProductList() {
   const [filterParams, setFilterParams] = useState({
     categoryId: [],
     sortOrder: undefined,
+    discountOrder: undefined,
   });
   const { productList } = useSelector((state) => state.product);
   const { categoryList } = useSelector((state) => state.category);
@@ -35,6 +36,7 @@ function ProductList() {
         : [],
       sortOrder: searchParams.sortOrder,
       searchKey: searchParams.searchKey || "",
+      discountOrder: searchParams.discountOrder,
     };
     setFilterParams(newFilterParams);
     dispatch(

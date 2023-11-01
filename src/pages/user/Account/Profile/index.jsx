@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useOutlet } from "react-router-dom";
 
 function Profile() {
-  const { avatar, setAvatar } = useOutlet();
+  // const { avatar, setAvatar } = useOutlet();
   const [email, setEmail] = useState("Ngovantri2912@gmail.com");
   const [phoneNumber, setPhoneNumber] = useState("0377460815");
   const atIndex = email.indexOf("@");

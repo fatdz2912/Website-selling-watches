@@ -7,8 +7,8 @@ import * as S from "./style";
 function TrendingNow() {
   const { trendingNow } = data;
   const groupTrendingNow = [];
-  for (let i = 0; i < trendingNow.length; i += 4) {
-    groupTrendingNow.push(trendingNow.slice(i, i + 4));
+  for (let i = 0; i < trendingNow.length; i += 3) {
+    groupTrendingNow.push(trendingNow.slice(i, i + 3));
   }
   const renderTrendingNow = useMemo(() => {
     return groupTrendingNow.map((group, index) => {
@@ -20,7 +20,7 @@ function TrendingNow() {
         >
           {group.map((item, index) => {
             return (
-              <S.TrendingNowsItem xs={12} sm={8} md={6} key={index}>
+              <S.TrendingNowsItem xs={12} sm={8} md={8} key={index}>
                 <S.ImageWrapper>
                   <S.Image src={item.image}></S.Image>
                 </S.ImageWrapper>
@@ -44,14 +44,14 @@ function TrendingNow() {
   return (
     <S.TrendingNowWrapper>
       <S.HeadingTrendingNow>
-        <h1>Trending Now</h1>
+        <h1>TÌM KIẾM HÀNG ĐẦU</h1>
       </S.HeadingTrendingNow>
       <Carousel
         style={{ width: "100% " }}
         autoplay
         dots
         dotPosition={"top"}
-        autoplaySpeed={3000}
+        autoplaySpeed={1500}
       >
         {renderTrendingNow}
       </Carousel>

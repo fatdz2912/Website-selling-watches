@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   userInfo: {
     data: {},
-    loading: false,
+    loading: true,
     error: null,
   },
   loginData: {
@@ -48,6 +48,11 @@ export const authSlice = createSlice({
       state.registerData.loading = false;
       state.registerData.error = error;
     },
+    // logout
+    logoutRequest: (state, action) => {
+      state.userInfo.data = {};
+      localStorage.removeItem("accessToken");
+    },
     // getUserInfo
     getUserInfoRequest: (state, action) => {
       state.userInfo.loading = true;
@@ -76,6 +81,7 @@ export const {
   getUserInfoFailure,
   getUserInfoRequest,
   getUserInfoSuccess,
+  logoutRequest,
 } = authSlice.actions;
 
 export default authSlice.reducer;

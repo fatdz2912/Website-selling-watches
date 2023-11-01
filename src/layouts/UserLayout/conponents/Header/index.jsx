@@ -1,11 +1,13 @@
 import React, { useEffect, useMemo } from "react";
+import { Dropdown } from "antd";
 import {
-  FaUserLarge,
-  FaRegMessage,
+  FaUserAlt,
+  FaFacebookMessenger,
   FaSearchengin,
-  FaCartShopping,
+  FaCartPlus,
   FaBars,
-} from "react-icons/fa6";
+  FaSignOutAlt,
+} from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState } from "react";
@@ -13,25 +15,47 @@ import qs from "qs";
 
 import * as S from "./style";
 import { color } from "../../../../themes/color";
-import { getCategoryListRequest } from "../../../../redux/slicers/category.slice";
 import { ROUTES } from "constants/routes";
 
-function Header({ isHiddenMenu, setIsHiddenMenu, setIsShowSignIn }) {
+import { getCategoryListRequest } from "../../../../redux/slicers/category.slice";
+import { logoutRequest } from "../../../../redux/slicers/auth.slice";
+
+function Header({ isHiddenMenu, setIsHiddenMenu }) {
+  const items = [
+    {
+      key: "1",
+      label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
+    },
+    {
+      key: "2",
+      label: <Link to={ROUTES.USER.ACCOUNT.PROFILE}>Thông tin cá nhân</Link>,
+      icon: <FaUserAlt />,
+    },
+    {
+      key: "3",
+      label: <div onClick={() => dispatch(logoutRequest())}>Đăng xuất</div>,
+      icon: <FaSignOutAlt />,
+    },
+  ];
   const [searchKey, setSearchKey] = useState("");
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
+
   useEffect(() => {
     dispatch(getCategoryListRequest());
   }, []);
+
   useEffect(() => {
     const searchParams = qs.parse(search, {
       ignoreQueryPrefix: true,
     });
     setSearchKey(searchParams.searchKey || "");
   }, [search]);
+
   const handleSearchKeyWord = (e) => {
     if (e.key === "Enter") {
       const searchParams = qs.parse(search, {
@@ -50,6 +74,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu, setIsShowSignIn }) {
       });
     }
   };
+
   const renderBrandsList = useMemo(() => {
     return categoryList.data.map((item, index) => {
       return (
@@ -88,7 +113,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu, setIsShowSignIn }) {
           <S.HeaderTopRight sm={0} xs={0} md={12}>
             <S.ChatCall>
               <S.IconMessage>
-                <FaRegMessage size={25} color={color.primaryText} />
+                <FaFacebookMessenger size={25} color={color.primaryText} />
               </S.IconMessage>
               Chat or Call (84+)377460815
             </S.ChatCall>
@@ -124,19 +149,23 @@ function Header({ isHiddenMenu, setIsHiddenMenu, setIsShowSignIn }) {
           ></S.InputSearch>
         </S.SearchColumn>
         <S.LoginAndCart sm={11} xs={12} md={12} xl={4}>
-          <FaCartShopping cursor={"pointer"} size={30} color={color.primary} />
-          <Link to={ROUTES.LOGIN}>
-            <S.Login>
-              <FaUserLarge color={color.primary} size={25} />
-              <S.HeadingLogin>
-                {userInfo
-                  ? userInfo.data.fullName
-                    ? userInfo.data.fullName
-                    : "login"
-                  : "Login"}
-              </S.HeadingLogin>
-            </S.Login>
-          </Link>
+          <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
+          {userInfo.data.fullName ? (
+            <Dropdown
+              menu={{
+                items,
+              }}
+            >
+              <S.Login>
+                <FaUserAlt color={color.primary} size={25} />
+                <S.HeadingLogin>{userInfo.data.fullName}</S.HeadingLogin>
+              </S.Login>
+            </Dropdown>
+          ) : (
+            <S.HeadingLogin onClick={() => navigate(ROUTES.LOGIN)}>
+              Đăng nhập
+            </S.HeadingLogin>
+          )}
         </S.LoginAndCart>
         <S.SearchColumn sm={24} xs={24} md={24} xl={0}>
           <S.InputSearch

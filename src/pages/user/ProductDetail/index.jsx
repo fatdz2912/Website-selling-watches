@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Product from "./components/Product";
 import Preview from "./components/InformationDetail/Preview";
 import InformationDetail from "./components/InformationDetail";
-import { getProductDetailRequest } from "../../../redux/slicers/productDetail.slice";
+import { getProductDetailRequest } from "redux/slicers/product.slice";
 import * as S from "./style";
 
 function ProductDetail() {

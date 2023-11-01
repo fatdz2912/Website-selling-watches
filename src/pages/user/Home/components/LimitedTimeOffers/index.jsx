@@ -1,13 +1,29 @@
 import { Button, Carousel } from "antd";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import qs from "qs";
+import { useNavigate } from "react-router-dom";
+import { PRODUCT_DISCOUNT } from "constants/paging";
+import { getDiscountProductListRequest } from "redux/slicers/product.slice";
 
-import { data } from "../../../../../App/data";
+import { data } from "App/data";
 import * as S from "./style";
+import { ROUTES } from "constants/routes";
+import { useDispatch } from "react-redux";
 
 function LimitedTimeOffers() {
   const { limitedTimeOffers } = data;
-  // render limited Offers
   const groupLimitedOffer = [];
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      getDiscountProductListRequest({
+        limit: PRODUCT_DISCOUNT,
+        discountOrder: "desc",
+      })
+    );
+  }, []);
+  // Giảm giá sốc
   for (let i = 0; i < limitedTimeOffers.length; i += 3) {
     groupLimitedOffer.push(limitedTimeOffers.slice(i, i + 3));
   }
@@ -40,8 +56,19 @@ function LimitedTimeOffers() {
   return (
     <S.LimitedOffersWrapper>
       <S.HeadingLimitedOffers>
-        <h1>Limited Time Offers</h1>
-        <Button>SHOP ALL OFFERS</Button>
+        <h1>KHUYẾN MÃI ĐẶC BIỆT</h1>
+        <Button
+          onClick={() =>
+            navigate({
+              pathname: ROUTES.USER.PRODUCT_LIST,
+              search: qs.stringify({
+                discountOrder: "desc",
+              }),
+            })
+          }
+        >
+          TẤT CẢ ƯU ĐÃI
+        </Button>
       </S.HeadingLimitedOffers>
       <Carousel
         style={{ width: "100% " }}

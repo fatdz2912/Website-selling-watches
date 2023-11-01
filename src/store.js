@@ -4,7 +4,7 @@ import createSagaMiddleware from "redux-saga";
 import authReducer from "redux/slicers/auth.slice";
 import productReducer from "./redux/slicers/product.slice";
 import categoryReducer from "./redux/slicers/category.slice";
-import productDetailReducer from "./redux/slicers/productDetail.slice";
+import productDetailReducer from "./redux/slicers/product.slice";
 import rootSaga from "./redux/sagas/index";
 
 const sagaMiddleware = createSagaMiddleware();
