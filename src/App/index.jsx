@@ -17,6 +17,7 @@ import Profile from "pages/user/Account/Profile";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import Dashboard from "pages/admin/Dashboard";
+import ManagerProduct from "pages/admin/ManagerProduct";
 
 import { jwtDecode } from "jwt-decode";
 
@@ -45,6 +46,7 @@ function App() {
       </Route>
       <Route element={<AdminLayout />}>
         <Route path={ROUTES.ADMIN.DASHBOARD} element={<Dashboard />} />
+        <Route path={ROUTES.ADMIN.PRODUCT_LIST} element={<ManagerProduct />} />
       </Route>
       <Route element={<AccountUserLayout />}>
         <Route path={ROUTES.USER.ACCOUNT.PROFILE} element={<Profile />} />

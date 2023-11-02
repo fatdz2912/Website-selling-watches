@@ -1,11 +1,26 @@
 import * as S from "./style";
-import { data } from "../../../App/data";
 import LimitedTimeOffers from "./components/LimitedTimeOffers";
 import TrendingNow from "./components/TrendingNow";
 import { useMemo } from "react";
 import {} from "antd";
 function Home() {
-  const { typedClocks } = data;
+  const typedClocks = [
+    {
+      id: "1",
+      name: "Men's Watches",
+      image: "https://cdn2.jomashop.com/media/wysiwyg/mens_round_150.png",
+    },
+    {
+      id: "2",
+      name: "Ladies Watches",
+      image: "https://cdn2.jomashop.com/media/wysiwyg/ladies_round_150.png",
+    },
+    {
+      id: "3",
+      name: "Sale",
+      image: "https://cdn2.jomashop.com/media/wysiwyg/sale_round_150.png",
+    },
+  ];
   const renderTypeClocks = useMemo(() => {
     // render TypeClocks
     return typedClocks.map((item, index) => {
@@ -18,7 +33,7 @@ function Home() {
         </S.TypeClockItem>
       );
     });
-  }, [typedClocks]);
+  }, []);
   const renderTypeClocksMobile = useMemo(() => {
     return typedClocks.map((item, index) => {
       return (
@@ -27,7 +42,7 @@ function Home() {
         </S.TypedMobileItem>
       );
     });
-  }, [typedClocks]);
+  }, []);
   // render trending now
   return (
     <S.HomeWrapper gutter={[16, 16]}>

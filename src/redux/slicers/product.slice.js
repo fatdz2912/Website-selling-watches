@@ -18,6 +18,18 @@ const initialState = {
     loading: false,
     error: null,
   },
+  addProductData: {
+    loading: false,
+    error: null,
+  },
+  updateProductData: {
+    loading: false,
+    error: null,
+  },
+  deleteProductData: {
+    loading: false,
+    error: null,
+  },
 };
 
 export const productSlice = createSlice({
@@ -73,6 +85,61 @@ export const productSlice = createSlice({
       state.productDetail.loading = false;
       state.productDetail.error = error;
     },
+    // AddProduct
+    addProductRequest: (state, action) => {
+      state.addProductData.loading = true;
+      state.addProductData.error = null;
+    },
+    addProductSuccess: (state, action) => {
+      const { data } = action.payload;
+      state.addProductData.loading = false;
+      state.productList.data = [...state.productList.data, data];
+    },
+    addProductFailure: (state, action) => {
+      const { error } = action.payload;
+      state.addProductData.loading = false;
+      state.addProductData.error = error;
+    },
+    // updateProduct
+    updateProductRequest: (state, action) => {
+      state.updateProductData.loading = true;
+      state.updateProductData.error = null;
+    },
+    updateProductSuccess: (state, action) => {
+      const { data } = action.payload;
+      state.updateProductData.loading = false;
+      const index = state.productList.data.findIndex(
+        (item) => item.id === data.id
+      );
+      const { id, ...rest } = data;
+      console.log(rest);
+      const newUser = {
+        id: id,
+        ...rest,
+      };
+      state.productList.data.splice(index, 1, newUser);
+    },
+    updateProductFailure: (state, action) => {
+      const { error } = action.payload;
+      state.updateProductData.loading = false;
+      state.updateProductData.error = error;
+    },
+    // deleteProduct
+    deleteProductRequest: (state, action) => {
+      state.deleteProductData.loading = true;
+      state.deleteProductData.error = null;
+    },
+    deleteProductSuccess: (state, action) => {
+      state.productList.data = state.productList.data.filter(
+        (item) => item.id !== action.payload.id
+      );
+      console.log(action.payload);
+    },
+    deleteProductFailure: (state, action) => {
+      const { error } = action.payload;
+      state.deleteProductData.loading = false;
+      state.deleteProductData.error = error;
+    },
   },
 });
 
@@ -86,6 +153,15 @@ export const {
   getProductDetailRequest,
   getProductDetailSuccess,
   getProductDetailFailure,
+  addProductRequest,
+  addProductFailure,
+  addProductSuccess,
+  updateProductRequest,
+  updateProductFailure,
+  updateProductSuccess,
+  deleteProductRequest,
+  deleteProductFailure,
+  deleteProductSuccess,
 } = productSlice.actions;
 
 export default productSlice.reducer;

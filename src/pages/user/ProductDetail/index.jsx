@@ -12,7 +12,8 @@ function ProductDetail() {
   const params = useParams();
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
-  const { productDetail } = useSelector((state) => state.productDetail);
+  const { productDetail } = useSelector((state) => state.product);
+
   const { description, image, name, category, discount, price } =
     productDetail.data;
   useEffect(() => {

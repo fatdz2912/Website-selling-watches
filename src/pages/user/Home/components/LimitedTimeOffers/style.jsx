@@ -1,10 +1,7 @@
-import { color } from "../../../../../themes/color";
 import styled, { css } from "styled-components";
 import { Row, Col } from "antd";
-const primaryText = color.primaryText;
-const primary = color.primary;
-// LimitedOffersWrapper
-export const LimitedOffersWrapper = styled.div`
+// Discount
+export const DiscountListWrapper = styled.div`
   width: 100%;
   margin-top: 22vh;
   background-color: #f6f6f6;
@@ -13,15 +10,15 @@ export const LimitedOffersWrapper = styled.div`
     margin-top: 2vh;
   }
 `;
-export const HeadingLimitedOffers = styled.div`
+export const HeadingDiscountList = styled.div`
   width: 100%;
   text-align: center;
 `;
-export const LimitedOfferList = styled(Row)`
+export const DiscountList = styled(Row)`
   display: flex !important;
   margin-top: 5vh;
 `;
-export const LimitedOffersItem = styled(Col)`
+export const ProductDiscountItem = styled(Col)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,46 +41,34 @@ export const Image = styled.img`
 export const Information = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0 0 2px #f0efef;
   width: 100%;
-  padding: 4px;
 `;
-export const Heading = styled.h4`
-  text-align: center;
-  font-size: 1.2rem;
+export const Heading = styled.div`
+  font-size: 1rem;
   width: 100%;
+  font-weight: 600;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  @media screen and (max-width: 1024px) {
-    font-size: 1rem;
-  }
 `;
-export const Decribe = styled.div`
-  margin-top: 1em;
+export const Decribe = styled.span`
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  @media screen and (max-width: 1024px) {
-    font-size: 1rem;
-  }
+  font-weight: 400;
 `;
+
 export const Discount = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  @media screen and (max-width: 1024px) {
-    font-size: 1rem;
-  }
-  text-align: center;
+  text-align: left;
   color: #f44242;
+`;
+
+export const Price = styled.div`
+  margin-top: 1em;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
 `;

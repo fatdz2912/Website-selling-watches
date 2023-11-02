@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import * as S from "./style";
 function InformationDetail() {
-  const { productDetail } = useSelector((state) => state.productDetail);
+  const { productDetail } = useSelector((state) => state.product);
   const {
     category,
     series,

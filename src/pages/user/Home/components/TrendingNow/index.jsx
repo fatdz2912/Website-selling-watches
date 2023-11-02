@@ -1,14 +1,27 @@
 import { Button, Carousel } from "antd";
 import { useMemo } from "react";
-
-import { data } from "../../../../../App/data";
 import * as S from "./style";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getProductListRequest } from "redux/slicers/product.slice";
+import { PRODUCT_DISCOUNT } from "constants/paging";
 
 function TrendingNow() {
-  const { trendingNow } = data;
+  const dispatch = useDispatch();
+  const { productList } = useSelector((state) => state.product);
+  const { data } = productList;
+
+  useEffect(() => {
+    dispatch(
+      getProductListRequest({
+        limit: PRODUCT_DISCOUNT,
+      })
+    );
+  }, []);
   const groupTrendingNow = [];
-  for (let i = 0; i < trendingNow.length; i += 3) {
-    groupTrendingNow.push(trendingNow.slice(i, i + 3));
+  for (let i = 0; i < data.length; i += 4) {
+    groupTrendingNow.push(data.slice(i, i + 4));
   }
   const renderTrendingNow = useMemo(() => {
     return groupTrendingNow.map((group, index) => {
@@ -20,18 +33,20 @@ function TrendingNow() {
         >
           {group.map((item, index) => {
             return (
-              <S.TrendingNowsItem xs={12} sm={8} md={8} key={index}>
+              <S.TrendingNowsItem xs={12} sm={12} md={6} key={index}>
                 <S.ImageWrapper>
                   <S.Image src={item.image}></S.Image>
                 </S.ImageWrapper>
                 <S.Information>
                   <S.Heading>
-                    {item.heading.toUpperCase()}
-                    <S.Decribe> {item.describe}</S.Decribe>
+                    {item.category.name.toUpperCase()}
+                    <S.Decribe> {item.name}</S.Decribe>
                   </S.Heading>
                   <S.Price>
                     ${item.price}
-                    <S.Discount> {item.discount}% Off</S.Discount>
+                    <S.Discount discount={item.discount}>
+                      giảm {item.discount}%{" "}
+                    </S.Discount>
                   </S.Price>
                 </S.Information>
               </S.TrendingNowsItem>
@@ -40,7 +55,7 @@ function TrendingNow() {
         </S.TrendingNowList>
       );
     });
-  }, [trendingNow]);
+  }, [data]);
   return (
     <S.TrendingNowWrapper>
       <S.HeadingTrendingNow>
