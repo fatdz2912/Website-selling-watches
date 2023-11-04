@@ -21,7 +21,7 @@ function UpdateModal({
   }, [isShowUpdateUser]);
   return (
     <Modal
-      title="Create User"
+      title="Thêm sản phẩm"
       footer={null}
       open={isShowUpdateUser}
       onCancel={() => {

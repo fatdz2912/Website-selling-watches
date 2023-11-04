@@ -1,31 +1,51 @@
 import * as S from "./style";
-import LimitedTimeOffers from "./components/LimitedTimeOffers";
+import SpecialOffer from "./components/SpecialOffer";
 import TrendingNow from "./components/TrendingNow";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {} from "antd";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "constants/routes";
+import qs from "qs";
 function Home() {
+  const navigate = useNavigate();
+
   const typedClocks = [
     {
       id: "1",
       name: "Men's Watches",
       image: "https://cdn2.jomashop.com/media/wysiwyg/mens_round_150.png",
+      gender: "Nam",
     },
     {
       id: "2",
       name: "Ladies Watches",
       image: "https://cdn2.jomashop.com/media/wysiwyg/ladies_round_150.png",
+      gender: "Nữ",
     },
     {
       id: "3",
       name: "Sale",
       image: "https://cdn2.jomashop.com/media/wysiwyg/sale_round_150.png",
+      gender: undefined,
     },
   ];
   const renderTypeClocks = useMemo(() => {
     // render TypeClocks
     return typedClocks.map((item, index) => {
       return (
-        <S.TypeClockItem md={8} xs={8} key={index}>
+        <S.TypeClockItem
+          md={8}
+          xs={8}
+          key={index}
+          onClick={() => {
+            navigate({
+              pathname: ROUTES.USER.PRODUCT_LIST,
+              search: qs.stringify({
+                gender: item.gender,
+              }),
+            });
+          }}
+        >
           <S.ImageTypeWrapper>
             <S.ImageTypeClock src={item.image}></S.ImageTypeClock>
           </S.ImageTypeWrapper>
@@ -55,7 +75,7 @@ function Home() {
       <S.TypeClockMobile justify={"space-between"}>
         {renderTypeClocksMobile}
       </S.TypeClockMobile>
-      <LimitedTimeOffers />
+      <SpecialOffer />
       <TrendingNow />
     </S.HomeWrapper>
   );

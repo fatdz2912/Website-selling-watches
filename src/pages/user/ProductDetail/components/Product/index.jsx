@@ -1,5 +1,5 @@
-import { Button, Col, Row, Space } from "antd";
-import { FaStar, FaShoppingCart } from "react-icons/fa";
+import { Button, Col, Row, Space, Rate } from "antd";
+import { FaShoppingCart } from "react-icons/fa";
 
 import { formatNumberWithCommaAndDecimal } from "components/fomatNumber";
 import * as S from "./style";
@@ -27,10 +27,7 @@ function Product({
             <S.Brands>{category?.name.toUpperCase()}</S.Brands>
             <S.Name>{name}</S.Name>
             <S.Preview>
-              <S.Star>
-                ? <FaStar size={17} /> <FaStar size={17} /> <FaStar size={17} />{" "}
-                <FaStar size={17} /> <FaStar size={17} />
-              </S.Star>
+              <Rate value={5} allowHalf disabled />
               <S.Evaluate>? Đánh giá</S.Evaluate>
               <S.Sold>? Đã Bán</S.Sold>
             </S.Preview>

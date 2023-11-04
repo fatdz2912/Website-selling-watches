@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.div`
   z-index: 2;
   background-color: #fff;
 `;
+
 export const HeaderTopWrapper = styled.div`
   background-color: #302e2e;
   color: ${primaryText};
@@ -21,6 +22,16 @@ export const HeaderTopWrapper = styled.div`
 export const HeaderTopBlock = styled(Row)`
   height: 100%;
   width: 95%;
+  position: relative;
+`;
+export const AngleUp = styled.div`
+  top: 60vh;
+  right: 2vh;
+  position: absolute;
+  width: 10px;
+  cursor: pointer;
+  padding: 10px;
+  display: ${(props) => (props.isHiddenAngleUp ? "block" : "none")};
 `;
 export const HeaderDiscount = styled.div`
   display: flex;

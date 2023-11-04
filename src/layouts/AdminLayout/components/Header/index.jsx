@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo } from "react";
-import { Dropdown } from "antd";
+import { Button, Dropdown } from "antd";
 import {
   FaUserAlt,
-  FaFacebookMessenger,
+  FaCommentDots,
   FaSearchengin,
   FaCartPlus,
   FaBars,
   FaSignOutAlt,
+  FaPhoneSquareAlt,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation, Link } from "react-router-dom";
@@ -21,22 +22,6 @@ import { getCategoryListRequest } from "redux/slicers/category.slice";
 import { logoutRequest } from "redux/slicers/auth.slice";
 
 function Header({ isShowSidebar, setIsShowSidebar }) {
-  const items = [
-    {
-      key: "1",
-      label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
-    },
-    {
-      key: "2",
-      label: <Link to={ROUTES.USER.ACCOUNT.PROFILE}>Thông tin cá nhân</Link>,
-      icon: <FaUserAlt />,
-    },
-    {
-      key: "3",
-      label: <div onClick={() => dispatch(logoutRequest())}>Đăng xuất</div>,
-      icon: <FaSignOutAlt />,
-    },
-  ];
   const [searchKey, setSearchKey] = useState("");
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
@@ -69,7 +54,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
         searchKey: searchKey,
       };
       navigate({
-        pathname: ROUTES.USER.PRODUCT_LIST,
+        pathname: ROUTES.ADMIN.PRODUCT_LIST,
         search: qs.stringify(newFilterParams),
       });
     }
@@ -82,7 +67,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
           key={index}
           onClick={() => {
             navigate({
-              pathname: ROUTES.USER.PRODUCT_LIST,
+              pathname: ROUTES.ADMIN.PRODUCT_LIST,
               search: qs.stringify({
                 categoryId: [item.id],
               }),
@@ -102,19 +87,36 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
           justify="space-between"
           align={"middle"}
         >
-          <S.HeaderTopLeft sm={24} xs={24} md={12}>
+          <S.HeaderTopLeft sm={24} xs={24} md={20}>
             <S.HeaderDiscount>
               <p>FALL SALE | UP TO 75% OFF!</p>
               <S.LinkDiscount>SHOP NOW</S.LinkDiscount>
             </S.HeaderDiscount>
           </S.HeaderTopLeft>
-          <S.HeaderTopRight sm={0} xs={0} md={12}>
-            <S.ChatCall>
-              <S.IconMessage>
-                <FaFacebookMessenger size={25} color={color.primaryText} />
-              </S.IconMessage>
-              Chat or Call (84+)377460815
-            </S.ChatCall>
+          <S.HeaderTopRight sm={0} xs={0} md={4}>
+            <Dropdown
+              menu={{
+                items: [
+                  {
+                    key: "1",
+                    label: "Call",
+                    icon: <FaPhoneSquareAlt size={25} />,
+                  },
+                  {
+                    key: "2",
+                    label: "Chat",
+                    icon: <FaCommentDots size={25} />,
+                  },
+                ],
+              }}
+            >
+              <S.ChatCall>
+                <S.IconMessage>
+                  <FaCommentDots size={25} color={color.primaryText} />
+                </S.IconMessage>
+                Chat or Call (84+)377460815
+              </S.ChatCall>
+            </Dropdown>
           </S.HeaderTopRight>
         </S.HeaderTopBlock>
       </S.HeaderTopWrapper>
@@ -151,7 +153,28 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
           {userInfo.data.fullName ? (
             <Dropdown
               menu={{
-                items,
+                items: [
+                  {
+                    key: "1",
+                    label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
+                    icon: <FaUserAlt />,
+                  },
+                  {
+                    key: "2",
+                    label: (
+                      <Link to={ROUTES.USER.ACCOUNT.PROFILE}>
+                        Thông tin cá nhân
+                      </Link>
+                    ),
+                    icon: <FaUserAlt />,
+                  },
+                  {
+                    key: "3",
+                    label: "Đăng xuất",
+                    onClick: () => dispatch(logoutRequest()),
+                    icon: <FaSignOutAlt />,
+                  },
+                ],
               }}
             >
               <S.Login>
@@ -160,9 +183,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
               </S.Login>
             </Dropdown>
           ) : (
-            <S.HeadingLogin onClick={() => navigate(ROUTES.LOGIN)}>
-              Đăng nhập
-            </S.HeadingLogin>
+            <Button onClick={() => navigate(ROUTES.LOGIN)}>Đăng nhập</Button>
           )}
         </S.LoginAndCart>
         <S.SearchColumn sm={24} xs={24} md={24} xl={0}>

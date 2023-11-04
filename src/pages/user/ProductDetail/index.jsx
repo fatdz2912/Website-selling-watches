@@ -17,6 +17,9 @@ function ProductDetail() {
   const { description, image, name, category, discount, price } =
     productDetail.data;
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = `ProductDetail Page - ${params.id}`;
     dispatch(
       getProductDetailRequest({

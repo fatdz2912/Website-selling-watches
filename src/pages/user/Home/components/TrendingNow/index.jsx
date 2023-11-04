@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getProductListRequest } from "redux/slicers/product.slice";
 import { PRODUCT_DISCOUNT } from "constants/paging";
+import { Link, generatePath } from "react-router-dom";
+import { ROUTES } from "constants/routes";
 
 function TrendingNow() {
   const dispatch = useDispatch();
@@ -34,21 +36,25 @@ function TrendingNow() {
           {group.map((item, index) => {
             return (
               <S.TrendingNowsItem xs={12} sm={12} md={6} key={index}>
-                <S.ImageWrapper>
-                  <S.Image src={item.image}></S.Image>
-                </S.ImageWrapper>
-                <S.Information>
-                  <S.Heading>
-                    {item.category.name.toUpperCase()}
-                    <S.Decribe> {item.name}</S.Decribe>
-                  </S.Heading>
-                  <S.Price>
-                    ${item.price}
-                    <S.Discount discount={item.discount}>
-                      giảm {item.discount}%{" "}
-                    </S.Discount>
-                  </S.Price>
-                </S.Information>
+                <Link
+                  to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item.id })}
+                >
+                  <S.ImageWrapper>
+                    <S.Image src={item.image}></S.Image>
+                  </S.ImageWrapper>
+                  <S.Information>
+                    <S.Heading>
+                      {item.category.name.toUpperCase()}
+                      <S.Decribe> {item.name}</S.Decribe>
+                    </S.Heading>
+                    <S.Price>
+                      ${item.price}
+                      <S.Discount discount={item.discount}>
+                        giảm {item.discount}%{" "}
+                      </S.Discount>
+                    </S.Price>
+                  </S.Information>
+                </Link>
               </S.TrendingNowsItem>
             );
           })}

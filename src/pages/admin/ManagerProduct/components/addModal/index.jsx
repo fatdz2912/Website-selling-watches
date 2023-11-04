@@ -1,25 +1,21 @@
 import { useEffect } from "react";
 import { Modal, Form, Input, Button, InputNumber, Select } from "antd";
-function CreateModal({
-  isShowCreateUser,
-  setIsShowCreateUser,
-  handleAddProduct,
-}) {
-  const [createForm] = Form.useForm();
+function AddModal({ isShowAddProduct, setIsShowAddProduct, handleAddProduct }) {
+  const [addForm] = Form.useForm();
   useEffect(() => {
-    if (isShowCreateUser) {
-      createForm.resetFields();
+    if (isShowAddProduct) {
+      addForm.resetFields();
     }
-  }, [isShowCreateUser]);
+  }, [isShowAddProduct]);
   return (
     <Modal
       title="Thêm sản phẩm"
       footer={null}
-      open={isShowCreateUser}
-      onCancel={() => setIsShowCreateUser(false)}
+      open={isShowAddProduct}
+      onCancel={() => setIsShowAddProduct(false)}
     >
       <Form
-        form={createForm}
+        form={addForm}
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 20 }}
         style={{
@@ -77,25 +73,25 @@ function CreateModal({
           <InputNumber style={{ width: "100%" }} />
         </Form.Item>
         <Form.Item
-          label="Gender"
+          label="Giới Tính"
           name="gender"
           rules={[
             {
               required: true,
-              message: "Please Choose a gender",
+              message: "Vui lòng chọn giới tính",
             },
           ]}
         >
           <Select
-            placeholder="Choose a gender"
+            placeholder="Chọn giới tính"
             options={[
               {
-                value: "Male",
-                label: "Male",
+                value: "Nam",
+                label: "Nam",
               },
               {
-                value: "Female",
-                label: "Female",
+                value: "Nữ",
+                label: "Nữ",
               },
             ]}
           ></Select>
@@ -172,4 +168,4 @@ function CreateModal({
   );
 }
 
-export default CreateModal;
+export default AddModal;

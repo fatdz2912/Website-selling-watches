@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import { Dropdown } from "antd";
+import { Button, Dropdown } from "antd";
 import {
   FaUserAlt,
   FaFacebookMessenger,
@@ -7,6 +7,9 @@ import {
   FaCartPlus,
   FaBars,
   FaSignOutAlt,
+  FaAngleUp,
+  FaPhoneSquareAlt,
+  FaCommentDots,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation, Link } from "react-router-dom";
@@ -14,29 +17,14 @@ import { useState } from "react";
 import qs from "qs";
 
 import * as S from "./style";
-import { color } from "../../../../themes/color";
+import { color } from "themes/color";
 import { ROUTES } from "constants/routes";
 
-import { getCategoryListRequest } from "../../../../redux/slicers/category.slice";
-import { logoutRequest } from "../../../../redux/slicers/auth.slice";
+import { getCategoryListRequest } from "redux/slicers/category.slice";
+import { logoutRequest } from "redux/slicers/auth.slice";
 
 function Header({ isHiddenMenu, setIsHiddenMenu }) {
-  const items = [
-    {
-      key: "1",
-      label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
-    },
-    {
-      key: "2",
-      label: <Link to={ROUTES.USER.ACCOUNT.PROFILE}>Thông tin cá nhân</Link>,
-      icon: <FaUserAlt />,
-    },
-    {
-      key: "3",
-      label: <div onClick={() => dispatch(logoutRequest())}>Đăng xuất</div>,
-      icon: <FaSignOutAlt />,
-    },
-  ];
+  const [isHiddenAngleUp, setIsHiddenAngleUp] = useState(false);
   const [searchKey, setSearchKey] = useState("");
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
@@ -46,7 +34,11 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const { search } = useLocation();
 
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
     dispatch(getCategoryListRequest());
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -55,6 +47,14 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
     });
     setSearchKey(searchParams.searchKey || "");
   }, [search]);
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    if (scrollPosition >= "300") {
+      setIsHiddenAngleUp(true);
+    } else {
+      setIsHiddenAngleUp(false);
+    }
+  };
 
   const handleSearchKeyWord = (e) => {
     if (e.key === "Enter") {
@@ -104,19 +104,47 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           justify="space-between"
           align={"middle"}
         >
-          <S.HeaderTopLeft sm={24} xs={24} md={12}>
+          <S.AngleUp
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+            isHiddenAngleUp={isHiddenAngleUp}
+          >
+            <FaAngleUp size={60} color={color.primary} />
+          </S.AngleUp>
+          <S.HeaderTopLeft sm={24} xs={24} md={20}>
             <S.HeaderDiscount>
               <p>FALL SALE | UP TO 75% OFF!</p>
               <S.LinkDiscount>SHOP NOW</S.LinkDiscount>
             </S.HeaderDiscount>
           </S.HeaderTopLeft>
-          <S.HeaderTopRight sm={0} xs={0} md={12}>
-            <S.ChatCall>
-              <S.IconMessage>
-                <FaFacebookMessenger size={25} color={color.primaryText} />
-              </S.IconMessage>
-              Chat or Call (84+)377460815
-            </S.ChatCall>
+          <S.HeaderTopRight sm={0} xs={0} md={4}>
+            <Dropdown
+              menu={{
+                items: [
+                  {
+                    key: "1",
+                    label: "Gọi",
+                    icon: <FaPhoneSquareAlt size={25} />,
+                  },
+                  {
+                    key: "2",
+                    label: " Nhắn tin",
+                    icon: <FaCommentDots size={25} />,
+                  },
+                ],
+              }}
+            >
+              <S.ChatCall>
+                <S.IconMessage>
+                  <FaCommentDots size={25} color={color.primaryText} />
+                </S.IconMessage>
+                Chat or Call (84+)377460815
+              </S.ChatCall>
+            </Dropdown>
           </S.HeaderTopRight>
         </S.HeaderTopBlock>
       </S.HeaderTopWrapper>
@@ -153,7 +181,28 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           {userInfo.data.fullName ? (
             <Dropdown
               menu={{
-                items,
+                items: [
+                  {
+                    key: "1",
+                    label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
+                    icon: <FaUserAlt />,
+                  },
+                  {
+                    key: "2",
+                    label: (
+                      <Link to={ROUTES.USER.ACCOUNT.PROFILE}>
+                        Thông tin cá nhân
+                      </Link>
+                    ),
+                    icon: <FaUserAlt />,
+                  },
+                  {
+                    key: "3",
+                    label: "Đăng xuất",
+                    onClick: () => dispatch(logoutRequest()),
+                    icon: <FaSignOutAlt />,
+                  },
+                ],
               }}
             >
               <S.Login>
@@ -162,9 +211,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
               </S.Login>
             </Dropdown>
           ) : (
-            <S.HeadingLogin onClick={() => navigate(ROUTES.LOGIN)}>
-              Đăng nhập
-            </S.HeadingLogin>
+            <Button onClick={() => navigate(ROUTES.LOGIN)}>Đăng nhập</Button>
           )}
         </S.LoginAndCart>
         <S.SearchColumn sm={24} xs={24} md={24} xl={0}>

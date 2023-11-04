@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Row, Col } from "antd";
+import { color } from "themes/color";
 // Discount
 export const DiscountListWrapper = styled.div`
   width: 100%;
@@ -42,6 +43,7 @@ export const Information = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: ${color.primary};
 `;
 export const Heading = styled.div`
   font-size: 1rem;

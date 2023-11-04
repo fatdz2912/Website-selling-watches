@@ -16,6 +16,7 @@ function ProductList() {
     categoryId: [],
     sortOrder: undefined,
     discountOrder: undefined,
+    gender: undefined,
   });
   const { productList } = useSelector((state) => state.product);
   const { categoryList } = useSelector((state) => state.category);
@@ -37,6 +38,7 @@ function ProductList() {
       sortOrder: searchParams.sortOrder,
       searchKey: searchParams.searchKey || "",
       discountOrder: searchParams.discountOrder,
+      gender: searchParams.gender,
     };
     setFilterParams(newFilterParams);
     dispatch(

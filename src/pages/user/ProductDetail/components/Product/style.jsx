@@ -38,13 +38,6 @@ export const Preview = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const Star = styled.div`
-  text-align: center;
-  font-size: 1.3rem;
-  border-right: 1px solid #ccc;
-  padding-right: 26px;
-  cursor: pointer;
-`;
 export const Evaluate = styled.div`
   text-align: center;
   font-size: 1.3rem;

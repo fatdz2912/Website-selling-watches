@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { Button, Table, Row, Col, Space, Popconfirm, Tooltip } from "antd";
 import { v4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 
-import CreateModal from "./components/CreateModal";
+import AddModal from "./components/addModal";
 import ModalUpdate from "./components/ModalUpdate";
 import {
   getProductListRequest,
@@ -13,12 +14,18 @@ import {
   deleteProductRequest,
 } from "redux/slicers/product.slice";
 import { PRODUCT_LIMIT } from "constants/paging";
+import { useLocation } from "react-router-dom";
+import qs from "qs";
 function ProductManager() {
-  const [isShowCreateUser, setIsShowCreateUser] = useState(false);
+  const [filterParams, setFilterParams] = useState({
+    categoryId: [],
+  });
+  const [isShowAddProduct, setIsShowAddProduct] = useState(false);
   const [isShowUpdateUser, setIsShowUpdateUser] = useState(false);
   const [updateData, setUpdateData] = useState({});
   const { productList } = useSelector((state) => state.product);
   const dispatch = useDispatch();
+  const { search } = useLocation();
   useEffect(() => {
     dispatch(
       getProductListRequest({
@@ -27,6 +34,25 @@ function ProductManager() {
       })
     );
   }, []);
+  useEffect(() => {
+    const searchParams = qs.parse(search, {
+      ignoreQueryPrefix: true,
+    });
+    const newFilterParams = {
+      categoryId: searchParams.categoryId
+        ? searchParams.categoryId.map((id) => parseInt(id))
+        : [],
+      searchKey: searchParams.searchKey || "",
+    };
+    setFilterParams(newFilterParams);
+    dispatch(
+      getProductListRequest({
+        page: 1,
+        limit: PRODUCT_LIMIT,
+        ...newFilterParams,
+      })
+    );
+  }, [search]);
   const handleAddProduct = (values) => {
     dispatch(
       addProductRequest({
@@ -36,7 +62,7 @@ function ProductManager() {
         },
       })
     );
-    setIsShowCreateUser(false);
+    setIsShowAddProduct(false);
   };
   const handleDeleteUser = (id) => {
     dispatch(
@@ -174,7 +200,7 @@ function ProductManager() {
         </Row>
       </Col>
       <Col md={4}>
-        <Button type="primary" onClick={() => setIsShowCreateUser(true)}>
+        <Button type="primary" onClick={() => setIsShowAddProduct(true)}>
           Thêm sản phẩm
         </Button>
       </Col>
@@ -183,7 +209,7 @@ function ProductManager() {
           dataSource={productList.data}
           columns={columns}
           pagination={false}
-          rowKey={"key"}
+          rowKey="Id"
         />
       </Col>
       <ModalUpdate
@@ -192,9 +218,9 @@ function ProductManager() {
         handleUpdateUser={handleUpdateUser}
         updateData={updateData}
       />
-      <CreateModal
-        isShowCreateUser={isShowCreateUser}
-        setIsShowCreateUser={setIsShowCreateUser}
+      <AddModal
+        isShowAddProduct={isShowAddProduct}
+        setIsShowAddProduct={setIsShowAddProduct}
         handleAddProduct={handleAddProduct}
       />
     </Row>

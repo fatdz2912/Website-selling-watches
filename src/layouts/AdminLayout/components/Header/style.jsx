@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   top: 0;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0 0 0 2px #f0efef;
+  box-shadow: 0 0 0 1px ${color.primary};
 `;
 export const HeaderTopWrapper = styled.div`
   background-color: #302e2e;
@@ -49,7 +49,6 @@ export const ChatCall = styled.div`
   align-items: center;
   justify-content: right;
   gap: 1em;
-  cursor: pointer;
 `;
 export const IconMessage = styled.div`
   margin-top: 0.5rem;

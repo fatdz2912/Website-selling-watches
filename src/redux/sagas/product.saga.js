@@ -32,6 +32,7 @@ function* getProductListSaga(action) {
       searchKey,
       sortOrder,
       discountOrder,
+      gender,
     } = action.payload;
     const result = yield axios.get("http://localhost:4000/products", {
       params: {
@@ -47,6 +48,9 @@ function* getProductListSaga(action) {
         ...(discountOrder && {
           _sort: "discount",
           _order: discountOrder,
+        }),
+        ...(gender && {
+          gender: gender,
         }),
       },
     });

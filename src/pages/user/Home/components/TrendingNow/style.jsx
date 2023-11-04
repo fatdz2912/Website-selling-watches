@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Row, Col } from "antd";
+import { color } from "themes/color";
 export const TrendingNowWrapper = styled.div`
   width: 100%;
   margin-top: 2vh;
@@ -37,6 +38,7 @@ export const Image = styled.img`
 export const Information = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${color.primary};
   width: 100%;
 `;
 export const Heading = styled.div`
