@@ -12,19 +12,19 @@ function Home() {
   const typedClocks = [
     {
       id: "1",
-      name: "Men's Watches",
+      name: "Đồng Hồ Nam",
       image: "https://cdn2.jomashop.com/media/wysiwyg/mens_round_150.png",
       gender: "Nam",
     },
     {
       id: "2",
-      name: "Ladies Watches",
+      name: "Đồng Hồ Nữ",
       image: "https://cdn2.jomashop.com/media/wysiwyg/ladies_round_150.png",
       gender: "Nữ",
     },
     {
       id: "3",
-      name: "Sale",
+      name: "Tất Cả",
       image: "https://cdn2.jomashop.com/media/wysiwyg/sale_round_150.png",
       gender: undefined,
     },
@@ -57,7 +57,17 @@ function Home() {
   const renderTypeClocksMobile = useMemo(() => {
     return typedClocks.map((item, index) => {
       return (
-        <S.TypedMobileItem key={index}>
+        <S.TypedMobileItem
+          key={index}
+          onClick={() => {
+            navigate({
+              pathname: ROUTES.USER.PRODUCT_LIST,
+              search: qs.stringify({
+                gender: item.gender,
+              }),
+            });
+          }}
+        >
           {item.name.toUpperCase()}
         </S.TypedMobileItem>
       );

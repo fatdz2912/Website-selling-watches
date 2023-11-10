@@ -1,8 +1,9 @@
-import { Button, Col, Row, Space, Rate } from "antd";
-import { FaShoppingCart } from "react-icons/fa";
+import { Button, Col, Row, Space, Rate, Breadcrumb } from "antd";
+import { FaShoppingCart, FaHome } from "react-icons/fa";
 
-import { formatNumberWithCommaAndDecimal } from "components/fomatNumber";
 import * as S from "./style";
+import { ROUTES } from "constants/routes";
+import { Link } from "react-router-dom";
 
 function Product({
   handleDecreaseQuantity,
@@ -12,45 +13,75 @@ function Product({
   name,
   category,
   discount,
-  price,
+  oldPrice,
+  currentPrice,
+  quantityData,
+  averageRate,
+  handleAddToCart,
 }) {
   return (
     <S.ProductDetail gutter={[16, 16]}>
-      <Col sm={24} md={24} lg={14}>
+      <Col xs={24} sm={24} md={24} lg={14}>
         <S.ImageWrapper>
+          <S.Discount>
+            <p>-{discount}%</p>
+          </S.Discount>
+          <S.FullBox>
+            <p>MỚI - FULLBOX 100%</p>
+          </S.FullBox>
           <S.Image src={image} />
         </S.ImageWrapper>
       </Col>
       <Col sm={24} md={24} lg={10}>
-        <Row>
+        <Breadcrumb
+          items={[
+            {
+              title: (
+                <Link to={ROUTES.USER.HOME}>
+                  <Space>
+                    <FaHome />
+                    <span>Trang chủ</span>
+                  </Space>
+                </Link>
+              ),
+            },
+            {
+              title: (
+                <Link to={ROUTES.USER.PRODUCT_LIST}>
+                  <Space>
+                    <span>Danh sách sản phẩm</span>
+                  </Space>
+                </Link>
+              ),
+            },
+            {
+              title: "Chi tiết sản phẩm",
+            },
+          ]}
+        />
+        <Row gutter={[16, 16]} style={{ marginTop: "1em" }}>
           <Col md={18} xs={18}>
             <S.Brands>{category?.name.toUpperCase()}</S.Brands>
             <S.Name>{name}</S.Name>
             <S.Preview>
-              <Rate value={5} allowHalf disabled />
-              <S.Evaluate>? Đánh giá</S.Evaluate>
-              <S.Sold>? Đã Bán</S.Sold>
+              <Col xs={16} md={16} lg={16}>
+                <Rate value={averageRate} allowHalf disabled />({averageRate})
+              </Col>
+              <S.Sold xs={8} md={8} lg={8}>
+                ? Đã Bán
+              </S.Sold>
             </S.Preview>
           </Col>
           <S.Report md={6} xs={6}>
             Tố cáo
           </S.Report>
-          <S.Price>
-            <S.OldPrice discount={discount} sm={24} md={24}>
-              ${formatNumberWithCommaAndDecimal(parseInt(price))}
-              .00
+          <S.Price sm={24} md={24}>
+            <S.OldPrice discount={discount}>
+              ${(oldPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
             </S.OldPrice>
-            <S.NewPrice>
-              $
-              {formatNumberWithCommaAndDecimal(
-                discount !== ""
-                  ? parseInt(price) -
-                      (parseInt(price) * parseInt(discount)) / 100
-                  : parseInt(price)
-              )}
-              .00
-            </S.NewPrice>
-            <S.Discount discount={discount}> giảm {discount}% </S.Discount>
+            <S.CurrentPrice>
+              ${(currentPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+            </S.CurrentPrice>
           </S.Price>
           <S.QuantityWrapper md={24} lg={24} xs={24}>
             <S.Quantity>Số Lượng:</S.Quantity>
@@ -59,22 +90,47 @@ function Product({
             <Button onClick={() => handleIncreaseQuantity()}>+</Button>
           </S.QuantityWrapper>
           <Col md={24} lg={24} xs={24}>
-            <S.Condition>CONDITION: NEW </S.Condition>
+            <S.Info gutter={[8, 8]}>
+              <S.Title xs={12} md={12} lg={12}>
+                TRẠNG THÁI
+              </S.Title>
+              <S.Desc xs={12} md={12} lg={12}>
+                NEW
+              </S.Desc>
+            </S.Info>
+            <S.Info gutter={[8, 8]}>
+              <S.Title xs={12} md={12} lg={12}>
+                XUẤT XỨ
+              </S.Title>
+              <S.Desc xs={12} md={12} lg={12}>
+                Thụy Sỹ
+              </S.Desc>
+            </S.Info>
+            <S.Info gutter={[8, 8]}>
+              <S.Title xs={12} md={12} lg={12}>
+                KHO
+              </S.Title>
+              <S.Desc xs={12} md={12} lg={12}>
+                Có sẵn
+              </S.Desc>
+            </S.Info>
+            <S.Info gutter={[8, 8]}>
+              <S.Title xs={12} md={12} lg={12}>
+                PHÍ VẬN CHUYỂN
+              </S.Title>
+              <S.Desc xs={12} md={12} lg={12}>
+                FREE
+              </S.Desc>
+            </S.Info>
           </Col>
           <Col md={24} lg={24} xs={24}>
-            <S.Stock>Có sẵn trong kho </S.Stock>
-          </Col>
-          <Col md={24} lg={24} xs={24}>
-            <S.Transport>Miễn phí vận chuyển</S.Transport>
-          </Col>
-          <Col md={24} lg={18} xs={24}>
-            <Space size={30}>
-              <S.AddCart type="primary">
+            <Row gutter={[16, 16]} style={{ width: "100%" }}>
+              <S.AddCart type="primary" onClick={() => handleAddToCart()}>
                 <FaShoppingCart size={30} style={{ marginRight: 15 }} />
                 Thêm vào giỏ
               </S.AddCart>
               <S.Buy>Mua ngay</S.Buy>
-            </Space>
+            </Row>
           </Col>
         </Row>
       </Col>

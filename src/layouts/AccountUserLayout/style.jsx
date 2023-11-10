@@ -11,7 +11,7 @@ export const MainWrapper = styled(Row)`
   width: 95%;
   flex: 1;
   margin: 0 auto !important;
-  max-width: 1500px;
+  max-width: 1200px;
   padding: 20px 0;
 `;
 

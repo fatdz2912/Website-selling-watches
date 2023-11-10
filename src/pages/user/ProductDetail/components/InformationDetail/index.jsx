@@ -22,8 +22,7 @@ function InformationDetail() {
         <S.TitleMoreDetail md={24} xs={24}>
           CHI TIẾT SẢN PHẨM
         </S.TitleMoreDetail>
-        <S.MoreDetailBody md={16} xs={16}>
-          <S.MoreDetailHead>THÔNG TIN</S.MoreDetailHead>
+        <S.MoreDetailBody md={16} xs={12}>
           <S.MoreDetailContent>
             <S.MoreDetailLabel>THƯƠNG HIỆU:</S.MoreDetailLabel>
             <S.MoreDetailValue>{category?.name}</S.MoreDetailValue>
@@ -33,7 +32,7 @@ function InformationDetail() {
             <S.MoreDetailValue>{series}</S.MoreDetailValue>
           </S.MoreDetailContent>
           <S.MoreDetailContent>
-            <S.MoreDetailLabel>GENDER:</S.MoreDetailLabel>
+            <S.MoreDetailLabel>GIỚI TÍNH:</S.MoreDetailLabel>
             <S.MoreDetailValue>{gender}</S.MoreDetailValue>
           </S.MoreDetailContent>
           <S.MoreDetailContent>
@@ -45,8 +44,7 @@ function InformationDetail() {
             <S.MoreDetailValue>{powerReserve} Giờ</S.MoreDetailValue>
           </S.MoreDetailContent>
         </S.MoreDetailBody>
-        <S.MoreDetailBody md={8} xs={8}>
-          <S.MoreDetailHead>CASE</S.MoreDetailHead>
+        <S.MoreDetailBody md={8} xs={12}>
           <S.MoreDetailContent>
             <S.MoreDetailLabel>KÍCH CỠ:</S.MoreDetailLabel>
             <S.MoreDetailValue>{size} mm</S.MoreDetailValue>

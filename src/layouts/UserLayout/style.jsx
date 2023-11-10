@@ -13,7 +13,7 @@ export const MainWrapper = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  max-width: 95%;
-  width: 100%;
+  max-width: 1200px;
+  width: 95%;
   padding: 16px;
 `;

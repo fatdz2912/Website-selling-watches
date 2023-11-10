@@ -16,6 +16,8 @@ import Home from "../pages/user/Home";
 import ProductList from "../pages/user/ProductList";
 import ProductDetail from "../pages/user/ProductDetail";
 import Profile from "pages/user/Account/Profile";
+import Cart from "pages/user/Cart";
+import Checkout from "pages/user/Checkout";
 
 import Login from "pages/Login";
 import Register from "pages/Register";
@@ -44,6 +46,8 @@ function App() {
         <Route path={ROUTES.USER.HOME} element={<Home />} />
         <Route path={ROUTES.USER.PRODUCT_LIST} element={<ProductList />} />
         <Route path={ROUTES.USER.PRODUCT_DETAIL} element={<ProductDetail />} />
+        <Route path={ROUTES.USER.CART} element={<Cart />} />
+        <Route path={ROUTES.USER.CHECKOUT} element={<Checkout />} />
       </Route>
       <Route element={<AdminLayout />}>
         <Route path={ROUTES.ADMIN.DASHBOARD} element={<Dashboard />} />

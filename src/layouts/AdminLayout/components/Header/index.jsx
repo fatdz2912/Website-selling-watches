@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import { Button, Dropdown } from "antd";
+import { Badge, Button, Dropdown } from "antd";
 import {
   FaUserAlt,
   FaCommentDots,
@@ -25,6 +25,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
   const [searchKey, setSearchKey] = useState("");
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
+  const { cartList } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -149,7 +150,11 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
           ></S.InputSearch>
         </S.SearchColumn>
         <S.LoginAndCart sm={11} xs={12} md={12} xl={4}>
-          <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
+          <Link to={ROUTES.USER.CART}>
+            <Badge count={cartList.length}>
+              <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
+            </Badge>
+          </Link>
           {userInfo.data.fullName ? (
             <Dropdown
               menu={{

@@ -9,6 +9,7 @@ export const Footer = styled(Row)`
   color: #c7bbbb;
   margin: 0 auto !important;
   padding: 16px;
+  max-width: 1200px;
 `;
 export const Information = styled(Col)`
   text-align: center;

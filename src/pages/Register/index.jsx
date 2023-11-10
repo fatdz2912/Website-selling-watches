@@ -27,7 +27,12 @@ function Register() {
     const { confirm, ...rest } = values;
     dispatch(
       registerRequest({
-        data: { ...rest, role: "user" },
+        data: {
+          ...rest,
+          role: "user",
+          avatar:
+            "http://localhost:3000/static/media/avatar.c3977b10f8422357ca38.jpg",
+        },
         callback: () => navigate(ROUTES.LOGIN),
       })
     );

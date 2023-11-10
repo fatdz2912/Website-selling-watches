@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: #fff;
+  background-color: #f5f5f5;
 `;
 
 export const HeaderTopWrapper = styled.div`
@@ -22,6 +22,7 @@ export const HeaderTopWrapper = styled.div`
 export const HeaderTopBlock = styled(Row)`
   height: 100%;
   width: 95%;
+  max-width: 1200px;
   position: relative;
 `;
 export const AngleUp = styled.div`
@@ -32,6 +33,9 @@ export const AngleUp = styled.div`
   cursor: pointer;
   padding: 10px;
   display: ${(props) => (props.isHiddenAngleUp ? "block" : "none")};
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 export const HeaderDiscount = styled.div`
   display: flex;
@@ -47,7 +51,8 @@ export const HeaderTopLeft = styled(Col)``;
 export const HeaderTopRight = styled(Col)``;
 
 export const LinkDiscount = styled.div`
-  font-weight: 400;
+  color: ${color.outstanding};
+  font-weight: 600;
   font-size: 1.2rem;
   text-decoration: underline;
   &:hover {
@@ -68,8 +73,10 @@ export const IconMessage = styled.div`
 export const HeaderToolBar = styled(Row)`
   background-color: ${primaryText};
   width: 95%;
+  max-width: 1200px;
   margin: 3vh auto 0 !important;
   position: relative;
+  background-color: #f5f5f5;
 `;
 export const HeaderLogo = styled(Col)`
   display: flex;
@@ -156,7 +163,7 @@ export const MenuItem = styled.li`
   font-size: 1.1rem;
   font-weight: 470;
   color: ${primary};
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #f5f5f5;
   padding-bottom: 1vh;
   ${(props) =>
     props.isHiddenMenu === false

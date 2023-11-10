@@ -1,7 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
-import { Card, Row, Col, Select, Button, Segmented, Skeleton } from "antd";
+import {
+  Card,
+  Row,
+  Col,
+  Select,
+  Button,
+  Segmented,
+  Skeleton,
+  Breadcrumb,
+  Space,
+} from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { AppstoreOutlined, BarsOutlined } from "@ant-design/icons";
+import { FaSortAmountUp, FaSortAmountDown, FaHome } from "react-icons/fa";
 import { Link, generatePath, useNavigate, useLocation } from "react-router-dom";
 import qs from "qs";
 
@@ -9,7 +19,6 @@ import { getProductListRequest } from "redux/slicers/product.slice";
 import { getCategoryListRequest } from "redux/slicers/category.slice";
 import { PRODUCT_LIMIT } from "constants/paging";
 import * as S from "./style";
-import { formatNumberWithCommaAndDecimal } from "../../../components/fomatNumber";
 import { ROUTES } from "constants/routes";
 function ProductList() {
   const [filterParams, setFilterParams] = useState({
@@ -87,8 +96,14 @@ function ProductList() {
     });
   }, [categoryList.data]);
   const renderProductList = productList.data.map((item, index) => (
-    <S.ProductItem xs={12} md={12} lg={6} key={index}>
+    <S.ProductItem xs={24} md={12} lg={6} key={index}>
       <Link to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item.id })}>
+        <S.Discount>
+          <p>-{item.discount}%</p>
+        </S.Discount>
+        <S.FullBox>
+          <p>MỚI - FULLBOX 100%</p>
+        </S.FullBox>
         <S.ImageWrapper>
           <S.Image src={item.image} alt={item.name}></S.Image>
         </S.ImageWrapper>
@@ -98,12 +113,13 @@ function ProductList() {
             {item.name}
           </S.Name>
           <S.Price>
+            <S.PriceRate value={5}></S.PriceRate>
             <S.OldPrice discount={item.discount}>
-              ${formatNumberWithCommaAndDecimal(parseInt(item.price))}.00
+              {(item.oldPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
             </S.OldPrice>
-            <S.Discount discount={item.discount}>
-              Giảm {item.discount}%
-            </S.Discount>
+            <S.CurrentPrice discount={item.discount}>
+              {(item.currentPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+            </S.CurrentPrice>
           </S.Price>
         </S.Information>
       </Link>
@@ -130,7 +146,25 @@ function ProductList() {
         <Col lg={21} md={18} xs={24}>
           <Card size="small" bordered={false}>
             <Row gutter={[16, 16]}>
-              <Col md={16} xs={24}></Col>
+              <Col md={16} xs={24}>
+                <Breadcrumb
+                  items={[
+                    {
+                      title: (
+                        <Link to={ROUTES.USER.HOME}>
+                          <Space>
+                            <FaHome />
+                            <span>Trang chủ</span>
+                          </Space>
+                        </Link>
+                      ),
+                    },
+                    {
+                      title: "Danh sách sản phẩm",
+                    },
+                  ]}
+                />
+              </Col>
               <Col md={8} xs={24} style={{ textAlign: "right" }}>
                 <S.SelectArrange
                   placeholder="Sắp xếp theo"
@@ -146,11 +180,11 @@ function ProductList() {
                   options={[
                     {
                       value: "card",
-                      icon: <AppstoreOutlined />,
+                      icon: <FaSortAmountDown />,
                     },
                     {
                       value: "list",
-                      icon: <BarsOutlined />,
+                      icon: <FaSortAmountUp />,
                     },
                   ]}
                 />

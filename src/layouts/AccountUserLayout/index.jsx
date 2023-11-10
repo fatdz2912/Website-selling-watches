@@ -5,11 +5,10 @@ import Header from "../UserLayout/conponents/Header";
 import Footer from "../UserLayout/conponents/Footer";
 import Sidebar from "./components/Sidebar";
 import * as S from "./style";
-import avatarDefault from "layouts/AccountUserLayout/components/Sidebar/avatar.jpg";
 
 function AccountUserLayout() {
   const [isHiddenMenu, setIsHiddenMenu] = useState(true);
-  const [avatar, setAvatar] = useState(avatarDefault);
+  const [avatar, setAvatar] = useState("");
   return (
     <S.LayoutWrapper>
       <Header isHiddenMenu={isHiddenMenu} setIsHiddenMenu={setIsHiddenMenu} />

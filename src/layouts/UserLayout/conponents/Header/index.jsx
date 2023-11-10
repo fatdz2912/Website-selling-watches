@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo } from "react";
-import { Button, Dropdown } from "antd";
+import { Button, Dropdown, Badge } from "antd";
 import {
   FaUserAlt,
-  FaFacebookMessenger,
   FaSearchengin,
   FaCartPlus,
   FaBars,
@@ -28,6 +27,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const [searchKey, setSearchKey] = useState("");
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
+  const { cartList } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -113,15 +113,17 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             }}
             isHiddenAngleUp={isHiddenAngleUp}
           >
-            <FaAngleUp size={60} color={color.primary} />
+            <FaAngleUp size={60} color={color.outstanding} />
           </S.AngleUp>
-          <S.HeaderTopLeft sm={24} xs={24} md={20}>
+          <S.HeaderTopLeft sm={24} xs={24} md={18}>
             <S.HeaderDiscount>
               <p>FALL SALE | UP TO 75% OFF!</p>
-              <S.LinkDiscount>SHOP NOW</S.LinkDiscount>
+              <Link to={ROUTES.USER.PRODUCT_LIST}>
+                <S.LinkDiscount>SHOP NOW</S.LinkDiscount>
+              </Link>
             </S.HeaderDiscount>
           </S.HeaderTopLeft>
-          <S.HeaderTopRight sm={0} xs={0} md={4}>
+          <S.HeaderTopRight sm={0} xs={0} md={6}>
             <Dropdown
               menu={{
                 items: [
@@ -177,7 +179,11 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           ></S.InputSearch>
         </S.SearchColumn>
         <S.LoginAndCart sm={11} xs={12} md={12} xl={4}>
-          <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
+          <Link to={ROUTES.USER.CART}>
+            <Badge count={cartList.length}>
+              <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
+            </Badge>
+          </Link>
           {userInfo.data.fullName ? (
             <Dropdown
               menu={{

@@ -1,10 +1,12 @@
 import { color } from "../../../themes/color";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Row, Col } from "antd";
 const primaryText = color.primaryText;
-const primary = color.primary;
 export const HomeWrapper = styled(Row)`
   width: 100%;
+  max-width: 1200px;
+  background-color: ${color.primaryText};
+  padding: 16px;
 `;
 // Logo wrapper
 export const LogoWrapper = styled(Col)``;

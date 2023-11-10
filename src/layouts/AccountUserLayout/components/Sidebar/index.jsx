@@ -1,13 +1,12 @@
 import { Col } from "antd";
 import * as S from "./style";
 import { FaUserNurse, FaClipboardList } from "react-icons/fa";
-import avatar from "./avatar.jpg";
 function Sidebar() {
   return (
     <S.SidebarWrapper xs={10} md={8} xl={4}>
       <S.UserWithAvatar>
         <S.AvatarWrapper>
-          <S.Avatar src={avatar}></S.Avatar>
+          <S.Avatar src="http://localhost:3000/static/media/avatar.c3977b10f8422357ca38.jpg"></S.Avatar>
         </S.AvatarWrapper>
         <S.Username>Ngovantri2912</S.Username>
       </S.UserWithAvatar>

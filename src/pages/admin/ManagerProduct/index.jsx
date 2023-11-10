@@ -59,6 +59,8 @@ function ProductManager() {
         data: {
           id: v4(),
           ...values,
+          currentPrice:
+            values.oldPrice - (values.oldPrice * values.discount) / 100,
         },
       })
     );
@@ -141,8 +143,8 @@ function ProductManager() {
 
     {
       title: "Giá",
-      dataIndex: "price",
-      key: "price",
+      dataIndex: "oldPrice",
+      key: "oldPrice",
     },
     {
       title: "Mô tả",
@@ -206,10 +208,11 @@ function ProductManager() {
       </Col>
       <Col md={24}>
         <Table
+          rowSelection={[2, 3, 4, 5]}
           dataSource={productList.data}
           columns={columns}
           pagination={false}
-          rowKey="Id"
+          rowKey="name"
         />
       </Col>
       <ModalUpdate

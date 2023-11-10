@@ -38,7 +38,7 @@ function AddModal({ isShowAddProduct, setIsShowAddProduct, handleAddProduct }) {
         </Form.Item>
         <Form.Item
           label="Giá"
-          name="price"
+          name="oldPrice"
           rules={[
             {
               required: true,

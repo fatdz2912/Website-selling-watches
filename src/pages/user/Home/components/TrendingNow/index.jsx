@@ -1,4 +1,4 @@
-import { Button, Carousel } from "antd";
+import { Carousel } from "antd";
 import { useMemo } from "react";
 import * as S from "./style";
 import { useEffect } from "react";
@@ -39,19 +39,30 @@ function TrendingNow() {
                 <Link
                   to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item.id })}
                 >
+                  <S.Discount>
+                    <p>-{item.discount}%</p>
+                  </S.Discount>
+                  <S.FullBox>
+                    <p>MỚI - FULLBOX 100%</p>
+                  </S.FullBox>
                   <S.ImageWrapper>
-                    <S.Image src={item.image}></S.Image>
+                    <S.Image src={item.image} alt={item.name}></S.Image>
                   </S.ImageWrapper>
                   <S.Information>
-                    <S.Heading>
-                      {item.category.name.toUpperCase()}
-                      <S.Decribe> {item.name}</S.Decribe>
-                    </S.Heading>
+                    <S.Name>
+                      <S.Brands>{item.category.name.toUpperCase()}</S.Brands>
+                      {item.name}
+                    </S.Name>
                     <S.Price>
-                      ${item.price}
-                      <S.Discount discount={item.discount}>
-                        giảm {item.discount}%{" "}
-                      </S.Discount>
+                      <S.PriceRate value={5}></S.PriceRate>
+                      <S.OldPrice discount={item.discount}>
+                        {(item.currentPrice * 1000).toLocaleString()}{" "}
+                        <S.Unit>₫</S.Unit>
+                      </S.OldPrice>
+                      <S.CurrentPrice discount={item.discount}>
+                        {(item.currentPrice * 1000).toLocaleString()}{" "}
+                        <S.Unit>₫</S.Unit>
+                      </S.CurrentPrice>
                     </S.Price>
                   </S.Information>
                 </Link>

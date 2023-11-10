@@ -42,7 +42,7 @@ function* getProductListSaga(action) {
         q: searchKey,
         categoryId: categoryId,
         ...(sortOrder && {
-          _sort: "price",
+          _sort: "currentPrice",
           _order: sortOrder,
         }),
         ...(discountOrder && {
@@ -71,32 +71,6 @@ function* getProductListSaga(action) {
   }
 }
 
-function* getProductDiscountListSaga(action) {
-  try {
-    const { limit, discountOrder } = action.payload;
-    const result = yield axios.get("http://localhost:4000/products", {
-      params: {
-        _expand: "category",
-        _limit: limit,
-        ...(discountOrder && {
-          _sort: "discount",
-          _order: discountOrder,
-        }),
-      },
-    });
-    yield put(
-      getDiscountProductListSuccess({
-        data: result.data,
-        meta: {
-          limit: limit,
-          total: parseInt(result.headers["x-total-count"]),
-        },
-      })
-    );
-  } catch (e) {
-    yield put(getDiscountProductListFailure({ error: "Lỗi" }));
-  }
-}
 function* addProductSaga(action) {
   try {
     const { data } = action.payload;
@@ -145,11 +119,39 @@ function* getProductDetailSaga(action) {
     yield put(getProductDetailFailure({ error: "Lỗi" }));
   }
 }
+
+function* getProductDiscountListSaga(action) {
+  try {
+    const { limit, discountOrder } = action.payload;
+    const result = yield axios.get("http://localhost:4000/products", {
+      params: {
+        _limit: limit,
+        ...(discountOrder && {
+          _sort: "discount",
+          _order: discountOrder,
+          _expand: "category",
+        }),
+      },
+    });
+
+    yield put(
+      getDiscountProductListSuccess({
+        data: result.data,
+        meta: {
+          limit: limit,
+          total: parseInt(result.headers["x-total-count"]),
+        },
+      })
+    );
+  } catch (e) {
+    yield put(getDiscountProductListFailure({ error: "Lỗi" }));
+  }
+}
 export default function* productSaga() {
   yield takeEvery(getProductListRequest, getProductListSaga);
-  yield takeEvery(getDiscountProductListRequest, getProductDiscountListSaga);
   yield takeEvery(getProductDetailRequest, getProductDetailSaga);
   yield takeEvery(addProductRequest, addProductSaga);
+  yield takeEvery(getDiscountProductListRequest, getProductDiscountListSaga);
   yield takeEvery(updateProductRequest, updateProductSaga);
   yield takeEvery(deleteProductRequest, deleteProductSaga);
 }

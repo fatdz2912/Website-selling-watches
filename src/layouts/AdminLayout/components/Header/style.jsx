@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: #fff;
+  background-color: #f5f5f5;
   box-shadow: 0 0 0 1px ${color.primary};
 `;
 export const HeaderTopWrapper = styled.div`
@@ -22,6 +22,7 @@ export const HeaderTopWrapper = styled.div`
 export const HeaderTopBlock = styled(Row)`
   height: 100%;
   width: 95%;
+  max-width: 1200px;
 `;
 export const HeaderDiscount = styled.div`
   display: flex;
@@ -59,6 +60,7 @@ export const HeaderToolBar = styled(Row)`
   width: 95%;
   margin: 3vh auto 0 !important;
   position: relative;
+  max-width: 1200px;
 `;
 export const HeaderLogo = styled(Col)`
   display: flex;

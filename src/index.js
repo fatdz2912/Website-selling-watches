@@ -19,6 +19,14 @@ root.render(
             colorPrimary: "#302e2e",
             borderRadius: 4,
           },
+          components: {
+            Table: {
+              rowSelectedBg: "#ccc",
+              rowHoverBg: "#ccc",
+              headerColor: "#dd3333",
+              rowSelectedHoverBg: "#f0efef",
+            },
+          },
         }}
       >
         <App />
