@@ -1,6 +1,8 @@
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
+
 import {
   Form,
   Button,
@@ -23,8 +25,10 @@ import {
   getDistrictListRequest,
   getWardListRequest,
 } from "redux/slicers/location.slice";
+import { orderProductRequest } from "redux/slicers/order.slice";
 
 import * as S from "./style";
+import { GUEST_ID } from "constants/guest";
 
 function Checkout() {
   const [checkoutForm] = Form.useForm();
@@ -34,7 +38,7 @@ function Checkout() {
   const { cityList, districtList, wardList } = useSelector(
     (state) => state.location
   );
-  const { productBuyList } = useSelector((state) => state.buy);
+  const { productBuyList } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
   const initialValues = {
@@ -43,7 +47,7 @@ function Checkout() {
   };
 
   const totalPrice = productBuyList.reduce(
-    (total, item) => total + item.currentPrice * 1000 * item.quantity,
+    (total, item) => total + item.currentPrice * item.quantity,
     0
   );
 
@@ -75,7 +79,7 @@ function Checkout() {
       render: (_, item) => (
         <S.IntoMoney>
           <div>
-            {(item.currentPrice * 1000 * item.quantity).toLocaleString()}
+            {(item.currentPrice * item.quantity).toLocaleString()}
             <S.Unit>₫</S.Unit>,
           </div>
         </S.IntoMoney>
@@ -83,7 +87,37 @@ function Checkout() {
     },
   ];
 
-  const handleSubmitCheckoutForm = (values) => {};
+  const handleSubmitCheckoutForm = (values) => {
+    const { cityCode, districtCode, wardCode, address } = values;
+    const cityData = cityList.data.find((item) => item.code === cityCode);
+    const districtData = districtList.data.find(
+      (item) => item.code === districtCode
+    );
+    const wardData = wardList.data.find((item) => item.code === wardCode);
+
+    const totalPrice = productBuyList.reduce(
+      (total, item) => total + item.currentPrice * item.quantity,
+      0
+    );
+    const id = v4();
+    console.log(values.note);
+    dispatch(
+      orderProductRequest({
+        orderData: {
+          cityName: cityData?.name,
+          districtName: districtData?.name,
+          wardName: wardData?.name,
+          totalPrice: totalPrice,
+          address: address,
+          note: values.note,
+          userId: userInfo.data.id || GUEST_ID,
+        },
+        productBuyList: productBuyList,
+        orderId: id,
+        callback: () => navigate(ROUTES.USER.SUCCESSPAY),
+      })
+    );
+  };
 
   const renderCityOptions = useMemo(() => {
     return cityList.data.map((item) => {
@@ -140,7 +174,7 @@ function Checkout() {
           </Col>
           <S.Price md={4} xs={4} lg={4}>
             <div>
-              {(item.currentPrice * 1000).toLocaleString()}
+              {item.currentPrice.toLocaleString()}
               <S.Unit>₫</S.Unit>
             </div>
           </S.Price>
@@ -149,7 +183,7 @@ function Checkout() {
           </S.Quantity>
           <S.IntoMoney md={4} xs={4} lg={4}>
             <div>
-              {(item.quantity * item.currentPrice * 1000).toLocaleString()}
+              {(item.quantity * item.currentPrice).toLocaleString()}
               <S.Unit>₫</S.Unit>
             </div>
           </S.IntoMoney>
@@ -200,143 +234,164 @@ function Checkout() {
             {renderCartListDetail}
           </S.CartListDetailWrapper>
         </Col>
-        <Col lg={14} md={14} sm={24} xs={24}>
+        <Col lg={24} md={24} sm={24} xs={24}>
           <Form
             name="checkoutForm"
             form={checkoutForm}
             layout="vertical"
             initialValues={initialValues}
             action="/pay"
-            // onFinish={(values) => handleSubmitCheckoutForm(values)}
+            onFinish={(values) => handleSubmitCheckoutForm(values)}
           >
             <Row gutter={[16, 16]}>
-              <Col span={24}>
-                <S.SubHeading>II.THÔNG TIN KHÁCH HÀNG</S.SubHeading>
-                <Form.Item
-                  label="Họ và tên"
-                  name="fullName"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Input placeholder="Nhập họ và tên" />
-                </Form.Item>
+              <Col xs={24} sm={24} md={14} xl={14}>
+                <Row gutter={[16, 16]}>
+                  <Col span={24}>
+                    <S.SubHeading>II.THÔNG TIN KHÁCH HÀNG</S.SubHeading>
+                    <Form.Item
+                      label="Họ và tên"
+                      name="fullName"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Input placeholder="Nhập họ và tên" />
+                    </Form.Item>
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={24}>
+                    <Form.Item
+                      label="Email"
+                      name="email"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Input placeholder="Nhập gmail của bạn" />
+                    </Form.Item>
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={24}>
+                    <Form.Item
+                      label="Số điện thoại"
+                      name="phoneNumber"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Input placeholder="Nhập số điện thoại" />
+                    </Form.Item>
+                  </Col>
+                  <Col lg={8} md={8} xs={24}>
+                    <Form.Item
+                      label="Tỉnh/Thành"
+                      name="cityCode"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Select
+                        placeholder="Chọn Tỉnh/Thành"
+                        onChange={(value) => {
+                          dispatch(getDistrictListRequest({ cityCode: value }));
+                          checkoutForm.setFieldsValue({
+                            districtCode: undefined,
+                            wardCode: undefined,
+                          });
+                        }}
+                      >
+                        {renderCityOptions}
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                  <Col lg={8} md={8} xs={24}>
+                    <Form.Item
+                      label="Quận/Huyện"
+                      name="districtCode"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Select
+                        placeholder="Chọn Quận/Huyện"
+                        onChange={(value) => {
+                          dispatch(getWardListRequest({ districtCode: value }));
+                          checkoutForm.setFieldsValue({
+                            wardCode: undefined,
+                          });
+                        }}
+                        disabled={!checkoutForm.getFieldValue("cityCode")}
+                      >
+                        {renderDistrictOptions}
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                  <Col lg={8} md={8} xs={24}>
+                    <Form.Item
+                      label="Phường/Xã"
+                      name="wardCode"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Select
+                        placeholder="Chọn Phường/Xã"
+                        disabled={!checkoutForm.getFieldValue("districtCode")}
+                      >
+                        {renderWardListOptions}
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                  <Col span={24}>
+                    <Form.Item
+                      label="Địa chỉ"
+                      name="address"
+                      rules={[{ required: true, message: "Required!" }]}
+                    >
+                      <Input />
+                    </Form.Item>
+                  </Col>
+                  <Row gutter={[16, 16]}>
+                    <Col span={24}>
+                      <Form.Item
+                        label="Phương thức thanh toán"
+                        name="paymentMethod"
+                        rules={[{ required: true, message: "Required!" }]}
+                      >
+                        <Radio.Group>
+                          <Space direction="vertical">
+                            <Radio value="pod">Thanh toán khi nhận hàng</Radio>
+                            <Radio value="atm">ATM</Radio>
+                          </Space>
+                        </Radio.Group>
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Row>
+                <Row gutter={[16, 16]} justify="space-between">
+                  <Button onClick={() => navigate(ROUTES.USER.CART)}>
+                    Trở lại
+                  </Button>
+                  <S.Order type="primary" htmlType="submit">
+                    Đặt Hàng
+                  </S.Order>
+                </Row>
               </Col>
-              <Col lg={12} md={12} sm={12} xs={24}>
-                <Form.Item
-                  label="Email"
-                  name="email"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Input placeholder="Nhập gmail của bạn" />
-                </Form.Item>
+              <Col xs={24} sm={24} md={10} xl={10}>
+                <Row>
+                  <S.SubHeading>III.ĐƠN HÀNG CỦA BẠN</S.SubHeading>
+                  {renderTableProductBuyList}
+                  <Row gutter={[16, 16]} style={{ width: "100%" }}>
+                    <Col lg={24} md={24} sm={24} xs={24}>
+                      <S.SubHeading>IV.GHI CHÚ</S.SubHeading>
+                      <Form.Item name="note">
+                        <Input.TextArea
+                          rows={5}
+                          placeholder="Nhập ghi chú cho đơn hàng"
+                        />
+                      </Form.Item>
+                      <Card
+                        size="small"
+                        style={{ marginTop: "2em" }}
+                        title="Tổng tiền"
+                      >
+                        <S.TotalPrice>
+                          {totalPrice.toLocaleString()}
+                          <S.Unit>₫</S.Unit>,
+                        </S.TotalPrice>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Row>
               </Col>
-              <Col lg={12} md={12} sm={12} xs={24}>
-                <Form.Item
-                  label="Số điện thoại"
-                  name="phoneNumber"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Input placeholder="Nhập số điện thoại" />
-                </Form.Item>
-              </Col>
-              <Col lg={8} md={8} xs={24}>
-                <Form.Item
-                  label="Tỉnh/Thành"
-                  name="cityCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select
-                    placeholder="Chọn Tỉnh/Thành"
-                    onChange={(value) => {
-                      dispatch(getDistrictListRequest({ cityCode: value }));
-                      checkoutForm.setFieldsValue({
-                        districtCode: undefined,
-                        wardCode: undefined,
-                      });
-                    }}
-                  >
-                    {renderCityOptions}
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col lg={8} md={8} xs={24}>
-                <Form.Item
-                  placeholder="Chọn Quận/Huyện"
-                  label="Quận/Huyện"
-                  name="districtCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select
-                    onChange={(value) => {
-                      dispatch(getWardListRequest({ districtCode: value }));
-                      checkoutForm.setFieldsValue({
-                        wardCode: undefined,
-                      });
-                    }}
-                    disabled={!checkoutForm.getFieldValue("cityCode")}
-                  >
-                    {renderDistrictOptions}
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col lg={8} md={8} xs={24}>
-                <Form.Item
-                  placeholder="Chọn Phường/Xã"
-                  label="Phường/Xã"
-                  name="wardCode"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Select
-                    disabled={!checkoutForm.getFieldValue("districtCode")}
-                  >
-                    {renderWardListOptions}
-                  </Select>
-                </Form.Item>
-              </Col>
-              <Col span={24}>
-                <Form.Item
-                  label="Địa chỉ"
-                  name="address"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Input />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={[16, 16]}>
-              <Col span={24}>
-                <Form.Item
-                  label="Phương thức thanh toán"
-                  name="paymentMethod"
-                  rules={[{ required: true, message: "Required!" }]}
-                >
-                  <Radio.Group>
-                    <Space direction="vertical">
-                      <Radio value="pod">Thanh toán khi nhận hàng</Radio>
-                      <Radio value="atm">ATM</Radio>
-                    </Space>
-                  </Radio.Group>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={[16, 16]} justify="space-between">
-              <Button onClick={() => navigate(ROUTES.USER.CART)}>
-                Trở lại
-              </Button>
-              <Button type="primary" htmlType="submit">
-                Thanh toán
-              </Button>
             </Row>
           </Form>
-        </Col>
-        <Col lg={10} md={10} sm={24} xs={24}>
-          <S.SubHeading>III.ĐƠN HÀNG CỦA BẠN</S.SubHeading>
-          {renderTableProductBuyList}
-          <Card size="small" style={{ marginTop: "2em" }} title="Tổng tiền">
-            <S.TotalPrice>
-              {totalPrice.toLocaleString()}
-              <S.Unit>₫</S.Unit>,
-            </S.TotalPrice>
-          </Card>
         </Col>
       </Row>
     </S.CheckoutWrapper>

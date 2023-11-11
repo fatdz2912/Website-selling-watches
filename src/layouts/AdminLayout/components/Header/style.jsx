@@ -1,15 +1,12 @@
-import { color } from "../../../../themes/color";
+import { color } from "themes/color";
 import styled, { css } from "styled-components";
-import { Row, Col, Input, Menu, Modal, Card } from "antd";
+import { Row, Col, Input, Modal, Card } from "antd";
 // Header Top wrapper
 const primaryText = color.primaryText;
 const primary = color.primary;
 export const HeaderWrapper = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background-color: #f5f5f5;
   box-shadow: 0 0 0 1px ${color.primary};
+  background-color: ${color.primaryText};
 `;
 export const HeaderTopWrapper = styled.div`
   background-color: #302e2e;
@@ -21,8 +18,7 @@ export const HeaderTopWrapper = styled.div`
 `;
 export const HeaderTopBlock = styled(Row)`
   height: 100%;
-  width: 95%;
-  max-width: 1200px;
+  width: 100%;
 `;
 export const HeaderDiscount = styled.div`
   display: flex;
@@ -56,11 +52,9 @@ export const IconMessage = styled.div`
 `;
 // Header Tool Bar
 export const HeaderToolBar = styled(Row)`
-  background-color: ${primaryText};
-  width: 95%;
+  width: 100%;
   margin: 3vh auto 0 !important;
   position: relative;
-  max-width: 1200px;
 `;
 export const HeaderLogo = styled(Col)`
   display: flex;

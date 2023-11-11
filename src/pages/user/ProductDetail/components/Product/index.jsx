@@ -3,7 +3,9 @@ import { FaShoppingCart, FaHome } from "react-icons/fa";
 
 import * as S from "./style";
 import { ROUTES } from "constants/routes";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { updateProductBuy } from "redux/slicers/cart.slice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Product({
   handleDecreaseQuantity,
@@ -15,10 +17,17 @@ function Product({
   discount,
   oldPrice,
   currentPrice,
-  quantityData,
   averageRate,
   handleAddToCart,
+  productId,
 }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleBuyNow = () => {
+    const selectedRows = [{ quantity, name, currentPrice, productId, image }];
+    dispatch(updateProductBuy({ selectedRows }));
+    navigate(ROUTES.USER.CHECKOUT);
+  };
   return (
     <S.ProductDetail gutter={[16, 16]}>
       <Col xs={24} sm={24} md={24} lg={14}>
@@ -77,10 +86,10 @@ function Product({
           </S.Report>
           <S.Price sm={24} md={24}>
             <S.OldPrice discount={discount}>
-              ${(oldPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+              ${oldPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.OldPrice>
             <S.CurrentPrice>
-              ${(currentPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+              ${currentPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.CurrentPrice>
           </S.Price>
           <S.QuantityWrapper md={24} lg={24} xs={24}>
@@ -129,7 +138,7 @@ function Product({
                 <FaShoppingCart size={30} style={{ marginRight: 15 }} />
                 Thêm vào giỏ
               </S.AddCart>
-              <S.Buy>Mua ngay</S.Buy>
+              <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
             </Row>
           </Col>
         </Row>

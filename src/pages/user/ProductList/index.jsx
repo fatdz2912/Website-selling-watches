@@ -113,12 +113,12 @@ function ProductList() {
             {item.name}
           </S.Name>
           <S.Price>
-            <S.PriceRate value={5}></S.PriceRate>
+            <S.PriceRate disabled value={5}></S.PriceRate>
             <S.OldPrice discount={item.discount}>
-              {(item.oldPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+              {item.oldPrice.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.OldPrice>
             <S.CurrentPrice discount={item.discount}>
-              {(item.currentPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+              {item.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.CurrentPrice>
           </S.Price>
         </S.Information>
@@ -129,8 +129,8 @@ function ProductList() {
   return (
     <S.ProductListWrapper>
       <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
-        <Col lg={3} md={6} xs={24}>
-          <Card title="Filter" size="small" bordered={false}>
+        <Col lg={5} md={6} xs={24}>
+          <S.filterBrands title="Filter" size="small" bordered={false}>
             {categoryList.loading ? (
               <Skeleton active />
             ) : (
@@ -141,9 +141,9 @@ function ProductList() {
                 <S.BrandList>{renderCategoryList}</S.BrandList>
               </S.CheckBoxFilter.Group>
             )}
-          </Card>
+          </S.filterBrands>
         </Col>
-        <Col lg={21} md={18} xs={24}>
+        <Col lg={19} md={18} xs={24}>
           <Card size="small" bordered={false}>
             <Row gutter={[16, 16]}>
               <Col md={16} xs={24}>
@@ -173,8 +173,12 @@ function ProductList() {
                   onChange={(value) => handleFilter("sortOrder", value)}
                   value={filterParams.sortOrder}
                 >
-                  <Select.Option value="asc">Giá tăng dần</Select.Option>
-                  <Select.Option value="desc">Giá giảm dần</Select.Option>
+                  <Select.Option value="currentPrice.asc">
+                    Giá tăng dần
+                  </Select.Option>
+                  <Select.Option value="currentPrice.desc">
+                    Giá giảm dần
+                  </Select.Option>
                 </S.SelectArrange>
                 <Segmented
                   options={[

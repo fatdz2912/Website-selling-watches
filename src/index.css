@@ -16,7 +16,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 h1,
 h2,
 h3,
@@ -28,7 +27,22 @@ label {
   margin: 0;
   line-height: 1.5em;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+span,
+div {
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+}
 ul,
 ol {
   list-style: none;

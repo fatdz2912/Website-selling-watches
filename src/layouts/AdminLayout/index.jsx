@@ -1,5 +1,5 @@
 import { ROUTES } from "constants/routes";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 

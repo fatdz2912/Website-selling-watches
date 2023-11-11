@@ -1,70 +1,73 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { Button, Table, Row, Col, Space, Popconfirm, Tooltip } from "antd";
-import { v4 } from "uuid";
+import {
+  Button,
+  Table,
+  Row,
+  Col,
+  Space,
+  Popconfirm,
+  Tooltip,
+  Input,
+  Select,
+  Pagination,
+} from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, generatePath, useNavigate } from "react-router-dom";
 
-import AddModal from "./components/addModal";
-import ModalUpdate from "./components/ModalUpdate";
+import * as S from "./style";
 import {
   getProductListRequest,
-  addProductRequest,
-  updateProductRequest,
   deleteProductRequest,
 } from "redux/slicers/product.slice";
-import { PRODUCT_LIMIT } from "constants/paging";
-import { useLocation } from "react-router-dom";
-import qs from "qs";
+import { PRODUCT_TABLE_LIMIT } from "constants/paging";
+import { ROUTES } from "constants/routes";
+import { useMemo } from "react";
+import { OldPrice } from "pages/user/ProductList/style";
 function ProductManager() {
   const [filterParams, setFilterParams] = useState({
     categoryId: [],
+    sortOrder: undefined,
+    discountOrder: undefined,
+    gender: undefined,
   });
-  const [isShowAddProduct, setIsShowAddProduct] = useState(false);
-  const [isShowUpdateUser, setIsShowUpdateUser] = useState(false);
-  const [updateData, setUpdateData] = useState({});
+  const navigate = useNavigate();
   const { productList } = useSelector((state) => state.product);
+  const { categoryList } = useSelector((state) => state.category);
   const dispatch = useDispatch();
-  const { search } = useLocation();
   useEffect(() => {
     dispatch(
       getProductListRequest({
         page: 1,
-        limit: PRODUCT_LIMIT,
+        limit: PRODUCT_TABLE_LIMIT,
       })
     );
   }, []);
-  useEffect(() => {
-    const searchParams = qs.parse(search, {
-      ignoreQueryPrefix: true,
-    });
+  const handleFilter = (key, values) => {
     const newFilterParams = {
-      categoryId: searchParams.categoryId
-        ? searchParams.categoryId.map((id) => parseInt(id))
-        : [],
-      searchKey: searchParams.searchKey || "",
+      ...filterParams,
+      [key]: values,
     };
     setFilterParams(newFilterParams);
+    navigate({
+      pathname: ROUTES.ADMIN.PRODUCT_MANAGER,
+    });
     dispatch(
       getProductListRequest({
         page: 1,
-        limit: PRODUCT_LIMIT,
+        limit: PRODUCT_TABLE_LIMIT,
         ...newFilterParams,
       })
     );
-  }, [search]);
-  const handleAddProduct = (values) => {
+  };
+  const handleChangePage = (page) => {
     dispatch(
-      addProductRequest({
-        data: {
-          id: v4(),
-          ...values,
-          currentPrice:
-            values.oldPrice - (values.oldPrice * values.discount) / 100,
-        },
+      getProductListRequest({
+        ...filterParams,
+        page: page,
+        limit: PRODUCT_TABLE_LIMIT,
       })
     );
-    setIsShowAddProduct(false);
   };
   const handleDeleteUser = (id) => {
     dispatch(
@@ -74,17 +77,6 @@ function ProductManager() {
         },
       })
     );
-  };
-  const handleUpdateUser = (id, values) => {
-    dispatch(
-      updateProductRequest({
-        data: {
-          id: id,
-          ...values,
-        },
-      })
-    );
-    setIsShowUpdateUser(false);
   };
   const columns = [
     {
@@ -107,28 +99,10 @@ function ProductManager() {
       ),
     },
     {
-      title: "Loại",
-      dataIndex: "categoryId",
-      key: "categoryId",
-    },
-    {
-      title: "Ảnh",
-      dataIndex: "image",
-      key: "image",
-      render: (text) => (
-        <Tooltip title={text}>
-          <div
-            style={{
-              width: "100px",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {text}
-          </div>
-        </Tooltip>
-      ),
+      title: "Thương hiệu",
+      dataIndex: "category",
+      key: "category",
+      render: (category) => category.name,
     },
     {
       title: "Gender",
@@ -145,6 +119,7 @@ function ProductManager() {
       title: "Giá",
       dataIndex: "oldPrice",
       key: "oldPrice",
+      render: (oldPrice) => <p>{oldPrice.toLocaleString()}VNĐ</p>,
     },
     {
       title: "Mô tả",
@@ -172,10 +147,11 @@ function ProductManager() {
       render: (_, item) => (
         <Space size={16}>
           <Button
-            onClick={() => {
-              setIsShowUpdateUser(true);
-              setUpdateData(item);
-            }}
+            onClick={() =>
+              navigate(
+                generatePath(ROUTES.ADMIN.UPDATE_PRODUCT, { id: item.id })
+              )
+            }
           >
             Update
           </Button>
@@ -192,41 +168,75 @@ function ProductManager() {
       ),
     },
   ];
+  const renderProductOptions = useMemo(() => {
+    return categoryList.data.map((item) => {
+      return (
+        <Select.Option key={item.id} value={item.id}>
+          {item.name}
+        </Select.Option>
+      );
+    });
+  }, [categoryList.data]);
   return (
-    <Row gutter={[16, 16]} justify="space-between" align="middle">
-      <Col md={20} push={1}>
-        <Row gutter={[16, 16]}>
-          <Col md={24}>
-            <h1>Danh sách sản phẩm</h1>
-          </Col>
-        </Row>
-      </Col>
-      <Col md={4}>
-        <Button type="primary" onClick={() => setIsShowAddProduct(true)}>
-          Thêm sản phẩm
-        </Button>
-      </Col>
-      <Col md={24}>
-        <Table
-          rowSelection={[2, 3, 4, 5]}
-          dataSource={productList.data}
-          columns={columns}
-          pagination={false}
-          rowKey="name"
-        />
-      </Col>
-      <ModalUpdate
-        isShowUpdateUser={isShowUpdateUser}
-        setIsShowUpdateUser={setIsShowUpdateUser}
-        handleUpdateUser={handleUpdateUser}
-        updateData={updateData}
-      />
-      <AddModal
-        isShowAddProduct={isShowAddProduct}
-        setIsShowAddProduct={setIsShowAddProduct}
-        handleAddProduct={handleAddProduct}
-      />
-    </Row>
+    <S.ProductManagerWrapper>
+      <S.ProductManager
+        gutter={[16, 16]}
+        justify="space-between"
+        align="middle"
+      >
+        <Col md={20}>
+          <Row gutter={[16, 16]}>
+            <Col md={24}>
+              <S.Heading>QUẢN LÝ SẢN PHẨM</S.Heading>
+            </Col>
+          </Row>
+        </Col>
+        <Col md={4}>
+          <Link to={ROUTES.ADMIN.CREATE_PRODUCT}>
+            <S.BTSubmit type="primary">Thêm sản phẩm</S.BTSubmit>
+          </Link>
+        </Col>
+        <Col md={24}>
+          <S.FilterWrapper>
+            <h2>Bộ lọc</h2>
+            <Row gutter={[16, 16]} style={{ marginTop: 4 }}>
+              <Col span={12}>
+                <Input
+                  onChange={(e) => handleFilter("searchKey", e.target.value)}
+                  placeholder="Tên sản phẩm"
+                />
+              </Col>
+              <Col span={12}>
+                <Select
+                  mode="multiple"
+                  allowClear
+                  onChange={(values) => handleFilter("categoryId", values)}
+                  placeholder="Thương hiệu"
+                  style={{ width: "100%" }}
+                >
+                  {renderProductOptions}
+                </Select>
+              </Col>
+            </Row>
+          </S.FilterWrapper>
+          <Table
+            dataSource={productList.data}
+            columns={columns}
+            pagination={false}
+            rowKey="name"
+          />
+          <Row>
+            <Pagination
+              current={productList.meta.page}
+              pageSize={PRODUCT_TABLE_LIMIT}
+              total={productList.meta.total}
+              onChange={(page) => handleChangePage(page)}
+              style={{ margin: "16px auto 0" }}
+            />
+          </Row>
+        </Col>
+      </S.ProductManager>
+    </S.ProductManagerWrapper>
   );
 }
 export default ProductManager;

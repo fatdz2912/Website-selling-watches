@@ -112,7 +112,6 @@ export const productSlice = createSlice({
         (item) => item.id === data.id
       );
       const { id, ...rest } = data;
-      console.log(rest);
       const newUser = {
         id: id,
         ...rest,

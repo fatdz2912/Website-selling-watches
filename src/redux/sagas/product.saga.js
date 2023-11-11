@@ -42,8 +42,8 @@ function* getProductListSaga(action) {
         q: searchKey,
         categoryId: categoryId,
         ...(sortOrder && {
-          _sort: "currentPrice",
-          _order: sortOrder,
+          _sort: sortOrder.split(".")[0],
+          _order: sortOrder.split(".")[1],
         }),
         ...(discountOrder && {
           _sort: "discount",
@@ -73,20 +73,20 @@ function* getProductListSaga(action) {
 
 function* addProductSaga(action) {
   try {
-    const { data } = action.payload;
+    const { data, callback } = action.payload;
     yield axios.post("http://localhost:4000/products", data);
-    yield put(getProductListRequest());
     yield put(addProductSuccess({ data }));
+    yield callback();
   } catch (e) {
     yield put(addProductFailure({ error: "Lỗi" }));
   }
 }
 function* updateProductSaga(action) {
   try {
-    const { data } = action.payload;
+    const { data, callback } = action.payload;
     yield axios.patch(`http://localhost:4000/products/${data.id}`, data);
-    yield put(getProductListRequest());
     yield put(updateProductSuccess({ data }));
+    yield callback();
   } catch (e) {
     yield put(updateProductFailure({ error: "Lỗi" }));
   }

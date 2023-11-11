@@ -14,7 +14,7 @@ import { FaHome } from "react-icons/fa";
 
 import { ROUTES } from "constants/routes";
 import { deleteCart, updateCart } from "redux/slicers/cart.slice";
-import { updateProductBuy } from "redux/slicers/buy.slice";
+import { updateProductBuy } from "redux/slicers/cart.slice";
 
 import * as S from "./style";
 import { useEffect, useState } from "react";
@@ -37,6 +37,9 @@ function CartPage() {
       updateCart({
         productId: productId,
         quantity: value,
+        selectedRows,
+        setTotalPrice,
+        setSelectedRows,
       })
     );
   };
@@ -69,7 +72,7 @@ function CartPage() {
       key: "currentPrice",
       render: (_, item) => (
         <S.CurrentPrice discount={item.discount}>
-          {(item.currentPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+          {item.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
         </S.CurrentPrice>
       ),
     },
@@ -91,7 +94,7 @@ function CartPage() {
       key: "total",
       render: (_, item) => (
         <S.TotalPrice discount={item.discount}>
-          {(item.currentPrice * 1000 * item.quantity).toLocaleString()}{" "}
+          {(item.currentPrice * item.quantity).toLocaleString()}
           <S.Unit>₫</S.Unit>
         </S.TotalPrice>
       ),
@@ -144,8 +147,7 @@ function CartPage() {
               setSelectedRows(selectedRows);
               setTotalPrice(
                 selectedRows.reduce(
-                  (total, item) =>
-                    total + item.currentPrice * 1000 * item.quantity,
+                  (total, item) => total + item.currentPrice * item.quantity,
                   0
                 )
               );
@@ -156,7 +158,7 @@ function CartPage() {
           <Col span={8}>
             <Card size="small" title="Tổng tiền phải thanh toán">
               <S.TotalPrice>
-                {(totalPrice * 1000).toLocaleString()} <S.Unit>₫</S.Unit>
+                {totalPrice.toLocaleString()} <S.Unit>₫</S.Unit>
               </S.TotalPrice>
             </Card>
           </Col>

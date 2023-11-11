@@ -8,8 +8,8 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   position: relative;
 `;
 export const Image = styled.img`
@@ -171,7 +171,7 @@ export const FullBox = styled.div`
   right: 0;
   position: absolute;
   width: 250px;
-  background-color: green;
+  background-color: #049f04;
   display: flex;
   align-items: center;
   justify-content: center;

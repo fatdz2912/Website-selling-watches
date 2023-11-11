@@ -46,7 +46,7 @@ export const Information = styled.div`
   flex-direction: column;
   width: 100%;
   box-shadow: -1px 0 1px #f0efef, 1px 0 1px #f0efef, 0 1px 1px #f0efef;
-  @media screen and (max-width: 1140px) and (min-width: 768px) {
+  @media screen and (max-width: 1140px) {
     min-height: 200px;
   }
 `;
@@ -57,6 +57,9 @@ export const PriceRate = styled(Rate)`
   width: 100%;
   color: #dd3333;
   font-size: 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 export const OldPrice = styled.div`
   font-size: 1rem;
@@ -66,15 +69,18 @@ export const OldPrice = styled.div`
   text-decoration: ${(props) =>
     props.discount !== 0 ? "line-through" : "none"};
   color: ${(props) => (props.discount !== 0 ? "#a19a9a" : `#dd3333`)};
-  /* @media screen and (min-width: 1200px) {
-    width: 100%;
-  } */
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 export const CurrentPrice = styled.div`
   font-size: 1rem;
   display: ${(props) => (props.discount === 0 ? "none" : "flex")};
   color: #dd3333;
   font-weight: 600;
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 export const Brands = styled.div`
   border-radius: 4px;
@@ -97,6 +103,9 @@ export const Name = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: ${color.primary};
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 export const FullBox = styled.div`
   font-size: 0.7rem;
@@ -106,7 +115,7 @@ export const FullBox = styled.div`
   right: 0;
   position: absolute;
   width: 123px;
-  background-color: green;
+  background-color: #049f04;
   display: flex;
   align-items: center;
   justify-content: center;

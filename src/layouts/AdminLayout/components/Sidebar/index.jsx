@@ -7,7 +7,7 @@ function Sidebar({ isShowSidebar }) {
   const renderSidebar = [
     {
       label: "Quản lý sản phẩm",
-      path: ROUTES.ADMIN.PRODUCT_LIST,
+      path: ROUTES.ADMIN.PRODUCT_MANAGER,
     },
     {
       label: "Quản lý người dùng",

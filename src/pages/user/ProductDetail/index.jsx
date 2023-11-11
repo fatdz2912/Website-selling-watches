@@ -42,16 +42,16 @@ function ProductDetail() {
   } = productDetail.data;
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-    document.title = `ProductDetail Page - ${id}`;
     dispatch(
       getProductDetailRequest({
         id: id,
       })
     );
-  }, []);
+    window.scrollTo({
+      top: 0,
+    });
+    document.title = `ProductDetail Page - ${id}`;
+  }, [id]);
 
   const handleDecreaseQuantity = () => {
     if (quantity > 1) {
@@ -92,6 +92,7 @@ function ProductDetail() {
         quantity={quantity}
         quantityData={reviewList.data.length}
         handleAddToCart={handleAddToCart}
+        productId={id}
       />
       <S.Description md={24} xs={24} lg={12}>
         <S.TitleDESC>MÔ TẢ SẢN PHẨM:</S.TitleDESC>

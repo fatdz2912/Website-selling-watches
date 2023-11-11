@@ -10,7 +10,6 @@ function Login() {
   const [loginForm] = Form.useForm();
 
   const { loginData } = useSelector((state) => state.auth);
-  console.log(loginData);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

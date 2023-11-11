@@ -29,7 +29,6 @@ function* getReviewListSaga(action) {
 function* createReviewListSaga(action) {
   try {
     const { data, callback } = action.payload;
-    console.log(data);
     const result = yield axios.post("http://localhost:4000/reviews", data);
     yield callback();
     yield put(getReviewListRequest({ productId: data.productId }));

@@ -23,7 +23,6 @@ export const reviewSlice = createSlice({
     },
     getReviewListSuccess: (state, action) => {
       const { data } = action.payload;
-      console.log(data);
       state.reviewList.data = data;
       state.reviewList.loading = false;
     },

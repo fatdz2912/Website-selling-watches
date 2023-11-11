@@ -55,7 +55,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
         searchKey: searchKey,
       };
       navigate({
-        pathname: ROUTES.ADMIN.PRODUCT_LIST,
+        pathname: ROUTES.ADMIN.PRODUCT_MANAGER,
         search: qs.stringify(newFilterParams),
       });
     }
@@ -68,7 +68,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
           key={index}
           onClick={() => {
             navigate({
-              pathname: ROUTES.ADMIN.PRODUCT_LIST,
+              pathname: ROUTES.USER.PRODUCT_LIST,
               search: qs.stringify({
                 categoryId: [item.id],
               }),
@@ -140,7 +140,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
             <S.ImageLogo src="https://www.jomashop.com/dist/file/jomashop_logo.7c0762d85d36b44f0c59.png"></S.ImageLogo>
           </a>
         </S.HeaderLogo>
-        <S.SearchColumn sm={0} xs={0} md={0} xl={16}>
+        <S.SearchColumn sm={0} xs={0} md={0} xl={15}>
           <S.InputSearch
             prefix={<FaSearchengin size={25} />}
             placeholder="Search for product or brands"
@@ -149,7 +149,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
             value={searchKey}
           ></S.InputSearch>
         </S.SearchColumn>
-        <S.LoginAndCart sm={11} xs={12} md={12} xl={4}>
+        <S.LoginAndCart sm={11} xs={12} md={12} xl={5}>
           <Link to={ROUTES.USER.CART}>
             <Badge count={cartList.length}>
               <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
@@ -167,9 +167,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
                   {
                     key: "2",
                     label: (
-                      <Link to={ROUTES.USER.ACCOUNT.PROFILE}>
-                        Thông tin cá nhân
-                      </Link>
+                      <Link to={ROUTES.USER.USERINFO}>Thông tin cá nhân</Link>
                     ),
                     icon: <FaUserAlt />,
                   },

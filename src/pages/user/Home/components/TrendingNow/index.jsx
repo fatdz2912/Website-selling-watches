@@ -56,12 +56,10 @@ function TrendingNow() {
                     <S.Price>
                       <S.PriceRate value={5}></S.PriceRate>
                       <S.OldPrice discount={item.discount}>
-                        {(item.currentPrice * 1000).toLocaleString()}{" "}
-                        <S.Unit>₫</S.Unit>
+                        {item.oldPrice.toLocaleString()} <S.Unit>₫</S.Unit>
                       </S.OldPrice>
                       <S.CurrentPrice discount={item.discount}>
-                        {(item.currentPrice * 1000).toLocaleString()}{" "}
-                        <S.Unit>₫</S.Unit>
+                        {item.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
                       </S.CurrentPrice>
                     </S.Price>
                   </S.Information>

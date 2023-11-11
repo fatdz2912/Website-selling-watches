@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.div`
   top: 0;
   z-index: 2;
   background-color: #f5f5f5;
+  height: 21vh;
 `;
 
 export const HeaderTopWrapper = styled.div`

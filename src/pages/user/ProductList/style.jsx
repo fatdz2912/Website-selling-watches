@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col, Select, Checkbox, Rate } from "antd";
+import { Row, Col, Select, Checkbox, Rate, Card } from "antd";
 import { color } from "themes/color";
 
 export const ProductListWrapper = styled.div`
@@ -10,6 +10,11 @@ export const ProductListWrapper = styled.div`
   padding: 32px;
 `;
 // Filter
+export const filterBrands = styled(Card)`
+  position: sticky;
+  top: 30vh;
+  z-index: 1;
+`;
 export const BrandList = styled(Row)``;
 export const BrandItem = styled(Col)``;
 export const CheckBoxFilter = styled(Checkbox)`
@@ -73,7 +78,7 @@ export const FullBox = styled.div`
   right: 0;
   position: absolute;
   width: 123px;
-  background-color: green;
+  background-color: #049f04;
   display: flex;
   align-items: center;
   justify-content: center;

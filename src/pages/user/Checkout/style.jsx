@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import styled from "styled-components";
 import { color } from "themes/color";
 
@@ -88,4 +88,8 @@ export const TotalPrice = styled(Col)`
   font-weight: 600;
   width: 100%;
   height: 100%;
+`;
+
+export const Order = styled(Button)`
+  background-color: ${color.outstanding};
 `;
