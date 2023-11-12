@@ -49,9 +49,12 @@ export const Preview = styled(Row)`
   margin-top: 0.5em;
   font-size: 1.1rem;
 `;
-export const Sold = styled(Col)`
+export const Heart = styled.div`
   font-size: 1.3rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;
 export const Price = styled(Col)`
   background-color: #ccc;

@@ -11,10 +11,10 @@ export const UpdateForm = styled(Form)`
   margin: 0 auto;
 `;
 export const Heading = styled.h2`
-  color: ${color.outstanding};
+  color: ${color.primary};
 `;
 export const BTSubmit = styled(Button)`
-  background-color: ${color.outstanding};
+  background-color: ${color.primary};
   padding: 20px;
   display: flex;
   align-items: center;

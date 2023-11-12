@@ -45,7 +45,7 @@ function AccountUserLayout() {
             },
           ]}
         />
-        <S.MainWrapper gutter={[16, 16]} justify={"center"}>
+        <S.ProfileMainWrapper gutter={[16, 16]} justify={"center"}>
           <S.NavMenu
             sm={2}
             xs={2}
@@ -56,10 +56,10 @@ function AccountUserLayout() {
             <FaBars size={25} color={color.primary} />
           </S.NavMenu>
           <Sidebar avatar={avatar} setAvatar={setAvatar} />
-          <S.MainContainer xs={22} md={22} xl={19}>
-            <Outlet avatar={avatar} setAvatar={setAvatar} />
-          </S.MainContainer>
-        </S.MainWrapper>
+          <S.ProfileMainContainer xs={22} md={22} xl={19}>
+            <Outlet />
+          </S.ProfileMainContainer>
+        </S.ProfileMainWrapper>
       </S.LayoutWrapper>
     );
   }

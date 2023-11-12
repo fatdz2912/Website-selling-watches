@@ -16,16 +16,8 @@ root.render(
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: "#302e2e",
+            colorPrimary: "#064074",
             borderRadius: 4,
-          },
-          components: {
-            Table: {
-              rowSelectedBg: "#ccc",
-              rowHoverBg: "#ccc",
-              headerColor: "#dd3333",
-              rowSelectedHoverBg: "#f0efef",
-            },
           },
         }}
       >

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { color } from "themes/color";
 
 export const CartListWrapper = styled.div`
-  margin: 0 auto;
   max-width: 1200px;
   background-color: ${color.primaryText};
 `;
@@ -17,9 +16,10 @@ export const HeadingCart = styled.div`
   text-align: center;
   background-color: #dbd8d8;
   padding: 8px;
+  border-radius: 8px;
 
   > h1 {
-    color: ${color.outstanding};
+    color: ${color.primary};
   }
 `;
 export const CurrentPrice = styled.div`
@@ -37,8 +37,6 @@ export const Unit = styled.span`
   font-size: 0.75rem;
 `;
 export const CartTable = styled(Table)`
-  margin-top: 32px;
+  margin-top: 16px;
 `;
-export const Pay = styled(Button)`
-  background-color: ${color.outstanding};
-`;
+export const Pay = styled(Button)``;

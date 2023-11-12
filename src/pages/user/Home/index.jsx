@@ -1,30 +1,33 @@
-import * as S from "./style";
-import SpecialOffer from "./components/SpecialOffer";
-import TrendingNow from "./components/TrendingNow";
-import { useMemo, useState } from "react";
+import qs from "qs";
+import { useMemo } from "react";
 import {} from "antd";
 import { useNavigate } from "react-router-dom";
+
+import * as S from "./style";
 import { ROUTES } from "constants/routes";
-import qs from "qs";
+
+import SpecialOffer from "./components/SpecialOffer";
+import TrendingNow from "./components/TrendingNow";
+import Hero from "components/Hero";
 function Home() {
   const navigate = useNavigate();
 
   const typedClocks = [
     {
       id: "1",
-      name: "Đồng Hồ Nam",
+      name: "ĐỒNG HỒ NAM",
       image: "https://cdn2.jomashop.com/media/wysiwyg/mens_round_150.png",
       gender: "Nam",
     },
     {
       id: "2",
-      name: "Đồng Hồ Nữ",
+      name: "ĐỒNG HỒ NỮ",
       image: "https://cdn2.jomashop.com/media/wysiwyg/ladies_round_150.png",
       gender: "Nữ",
     },
     {
       id: "3",
-      name: "Tất Cả",
+      name: "TẤT CẢ",
       image: "https://cdn2.jomashop.com/media/wysiwyg/sale_round_150.png",
       gender: undefined,
     },
@@ -73,9 +76,9 @@ function Home() {
       );
     });
   }, []);
-  // render trending now
   return (
     <S.HomeWrapper gutter={[16, 16]}>
+      <Hero />
       <S.LogoWrapper xs={24} md={24} sm={24} xl={24}>
         <S.Logo src="https://media.licdn.com/dms/image/C5112AQEfptQtGhQJzg/article-cover_image-shrink_720_1280/0/1520153250066?e=2147483647&v=beta&t=OFTPWbq17Js1SyMYjopAHujweUE000l92Dn8kgYHAO0"></S.Logo>
         <S.TypedClockList gutter={[16, 16]} justify={"space-between"}>

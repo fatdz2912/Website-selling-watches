@@ -5,7 +5,7 @@ export const ProductDetailWrapper = styled(Row)`
   max-width: 1200px;
   padding: 32px 16px;
   background-color: ${color.primaryText};
-  padding: 32px 16px;
+  margin-top: 20px;
 `;
 export const TitleDESC = styled.div`
   font-size: 1.4rem;

@@ -1,9 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { color } from "themes/color";
-import { Row, Col, Input, Menu, Modal } from "antd";
-const primaryText = color.primaryText;
-const primary = color.primary;
-export const ProfileWrapper = styled.div`
+import { Row, Col } from "antd";
+export const UserInfoWrapper = styled(Row)`
   width: 100%;
 `;
 export const Heading = styled.div`

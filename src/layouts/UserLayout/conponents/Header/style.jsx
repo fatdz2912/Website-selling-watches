@@ -1,19 +1,23 @@
-import { color } from "../../../../themes/color";
+import { color } from "themes/color";
 import styled, { css } from "styled-components";
-import { Row, Col, Input, Menu, Modal, Card } from "antd";
+import { Row, Col, Input, Modal, Card } from "antd";
 // Header Top wrapper
 const primaryText = color.primaryText;
 const primary = color.primary;
 export const HeaderWrapper = styled.div`
+  background-color: ${color.background_Color};
+  height: 22vh;
   position: sticky;
   top: 0;
-  z-index: 2;
-  background-color: #f5f5f5;
-  height: 21vh;
+  z-index: 3;
+  padding-bottom: 16px;
+  @media screen and (min-width: 769px) and (max-width: 1199px) {
+    height: 30vh;
+  }
 `;
 
 export const HeaderTopWrapper = styled.div`
-  background-color: #302e2e;
+  background-color: ${color.primary};
   color: ${primaryText};
   height: 6vh;
   display: flex;
@@ -52,7 +56,7 @@ export const HeaderTopLeft = styled(Col)``;
 export const HeaderTopRight = styled(Col)``;
 
 export const LinkDiscount = styled.div`
-  color: ${color.outstanding};
+  color: #ff0000;
   font-weight: 600;
   font-size: 1.2rem;
   text-decoration: underline;
@@ -72,13 +76,11 @@ export const IconMessage = styled.div`
 `;
 // Header Tool Bar
 export const HeaderToolBar = styled(Row)`
-  background-color: ${primaryText};
   width: 95%;
   max-width: 1200px;
   margin: 3vh auto 0 !important;
-  position: relative;
-  background-color: #f5f5f5;
 `;
+
 export const HeaderLogo = styled(Col)`
   display: flex;
   align-items: center;
@@ -105,6 +107,9 @@ export const LoginAndCart = styled(Col)`
   align-items: center;
   gap: 2em;
   justify-content: right;
+  @media screen and (max-width: 400px) {
+    gap: 5px;
+  }
 `;
 export const Login = styled(Col)`
   display: flex;
@@ -164,7 +169,7 @@ export const MenuItem = styled.li`
   font-size: 1.1rem;
   font-weight: 470;
   color: ${primary};
-  border-bottom: 3px solid #f5f5f5;
+  border-bottom: 3px solid ${color.background_Color};
   padding-bottom: 1vh;
   ${(props) =>
     props.isHiddenMenu === false

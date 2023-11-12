@@ -1,6 +1,6 @@
 import { color } from "../../../../themes/color";
 import styled, { css } from "styled-components";
-import { Row, Col, Input, Menu, Modal } from "antd";
+import { Row, Col } from "antd";
 export const FooterWrapper = styled.div`
   background-color: ${color.primary};
 `;

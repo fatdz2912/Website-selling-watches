@@ -61,25 +61,6 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
     }
   };
 
-  const renderBrandsList = useMemo(() => {
-    return categoryList.data.map((item, index) => {
-      return (
-        <S.MenuItem
-          key={index}
-          onClick={() => {
-            navigate({
-              pathname: ROUTES.USER.PRODUCT_LIST,
-              search: qs.stringify({
-                categoryId: [item.id],
-              }),
-            });
-          }}
-        >
-          {item.name}
-        </S.MenuItem>
-      );
-    });
-  }, [categoryList.data]);
   return (
     <S.HeaderWrapper>
       <S.HeaderTopWrapper>
@@ -142,7 +123,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
         </S.HeaderLogo>
         <S.SearchColumn sm={0} xs={0} md={0} xl={15}>
           <S.InputSearch
-            prefix={<FaSearchengin size={25} />}
+            prefix={<FaSearchengin size={25} color={color.primary} />}
             placeholder="Search for product or brands"
             onChange={(e) => setSearchKey(e.target.value)}
             onKeyDown={(e) => handleSearchKeyWord(e)}
@@ -198,7 +179,6 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
             value={searchKey}
           ></S.InputSearch>
         </S.SearchColumn>
-        <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
       </S.HeaderToolBar>
     </S.HeaderWrapper>
   );

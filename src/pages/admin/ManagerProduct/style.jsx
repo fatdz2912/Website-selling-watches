@@ -18,10 +18,10 @@ export const ProductManagerWrapper = styled.div`
   width: 100%;
 `;
 export const Heading = styled.h1`
-  color: ${color.outstanding};
+  color: ${color.primary};
 `;
 export const BTSubmit = styled(Button)`
-  background-color: ${color.outstanding};
+  background-color: ${color.primary};
   padding: 20px;
   display: flex;
   align-items: center;

@@ -1,7 +1,9 @@
-import { useEffect } from "react";
-import { Table } from "antd";
+import { useEffect, useMemo } from "react";
+import { Col, Row, Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import dayjs from "dayjs";
+
+import * as S from "./style";
 
 import { getOrderListRequest } from "redux/slicers/order.slice";
 
@@ -33,8 +35,7 @@ function OrderHistories() {
       title: "Tổng tiền",
       dataIndex: "totalPrice",
       key: "totalPrice",
-      render: (totalPrice, item) =>
-        `${item.orderData.totalPrice.toLocaleString()} VND`,
+      render: (totalPrice, item) => `${totalPrice.toLocaleString()} VND`,
     },
     {
       title: "Ngày đặt hàng",
@@ -46,11 +47,10 @@ function OrderHistories() {
       title: "Địa chỉ giao hàng",
       dataIndex: "address",
       key: "address",
-      render: (_, item) =>
-        `${item.orderData.address}, ${item.orderData.wardName}, ${item.orderData.districtName}, ${item.orderData.cityName}`,
+      render: (address, item) =>
+        `${address}, ${item?.wardName}, ${item?.districtName}, ${item?.cityName}`,
     },
   ];
-
   return (
     <Table
       columns={tableColumns}
@@ -60,13 +60,48 @@ function OrderHistories() {
       expandable={{
         expandedRowRender: (record) => (
           <ul>
-            {record.orderDetails.map((item) => (
-              <li key={item.id}>
-                {item.name}
-                {` - ${item.price}`}
-                {` - ${item.quantity}`}
-                {` - ${item.price * item.quantity}`}
-              </li>
+            <S.CartListDetailWrapper gutter={[16, 16]}>
+              <S.Title md={12} xs={12} lg={12}>
+                SẢN PHẨM
+              </S.Title>
+              <S.Title md={4} xs={4} lg={4}>
+                GIÁ
+              </S.Title>
+              <S.Title md={4} xs={4} lg={4}>
+                SỐ LƯỢNG
+              </S.Title>
+              <S.Title md={4} xs={4} lg={4}>
+                THÀNH TIỀN
+              </S.Title>
+            </S.CartListDetailWrapper>
+            {record.orderDetails.map((item, index) => (
+              <S.CartItem key={index}>
+                <Col md={12} xs={12} lg={12}>
+                  <Row>
+                    <S.ImageCartWrapper xs={5} md={5} lg={5}>
+                      <S.ImageCart src={item?.image}></S.ImageCart>
+                    </S.ImageCartWrapper>
+                    <S.Name xs={19} md={19} lg={19}>
+                      <div>{item.name}</div>
+                    </S.Name>
+                  </Row>
+                </Col>
+                <S.Price md={4} xs={4} lg={4}>
+                  <div>
+                    {item?.currentPrice.toLocaleString()}
+                    <S.Unit>₫</S.Unit>
+                  </div>
+                </S.Price>
+                <S.Quantity md={4} xs={4} lg={4}>
+                  <div>{item?.quantity}</div>
+                </S.Quantity>
+                <S.IntoMoney md={4} xs={4} lg={4}>
+                  <div>
+                    {(item?.quantity * item?.currentPrice).toLocaleString()}
+                    <S.Unit>₫</S.Unit>
+                  </div>
+                </S.IntoMoney>
+              </S.CartItem>
             ))}
           </ul>
         ),

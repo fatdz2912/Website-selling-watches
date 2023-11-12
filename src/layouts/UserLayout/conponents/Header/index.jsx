@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import { Button, Dropdown, Badge } from "antd";
+import { Button, Dropdown, Badge, Skeleton, Space } from "antd";
 import {
   FaUserAlt,
   FaSearchengin,
@@ -76,26 +76,25 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   };
 
   const renderBrandsList = useMemo(() => {
-    return categoryList.data.map((item, index) => {
-      return (
-        <S.MenuItem
-          isHiddenMenu={isHiddenMenu}
-          key={index}
-          onClick={() => {
-            navigate({
-              pathname: ROUTES.USER.PRODUCT_LIST,
-              search: qs.stringify({
-                categoryId: [item.id],
-              }),
-            });
-            setIsHiddenMenu(true);
-          }}
-        >
-          {item.name}
-        </S.MenuItem>
-      );
-    });
+    return categoryList.data.map((item, index) => (
+      <S.MenuItem
+        isHiddenMenu={isHiddenMenu}
+        key={index}
+        onClick={() => {
+          navigate({
+            pathname: ROUTES.USER.PRODUCT_LIST,
+            search: qs.stringify({
+              categoryId: [item.id],
+            }),
+          });
+          setIsHiddenMenu(true);
+        }}
+      >
+        {item.name.toUpperCase()}
+      </S.MenuItem>
+    ));
   }, [categoryList.data, isHiddenMenu]);
+
   return (
     <S.HeaderWrapper>
       <S.HeaderTopWrapper>
@@ -227,7 +226,16 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             value={searchKey}
           ></S.InputSearch>
         </S.SearchColumn>
-        <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
+        {categoryList.loading ? (
+          <Space>
+            <Skeleton.Button active />
+            <Skeleton.Button active />
+            <Skeleton.Button active />
+            <Skeleton.Button active />
+          </Space>
+        ) : (
+          <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
+        )}
         <S.MenuModal
           open={!isHiddenMenu}
           onCancel={() => setIsHiddenMenu(true)}
@@ -235,9 +243,18 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           styles={{ content: { padding: 0 } }}
         >
           <S.CardMenuMobileAndTablet title="MenuBrands">
-            <S.MenuMobileAndTabletWrapper isHiddenMenu={isHiddenMenu}>
-              {renderBrandsList}
-            </S.MenuMobileAndTabletWrapper>
+            {categoryList.loading ? (
+              <Space>
+                <Skeleton.Button active />
+                <Skeleton.Button active />
+                <Skeleton.Button active />
+                <Skeleton.Button active />
+              </Space>
+            ) : (
+              <S.MenuMobileAndTabletWrapper isHiddenMenu={isHiddenMenu}>
+                {renderBrandsList}
+              </S.MenuMobileAndTabletWrapper>
+            )}
           </S.CardMenuMobileAndTablet>
         </S.MenuModal>
       </S.HeaderToolBar>

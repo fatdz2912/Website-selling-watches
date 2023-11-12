@@ -4,9 +4,6 @@ import { Row, Col } from "antd";
 const primaryText = color.primaryText;
 export const HomeWrapper = styled(Row)`
   width: 100%;
-  max-width: 1200px;
-  background-color: ${color.primaryText};
-  padding: 16px;
 `;
 // Logo wrapper
 export const LogoWrapper = styled(Col)``;
@@ -53,7 +50,7 @@ export const ImageTypeClock = styled.img`
   object-fit: cover;
   transition: all 0.3s;
   &:hover {
-    filter: grayscale(50%);
+    filter: grayscale(100%);
     cursor: pointer;
     transition: all 0.3s;
   }
@@ -61,6 +58,7 @@ export const ImageTypeClock = styled.img`
 export const NameTypeClock = styled.div`
   margin-top: 1em;
   font-size: 1.2rem;
+  color: ${color.primary};
 `;
 export const TypeClockMobile = styled(Row)`
   margin-top: 2vh;

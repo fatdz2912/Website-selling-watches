@@ -7,6 +7,7 @@
       "agree": true,
       "role": "user",
       "createdAt": 1698478445048,
+      "isDelete": false,
       "updatedAt": 1698478445048,
       "id": 1,
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s"
@@ -18,6 +19,7 @@
       "agree": true,
       "role": "admin",
       "createdAt": 1698830892505,
+      "isDelete": false,
       "updatedAt": 1698830892505,
       "id": 2,
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s"
@@ -30,6 +32,7 @@
       "userId": 2,
       "productId": "3",
       "createdAt": 1699261088139,
+      "isDelete": false,
       "updatedAt": 1699261088139,
       "id": 1
     },
@@ -39,6 +42,7 @@
       "userId": 2,
       "productId": "2",
       "createdAt": 1699261187406,
+      "isDelete": false,
       "updatedAt": 1699261187406,
       "id": 2
     },
@@ -48,6 +52,7 @@
       "userId": 2,
       "productId": "91f9bd59-90c3-47ef-b133-aa3c7b674a08",
       "createdAt": 1699262009248,
+      "isDelete": false,
       "updatedAt": 1699262009248,
       "id": 3
     },
@@ -57,6 +62,7 @@
       "userId": 1,
       "productId": "91f9bd59-90c3-47ef-b133-aa3c7b674a08",
       "createdAt": 1699262429952,
+      "isDelete": false,
       "updatedAt": 1699262429952,
       "id": 4
     },
@@ -66,6 +72,7 @@
       "userId": 1,
       "productId": "2",
       "createdAt": 1699264155390,
+      "isDelete": false,
       "updatedAt": 1699264155391,
       "id": 5
     },
@@ -75,6 +82,7 @@
       "userId": 2,
       "productId": "6",
       "createdAt": 1699462814770,
+      "isDelete": false,
       "updatedAt": 1699462814770,
       "id": 6
     },
@@ -84,6 +92,7 @@
       "userId": 2,
       "productId": "16",
       "createdAt": 1699693907925,
+      "isDelete": false,
       "updatedAt": 1699693907926,
       "id": 7
     }
@@ -107,7 +116,10 @@
       "thickness": "15",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 2,
@@ -127,7 +139,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 3,
@@ -147,7 +162,10 @@
       "thickness": "10.8",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 19,
@@ -167,7 +185,10 @@
       "thickness": "10.8",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 25,
@@ -187,7 +208,10 @@
       "thickness": "15",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 31,
@@ -208,7 +232,9 @@
       "material": "Thép không gỉ",
       "shape": "Tròn",
       "back": "Chất rắn",
-      "updatedAt": 1699721317396
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 4,
@@ -228,7 +254,10 @@
       "thickness": "14",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 5,
@@ -248,7 +277,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 14,
@@ -268,7 +300,10 @@
       "thickness": "10.8",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt nhìn xuyên qua"
+      "back": "Trong suốt nhìn xuyên qua",
+      "createdAt": 1699716259722,
+      "isDelete": false,
+      "updatedAt": 1699716259722
     },
     {
       "id": 20,
@@ -288,7 +323,10 @@
       "thickness": "13",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259721,
+      "isDelete": false,
+      "updatedAt": 1699716259721
     },
     {
       "id": 26,
@@ -308,7 +346,10 @@
       "thickness": "11.9",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259620,
+      "isDelete": false,
+      "updatedAt": 1699716259620
     },
     {
       "id": 32,
@@ -328,7 +369,10 @@
       "thickness": "14",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Bộ xương"
+      "back": "Bộ xương",
+      "createdAt": 1699716259340,
+      "isDelete": false,
+      "updatedAt": 1699716259340
     },
     {
       "id": 6,
@@ -348,7 +392,10 @@
       "thickness": "16",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259540,
+      "isDelete": false,
+      "updatedAt": 1699716259540
     },
     {
       "id": 7,
@@ -368,7 +415,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259130,
+      "isDelete": false,
+      "updatedAt": 1699716259130
     },
     {
       "id": 15,
@@ -388,7 +438,10 @@
       "thickness": "10.89",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Bộ xương"
+      "back": "Bộ xương",
+      "createdAt": 1699716259800,
+      "isDelete": false,
+      "updatedAt": 1699716259800
     },
     {
       "id": 21,
@@ -408,7 +461,10 @@
       "thickness": "15",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259723,
+      "isDelete": false,
+      "updatedAt": 1699716259723
     },
     {
       "id": 27,
@@ -428,7 +484,10 @@
       "thickness": "14",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259720,
+      "isDelete": false,
+      "updatedAt": 1699716259720
     },
     {
       "id": 33,
@@ -448,7 +507,10 @@
       "thickness": "14",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259228,
+      "isDelete": false,
+      "updatedAt": 1699716259228
     },
     {
       "id": 8,
@@ -468,7 +530,10 @@
       "thickness": "13.58",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259718,
+      "isDelete": false,
+      "updatedAt": 1699716259718
     },
     {
       "id": 9,
@@ -488,7 +553,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259750,
+      "isDelete": false,
+      "updatedAt": 1699716259750
     },
     {
       "id": 16,
@@ -508,7 +576,10 @@
       "thickness": "10",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Bộ xương"
+      "back": "Bộ xương",
+      "createdAt": 1699716259628,
+      "isDelete": false,
+      "updatedAt": 1699716259628
     },
     {
       "id": 22,
@@ -528,7 +599,10 @@
       "thickness": "12.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259528,
+      "isDelete": false,
+      "updatedAt": 1699716259528
     },
     {
       "id": 28,
@@ -548,7 +622,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259128,
+      "isDelete": false,
+      "updatedAt": 1699716259128
     },
     {
       "id": 34,
@@ -568,7 +645,10 @@
       "thickness": "11.9",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259778,
+      "isDelete": false,
+      "updatedAt": 1699716259778
     },
     {
       "id": 10,
@@ -588,7 +668,10 @@
       "thickness": "13.58",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259128,
+      "isDelete": false,
+      "updatedAt": 1699716259128
     },
     {
       "id": 11,
@@ -608,7 +691,10 @@
       "thickness": "14.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259798,
+      "isDelete": false,
+      "updatedAt": 1699716259798
     },
     {
       "id": 17,
@@ -628,7 +714,10 @@
       "thickness": "10.8",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 23,
@@ -648,7 +737,10 @@
       "thickness": "13",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 29,
@@ -668,7 +760,10 @@
       "thickness": "12.5",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259728,
+      "isDelete": false,
+      "updatedAt": 1699716259728
     },
     {
       "id": 35,
@@ -688,7 +783,10 @@
       "thickness": "11.9",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259638,
+      "isDelete": false,
+      "updatedAt": 1699716259638
     },
     {
       "id": 12,
@@ -708,7 +806,10 @@
       "thickness": "14",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259142,
+      "isDelete": false,
+      "updatedAt": 1699716259142
     },
     {
       "id": 13,
@@ -728,7 +829,10 @@
       "thickness": "13",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259412,
+      "isDelete": false,
+      "updatedAt": 1699716259412
     },
     {
       "id": 18,
@@ -748,7 +852,10 @@
       "thickness": "10.8",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Trong suốt"
+      "back": "Trong suốt",
+      "createdAt": 1699716259121,
+      "isDelete": false,
+      "updatedAt": 1699716259121
     },
     {
       "id": 24,
@@ -768,7 +875,10 @@
       "thickness": "14.35",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259421,
+      "isDelete": false,
+      "updatedAt": 1699716259421
     },
     {
       "id": 30,
@@ -788,7 +898,10 @@
       "thickness": "15",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259111,
+      "isDelete": false,
+      "updatedAt": 1699716259111
     },
     {
       "id": 36,
@@ -808,7 +921,10 @@
       "thickness": "11.9",
       "material": "Thép không gỉ",
       "shape": "Tròn",
-      "back": "Chất rắn"
+      "back": "Chất rắn",
+      "createdAt": 1699716259999,
+      "isDelete": false,
+      "updatedAt": 1699716259999
     },
     {
       "id": "0db8e1d5-5f34-497e-9cc4-d1e67d56b2eb",
@@ -821,6 +937,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/t/i/tissot-prx-quartz-blue-dial-mens-watch-t1372101104100.jpg?width=350&height=350",
       "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Chuyển động thạch anh. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 35 mm, độ dày vỏ: 9,6 mm. Bướm có chốt nhả nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Prx. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ Unisex Tissot PRX mặt xanh thạch anh T1372101104100.",
       "createdAt": 1699065992345,
+      "isDelete": false,
       "updatedAt": 1699065992345,
       "limited": false,
       "series": "GMT-Master II",
@@ -843,6 +960,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/p/r/preowned-rolex-datejust-champagne-dial-jubilee-bracelet-ladies-watch-69173cdj-26-mm.jpg?width=350&height=350",
       "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng thép không gỉ hai tông màu (tông màu bạc và tông vàng). Cố định vành bezel bằng vàng hồng 18kt tông vàng. Mặt số bằng vàng với kim có tông màu vàng và vạch chỉ giờ bằng kim cương. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex Calibre 2135, chứa 29 viên đá quý, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 26 mm. Chiều rộng dải: 13 mm. Gấp qua móc cài. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: giờ, phút, giây, ngày. Dòng Datejust. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nữ Rolex Datejust Champagne Dial Jubilee đã qua sử dụng 69173CDJ 26 mm.",
       "createdAt": 1699067067098,
+      "isDelete": false,
       "updatedAt": 1699067067098,
       "limited": false,
       "series": "GMT-Master II",
@@ -865,6 +983,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/b/r/breitling-professional-chronograph-quartz-chronometer-black-dial-mens-watch-x82310281b1s1.jpg?width=546&height=546",
       "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền thép không gỉ tông màu bạc xoay hai chiều. Mặt số màu xanh lá cây với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 35 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng Navitimer. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ Unisex Breitling Navitimer mặt số xanh lục tự động Chronometer A17395361L1A1.",
       "createdAt": 1699067168057,
+      "isDelete": false,
       "updatedAt": 1699067168057,
       "limited": false,
       "series": "GMT-Master II",
@@ -887,6 +1006,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/i/c/icewatch-quartz-silver-dial-unisex-watch-020384.jpg?width=546&height=546",
       "description": "Vỏ thép không gỉ với dây đeo cao su màu trắng. Viền thép không gỉ cố định. Mặt số màu bạc với kim đồng sáng và vạch chỉ giờ bằng pha lê. Điểm đánh dấu chỉ số ở vị trí 3, 6 và 9 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Chuyển động thạch anh. Tinh thể khoáng chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Chiều rộng dải: 19 mm. Tang kẹp. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ đeo tay Unisex mặt bạc thạch anh Ice-Watch 020384.",
       "createdAt": 1699067244611,
+      "isDelete": false,
       "updatedAt": 1699067244611,
       "limited": false,
       "series": "GMT-Master II",
@@ -909,6 +1029,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/p/r/preowned-rolex-datejust-automatic-chronometer-black-dial-ladies-watch-79173csj.jpg?width=546&height=546",
       "description": "Vỏ thép không gỉ tông màu bạc với vòng đeo tay bằng thép không gỉ (tông màu bạc). Viền thép không gỉ tông vàng cố định dạng rãnh. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex Calibre 2235, chứa 31 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 26 mm. Chiều dài băng tần: 6 1/2 inch. Gấp qua móc cài. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, đồng hồ bấm giờ. Dòng Datejust. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nữ mặt số màu đen Rolex Datejust tự động Chronometer 79173CSJ đã qua sử dụng.",
       "createdAt": 1699067319521,
+      "isDelete": false,
       "updatedAt": 1699067319521,
       "limited": false,
       "series": "GMT-Master II",
@@ -931,6 +1052,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/l/o/longines-master-collection-automatic-blue-dial-watch-l29104920-l29104920.jpg?width=546&height=546",
       "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng da cá sấu/cá sấu màu xanh. Viền cố định. Mặt số màu xanh với kim có tông màu bạc và vạch chỉ giờ. Thang đo phút xung quanh vành trong. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines Calibre L897, dựa trên ETA A31.L81, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kiểu dáng vỏ tròn, kích thước vỏ: 40 mm, độ dày vỏ: 9,5 mm. Nút bấm triển khai khóa cài. Chống nước ở độ sâu 30 mét / 99 feet. Chức năng: ngày, tháng, giờ, phút, giây. Bộ sưu tập bậc thầy. Nhãn đồng hồ: Swiss Made. Đồng hồ mặt số màu xanh tự động Longines Master Collection L2.910.4.92.0.",
       "createdAt": 1699067746618,
+      "isDelete": false,
       "updatedAt": 1699067746618,
       "limited": false,
       "series": "GMT-Master II",
@@ -952,6 +1074,7 @@
       "categoryId": 6,
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/f/r/frederique-constant-classics-quartz-black-dial-36-mm-watch-fc-220mb3b4.jpg?width=350&height=350",
       "createdAt": 1699067943178,
+      "isDelete": false,
       "updatedAt": 1699067943178,
       "limited": false,
       "series": "GMT-Master II",
@@ -974,6 +1097,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/t/u/tudor-royal-automatic-black-dial-ladies-watch-m284000003.jpg?width=546&height=546",
       "description": "Vỏ thép 316L với dây đeo bằng thép 316L. Cố định khung thép 316L. Mặt số màu đen với kim màu bạc sáng và vạch số giờ La Mã. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Tudor calibre T601, dựa trên ETA 2824, chứa 25 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 38 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 34 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hoàng Gia. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nữ mặt số màu đen tự động Tudor Royal M28400-0003.",
       "createdAt": 1699068030318,
+      "isDelete": false,
       "updatedAt": 1699068030318,
       "limited": false,
       "series": "GMT-Master II",
@@ -996,6 +1120,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/o/m/omega-prestige-co-axial-automatic-silver-dial-stainless-steel-men_s-watch-424.10.37.20.02.001_7.jpg?width=546&height=546",
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim kiểu dauphine tông màu bạc và vạch chỉ giờ dạng dính. Các chữ số La Mã đánh dấu các vị trí 3, 6, 9 và 12 giờ. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Omega calibre 2500, dựa trên ETA 2892-A2, chứa 27 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 36,8 mm. Độ dày vỏ: 10 mm. Chiều rộng dải: 21,6 mm. Chiều dài dây: 8,5 inch. Gấp qua móc cài. Chống nước ở độ sâu 30 mét / 100 feet. Chức năng: ngày, giờ, phút, giây, bộ thoát đồng trục, đồng hồ bấm giờ. Dòng đồng trục De Ville Prestige. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mã hàng: 424 10 37 20 02 001, 424-10-37-20-02-001, 424/10/37/20/02/001, 42410372002001. Đồng hồ Unisex Omega Prestige Co-Axial mặt bạc tự động 424.10.37.20. 02.001.",
       "createdAt": 1699068195262,
+      "isDelete": false,
       "updatedAt": 1699068195262,
       "limited": false,
       "series": "GMT-Master II",
@@ -1018,6 +1143,7 @@
       "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/p/r/preowned-rolex-oyster-perpetual-automatic-chronometer-white-dial-ladies-watch-177200wblro.jpg?width=546&height=546",
       "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng thép không gỉ rolex tông màu bạc. Viền thép không gỉ tông màu bạc hình vòm cố định. Mặt số màu trắng với kim màu bạc và vạch số giờ La Mã. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bộ chuyển động tự động Rolex Calibre 2231, chứa 31 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 31 mm. Chiều dài băng tần: 6 1/2. Khóa Oysterlock. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng sản phẩm Oyster vĩnh viễn. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nữ Rolex Oyster Perpetual Chronometer mặt số màu trắng đã qua sử dụng 177200WBLRO.",
       "createdAt": 1699070786158,
+      "isDelete": false,
       "updatedAt": 1699070786158,
       "limited": false,
       "series": "GMT-Master II",
@@ -1040,6 +1166,7 @@
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số xà cừ với kim màu bạc và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút bằng chữ số Ả Rập (cách nhau 5 phút). Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Powermatic 80.811 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 30 mm. Độ dày vỏ: 9,44 mm. Hình dạng vỏ tròn. Chiều rộng dải: 16 mm. Gấp qua móc cài. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: ngày, giờ, phút, giây. Phong cách đồng hồ đeo tay. Nhãn đồng hồ: Swiss Made. Đồng hồ nữ mặt số ngọc trai tự động Tissot T-Classic Ballade T108.208.11.117.00.",
       "currentPrice": 24000000,
       "createdAt": 1699461349397,
+      "isDelete": false,
       "updatedAt": 1699461349398,
       "limited": false,
       "series": "GMT-Master II",
@@ -1069,7 +1196,50 @@
       "description": "Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO - Mẫu 2022 có hộp Rolex Vỏ thép không gỉ với vòng đeo tay bằng thép không gỉ. Viền bằng thép không gỉ xoay một chiều với vòng gốm màu đen. Mặt số màu đen với kim màu bạc và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Rolex calibre 3230, chứa 31 viên Jewel, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 41 mm. Độ dày vỏ: 12,5 mm. Khóa Oysterlock. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng tàu ngầm. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Các biến thể của mặt hàng: M124060-0001, 124060ln. Đồng hồ nam Rolex Submariner tự động mặt số màu đen 124060BKSO.",
       "currentPrice": 123250000,
       "createdAt": 1699716259728,
+      "isDelete": false,
       "updatedAt": 1699716259728
+    },
+    {
+      "id": "34f04364-7696-4a76-9b01-eb257bb5d958",
+      "name": "Đồng hồ nam mặt số xanh tự động PRX Powermatic 80",
+      "oldPrice": 180000000,
+      "powerReserve": 60,
+      "size": 32,
+      "thickness": 15,
+      "discount": 25,
+      "series": "PRX Powermatic 80",
+      "material": "Thép không gỉ",
+      "gender": "Nam",
+      "shape": "Tròn",
+      "back": "Trong suốt",
+      "categoryId": 3,
+      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/t/i/tissot-prx-powermatic-80-automatic-green-dial-mens-watch-t1374071109100-t1374071109100.jpg?width=546&height=546",
+      "description": "Vỏ thép không gỉ 316L tông màu bạc với vòng đeo tay bằng thép không gỉ tông màu bạc. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số màu xanh lá cây với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Tissot Calibre Powermatic 80 (C07.111), dựa trên ETA 2824-2, chứa 23 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 80 giờ. Tinh thể sapphire chống trầy xước. Ốp lưng trong suốt nhìn xuyên thấu. Hình dạng vỏ Tonneau, kích thước vỏ: 40 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Prx Powermatic 80. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot PRX Powermatic 80 mặt xanh tự động T137.407.11.091.00.",
+      "currentPrice": 135000000,
+      "createdAt": 1699752292276,
+      "isDelete": false,
+      "updatedAt": 1699752292276
+    },
+    {
+      "id": "9be5635c-1995-4d2c-a650-fefac4be77fe",
+      "name": "Đồng hồ Unisex Black Bay 36 Chronometer mặt số màu xanh tự động",
+      "oldPrice": 150000000,
+      "powerReserve": 50,
+      "size": 32,
+      "thickness": 12,
+      "discount": 40,
+      "series": "Black Bay 36",
+      "material": "Thép không gỉ",
+      "gender": "Nữ",
+      "shape": "Tròn",
+      "back": "Trong suốt",
+      "categoryId": 5,
+      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/t/u/tudor-black-bay-36-automatic-chronometer-blue-dial-unisex-watch-m796400002.jpg?width=546&height=546",
+      "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền cố định bằng thép không gỉ tông màu bạc. Mặt số màu xanh với kim có tông màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ máy tự động Tudor Calibre MT5400, chứa 27 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Kiểu dáng vỏ tròn, kích thước vỏ: 36 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng Black Bay 36. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ Tudor Black Bay 36 Chronometer tự động mặt số màu xanh Unisex M79640-0002.",
+      "currentPrice": 90000000,
+      "createdAt": 1699752571480,
+      "isDelete": false,
+      "updatedAt": 1699752571480
     }
   ],
   "orders": [
@@ -1081,30 +1251,21 @@
       "address": "Tổ Phước Viên",
       "userId": 2,
       "createdAt": 1699694785351,
+      "isDelete": false,
       "updatedAt": 1699694785351,
       "id": 1
     },
     {
-      "cityName": "Tỉnh Bà Rịa-Vũng Tàu",
-      "districtName": "Thành phố Bà Rịa",
-      "wardName": "Phường Phước Nguyên",
-      "totalPrice": 85200000,
-      "address": "Nong",
-      "userId": 1,
-      "createdAt": 1699694896739,
-      "updatedAt": 1699694896739,
+      "cityName": "Tỉnh Quảng Nam",
+      "districtName": "Huyện Nông Sơn",
+      "wardName": "Xã Quế Trung",
+      "totalPrice": 1089650000,
+      "address": "Tổ Trung Nam",
+      "userId": 2,
+      "createdAt": 1699768692916,
+      "updatedAt": 1699768692916,
+      "isDelete": false,
       "id": 2
-    },
-    {
-      "cityName": "Tỉnh Bà Rịa-Vũng Tàu",
-      "districtName": "Thành phố Bà Rịa",
-      "wardName": "Phường Phước Nguyên",
-      "totalPrice": 530000000,
-      "address": "121221",
-      "userId": 1,
-      "createdAt": 1699695188856,
-      "updatedAt": 1699695188856,
-      "id": 3
     }
   ],
   "orderDetails": [
@@ -1117,6 +1278,7 @@
       "orderId": 1,
       "uuid": "ecc400f4-9131-4b6c-85bb-12a37cb7dce5",
       "createdAt": 1699694785390,
+      "isDelete": false,
       "updatedAt": 1699694785390,
       "id": 1
     },
@@ -1129,6 +1291,7 @@
       "orderId": 2,
       "uuid": "318cd9c9-8587-47e5-939f-3aaf04eecf2c",
       "createdAt": 1699694896783,
+      "isDelete": false,
       "updatedAt": 1699694896784,
       "id": 2
     },
@@ -1141,8 +1304,48 @@
       "orderId": 3,
       "uuid": "9e91d8c8-a804-44e7-b069-1dc9a73c385f",
       "createdAt": 1699695188902,
+      "isDelete": false,
       "updatedAt": 1699695188902,
       "id": 3
+    },
+    {
+      "productId": "33",
+      "name": "Đồng hồ nam mặt bạc Conquest mặt nâu 43mm L37604765",
+      "currentPrice": 38500000,
+      "quantity": 1,
+      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/l/o/longines-conquest-silver-dial-brown-leather-men_s-watch-l37604765.jpg?width=350&height=350",
+      "orderId": 2,
+      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
+      "createdAt": 1699768692958,
+      "updatedAt": 1699768692958,
+      "isDelete": false,
+      "id": 4
+    },
+    {
+      "productId": "22",
+      "name": "Đồng hồ nam Chronometer tự động Superocean A17375211B1S1",
+      "currentPrice": 466200000,
+      "quantity": 2,
+      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/b/r/breitling-superocean-automatic-chronometer-mens-watch-a17375211b1s1.jpg?width=350&height=350",
+      "orderId": 2,
+      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
+      "createdAt": 1699768693001,
+      "updatedAt": 1699768693001,
+      "isDelete": false,
+      "id": 5
+    },
+    {
+      "productId": "2",
+      "name": "Đồng hồ nam mặt số đen tự động.Đồng hồ bấm giờ tàu ngầm 124060BKSO",
+      "currentPrice": 118750000,
+      "quantity": 1,
+      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-submariner-automatic-chronometer-black-dial-mens-watch-124060bkso.jpg?width=350&height=350",
+      "orderId": 2,
+      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
+      "createdAt": 1699768693050,
+      "updatedAt": 1699768693050,
+      "isDelete": false,
+      "id": 6
     }
   ],
   "categories": [

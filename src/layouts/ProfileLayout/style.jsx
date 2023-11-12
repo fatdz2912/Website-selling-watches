@@ -10,7 +10,7 @@ export const LayoutWrapper = styled.div`
 export const NavMenu = styled(Col)`
   cursor: pointer;
 `;
-export const MainWrapper = styled(Row)`
+export const ProfileMainWrapper = styled(Row)`
   background-color: ${color.primaryText};
   max-width: 1200px;
   width: 95%;
@@ -19,7 +19,7 @@ export const MainWrapper = styled(Row)`
   padding: 20px 0;
 `;
 
-export const MainContainer = styled(Col)`
+export const ProfileMainContainer = styled(Col)`
   width: 100%;
   padding: 16px;
 `;

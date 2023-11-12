@@ -10,7 +10,7 @@ function Profile() {
   const atIndex = email.indexOf("@");
 
   return (
-    <S.ProfileWrapper>
+    <S.UserInfoWrapper>
       <S.Heading>
         <S.SubHeading>Hồ sơ của tôi</S.SubHeading>
       </S.Heading>
@@ -45,7 +45,7 @@ function Profile() {
           <Input type="file" />
         </S.Right>
       </S.Profile>
-    </S.ProfileWrapper>
+    </S.UserInfoWrapper>
   );
 }
 

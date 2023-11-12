@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Row, Col, Rate } from "antd";
 import { color } from "themes/color";
 export const TrendingNowWrapper = styled.div`
+  border-radius: 8px;
   width: 100%;
   margin-top: 2vh;
   padding: 22px 18px;

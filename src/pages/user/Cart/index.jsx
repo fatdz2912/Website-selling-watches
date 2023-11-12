@@ -1,23 +1,14 @@
-import {
-  Table,
-  Button,
-  InputNumber,
-  Row,
-  Col,
-  Card,
-  Space,
-  Breadcrumb,
-} from "antd";
+import { Button, InputNumber, Row, Col, Card, Space, Breadcrumb } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 import { ROUTES } from "constants/routes";
 import { deleteCart, updateCart } from "redux/slicers/cart.slice";
 import { updateProductBuy } from "redux/slicers/cart.slice";
 
 import * as S from "./style";
-import { useEffect, useState } from "react";
 
 function CartPage() {
   const [totalPrice, setTotalPrice] = useState(0);

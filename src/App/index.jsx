@@ -55,14 +55,14 @@ function App() {
         <Route path={ROUTES.USER.CHECKOUT} element={<Checkout />} />
         <Route element={<ProfileLayout />}>
           <Route
+            path={ROUTES.USER.ORDER_HISTORY}
+            element={<OrderHistories />}
+          />
+          <Route
             path={ROUTES.USER.PROFILE}
             element={<Navigate to={ROUTES.USER.USERINFO} />}
           />
           <Route path={ROUTES.USER.USERINFO} element={<UserInfo />} />
-          <Route
-            path={ROUTES.USER.ORDER_HISTORY}
-            element={<OrderHistories />}
-          />
         </Route>
       </Route>
       <Route element={<AdminLayout />}>

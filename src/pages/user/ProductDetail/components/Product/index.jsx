@@ -1,5 +1,5 @@
 import { Button, Col, Row, Space, Rate, Breadcrumb } from "antd";
-import { FaShoppingCart, FaHome } from "react-icons/fa";
+import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
 
 import * as S from "./style";
 import { ROUTES } from "constants/routes";
@@ -73,12 +73,14 @@ function Product({
             <S.Brands>{category?.name.toUpperCase()}</S.Brands>
             <S.Name>{name}</S.Name>
             <S.Preview>
-              <Col xs={16} md={16} lg={16}>
+              <Col xs={12} md={12} lg={12}>
                 <Rate value={averageRate} allowHalf disabled />({averageRate})
               </Col>
-              <S.Sold xs={8} md={8} lg={8}>
-                ? Đã Bán
-              </S.Sold>
+              <Col span={12}>
+                <S.Heart>
+                  <FaHeart size={25} color="red" /> 1 Lượt Thích
+                </S.Heart>
+              </Col>
             </S.Preview>
           </Col>
           <S.Report md={6} xs={6}>

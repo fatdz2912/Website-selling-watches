@@ -3,16 +3,15 @@ import { Row, Col, Select, Checkbox, Rate, Card } from "antd";
 import { color } from "themes/color";
 
 export const ProductListWrapper = styled.div`
-  margin: 0 auto;
+  margin: 10px auto 0;
   width: 100%;
   max-width: 1200px;
   background-color: ${color.primaryText};
-  padding: 32px;
 `;
 // Filter
 export const filterBrands = styled(Card)`
   position: sticky;
-  top: 30vh;
+  top: 21vh;
   z-index: 1;
 `;
 export const BrandList = styled(Row)``;

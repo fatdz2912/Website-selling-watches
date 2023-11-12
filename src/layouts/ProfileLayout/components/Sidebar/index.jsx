@@ -8,7 +8,7 @@ function Sidebar() {
     return PROFILE_MENU.map((item, index) => {
       return (
         <Link to={item.path} key={index} style={{ color: "black" }}>
-          <S.ProfileMenuItem active={item.path === pathname}>
+          <S.ProfileMenuItem key={index} active={item.path === pathname}>
             <div>{item.icon}</div>
             <p style={{ marginLeft: 12 }}>{item.label}</p>
           </S.ProfileMenuItem>

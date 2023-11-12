@@ -1,4 +1,4 @@
-import { Carousel } from "antd";
+import { Carousel, Skeleton } from "antd";
 import { useMemo } from "react";
 import * as S from "./style";
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ import { ROUTES } from "constants/routes";
 function TrendingNow() {
   const dispatch = useDispatch();
   const { productList } = useSelector((state) => state.product);
-  const { data } = productList;
+  const { data, loading } = productList;
 
   useEffect(() => {
     dispatch(
@@ -76,15 +76,20 @@ function TrendingNow() {
       <S.HeadingTrendingNow>
         <h1>TÌM KIẾM HÀNG ĐẦU</h1>
       </S.HeadingTrendingNow>
-      <Carousel
-        style={{ width: "100% " }}
-        autoplay
-        dots
-        dotPosition={"top"}
-        autoplaySpeed={1500}
-      >
-        {renderTrendingNow}
-      </Carousel>
+
+      {loading ? (
+        <Skeleton active />
+      ) : (
+        <Carousel
+          style={{ width: "100% " }}
+          autoplay
+          dots
+          dotPosition={"top"}
+          autoplaySpeed={1500}
+        >
+          {renderTrendingNow}
+        </Carousel>
+      )}
     </S.TrendingNowWrapper>
   );
 }

@@ -23,7 +23,6 @@ import {
 import { PRODUCT_TABLE_LIMIT } from "constants/paging";
 import { ROUTES } from "constants/routes";
 import { useMemo } from "react";
-import { OldPrice } from "pages/user/ProductList/style";
 function ProductManager() {
   const [filterParams, setFilterParams] = useState({
     categoryId: [],
@@ -102,7 +101,7 @@ function ProductManager() {
       title: "Thương hiệu",
       dataIndex: "category",
       key: "category",
-      render: (category) => category.name,
+      render: (category) => category?.name,
     },
     {
       title: "Gender",
@@ -172,7 +171,7 @@ function ProductManager() {
     return categoryList.data.map((item) => {
       return (
         <Select.Option key={item.id} value={item.id}>
-          {item.name}
+          {item?.name}
         </Select.Option>
       );
     });
@@ -206,7 +205,7 @@ function ProductManager() {
                   placeholder="Tên sản phẩm"
                 />
               </Col>
-              <Col span={12}>
+              <Col span={8}>
                 <Select
                   mode="multiple"
                   allowClear
@@ -215,6 +214,28 @@ function ProductManager() {
                   style={{ width: "100%" }}
                 >
                   {renderProductOptions}
+                </Select>
+              </Col>
+              <Col span={4}>
+                <Select
+                  placeholder="Sắp xếp theo"
+                  onChange={(value) => handleFilter("sortOrder", value)}
+                  allowClear
+                >
+                  <Select.Option value="oldPrice.desc">
+                    Giá giảm dần
+                  </Select.Option>
+                  <Select.Option value="oldPrice.asc">
+                    Giá tăng dần
+                  </Select.Option>
+                  <Select.Option value="createdAt.desc">Mới nhất</Select.Option>
+                  <Select.Option value="createdAt.asc">Cũ nhất</Select.Option>
+                  <Select.Option value="updatedAt.desc">
+                    Cập nhật mới nhất
+                  </Select.Option>
+                  <Select.Option value="updatedAt.asc">
+                    Cập nhật cũ nhất
+                  </Select.Option>
                 </Select>
               </Col>
             </Row>

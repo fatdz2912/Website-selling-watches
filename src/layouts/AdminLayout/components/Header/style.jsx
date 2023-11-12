@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   background-color: ${color.primaryText};
 `;
 export const HeaderTopWrapper = styled.div`
-  background-color: #302e2e;
+  background-color: ${color.primary};
   color: ${primaryText};
   height: 6vh;
   display: flex;
@@ -52,8 +52,7 @@ export const IconMessage = styled.div`
 `;
 // Header Tool Bar
 export const HeaderToolBar = styled(Row)`
-  width: 100%;
-  margin: 3vh auto 0 !important;
+  margin: 3vh auto !important;
   position: relative;
 `;
 export const HeaderLogo = styled(Col)`
@@ -91,40 +90,6 @@ export const Login = styled(Col)`
 export const HeadingLogin = styled(Col)`
   font-size: 1rem;
   color: ${color.primary};
-`;
-// Menu Wrapper
-export const MenuDeskWrapper = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3em;
-  margin: 0 auto;
-
-  ${(props) =>
-    props.isHiddenMenu === false
-      ? css`
-          flex-direction: column;
-          width: 100%;
-          text-align: center;
-        `
-      : css``};
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-export const MenuMobileAndTabletWrapper = styled.ul`
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 3em;
-  margin: 0 auto;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  ${(props) => (props.isHiddenMenu === false ? css`` : css``)};
-  @media screen and (max-width: 768px) {
-    display: flex;
-  }
 `;
 export const MenuModal = styled(Modal)`
   position: absolute;

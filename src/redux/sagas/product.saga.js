@@ -44,6 +44,7 @@ function* getProductListSaga(action) {
         ...(sortOrder && {
           _sort: sortOrder.split(".")[0],
           _order: sortOrder.split(".")[1],
+          isDelete: false,
         }),
         ...(discountOrder && {
           _sort: "discount",
@@ -75,6 +76,11 @@ function* addProductSaga(action) {
   try {
     const { data, callback } = action.payload;
     yield axios.post("http://localhost:4000/products", data);
+    yield put(
+      getProductListRequest({
+        sortOrder: "createdAt.desc",
+      })
+    );
     yield put(addProductSuccess({ data }));
     yield callback();
   } catch (e) {
@@ -94,7 +100,9 @@ function* updateProductSaga(action) {
 function* deleteProductSaga(action) {
   try {
     const { data } = action.payload;
-    yield axios.delete(`http://localhost:4000/products/${data.id}`, data);
+    yield axios.patch(`http://localhost:4000/products/${data.id}`, {
+      isDelete: true,
+    });
     yield put(getProductListRequest());
     yield put(deleteProductSuccess({ id: data.id }));
   } catch (e) {
@@ -108,6 +116,7 @@ function* getProductDetailSaga(action) {
       params: {
         _expand: "category",
         id: id,
+        isDelete: false,
       },
     });
     yield put(
@@ -130,6 +139,7 @@ function* getProductDiscountListSaga(action) {
           _sort: "discount",
           _order: discountOrder,
           _expand: "category",
+          isDelete: false,
         }),
       },
     });

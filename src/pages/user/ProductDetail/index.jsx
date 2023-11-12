@@ -6,6 +6,7 @@ import { Col, notification } from "antd";
 import Product from "./components/Product";
 import Preview from "./components/Review";
 import InformationDetail from "./components/InformationDetail";
+import Hero from "components/Hero";
 
 import { getProductDetailRequest } from "redux/slicers/product.slice";
 import { addCart } from "redux/slicers/cart.slice";
@@ -79,6 +80,7 @@ function ProductDetail() {
 
   return (
     <S.ProductDetailWrapper>
+      <Hero />
       <Product
         averageRate={averageRate}
         image={image}
