@@ -1,11 +1,15 @@
 import { Button, Col, Row, Space, Rate, Breadcrumb } from "antd";
 import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
-
-import * as S from "./style";
-import { ROUTES } from "constants/routes";
-import { Link, useNavigate } from "react-router-dom";
-import { updateProductBuy } from "redux/slicers/cart.slice";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useMemo } from "react";
+
+import { favoriteProductRequest } from "redux/slicers/favorite.slice";
+import { updateProductBuy } from "redux/slicers/cart.slice";
+
+import { ROUTES } from "constants/routes";
+import { color } from "themes/color";
+import * as S from "./style";
 
 function Product({
   handleDecreaseQuantity,
@@ -23,10 +27,34 @@ function Product({
 }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { productDetail } = useSelector((state) => state.product);
+  const { userInfo } = useSelector((state) => state.auth);
+  const isFavorite = useMemo(
+    () =>
+      productDetail?.data?.favorites?.some(
+        (item) => item.userId === userInfo.data.id
+      ),
+    [productDetail.data?.favorites, userInfo?.data?.id]
+  );
   const handleBuyNow = () => {
     const selectedRows = [{ quantity, name, currentPrice, productId, image }];
     dispatch(updateProductBuy({ selectedRows }));
     navigate(ROUTES.USER.CHECKOUT);
+  };
+  const handleToggleFavorite = () => {
+    if (userInfo.data.id) {
+      if (isFavorite) {
+        console.log("Hãy un favorite");
+      } else {
+        dispatch(
+          favoriteProductRequest({
+            userId: userInfo?.data?.id,
+            productId: productDetail?.data?.id,
+          })
+        );
+      }
+    }
   };
   return (
     <S.ProductDetail gutter={[16, 16]}>
@@ -78,7 +106,20 @@ function Product({
               </Col>
               <Col span={12}>
                 <S.Heart>
-                  <FaHeart size={25} color="red" /> 1 Lượt Thích
+                  <Button
+                    size="large"
+                    type="text"
+                    danger={isFavorite}
+                    icon={
+                      isFavorite ? (
+                        <FaHeart size={24} color={color.outstanding} />
+                      ) : (
+                        <FaHeart size={24} />
+                      )
+                    }
+                    onClick={() => handleToggleFavorite()}
+                  ></Button>
+                  {productDetail?.data?.favorites?.length} Lượt Thích
                 </S.Heart>
               </Col>
             </S.Preview>

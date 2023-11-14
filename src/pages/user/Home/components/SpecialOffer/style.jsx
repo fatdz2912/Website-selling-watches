@@ -45,9 +45,18 @@ export const Information = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  box-shadow: -1px 0 1px #f0efef, 1px 0 1px #f0efef, 0 1px 1px #f0efef;
+  box-shadow: -1px 0 1px #efeff0, 1px 0 1px #f0efef, 0 -1px 1px #f0efef;
+  border-left: 1px solid #e7e4e4;
+  border-right: 1px solid #e7e4e4;
+  border-bottom: 1px solid #e7e4e4;
   @media screen and (max-width: 1140px) {
     min-height: 200px;
+  }
+  @media screen and (max-width: 768px) and (min-width: 450px) {
+    min-height: 120px;
+  }
+  @media screen and (max-width: 375px) {
+    min-height: 150px;
   }
 `;
 export const Unit = styled.span`

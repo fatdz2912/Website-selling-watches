@@ -7,6 +7,7 @@ export const ProductListWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   background-color: ${color.primaryText};
+  padding: 16px;
 `;
 // Filter
 export const filterBrands = styled(Card)`

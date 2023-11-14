@@ -13,7 +13,6 @@ import {
 } from "antd";
 // import { PlusOutlined } from "@ant-design/icons";
 // import ReactQuill from "react-quill";
-import { v4 as uuid } from "uuid";
 
 import * as S from "./style";
 

@@ -1296,19 +1296,6 @@
       "id": 2
     },
     {
-      "productId": "5",
-      "name": "Đồng hồ nam GMT-Master II GMT mặt đen Batman Bezel 126710blnr",
-      "currentPrice": 530000000,
-      "quantity": 1,
-      "image": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-gmtmaster-ii-gmt-black-dial-batman-bezel-mens-watch-126710blnr.jpg?width=350&height=350",
-      "orderId": 3,
-      "uuid": "9e91d8c8-a804-44e7-b069-1dc9a73c385f",
-      "createdAt": 1699695188902,
-      "isDelete": false,
-      "updatedAt": 1699695188902,
-      "id": 3
-    },
-    {
       "productId": "33",
       "name": "Đồng hồ nam mặt bạc Conquest mặt nâu 43mm L37604765",
       "currentPrice": 38500000,
@@ -1346,6 +1333,118 @@
       "updatedAt": 1699768693050,
       "isDelete": false,
       "id": 6
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 2,
+      "productId": 14,
+      "createdAt": 1699812495465,
+      "updatedAt": 1699812495465,
+      "isDelete": false,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "productId": 14,
+      "createdAt": 1699812648663,
+      "updatedAt": 1699812648663,
+      "isDelete": false,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "productId": 9,
+      "createdAt": 1699812821085,
+      "updatedAt": 1699812821085,
+      "isDelete": false,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "productId": 16,
+      "createdAt": 1699813063197,
+      "updatedAt": 1699813063197,
+      "isDelete": false,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "productId": 2,
+      "createdAt": 1699948958369,
+      "updatedAt": 1699948958369,
+      "isDelete": false,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "productId": 2,
+      "createdAt": 1699948959938,
+      "updatedAt": 1699948959938,
+      "isDelete": false,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "productId": 2,
+      "createdAt": 1699948960954,
+      "updatedAt": 1699948960954,
+      "isDelete": false,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "productId": 2,
+      "createdAt": 1699948962562,
+      "updatedAt": 1699948962562,
+      "isDelete": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "productId": 16,
+      "createdAt": 1699948979661,
+      "updatedAt": 1699948979661,
+      "isDelete": false,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "productId": 3,
+      "createdAt": 1699969639674,
+      "updatedAt": 1699969639674,
+      "isDelete": false,
+      "id": 10
+    }
+  ],
+  "addresses": [
+    {
+      "name": "Ngô Văn Trị",
+      "cityName": "Tỉnh Quảng Nam",
+      "districtName": "Huyện Nông Sơn",
+      "wardName": "Xã Quế Trung",
+      "userId": 2,
+      "addressDefault": false,
+      "phone": "0377460815",
+      "createdAt": 1699890680553,
+      "updatedAt": 1699969685622,
+      "isDelete": false,
+      "id": 1,
+      "specificAddress": "Tổ Phước Viên"
+    },
+    {
+      "name": "Ngô Văn Trị",
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường Xuân Hà",
+      "userId": 2,
+      "addressDefault": true,
+      "phone": "0377460815",
+      "createdAt": 1699891421602,
+      "updatedAt": 1699969685656,
+      "isDelete": false,
+      "id": 3,
+      "specificAddress": "435/53 Trần Cao Vân"
     }
   ],
   "categories": [

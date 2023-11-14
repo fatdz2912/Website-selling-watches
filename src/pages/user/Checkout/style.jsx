@@ -19,6 +19,13 @@ export const SubHeading = styled.h3`
   color: ${color.primary};
   font-weight: 650;
 `;
+export const DefaultAddress = styled(Button)`
+  margin: 10px 0;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const Unit = styled.span`
   font-size: 0.75rem;
 `;

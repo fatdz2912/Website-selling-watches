@@ -13,7 +13,6 @@ import { PROFILE_MENU } from "./constant";
 import { color } from "themes/color";
 
 function AccountUserLayout() {
-  const [isShowSidebar, setIsShowSidebar] = useState(false);
   const [avatar, setAvatar] = useState("");
   const { userInfo } = useSelector((state) => state.auth);
   const accessToken = localStorage.getItem("accessToken");
@@ -41,12 +40,13 @@ function AccountUserLayout() {
               ),
             },
             {
+              color: "red",
               title: profileLabel,
             },
           ]}
         />
         <S.ProfileMainWrapper gutter={[16, 16]} justify={"center"}>
-          <S.NavMenu
+          {/* <S.NavMenu
             sm={2}
             xs={2}
             md={0}
@@ -54,9 +54,9 @@ function AccountUserLayout() {
             onClick={() => setIsShowSidebar(!isShowSidebar)}
           >
             <FaBars size={25} color={color.primary} />
-          </S.NavMenu>
+          </S.NavMenu> */}
           <Sidebar avatar={avatar} setAvatar={setAvatar} />
-          <S.ProfileMainContainer xs={22} md={22} xl={19}>
+          <S.ProfileMainContainer xs={24} sm={16} md={17} xl={19}>
             <Outlet />
           </S.ProfileMainContainer>
         </S.ProfileMainWrapper>

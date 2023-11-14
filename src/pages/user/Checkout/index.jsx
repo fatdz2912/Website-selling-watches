@@ -26,6 +26,10 @@ import {
   getWardListRequest,
 } from "redux/slicers/location.slice";
 import { orderProductRequest } from "redux/slicers/order.slice";
+import {
+  getAddressListRequest,
+  getAddressDefaultRequest,
+} from "redux/slicers/address.slice";
 
 import * as S from "./style";
 import { GUEST_ID } from "constants/guest";
@@ -40,11 +44,9 @@ function Checkout() {
   );
   const { productBuyList } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
-
-  const initialValues = {
-    fullName: userInfo.data.fullName,
-    email: userInfo.data.email,
-  };
+  const { addressList, getDefaultAddress } = useSelector(
+    (state) => state?.address
+  );
 
   const totalPrice = productBuyList.reduce(
     (total, item) => total + item.currentPrice * item.quantity,
@@ -52,14 +54,37 @@ function Checkout() {
   );
 
   useEffect(() => {
+    document.title = "Checkout Page";
     dispatch(getCityListRequest());
+    dispatch(getAddressDefaultRequest());
+    dispatch(getAddressListRequest({ userId: userInfo?.data?.id }));
   }, []);
 
   useEffect(() => {
-    if (userInfo.data.id) {
-      checkoutForm.setFieldsValue(initialValues);
+    if (getDefaultAddress.data) {
+      const { cityName, districtName, wardName, name, phone, specificAddress } =
+        getDefaultAddress.data;
+      const cityData = cityList.data.find((item) => item.name === cityName);
+      const districtData = districtList.data.find(
+        (item) => item.name === districtName
+      );
+      const wardData = wardList.data.find((item) => item.name === wardName);
+
+      dispatch(getDistrictListRequest({ cityCode: districtData?.code }));
+      dispatch(getWardListRequest({ districtCode: wardData?.code }));
+      if (userInfo.data.id) {
+        checkoutForm.setFieldsValue({
+          fullName: name,
+          email: userInfo.data.email,
+          phoneNumber: phone,
+          specificAddress: specificAddress,
+          cityCode: cityData?.code,
+          districtCode: districtData?.code,
+          wardCode: wardData?.code,
+        });
+      }
     }
-  }, [userInfo.data]);
+  }, [userInfo.data, getDefaultAddress.data]);
 
   const tableColumn = [
     {
@@ -100,7 +125,6 @@ function Checkout() {
       0
     );
     const id = v4();
-    console.log(values.note);
     dispatch(
       orderProductRequest({
         orderData: {
@@ -239,7 +263,6 @@ function Checkout() {
             name="checkoutForm"
             form={checkoutForm}
             layout="vertical"
-            initialValues={initialValues}
             action="/pay"
             onFinish={(values) => handleSubmitCheckoutForm(values)}
           >
@@ -248,6 +271,7 @@ function Checkout() {
                 <Row gutter={[16, 16]}>
                   <Col span={24}>
                     <S.SubHeading>II.THÔNG TIN KHÁCH HÀNG</S.SubHeading>
+                    <S.DefaultAddress>Chọn địa chỉ mặc định</S.DefaultAddress>
                     <Form.Item
                       label="Họ và tên"
                       name="fullName"
@@ -331,7 +355,7 @@ function Checkout() {
                   <Col span={24}>
                     <Form.Item
                       label="Địa chỉ"
-                      name="address"
+                      name="specificAddress"
                       rules={[{ required: true, message: "Required!" }]}
                     >
                       <Input />

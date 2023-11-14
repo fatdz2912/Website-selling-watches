@@ -7,7 +7,6 @@ export const UserWithAvatar = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
-  margin-bottom: 30px;
   @media screen and (max-width: 400px) {
     gap: 0.2em;
   }
@@ -20,17 +19,18 @@ export const ProfileMenuItem = styled.div`
   transition: all 0.2s;
 
   &:hover {
-    background-color: #11bc11;
+    background-color: ${color.background_Color};
   }
 
   ${({ active }) =>
     active &&
     css`
-      border-right: 5px solid ${color.primary};
-      background-color: #2aa22a;
+      border-right: 5px solid #000;
+      background-color: ${color.primary};
       color: ${color.primaryText};
       &:hover {
-        background-color: #11bc11;
+        color: ${color.primary};
+        background-color: ${color.background_Color};
       }
     `}
 `;

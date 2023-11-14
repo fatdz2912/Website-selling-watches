@@ -5,7 +5,7 @@ import { Row, Col, Input, Modal, Card } from "antd";
 const primaryText = color.primaryText;
 const primary = color.primary;
 export const HeaderWrapper = styled.div`
-  background-color: ${color.background_Color};
+  background-color: ${color.primaryText};
   height: 22vh;
   position: sticky;
   top: 0;
@@ -169,7 +169,7 @@ export const MenuItem = styled.li`
   font-size: 1.1rem;
   font-weight: 470;
   color: ${primary};
-  border-bottom: 3px solid ${color.background_Color};
+  border-bottom: 3px solid ${color.primaryText};
   padding-bottom: 1vh;
   ${(props) =>
     props.isHiddenMenu === false

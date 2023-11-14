@@ -34,7 +34,7 @@ function SpecialOffer() {
         <S.DiscountList key={index} gutter={[16, 16]}>
           {group.map((item, index) => {
             return (
-              <S.ProductDiscountItem md={6} xs={12} key={index}>
+              <S.ProductDiscountItem md={6} sm={12} xs={12} key={index}>
                 <Link
                   to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item.id })}
                 >

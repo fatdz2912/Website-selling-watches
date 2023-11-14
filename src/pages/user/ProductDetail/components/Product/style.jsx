@@ -33,6 +33,14 @@ export const Brands = styled.div`
   font-size: 2rem;
   display: flex;
   max-width: 180px;
+  @media screen and (max-width: 576px) {
+    font-size: 1.2rem;
+    max-width: 120px;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.4rem;
+    max-width: 140px;
+  }
 `;
 export const Report = styled(Col)`
   font-size: 1rem;
@@ -41,9 +49,16 @@ export const Report = styled(Col)`
   cursor: pointer;
 `;
 export const Name = styled.div`
-  margin-top: 0.5;
+  margin-top: 0.5em;
   font-size: 1.1rem;
+  @media screen and (max-width: 576px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
+
 export const Preview = styled(Row)`
   width: 100%;
   margin-top: 0.5em;
@@ -55,6 +70,9 @@ export const Heart = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  @media screen and (max-width: 576px) {
+    font-size: 0.8rem;
+  }
 `;
 export const Price = styled(Col)`
   background-color: #ccc;
@@ -73,7 +91,13 @@ export const CurrentPrice = styled.div`
   width: 50%;
   font-size: 1.7rem;
   @media screen and (max-width: 768px) {
-    width: 100%;
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.4rem;
   }
 `;
 export const OldPrice = styled.div`
@@ -85,7 +109,10 @@ export const OldPrice = styled.div`
     props.discount !== 0 ? "line-through" : "none"};
   display: ${(props) => (props.discount === 0 ? "none" : "flex")};
   @media screen and (max-width: 768px) {
-    width: 100%;
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 1.2rem;
   }
 `;
 export const Unit = styled.span`
@@ -94,6 +121,15 @@ export const Unit = styled.span`
 export const Title = styled(Col)`
   margin-top: 1em;
   font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 export const Info = styled(Row)`
   border-bottom: 1px solid #ccc;
@@ -106,12 +142,39 @@ export const Desc = styled(Col)`
   font-size: 1.2rem;
   font-weight: 600;
   color: ${color.outstanding};
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem !important;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.8rem !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 export const Stock = styled.div`
   font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem !important;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.8rem !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 export const Transport = styled.div`
   font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem !important;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.8rem !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 export const AddCart = styled(Button)`
   margin-top: 1em;
@@ -121,12 +184,30 @@ export const AddCart = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem !important;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.9rem !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 export const Buy = styled(Button)`
   margin-top: 1em;
   font-size: 1.6rem;
   min-height: 8vh;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem !important;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 0.9rem !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 export const QuantityWrapper = styled(Col)`
   cursor: pointer;
@@ -140,6 +221,15 @@ export const QuantityWrapper = styled(Col)`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+      font-size: 1.1rem !important;
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 0.9rem !important;
+    }
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
 `;
 export const Quantity = styled.span`
@@ -164,6 +254,14 @@ export const Discount = styled.div`
     color: ${color.primaryText};
     font-size: 1.5rem;
     font-weight: 600;
+    @media screen and (max-width: 576px) {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 1rem;
+    width: 60px;
+    height: 60px;
   }
 `;
 export const FullBox = styled.div`
@@ -181,5 +279,9 @@ export const FullBox = styled.div`
   & > p {
     color: ${color.primaryText};
     font-weight: 600;
+  }
+  @media screen and (max-width: 576px) {
+    width: 150px;
+    font-size: 0.8rem;
   }
 `;

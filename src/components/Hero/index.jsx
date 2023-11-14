@@ -8,10 +8,10 @@ function Hero() {
   return (
     <S.Hero>
       <S.ImageHero src="https://cdn2.jomashop.com/media/wysiwyg/sales-event/11_topbar.png"></S.ImageHero>
-      <S.TextHero>
-        11.11 EXCLUSIVE SALE:
+      <S.ContentHero>
+        <S.TextHero>11.11 EXCLUSIVE SALE:</S.TextHero>
         <S.HeroDiscount> UP TO 80% OFF</S.HeroDiscount>
-      </S.TextHero>
+      </S.ContentHero>
       <S.ShopNow
         onClick={() =>
           navigate({

@@ -55,7 +55,7 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
         searchKey: searchKey,
       };
       navigate({
-        pathname: ROUTES.ADMIN.PRODUCT_MANAGER,
+        pathname: ROUTES.USER.PRODUCT_LIST,
         search: qs.stringify(newFilterParams),
       });
     }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 130vh;
+  min-height: 100vh;
 `;
 
 export const MainWrapper = styled.div`
@@ -17,6 +17,6 @@ export const MainContainer = styled.div`
   width: 95%;
   padding: 16px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   flex-direction: column;
 `;

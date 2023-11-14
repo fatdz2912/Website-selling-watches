@@ -13,6 +13,7 @@ function OrderHistories() {
   const { userInfo } = useSelector((state) => state.auth);
   const { orderList } = useSelector((state) => state.order);
   useEffect(() => {
+    document.title = "Order History Page";
     if (userInfo.data.id) {
       dispatch(getOrderListRequest({ userId: userInfo.data.id }));
     }
@@ -53,6 +54,7 @@ function OrderHistories() {
   ];
   return (
     <Table
+      scroll={{ x: 500 }}
       columns={tableColumns}
       dataSource={orderList.data}
       rowKey="id"

@@ -1,16 +1,20 @@
-import { Form, Input, Button, Row, Col, Checkbox } from "antd";
-import { ROUTES } from "constants/routes";
+import { Form, Input, Button, Col, Checkbox } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import * as S from "./style";
 import { registerRequest } from "redux/slicers/auth.slice";
+import { ROUTES } from "constants/routes";
 function Register() {
   const [registerForm] = Form.useForm();
   const { registerData } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Register Page";
+  }, []);
 
   useEffect(() => {
     if (registerData.error) {
@@ -40,7 +44,7 @@ function Register() {
   return (
     <S.RegisterWrapper>
       <Col md={24}>
-        <Row gutter={[16, 16]} justify={"center"}>
+        <S.FormRegister gutter={[16, 16]} justify={"center"}>
           <Col xs={20} md={14} lg={9}>
             <Form
               form={registerForm}
@@ -172,7 +176,7 @@ function Register() {
               </Form.Item>
             </Form>
           </Col>
-        </Row>
+        </S.FormRegister>
         ;
       </Col>
     </S.RegisterWrapper>

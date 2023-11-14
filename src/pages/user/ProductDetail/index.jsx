@@ -79,48 +79,50 @@ function ProductDetail() {
   };
 
   return (
-    <S.ProductDetailWrapper>
+    <>
       <Hero />
-      <Product
-        averageRate={averageRate}
-        image={image}
-        name={name}
-        category={category}
-        discount={discount}
-        oldPrice={oldPrice}
-        currentPrice={currentPrice}
-        handleDecreaseQuantity={handleDecreaseQuantity}
-        handleIncreaseQuantity={handleIncreaseQuantity}
-        quantity={quantity}
-        quantityData={reviewList.data.length}
-        handleAddToCart={handleAddToCart}
-        productId={id}
-      />
-      <S.Description md={24} xs={24} lg={12}>
-        <S.TitleDESC>MÔ TẢ SẢN PHẨM:</S.TitleDESC>
-        <S.DESC>{description}</S.DESC>
-      </S.Description>
-      <Col md={0} xs={0} lg={1}></Col>
-      <Col md={24} xs={24} lg={11}>
-        <InformationDetail productDetail={productDetail} />
-      </Col>
-      <S.Guaranteed md={24} xs={24} lg={24}>
-        <p>Một mẫu {category?.name} tuyệt đệp đến từ JOMASHOP !!</p>
-        <p>– Với nét thiết kế cổ điển tinh tế nhưng cũng rất sang trọng</p>
-        <p>– Cùng điểm nhấn là ô MoonPhasse góc 6h ấn tượng</p>
-        <p>– Size {productDetail.data?.size}mm dễ lên tay</p>
-        <p>
-          – Bộ truyền động RW 4280 với 26 chân kính, 28800 vph &amp; 38h tích
-          cót
-        </p>
-        <p>– Kính Sapphire chống xước, đc phủ chống lóa</p>
-        <p>– Chống nước 30m đủ dùng</p>
-      </S.Guaranteed>
-      <S.ImageGuranteedWrapper>
-        <S.Image src="https://luxewatch.vn/wp-content/uploads/2018/08/63636-compressed.jpg"></S.Image>
-      </S.ImageGuranteedWrapper>
-      <Preview id={id} averageRate={averageRate} />
-    </S.ProductDetailWrapper>
+      <S.ProductDetailWrapper>
+        <Product
+          averageRate={averageRate}
+          image={image}
+          name={name}
+          category={category}
+          discount={discount}
+          oldPrice={oldPrice}
+          currentPrice={currentPrice}
+          handleDecreaseQuantity={handleDecreaseQuantity}
+          handleIncreaseQuantity={handleIncreaseQuantity}
+          quantity={quantity}
+          quantityData={reviewList.data.length}
+          handleAddToCart={handleAddToCart}
+          productId={id}
+        />
+        <S.Description md={24} xs={24} lg={12}>
+          <S.TitleDESC>MÔ TẢ SẢN PHẨM:</S.TitleDESC>
+          <S.DESC>{description}</S.DESC>
+        </S.Description>
+        <Col md={0} xs={0} lg={1}></Col>
+        <Col md={24} xs={24} lg={11}>
+          <InformationDetail productDetail={productDetail} />
+        </Col>
+        <S.Guaranteed md={24} xs={24} lg={24}>
+          <p>Một mẫu {category?.name} tuyệt đệp đến từ JOMASHOP !!</p>
+          <p>– Với nét thiết kế cổ điển tinh tế nhưng cũng rất sang trọng</p>
+          <p>– Cùng điểm nhấn là ô MoonPhasse góc 6h ấn tượng</p>
+          <p>– Size {productDetail.data?.size}mm dễ lên tay</p>
+          <p>
+            – Bộ truyền động RW 4280 với 26 chân kính, 28800 vph &amp; 38h tích
+            cót
+          </p>
+          <p>– Kính Sapphire chống xước, đc phủ chống lóa</p>
+          <p>– Chống nước 30m đủ dùng</p>
+        </S.Guaranteed>
+        <S.ImageGuranteedWrapper>
+          <S.Image src="https://luxewatch.vn/wp-content/uploads/2018/08/63636-compressed.jpg"></S.Image>
+        </S.ImageGuranteedWrapper>
+        <Preview id={id} averageRate={averageRate} />
+      </S.ProductDetailWrapper>
+    </>
   );
 }
 

@@ -10,7 +10,7 @@ const initialState = {
     loading: false,
     error: null,
   },
-  registerData: {
+  changePassword: {
     loading: false,
     error: null,
   },
@@ -68,6 +68,20 @@ export const authSlice = createSlice({
       state.userInfo.loading = false;
       state.userInfo.error = error;
     },
+    // Change password
+    // register
+    changePasswordRequest: (state, action) => {
+      state.changePassword.loading = true;
+      state.changePassword.error = null;
+    },
+    changePasswordSuccess: (state, action) => {
+      state.changePassword.loading = false;
+    },
+    changePasswordFailure: (state, action) => {
+      const { error } = action.payload;
+      state.changePassword.loading = false;
+      state.changePassword.error = error;
+    },
   },
 });
 
@@ -82,6 +96,9 @@ export const {
   getUserInfoRequest,
   getUserInfoSuccess,
   logoutRequest,
+  changePasswordRequest,
+  changePasswordSuccess,
+  changePasswordFailure,
 } = authSlice.actions;
 
 export default authSlice.reducer;

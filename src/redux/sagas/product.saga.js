@@ -115,6 +115,7 @@ function* getProductDetailSaga(action) {
     const result = yield axios.get("http://localhost:4000/products", {
       params: {
         _expand: "category",
+        _embed: "favorites",
         id: id,
         isDelete: false,
       },

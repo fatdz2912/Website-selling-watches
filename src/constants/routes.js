@@ -9,7 +9,7 @@ export const ROUTES = {
     SUCCESSPAY: "/successpay",
     PROFILE: "profile",
     ADDRESS: "profile/address",
-    PASSWORD: "profile/change-password",
+    CHANGS_PASSWORD: "profile/change-password",
     USERINFO: "profile/user-info",
     ORDER_HISTORY: "profile/order-history",
     FAVORITE: "/profile/favorite-products",

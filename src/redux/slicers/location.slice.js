@@ -44,6 +44,7 @@ export const locationSlice = createSlice({
     },
     getDistrictListSuccess: (state, action) => {
       const { data } = action.payload;
+      state.districtList.data = data;
       state.districtList.loading = false;
       state.districtList.data = data;
     },
@@ -59,6 +60,7 @@ export const locationSlice = createSlice({
     },
     getWardListSuccess: (state, action) => {
       const { data } = action.payload;
+      state.wardList.data = data;
       state.wardList.loading = false;
       state.wardList.data = data;
     },

@@ -2,7 +2,9 @@ import { useMemo } from "react";
 import * as S from "./style";
 import { Link, useLocation } from "react-router-dom";
 import { PROFILE_MENU } from "layouts/ProfileLayout/constant";
+import { useSelector } from "react-redux";
 function Sidebar() {
+  const { userInfo } = useSelector((state) => state.auth);
   const { pathname } = useLocation();
   const renderProfileMenu = useMemo(() => {
     return PROFILE_MENU.map((item, index) => {
@@ -17,12 +19,12 @@ function Sidebar() {
     });
   }, [pathname]);
   return (
-    <S.SidebarWrapper xs={0} md={0} xl={5}>
+    <S.SidebarWrapper xs={24} sm={8} md={7} xl={5}>
       <S.UserWithAvatar>
         <S.AvatarWrapper>
-          <S.Avatar src="http://localhost:3000/static/media/avatar.c3977b10f8422357ca38.jpg"></S.Avatar>
+          <S.Avatar src={userInfo?.data?.avatar}></S.Avatar>
         </S.AvatarWrapper>
-        <S.Username>Ngovantri2912</S.Username>
+        <S.Username>{userInfo.data.fullName}</S.Username>
       </S.UserWithAvatar>
       {renderProfileMenu}
     </S.SidebarWrapper>

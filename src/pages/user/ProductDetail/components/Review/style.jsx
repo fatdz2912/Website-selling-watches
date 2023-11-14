@@ -2,14 +2,17 @@ import styled from "styled-components";
 import { Row, Col } from "antd";
 import { color } from "themes/color";
 export const ReviewWrapper = styled(Row)`
-  margin-top: 3em;
+  margin: 3em auto !important;
   width: 100%;
   color: ${color.primary};
-  background-color: #b3b1b1;
+  background-color: #f5f5f5;
   padding: 16px;
+  border-radius: 8px;
 `;
 export const ReviewHead = styled(Col)`
   font-size: 1.4rem;
+  font-weight: 700;
+  color: ${color.outstanding};
 `;
 export const Stars = styled.div`
   display: flex;
@@ -45,8 +48,9 @@ export const ReviewFormWrapper = styled.div`
 
 export const ReviewItemWrapper = styled.div`
   margin-top: 8px;
-  background-color: #f5f5f5;
-  border-radius: 16px;
+  background-color: #ccc;
+  border-radius: 8px;
+  padding: 8px;
 `;
 export const Title = styled.label``;
 export const Text = styled.label``;

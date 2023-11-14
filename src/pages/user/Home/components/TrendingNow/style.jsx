@@ -6,6 +6,7 @@ export const TrendingNowWrapper = styled.div`
   width: 100%;
   margin-top: 2vh;
   padding: 22px 18px;
+  background-color: ${color.primaryText};
   @media screen and (max-width: 768px) {
     margin-top: 2vh;
   }
@@ -43,10 +44,18 @@ export const Information = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-radius: 0.125rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.0625rem 0.125rem 0px;
+  box-shadow: -1px 0 1px #efeff0, 1px 0 1px #f0efef, 0 -1px 1px #f0efef;
+  border-left: 1px solid #e7e4e4;
+  border-right: 1px solid #e7e4e4;
+  border-bottom: 1px solid #e7e4e4;
   @media screen and (max-width: 1140px) and (min-width: 768px) {
     min-height: 200px;
+  }
+  @media screen and (max-width: 768px) and (min-width: 450px) {
+    min-height: 120px;
+  }
+  @media screen and (max-width: 375px) {
+    min-height: 150px;
   }
 `;
 export const Unit = styled.span`

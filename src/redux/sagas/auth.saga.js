@@ -11,7 +11,11 @@ import {
   getUserInfoFailure,
   getUserInfoRequest,
   getUserInfoSuccess,
+  changePasswordRequest,
+  changePasswordSuccess,
+  changePasswordFailure,
 } from "../slicers/auth.slice";
+import { notification } from "antd";
 
 function* loginSaga(action) {
   try {
@@ -50,8 +54,21 @@ function* getUserInfoSaga(action) {
     yield put(getUserInfoFailure({ error: "Lỗi" }));
   }
 }
+function* changePasswordSaga(action) {
+  try {
+    const { data, reset } = action.payload;
+    const result = yield axios.post("http://localhost:4000/login", data);
+    yield localStorage.setItem("accessToken", result.data.accessToken);
+    yield put(changePasswordSuccess({ data: result.data.user }));
+    yield reset();
+    notification.success({ message: "Thay đổi mật khẩu thành công" });
+  } catch (e) {
+    yield put(changePasswordFailure({ error: "Mật khẩu không đúng!" }));
+  }
+}
 export default function* categorySaga() {
   yield takeEvery(loginRequest, loginSaga);
   yield takeEvery(registerRequest, registerSaga);
   yield takeEvery(getUserInfoRequest, getUserInfoSaga);
+  yield takeEvery(changePasswordRequest, changePasswordSaga);
 }

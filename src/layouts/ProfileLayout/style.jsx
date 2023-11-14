@@ -5,13 +5,11 @@ import { color } from "themes/color";
 export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 `;
 export const NavMenu = styled(Col)`
   cursor: pointer;
 `;
 export const ProfileMainWrapper = styled(Row)`
-  background-color: ${color.primaryText};
   max-width: 1200px;
   width: 95%;
   flex: 1;
@@ -21,5 +19,4 @@ export const ProfileMainWrapper = styled(Row)`
 
 export const ProfileMainContainer = styled(Col)`
   width: 100%;
-  padding: 16px;
 `;

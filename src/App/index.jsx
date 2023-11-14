@@ -19,6 +19,9 @@ import UserInfo from "pages/user/UserInfo";
 import Cart from "pages/user/Cart";
 import Checkout from "pages/user/Checkout";
 import OrderHistories from "pages/user/OrderHistory";
+import Address from "pages/user/Address";
+import ChangePassword from "pages/user/ChangePassword";
+import Favorite from "pages/user/Favorite";
 
 import Login from "pages/Login";
 import Register from "pages/Register";
@@ -63,6 +66,12 @@ function App() {
             element={<Navigate to={ROUTES.USER.USERINFO} />}
           />
           <Route path={ROUTES.USER.USERINFO} element={<UserInfo />} />
+          <Route path={ROUTES.USER.ADDRESS} element={<Address />} />
+          <Route
+            path={ROUTES.USER.CHANGS_PASSWORD}
+            element={<ChangePassword />}
+          />
+          <Route path={ROUTES.USER.FAVORITE} element={<Favorite />} />
         </Route>
       </Route>
       <Route element={<AdminLayout />}>
