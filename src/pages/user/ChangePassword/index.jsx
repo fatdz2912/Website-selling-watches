@@ -13,6 +13,13 @@ function ChangsPassword() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    document.title = "Change Password Page";
+  }, []);
+
+  useEffect(() => {
     if (changePassword.error) {
       changePasswordForm.setFields([
         {
@@ -111,7 +118,12 @@ function ChangsPassword() {
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" block>
+            <Button
+              loading={changePassword.loading}
+              type="primary"
+              htmlType="submit"
+              block
+            >
               Thay đổi
             </Button>
           </Form.Item>

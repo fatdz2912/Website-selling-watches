@@ -13,6 +13,9 @@ function OrderHistories() {
   const { userInfo } = useSelector((state) => state.auth);
   const { orderList } = useSelector((state) => state.order);
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "Order History Page";
     if (userInfo.data.id) {
       dispatch(getOrderListRequest({ userId: userInfo.data.id }));

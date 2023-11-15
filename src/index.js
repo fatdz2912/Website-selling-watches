@@ -19,6 +19,12 @@ root.render(
             colorPrimary: "#064074",
             borderRadius: 4,
           },
+          components: {
+            Table: {
+              headerBg: "#ADD8E6",
+              headerSplitColor: "#ADD8E6",
+            },
+          },
         }}
       >
         <App />

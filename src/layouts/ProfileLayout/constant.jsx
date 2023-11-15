@@ -27,7 +27,7 @@ export const PROFILE_MENU = [
     icon: <FaAddressCard />,
   },
   {
-    label: "Đổi mật khẩu",
+    label: "Thay đổi mật khẩu",
     path: "/profile/change-password",
     icon: <FaLock />,
   },

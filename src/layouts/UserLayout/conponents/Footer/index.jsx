@@ -1,28 +1,46 @@
 import { FaFacebook } from "react-icons/fa6";
 import * as S from "./style";
 import imageZalo from "./image/zalo.PNG";
+import { Link } from "react-router-dom";
+import { ROUTES } from "constants/routes";
 function Footer() {
   return (
     <S.FooterWrapper>
       <S.Footer justify={"space-between"} gutter={[32, 32]}>
         <S.Information xs={24} xl={8}>
-          <S.Heading>GENERAL INFORMATION</S.Heading>
-          <S.DESC>About</S.DESC>
-          <S.DESC>News</S.DESC>
-          <S.DESC>Delivery and payment</S.DESC>
-          <S.DESC>Contact</S.DESC>
+          <S.Heading>THÔNG TIN CHUNG</S.Heading>
+          <Link to={ROUTES.USER.ABOUT}>
+            <S.DESC>Giới thiệu</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.NEWS}>
+            <S.DESC>Tin tức</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.DELIVERY_PAYMENT}>
+            <S.DESC>Giao hàng và thanh toán</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.CONTACT}>
+            <S.DESC>Liên hệ</S.DESC>
+          </Link>
         </S.Information>
         <S.Information xs={24} xl={8}>
-          <S.Heading>CUSTOMER SUPPORT</S.Heading>
-          <S.DESC>General policies and regulations</S.DESC>
-          <S.DESC>Policy maintenance</S.DESC>
-          <S.DESC>Shipping policy</S.DESC>
-          <S.DESC>Privacy Policy</S.DESC>
+          <S.Heading>HỖ TRỢ KHÁCH HÀNG</S.Heading>
+          <Link to={ROUTES.USER.GENEGAL}>
+            <S.DESC>Chính sách & Quy định chung</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.MAINTENANCE}>
+            <S.DESC>Chính sách bảo hành</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.SHIPPING_POLICY}>
+            <S.DESC>Chính sách vận chuyển</S.DESC>
+          </Link>
+          <Link to={ROUTES.USER.PRIVACY_POLICY}>
+            <S.DESC>Chính sách bảo mật</S.DESC>
+          </Link>
         </S.Information>
         <S.Information xs={24} xl={8}>
           <S.Heading>CONNECT</S.Heading>
           <S.ConnectFB>
-            <FaFacebook size={30} color="blue" />
+            <FaFacebook size={30} />
             <span>Fanpage Facebook</span>
           </S.ConnectFB>
           <S.ConnectZalo>

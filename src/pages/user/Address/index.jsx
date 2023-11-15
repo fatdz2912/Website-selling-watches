@@ -24,6 +24,9 @@ function Address() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "Address page";
     dispatch(getAddressListRequest({ userId: userInfo?.data?.id }));
   }, []);

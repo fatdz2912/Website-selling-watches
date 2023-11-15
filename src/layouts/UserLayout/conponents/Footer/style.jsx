@@ -20,6 +20,7 @@ export const Heading = styled.h3`
   text-align: center;
 `;
 export const DESC = styled.div`
+  color: ${color.primaryText};
   margin-top: 0.5em;
   &:hover {
     text-decoration: underline;

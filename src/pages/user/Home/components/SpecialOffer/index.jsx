@@ -17,6 +17,9 @@ function SpecialOffer() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     dispatch(
       getDiscountProductListRequest({
         limit: PRODUCT_DISCOUNT,

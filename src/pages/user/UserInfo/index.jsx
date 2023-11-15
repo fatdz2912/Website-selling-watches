@@ -11,6 +11,9 @@ function Profile() {
   const atIndex = userInfo?.data?.email.indexOf("@");
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "User Information Page";
   }, []);
   return (

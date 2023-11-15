@@ -54,6 +54,9 @@ function Checkout() {
   );
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "Checkout Page";
     dispatch(getCityListRequest());
     dispatch(getAddressDefaultRequest());

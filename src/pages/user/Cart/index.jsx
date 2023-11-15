@@ -20,6 +20,9 @@ function CartPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "Cart Page";
   }, []);
 

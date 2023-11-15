@@ -36,6 +36,9 @@ function ProductList() {
   const navigate = useNavigate();
   const { search } = useLocation();
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "ProductList Page";
     dispatch(getCategoryListRequest());
   }, []);

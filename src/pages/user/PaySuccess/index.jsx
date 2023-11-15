@@ -3,8 +3,15 @@ import { FaCheckCircle } from "react-icons/fa";
 import * as S from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "constants/routes";
+import { useEffect } from "react";
 
 function Successpay() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    document.title = "Successpay Page";
+  }, []);
   const navigate = useNavigate();
   return (
     <S.SuccessPayWrapper>

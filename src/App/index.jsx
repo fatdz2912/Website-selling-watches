@@ -22,6 +22,13 @@ import OrderHistories from "pages/user/OrderHistory";
 import Address from "pages/user/Address";
 import ChangePassword from "pages/user/ChangePassword";
 import Favorite from "pages/user/Favorite";
+import About from "pages/user/About";
+import DeliveryPayment from "pages/user/DeliveryPayment";
+import Maintenance from "pages/user/Maintenance";
+import ShippingPolicy from "pages/user/ShippingPolicy";
+import Genegal from "pages/user/Genegal";
+import PrivaryPolicy from "pages/user/PrivacyPolicy";
+import News from "pages/user/News";
 
 import Login from "pages/Login";
 import Register from "pages/Register";
@@ -56,6 +63,21 @@ function App() {
         <Route path={ROUTES.USER.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={ROUTES.USER.CART} element={<Cart />} />
         <Route path={ROUTES.USER.CHECKOUT} element={<Checkout />} />
+        <Route path={ROUTES.USER.ABOUT} element={<About />} />
+        <Route path={ROUTES.USER.NEWS} element={<News />} />
+        <Route path={ROUTES.USER.GENEGAL} element={<Genegal />} />
+        <Route path={ROUTES.USER.MAINTENANCE} element={<Maintenance />} />
+        <Route path={ROUTES.USER.PRIVACY_POLICY} element={<PrivaryPolicy />} />
+        <Route
+          path={ROUTES.USER.DELIVERY_PAYMENT}
+          element={<DeliveryPayment />}
+        />
+
+        <Route
+          path={ROUTES.USER.SHIPPING_POLICY}
+          element={<ShippingPolicy />}
+        />
+
         <Route element={<ProfileLayout />}>
           <Route
             path={ROUTES.USER.ORDER_HISTORY}
