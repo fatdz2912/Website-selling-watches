@@ -112,7 +112,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             }}
             isHiddenAngleUp={isHiddenAngleUp}
           >
-            <FaAngleUp size={60} color={color.outstanding} />
+            <FaAngleUp size={60} color={color.primary} />
           </S.AngleUp>
           <S.HeaderTopLeft sm={24} xs={24} md={18}>
             <S.HeaderDiscount>
@@ -171,7 +171,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         <S.SearchColumn sm={0} xs={0} md={0} xl={15}>
           <S.InputSearch
             prefix={<FaSearchengin size={25} />}
-            placeholder="Search for product or brands"
+            placeholder="Tìm kiếm sản phẩm hoặc thương hiệu "
             onChange={(e) => setSearchKey(e.target.value)}
             onKeyDown={(e) => handleSearchKeyWord(e)}
             value={searchKey}

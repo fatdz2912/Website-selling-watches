@@ -6,12 +6,12 @@ function Sidebar({ isShowSidebar }) {
   const { pathname } = useLocation();
   const renderSidebar = [
     {
-      label: "Quản lý sản phẩm",
-      path: ROUTES.ADMIN.PRODUCT_MANAGER,
+      label: "Dashboard",
+      path: ROUTES.ADMIN.DASHBOARD,
     },
     {
-      label: "Quản lý người dùng",
-      path: ROUTES.ADMIN.USER_LIST,
+      label: "Quản lý sản phẩm",
+      path: ROUTES.ADMIN.PRODUCT_MANAGER,
     },
   ];
   return (

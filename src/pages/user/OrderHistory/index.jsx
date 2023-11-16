@@ -27,19 +27,13 @@ function OrderHistories() {
       title: "Mã đơn hàng",
       dataIndex: "uuid",
       key: "uuid",
-      render: (_, item) => `${item.orderDetails[0].uuid}`,
+      render: (_, item) => `${item.orderDetails[0].uuid.toUpperCase()}`,
     },
     {
       title: "Số lượng sản phẩm",
       dataIndex: "orderDetails",
       key: "orderDetails",
       render: (orderDetails) => `${orderDetails.length} sản phẩm`,
-    },
-    {
-      title: "Tổng tiền",
-      dataIndex: "totalPrice",
-      key: "totalPrice",
-      render: (totalPrice, item) => `${totalPrice.toLocaleString()} VND`,
     },
     {
       title: "Ngày đặt hàng",
@@ -53,6 +47,12 @@ function OrderHistories() {
       key: "address",
       render: (address, item) =>
         `${address}, ${item?.wardName}, ${item?.districtName}, ${item?.cityName}`,
+    },
+    {
+      title: "Tổng tiền",
+      dataIndex: "totalPrice",
+      key: "totalPrice",
+      render: (totalPrice, item) => `${totalPrice.toLocaleString()} VNĐ`,
     },
   ];
   return (

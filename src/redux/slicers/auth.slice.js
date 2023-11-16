@@ -10,6 +10,10 @@ const initialState = {
     loading: false,
     error: null,
   },
+  registerData: {
+    loading: false,
+    error: null,
+  },
   changePassword: {
     loading: false,
     error: null,

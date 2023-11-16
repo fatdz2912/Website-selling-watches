@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Row, Col, Rate } from "antd";
 import { color } from "themes/color";
-export const TrendingNowWrapper = styled.div`
+export const SearchTopWrapper = styled.div`
   border-radius: 8px;
   width: 100%;
   margin-top: 2vh;
@@ -11,16 +11,16 @@ export const TrendingNowWrapper = styled.div`
     margin-top: 2vh;
   }
 `;
-export const HeadingTrendingNow = styled.div`
+export const HeadingSearchTop = styled.div`
   width: 100%;
   text-align: center;
   color: ${color.outstanding};
 `;
-export const TrendingNowList = styled(Row)`
+export const SearchTopList = styled(Row)`
   display: flex !important;
   margin: 5vh 0 0 !important;
 `;
-export const TrendingNowsItem = styled(Col)`
+export const SearchTopsItem = styled(Col)`
   display: flex;
   flex-direction: column;
   align-items: center;

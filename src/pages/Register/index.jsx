@@ -17,7 +17,7 @@ function Register() {
   }, []);
 
   useEffect(() => {
-    if (registerData.error) {
+    if (registerData?.error) {
       registerForm.setFields([
         {
           name: "email",
@@ -25,7 +25,7 @@ function Register() {
         },
       ]);
     }
-  }, [registerData.error]);
+  }, [registerData?.error]);
 
   const handleSubmit = (values) => {
     const { confirm, ...rest } = values;
@@ -35,7 +35,7 @@ function Register() {
           ...rest,
           role: "user",
           avatar:
-            "http://localhost:3000/static/media/avatar.c3977b10f8422357ca38.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
         },
         callback: () => navigate(ROUTES.LOGIN),
       })
@@ -157,7 +157,7 @@ function Register() {
                 }}
               >
                 <Button
-                  loading={registerData.loading}
+                  loading={registerData?.loading}
                   type="primary"
                   htmlType="submit"
                   block

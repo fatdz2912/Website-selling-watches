@@ -8,19 +8,26 @@ const SidebarWrapper = styled.ul`
   background-color: ${color.primary};
   transition: all 0.3s;
   height: 100%;
+  border-right: 1px solid ${color.primary};
 `;
 const SidebarItem = styled.li`
-  color: ${color.primaryText};
+  background-color: ${color.background_Color};
+  color: #000;
+
   &:hover {
-    background-color: #90de90;
-    color: #fff;
+    background-color: #7272f4;
+    color: #000;
   }
   ${({ active }) =>
     active &&
     css`
-      color: ${color.primaryText};
+      color: #fff;
+      background-color: #2b2bc9;
       border-right: 5px solid red;
-      background-color: #05a005;
+      &:hover {
+        color: ${color.primaryText};
+        background-color: #1d1d8b;
+      }
     `}
 `;
 export { SidebarWrapper, SidebarItem };

@@ -16,7 +16,7 @@ import {
   Table,
   Breadcrumb,
 } from "antd";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaShoppingCart } from "react-icons/fa";
 
 import { ROUTES } from "constants/routes";
 
@@ -232,6 +232,17 @@ function Checkout() {
               </Link>
             ),
           },
+          {
+            title: (
+              <Link to={ROUTES.USER.CART}>
+                <Space>
+                  <FaShoppingCart />
+                  <span>Giỏ hàng</span>
+                </Space>
+              </Link>
+            ),
+          },
+
           {
             title: "Thanh Toán",
           },

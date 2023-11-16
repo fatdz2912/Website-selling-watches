@@ -5,8 +5,8 @@ import { Row, Col, Input, Modal, Card } from "antd";
 const primaryText = color.primaryText;
 const primary = color.primary;
 export const HeaderWrapper = styled.div`
-  box-shadow: 0 0 0 1px ${color.primary};
   background-color: ${color.primaryText};
+  box-shadow: 0 1px #ccc;
 `;
 export const HeaderTopWrapper = styled.div`
   background-color: ${color.primary};

@@ -1,4 +1,13 @@
-import { Button, InputNumber, Row, Col, Card, Space, Breadcrumb } from "antd";
+import {
+  Button,
+  InputNumber,
+  Row,
+  Col,
+  Card,
+  Space,
+  Breadcrumb,
+  Skeleton,
+} from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
@@ -65,7 +74,7 @@ function CartPage() {
       dataIndex: "currentPrice",
       key: "currentPrice",
       render: (_, item) => (
-        <S.CurrentPrice discount={item.discount}>
+        <S.CurrentPrice style={{ display: "flex" }} discount={item.discount}>
           {item.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
         </S.CurrentPrice>
       ),

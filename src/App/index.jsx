@@ -29,6 +29,7 @@ import ShippingPolicy from "pages/user/ShippingPolicy";
 import Genegal from "pages/user/Genegal";
 import PrivaryPolicy from "pages/user/PrivacyPolicy";
 import News from "pages/user/News";
+import Contact from "pages/user/Contact";
 
 import Login from "pages/Login";
 import Register from "pages/Register";
@@ -68,6 +69,7 @@ function App() {
         <Route path={ROUTES.USER.GENEGAL} element={<Genegal />} />
         <Route path={ROUTES.USER.MAINTENANCE} element={<Maintenance />} />
         <Route path={ROUTES.USER.PRIVACY_POLICY} element={<PrivaryPolicy />} />
+        <Route path={ROUTES.USER.CONTACT} element={<Contact />} />
         <Route
           path={ROUTES.USER.DELIVERY_PAYMENT}
           element={<DeliveryPayment />}

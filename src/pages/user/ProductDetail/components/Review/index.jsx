@@ -79,7 +79,10 @@ function Review({ id, averageRate }) {
               name="comment"
               rules={[{ required: true, message: "Nhận xét là bắt buộc" }]}
             >
-              <Input.TextArea />
+              <Input.TextArea
+                placeholder="Nhận xét của bạn về sản phẩm này"
+                rows={4}
+              />
             </Form.Item>
             <Button type="primary" htmlType="submit" block>
               Gửi

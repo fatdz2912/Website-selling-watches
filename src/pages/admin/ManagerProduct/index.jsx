@@ -35,6 +35,7 @@ function ProductManager() {
   const { categoryList } = useSelector((state) => state.category);
   const dispatch = useDispatch();
   useEffect(() => {
+    document.title = "Product Manager";
     dispatch(
       getProductListRequest({
         page: 1,

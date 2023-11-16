@@ -1,10 +1,13 @@
-import { Button, Col, Row, Space, Rate, Breadcrumb } from "antd";
+import { Button, Col, Row, Space, Rate, Breadcrumb, notification } from "antd";
 import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { favoriteProductRequest } from "redux/slicers/favorite.slice";
+import {
+  favoriteProductRequest,
+  unFavoriteProductRequest,
+} from "redux/slicers/favorite.slice";
 import { updateProductBuy } from "redux/slicers/cart.slice";
 
 import { ROUTES } from "constants/routes";
@@ -30,12 +33,13 @@ function Product({
 
   const { productDetail } = useSelector((state) => state.product);
   const { userInfo } = useSelector((state) => state.auth);
+
   const isFavorite = useMemo(
     () =>
-      productDetail?.data?.favorites?.some(
+      productDetail.data.favorites?.some(
         (item) => item.userId === userInfo.data.id
       ),
-    [productDetail.data?.favorites, userInfo?.data?.id]
+    [productDetail.data.favorites, userInfo.data.id]
   );
   const handleBuyNow = () => {
     const selectedRows = [{ quantity, name, currentPrice, productId, image }];
@@ -45,17 +49,29 @@ function Product({
   const handleToggleFavorite = () => {
     if (userInfo.data.id) {
       if (isFavorite) {
-        console.log("Hãy un favorite");
+        const favoriteData = productDetail.data.favorites?.find(
+          (item) => item.userId === userInfo.data.id
+        );
+        dispatch(
+          unFavoriteProductRequest({
+            id: favoriteData.id,
+          })
+        );
       } else {
         dispatch(
           favoriteProductRequest({
-            userId: userInfo?.data?.id,
-            productId: productDetail?.data?.id,
+            productId: productDetail.data.id,
+            userId: userInfo.data.id,
           })
         );
       }
+    } else {
+      notification.error({
+        message: "Vui lòng đăng nhập để thực hiện chức năng này!",
+      });
     }
   };
+  useEffect(() => {}, [isFavorite]);
   return (
     <S.ProductDetail gutter={[16, 16]}>
       <Col xs={24} sm={24} md={24} lg={14}>

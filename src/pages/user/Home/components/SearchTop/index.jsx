@@ -1,42 +1,35 @@
-import { Button, Carousel, Skeleton, Space } from "antd";
-import { useEffect, useMemo } from "react";
-import qs from "qs";
-import { Link, generatePath, useNavigate } from "react-router-dom";
-import { PRODUCT_DISCOUNT } from "constants/paging";
-import { getDiscountProductListRequest } from "redux/slicers/product.slice";
-
+import { Carousel, Skeleton, Space } from "antd";
+import { useMemo } from "react";
 import * as S from "./style";
-import { ROUTES } from "constants/routes";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-function SpecialOffer() {
-  const { productDiscountList } = useSelector((state) => state.product);
-  const { data, loading } = productDiscountList;
+import { getProductListRequest } from "redux/slicers/product.slice";
+import { PRODUCT_DISCOUNT } from "constants/paging";
+import { Link, generatePath } from "react-router-dom";
+import { ROUTES } from "constants/routes";
 
-  const groupSpecialOffer = [];
-  const navigate = useNavigate();
+function SearchTop() {
   const dispatch = useDispatch();
+  const { productList } = useSelector((state) => state.product);
+  const { data, loading } = productList;
+
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    // });
     dispatch(
-      getDiscountProductListRequest({
+      getProductListRequest({
         limit: PRODUCT_DISCOUNT,
-        discountOrder: "desc",
       })
     );
   }, []);
-  // Giảm giá sốc
+  const groupSearchTop = [];
   for (let i = 0; i < data.length; i += 4) {
-    groupSpecialOffer.push(data.slice(i, i + 4));
+    groupSearchTop.push(data.slice(i, i + 4));
   }
-
-  const renderSpecialOffer = useMemo(() => {
+  const renderSearchTop = useMemo(() => {
     if (loading) {
       return (
-        <S.DiscountList gutter={[16, 16]}>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
+        <S.SearchTopList gutter={[16, 16]}>
+          <S.SearchTopsItem md={6} sm={12} xs={12}>
             <Skeleton.Image style={{ width: "120px" }} active />
             <br />
             <br />
@@ -51,8 +44,8 @@ function SpecialOffer() {
               <Skeleton.Button active />
               <Skeleton.Button active />
             </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
+          </S.SearchTopsItem>
+          <S.SearchTopsItem md={6} sm={12} xs={12}>
             <Skeleton.Image style={{ width: "120px" }} active />
             <br />
             <br />
@@ -67,8 +60,8 @@ function SpecialOffer() {
               <Skeleton.Button active />
               <Skeleton.Button active />
             </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
+          </S.SearchTopsItem>
+          <S.SearchTopsItem md={6} sm={12} xs={12}>
             <Skeleton.Image style={{ width: "120px" }} active />
             <br />
             <br />
@@ -83,8 +76,8 @@ function SpecialOffer() {
               <Skeleton.Button active />
               <Skeleton.Button active />
             </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
+          </S.SearchTopsItem>
+          <S.SearchTopsItem md={6} sm={12} xs={12}>
             <Skeleton.Image style={{ width: "120px" }} active />
             <br />
             <br />
@@ -99,16 +92,20 @@ function SpecialOffer() {
               <Skeleton.Button active />
               <Skeleton.Button active />
             </Space>
-          </S.ProductDiscountItem>
-        </S.DiscountList>
+          </S.SearchTopsItem>
+        </S.SearchTopList>
       );
     } else {
-      return groupSpecialOffer.map((group, index) => {
+      return groupSearchTop.map((group, index) => {
         return (
-          <S.DiscountList key={index} gutter={[16, 16]}>
+          <S.SearchTopList
+            key={index}
+            gutter={[20, 20]}
+            justify={"space-between"}
+          >
             {group.map((item, index) => {
               return (
-                <S.ProductDiscountItem md={6} sm={12} xs={12} key={index}>
+                <S.SearchTopsItem xs={12} sm={12} md={6} key={index}>
                   <Link
                     to={generatePath(ROUTES.USER.PRODUCT_DETAIL, {
                       id: item.id,
@@ -140,43 +137,30 @@ function SpecialOffer() {
                       </S.Price>
                     </S.Information>
                   </Link>
-                </S.ProductDiscountItem>
+                </S.SearchTopsItem>
               );
             })}
-          </S.DiscountList>
+          </S.SearchTopList>
         );
       });
     }
   }, [data, loading]);
-
   return (
-    <S.DiscountListWrapper>
-      <S.HeadingDiscountList>
-        <h1>KHUYẾN MÃI ĐẶC BIỆT</h1>
-        <Button
-          onClick={() =>
-            navigate({
-              pathname: ROUTES.USER.PRODUCT_LIST,
-              search: qs.stringify({
-                discountOrder: "desc",
-              }),
-            })
-          }
-        >
-          TẤT CẢ ƯU ĐÃI
-        </Button>
-      </S.HeadingDiscountList>
+    <S.SearchTopWrapper>
+      <S.HeadingSearchTop>
+        <h1>TÌM KIẾM HÀNG ĐẦU</h1>
+      </S.HeadingSearchTop>
       <Carousel
         style={{ width: "100% " }}
         autoplay
         dots
         dotPosition={"top"}
-        autoplaySpeed={3000}
+        autoplaySpeed={1500}
       >
-        {renderSpecialOffer}
+        {renderSearchTop}
       </Carousel>
-    </S.DiscountListWrapper>
+    </S.SearchTopWrapper>
   );
 }
 
-export default SpecialOffer;
+export default SearchTop;

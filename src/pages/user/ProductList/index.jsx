@@ -32,9 +32,15 @@ function ProductList() {
   });
   const { productList } = useSelector((state) => state.product);
   const { categoryList } = useSelector((state) => state.category);
+  const { data, loading } = productList;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
+
+  const searchParams = qs.parse(search, {
+    ignoreQueryPrefix: true,
+  });
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -42,6 +48,7 @@ function ProductList() {
     document.title = "ProductList Page";
     dispatch(getCategoryListRequest());
   }, []);
+
   useEffect(() => {
     const searchParams = qs.parse(search, {
       ignoreQueryPrefix: true,
@@ -64,6 +71,7 @@ function ProductList() {
       })
     );
   }, [search]);
+
   const handleFilter = (key, values) => {
     const newFilterParams = {
       ...filterParams,
@@ -101,44 +109,91 @@ function ProductList() {
       );
     });
   }, [categoryList.data]);
-  const renderProductList = productList.data.map((item, index) => (
-    <S.ProductItem xs={24} md={12} lg={6} key={index}>
-      <Link to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item?.id })}>
-        <S.Discount>
-          <p>-{item?.discount}%</p>
-        </S.Discount>
-        <S.FullBox>
-          <p>MỚI - FULLBOX 100%</p>
-        </S.FullBox>
-        <S.ImageWrapper>
-          <S.Image src={item?.image} alt={item?.name}></S.Image>
-        </S.ImageWrapper>
-        <S.Information>
-          <S.Name>
-            <S.Brands>{item?.category?.name.toUpperCase()}</S.Brands>
-            {item?.name}
-          </S.Name>
-          <S.Price>
-            <S.PriceRate disabled value={5}></S.PriceRate>
-            <S.OldPrice discount={item?.discount}>
-              {item?.oldPrice.toLocaleString()} <S.Unit>₫</S.Unit>
-            </S.OldPrice>
-            <S.CurrentPrice discount={item?.discount}>
-              {item?.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
-            </S.CurrentPrice>
-          </S.Price>
-        </S.Information>
-      </Link>
-    </S.ProductItem>
-  ));
+
+  const renderProductList = useMemo(() => {
+    if (loading) {
+      return data.map((_, index) => {
+        return (
+          <S.ProductItem xs={24} sm={12} md={12} lg={6} key={index}>
+            <Skeleton.Image style={{ width: "120px" }} active />
+            <br />
+            <br />
+            <Skeleton.Button active />
+            <br />
+            <br />
+            <Skeleton.Input block active />
+            <br />
+            <Skeleton.Input block active />
+            <br />
+            <Space>
+              <Skeleton.Button active />
+              <Skeleton.Button active />
+            </Space>
+          </S.ProductItem>
+        );
+      });
+    } else {
+      return data.map((item, index) => {
+        return (
+          <S.ProductItem xs={24} sm={12} md={12} lg={6} key={index}>
+            <Link
+              to={generatePath(ROUTES.USER.PRODUCT_DETAIL, { id: item?.id })}
+            >
+              <S.Discount>
+                <p>-{item?.discount}%</p>
+              </S.Discount>
+              <S.FullBox>
+                <p>MỚI - FULLBOX 100%</p>
+              </S.FullBox>
+              <S.ImageWrapper>
+                <S.Image src={item?.image} alt={item?.name}></S.Image>
+              </S.ImageWrapper>
+              <S.Information>
+                <S.Name>
+                  <S.Brands>{item?.category?.name.toUpperCase()}</S.Brands>
+                  {item?.name}
+                </S.Name>
+                <S.Price>
+                  <S.PriceRate disabled value={5}></S.PriceRate>
+                  <S.OldPrice discount={item?.discount}>
+                    {item?.oldPrice.toLocaleString()} <S.Unit>₫</S.Unit>
+                  </S.OldPrice>
+                  <S.CurrentPrice discount={item?.discount}>
+                    {item?.currentPrice.toLocaleString()} <S.Unit>₫</S.Unit>
+                  </S.CurrentPrice>
+                </S.Price>
+              </S.Information>
+            </Link>
+          </S.ProductItem>
+        );
+      });
+    }
+  }, [data, loading]);
 
   return (
     <>
       <Hero />
       <S.ProductListWrapper>
+        <Breadcrumb
+          items={[
+            {
+              title: (
+                <Link to={ROUTES.USER.HOME}>
+                  <Space>
+                    <FaHome />
+                    <span>Trang chủ</span>
+                  </Space>
+                </Link>
+              ),
+            },
+            {
+              title: "Danh sách sản phẩm",
+            },
+          ]}
+        />
         <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
           <Col lg={5} md={6} xs={24}>
-            <S.filterBrands title="Filter" size="small" bordered={false}>
+            <S.filterBrands title="Bộ lọc" size="small" bordered={false}>
               {categoryList.loading ? (
                 <Skeleton active />
               ) : (
@@ -154,40 +209,43 @@ function ProductList() {
           <Col lg={19} md={18} xs={24}>
             <Card size="small" bordered={false}>
               <Row gutter={[16, 16]}>
-                <Col md={16} sm={14} xs={0}>
-                  <Breadcrumb
-                    items={[
-                      {
-                        title: (
-                          <Link to={ROUTES.USER.HOME}>
-                            <Space>
-                              <FaHome />
-                              <span>Trang chủ</span>
-                            </Space>
-                          </Link>
-                        ),
-                      },
-                      {
-                        title: "Danh sách sản phẩm",
-                      },
-                    ]}
-                  />
+                <Col lg={20} md={24} sm={24} xs={24}>
+                  <S.Arrange>
+                    <p>Sắp xếp theo</p>
+                    <S.Relevancy
+                      onClick={() => handleFilter("sortOrder", undefined)}
+                      active={searchParams.sortOrder === undefined}
+                    >
+                      Liên Quan
+                    </S.Relevancy>
+                    <S.Ctime
+                      active={searchParams.sortOrder === "createdAt.desc"}
+                      onClick={() =>
+                        handleFilter("sortOrder", "createdAt.desc")
+                      }
+                    >
+                      Mới Nhất
+                    </S.Ctime>
+                    <S.SelectArrangePrice
+                      placeholder="Giá"
+                      bordered={false}
+                      active={
+                        searchParams.sortOrder === "currentPrice.asc" ||
+                        searchParams.sortOrder === "currentPrice.desc"
+                      }
+                      allowClear
+                      onChange={(value) => handleFilter("sortOrder", value)}
+                    >
+                      <S.SelectOptionArrangePrice value="currentPrice.asc">
+                        Giá tăng dần
+                      </S.SelectOptionArrangePrice>
+                      <S.SelectOptionArrangePrice value="currentPrice.desc">
+                        Giá giảm dần
+                      </S.SelectOptionArrangePrice>
+                    </S.SelectArrangePrice>
+                  </S.Arrange>
                 </Col>
-                <Col md={8} sm={10} xs={24} style={{ textAlign: "right" }}>
-                  <S.SelectArrange
-                    placeholder="Sắp xếp theo"
-                    bordered={false}
-                    allowClear
-                    onChange={(value) => handleFilter("sortOrder", value)}
-                    value={filterParams.sortOrder}
-                  >
-                    <Select.Option value="currentPrice.asc">
-                      Giá tăng dần
-                    </Select.Option>
-                    <Select.Option value="currentPrice.desc">
-                      Giá giảm dần
-                    </Select.Option>
-                  </S.SelectArrange>
+                <Col lg={4} md={0} sm={0} xs={0} style={{ textAlign: "right" }}>
                   <Segmented
                     options={[
                       {
@@ -203,14 +261,10 @@ function ProductList() {
                 </Col>
               </Row>
             </Card>
-            {productList.loading ? (
-              <Skeleton active />
-            ) : (
-              <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
-                {renderProductList}
-              </Row>
-            )}
-            {productList.data.length !== productList.meta.total && (
+            <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
+              {renderProductList}
+            </Row>
+            {data.length !== productList.meta.total && (
               <Row justify="center" style={{ marginTop: 16 }}>
                 <Button onClick={() => handleShowMore()}>Hiển thị thêm</Button>
               </Row>

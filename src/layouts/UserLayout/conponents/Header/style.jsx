@@ -11,6 +11,7 @@ export const HeaderWrapper = styled.div`
   top: 0;
   z-index: 3;
   padding-bottom: 16px;
+  box-shadow: 0 1px #ccc;
   @media screen and (min-width: 769px) and (max-width: 1199px) {
     height: 30vh;
   }

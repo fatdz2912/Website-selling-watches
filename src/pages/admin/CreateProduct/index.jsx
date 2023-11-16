@@ -1,16 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Button,
-  Form,
-  Input,
-  Select,
-  InputNumber,
-  Space,
-  Upload,
-  notification,
-} from "antd";
+import { Form, Input, Select, InputNumber, notification } from "antd";
 // import { PlusOutlined } from "@ant-design/icons";
 // import ReactQuill from "react-quill";
 import { v4 as uuid } from "uuid";

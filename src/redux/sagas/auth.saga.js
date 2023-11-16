@@ -1,6 +1,6 @@
 import { put, takeEvery } from "redux-saga/effects";
 import axios from "axios";
-
+import { notification } from "antd";
 import {
   loginRequest,
   loginSuccess,
@@ -15,8 +15,6 @@ import {
   changePasswordSuccess,
   changePasswordFailure,
 } from "../slicers/auth.slice";
-import { notification } from "antd";
-
 function* loginSaga(action) {
   try {
     const { data, callback } = action.payload;
@@ -34,6 +32,9 @@ function* registerSaga(action) {
     yield axios.post("http://localhost:4000/register", data);
     yield callback();
     yield put(registerSuccess());
+    notification.success({
+      message: "Đăng ký thành công!",
+    });
   } catch (e) {
     yield put(
       registerFailure({

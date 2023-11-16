@@ -7,7 +7,7 @@ import * as S from "./style";
 import { ROUTES } from "constants/routes";
 
 import SpecialOffer from "./components/SpecialOffer";
-import TrendingNow from "./components/TrendingNow";
+import TrendingNow from "./components/SearchTop";
 import Hero from "components/Hero";
 function Home() {
   const navigate = useNavigate();

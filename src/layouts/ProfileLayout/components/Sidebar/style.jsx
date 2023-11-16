@@ -17,7 +17,7 @@ export const ProfileMenuItem = styled.div`
   padding: 8px 16px;
   color: ${color.primary};
   transition: all 0.2s;
-
+  margin-top: 5px;
   &:hover {
     background-color: ${color.background_Color};
   }

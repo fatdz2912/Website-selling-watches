@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Row, Col, Select, Checkbox, Rate, Card } from "antd";
 import { color } from "themes/color";
 
@@ -12,7 +12,7 @@ export const ProductListWrapper = styled.div`
 // Filter
 export const filterBrands = styled(Card)`
   position: sticky;
-  top: 21vh;
+  top: 24vh;
   z-index: 1;
 `;
 export const BrandList = styled(Row)``;
@@ -21,9 +21,55 @@ export const CheckBoxFilter = styled(Checkbox)`
   font-size: 1.1rem;
 `;
 // SelectArange
-export const SelectArrange = styled(Select)`
-  width: 130px;
-  font-size: 1.2rem;
+export const SelectArrangePrice = styled(Select)`
+  width: 160px;
+  background-color: #f5f5f5;
+  display: block;
+  height: 37px;
+
+  ${({ active }) =>
+    active &&
+    css`
+      &
+        > :where(
+          .css-dev-only-do-not-override-j19ufn
+        ).ant-select-single.ant-select-show-arrow
+        .ant-select-selection-item,
+      :where(
+          .css-dev-only-do-not-override-j19ufn
+        ).ant-select-single.ant-select-show-arrow
+        .ant-select-selection-placeholder {
+        color: red;
+      }
+    `}
+`;
+export const SelectOptionArrangePrice = styled(Select.Option)``;
+export const Arrange = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 16px;
+`;
+export const Relevancy = styled.span`
+  background-color: #f5f5f5;
+  padding: 8px;
+  ${({ active }) =>
+    active &&
+    css`
+      color: ${color.primaryText};
+      background-color: rgb(238, 77, 45);
+    `}
+`;
+export const Ctime = styled.span`
+  background-color: #f5f5f5;
+  padding: 8px;
+  ${({ active }) =>
+    active &&
+    css`
+      color: ${color.primaryText};
+      background-color: rgb(238, 77, 45);
+    `}
 `;
 // ProductList
 export const ProductList = styled(Row)`
@@ -99,6 +145,9 @@ export const Information = styled.div`
   @media screen and (max-width: 1140px) and (min-width: 768px) {
     min-height: 200px;
   }
+  @media screen and (max-width: 768px) {
+    min-height: 120px;
+  }
 `;
 export const Name = styled.div`
   text-align: center;
@@ -118,7 +167,13 @@ export const Price = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 1em;
+  gap: 0.5em;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    gap: 1em;
+  }
 `;
 export const OldPrice = styled.div`
   font-size: 1rem;

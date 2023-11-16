@@ -23,6 +23,30 @@
       "updatedAt": 1698830892505,
       "id": 2,
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s"
+    },
+    {
+      "email": "Guestt@gmail.com",
+      "password": "$2a$10$qRZubXmR4BJq2CvkVni.IOvx31QheLH2MPXI2P2HUjWyI6atXeD1q",
+      "fullName": "Guestt",
+      "agree": true,
+      "role": "user",
+      "avatar": "http://localhost:3000/static/media/avatar.c3977b10f8422357ca38.jpg",
+      "createdAt": 1700040342124,
+      "updatedAt": 1700040342124,
+      "isDelete": false,
+      "id": 3
+    },
+    {
+      "email": "dathao@gmail.com",
+      "password": "$2a$10$.cdTHg.mJGPqScL956los.xAGbIhmbtZOdbBp7GLuoEhkZ1joQ3h6",
+      "fullName": "Dạ Thảo",
+      "agree": true,
+      "role": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "createdAt": 1700041187310,
+      "updatedAt": 1700041187310,
+      "isDelete": false,
+      "id": 4
     }
   ],
   "reviews": [
@@ -95,6 +119,26 @@
       "isDelete": false,
       "updatedAt": 1699693907926,
       "id": 7
+    },
+    {
+      "rate": 0,
+      "comment": "Vừa tay, giá hơi đắt nhưng rất đẹp",
+      "userId": 4,
+      "productId": "1",
+      "createdAt": 1700041252686,
+      "updatedAt": 1700041252686,
+      "isDelete": false,
+      "id": 8
+    },
+    {
+      "rate": 5,
+      "comment": "Đẹp, đeo vừa tay,giá thành khá rẻ",
+      "userId": 4,
+      "productId": "2",
+      "createdAt": 1700041475002,
+      "updatedAt": 1700041475002,
+      "isDelete": false,
+      "id": 9
     }
   ],
   "products": [
@@ -119,7 +163,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1699716259728
+      "updatedAt": 1700029890156
     },
     {
       "id": 2,
@@ -1415,6 +1459,55 @@
       "updatedAt": 1699969639674,
       "isDelete": false,
       "id": 10
+    },
+    {
+      "userId": 4,
+      "productId": 1,
+      "createdAt": 1700052058423,
+      "updatedAt": 1700052058423,
+      "isDelete": false,
+      "id": 11
+    },
+    {
+      "userId": 4,
+      "productId": "76ebbcb0-fcfb-4499-bf46-0d596b65bf98",
+      "createdAt": 1700052132891,
+      "updatedAt": 1700052132891,
+      "isDelete": false,
+      "id": 12
+    },
+    {
+      "userId": 4,
+      "productId": 28,
+      "createdAt": 1700052680000,
+      "updatedAt": 1700052680000,
+      "isDelete": false,
+      "id": 13
+    },
+    {
+      "userId": 4,
+      "productId": "7c6fb5a0-3978-4870-b86f-f7bbb8655260",
+      "createdAt": 1700052711528,
+      "updatedAt": 1700052711528,
+      "isDelete": false,
+      "id": 14
+    },
+    {
+      "userId": 4,
+      "productId": 24,
+      "createdAt": 1700053243346,
+      "updatedAt": 1700053243346,
+      "isDelete": false,
+      "id": 15
+    },
+
+    {
+      "productId": "22",
+      "userId": 4,
+      "createdAt": 1700054597755,
+      "updatedAt": 1700054597755,
+      "isDelete": false,
+      "id": 25
     }
   ],
   "addresses": [
@@ -1427,7 +1520,7 @@
       "addressDefault": false,
       "phone": "0377460815",
       "createdAt": 1699890680553,
-      "updatedAt": 1699969685622,
+      "updatedAt": 1700036807764,
       "isDelete": false,
       "id": 1,
       "specificAddress": "Tổ Phước Viên"
@@ -1441,7 +1534,7 @@
       "addressDefault": true,
       "phone": "0377460815",
       "createdAt": 1699891421602,
-      "updatedAt": 1699969685656,
+      "updatedAt": 1700036807836,
       "isDelete": false,
       "id": 3,
       "specificAddress": "435/53 Trần Cao Vân"
