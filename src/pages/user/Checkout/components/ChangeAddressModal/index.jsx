@@ -1,40 +1,25 @@
-import { Button } from "antd";
-import { useMemo } from "react";
-import { useState, useEffect } from "react";
+import { Button, Col, Modal, Row } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { useState, useMemo } from "react";
 
-import CreateModal from "../components/CreateModal";
-import UpdateModal from "../components/UpdateModal";
-
+import * as S from "./style";
 import {
   deleteAddressRequest,
   getAddressListRequest,
   updateAddressDefaultRequest,
 } from "redux/slicers/address.slice";
 
-import * as S from "./style";
-function Address() {
+import UpdateModal from "pages/user/components/UpdateModal";
+import CreateModal from "pages/user/components/CreateModal";
+function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
+  const [updateData, setUpdateData] = useState([]);
   const [isShowCreateAddress, setIsShowCreateAddress] = useState(false);
   const [isShowUpdateAddress, setIsShowUpdateAddress] = useState(false);
-  const [updateData, setUpdateData] = useState([]);
 
   const { addressList } = useSelector((state) => state.address);
   const { userInfo } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    // });
-    document.title = "Address page";
-    dispatch(
-      getAddressListRequest({
-        userId: userInfo?.data?.id,
-        addressDefaultId: userInfo.data?.addressDefaultId,
-      })
-    );
-  }, []);
   const renderAddressList = useMemo(() => {
     if (addressList.data[0] != null) {
       return addressList.data.map((item, index) => {
@@ -57,11 +42,7 @@ function Address() {
               <S.UpdateAndDeleteWrapper>
                 <S.Update
                   onClick={() => {
-                    setUpdateData(
-                      addressList.data.find(
-                        (addresItem) => addresItem.id === item.id
-                      )
-                    );
+                    setUpdateData(addressList.data[index]);
                     setIsShowUpdateAddress(true);
                   }}
                 >
@@ -94,7 +75,7 @@ function Address() {
                 }
                 disabled={index === 0}
               >
-                Thiết lập mặc định
+                Chọn
               </S.EstablishDefault>
             </S.Right>
           </S.AddressItem>
@@ -105,14 +86,28 @@ function Address() {
     }
   }, [addressList.data]);
   return (
-    <S.AddressWrapper>
-      <S.Heading>
-        <S.SubHeading>Địa chỉ của tôi</S.SubHeading>
-        <Button type="primary" onClick={() => setIsShowCreateAddress(true)}>
-          + Thêm
+    <Modal
+      title="Thêm địa chỉ"
+      open={isShowChangeAddress}
+      onCancel={() => setIsShowChangeAddress(false)}
+      footer={null}
+      width={700}
+    >
+      {renderAddressList}
+      <Button onClick={() => setIsShowCreateAddress(true)}>
+        Thêm địa chỉ mới
+      </Button>
+      <Row gutter={[16, 16]}>
+        <Button
+          onClick={() => {
+            setIsShowChangeAddress(false);
+            dispatch(getAddressListRequest({ userId: userInfo.data.id }));
+          }}
+        >
+          Xác Nhận
         </Button>
-      </S.Heading>
-      <S.AddressList>{renderAddressList}</S.AddressList>
+        <Button>Hủy</Button>
+      </Row>
       <CreateModal
         isShowCreateAddress={isShowCreateAddress}
         setIsShowCreateAddress={setIsShowCreateAddress}
@@ -123,8 +118,8 @@ function Address() {
         updateData={updateData}
         addressListData={addressList?.data}
       />
-    </S.AddressWrapper>
+    </Modal>
   );
 }
 
-export default Address;
+export default ChangeAddressModal;

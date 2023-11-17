@@ -22,11 +22,6 @@ const initialState = {
     loading: false,
     error: null,
   },
-  getDefaultAddress: {
-    data: {},
-    loading: false,
-    error: null,
-  },
   updateDefaultAddress: {
     loading: false,
     error: null,
@@ -43,11 +38,13 @@ export const addressSlice = createSlice({
       state.addressList.error = null;
     },
     getAddressListSuccess: (state, action) => {
-      const { data } = action.payload;
+      const { data, addressDefaultId } = action.payload;
       const newArray = [...data];
-      const index = data.findIndex((item) => item.addressDefault === true);
-      newArray.splice(index, 1);
-      newArray.unshift(data[index]);
+      const index = data.findIndex((item) => item.id === addressDefaultId);
+      if (index !== -1) {
+        newArray.splice(index, 1);
+        newArray.unshift(data[index]);
+      }
       state.addressList.loading = false;
       state.addressList.data = newArray;
     },
@@ -62,6 +59,8 @@ export const addressSlice = createSlice({
       state.createAddress.error = null;
     },
     createAddressSuccess: (state, action) => {
+      const { data } = action.payload;
+      state.addressList.data = [...state.addressList.data, data];
       state.createAddress.loading = false;
       state.createAddress.error = null;
     },
@@ -75,8 +74,18 @@ export const addressSlice = createSlice({
       state.updateAddress.error = null;
     },
     updateAddressSuccess: (state, action) => {
+      // const { data } = action.payload;
       state.updateAddress.loading = false;
       state.updateAddress.error = null;
+      // const index = state.addressList.data.findIndex(
+      //   (item) => item.id === data.id
+      // );
+      // const { id, ...rest } = data;
+      // const newUser = {
+      //   id: id,
+      //   ...rest,
+      // };
+      // state.addressList.data.splice(index, 1, newUser);
     },
     updateAddressFailure: (state, action) => {
       const { error } = action.payload;
@@ -114,19 +123,19 @@ export const addressSlice = createSlice({
 
     // getAddressDefault
     getAddressDefaultRequest: (state, action) => {
-      state.getDefaultAddress.loading = true;
-      state.updateDefaultAddress.error = null;
+      state.defaultAddress.loading = true;
+      state.defaultAddress.error = null;
     },
     getAddressDefaultSuccess: (state, action) => {
       const { data } = action.payload;
-      state.getDefaultAddress.data = data;
-      state.getDefaultAddress.loading = false;
-      state.getDefaultAddress.error = null;
+      state.defaultAddress.data = data;
+      state.defaultAddress.loading = false;
+      state.defaultAddress.error = null;
     },
     getAddressDefaultFailure: (state, action) => {
       const { error } = action.payload;
-      state.getDefaultAddress.loading = false;
-      state.getDefaultAddress.error = error;
+      state.defaultAddress.loading = false;
+      state.defaultAddress.error = error;
     },
   },
 });

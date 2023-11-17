@@ -101,6 +101,14 @@ function ProductList() {
     );
   };
   const renderCategoryList = useMemo(() => {
+    if (categoryList.loading) {
+      return [...Array(6)].map((_, index) => (
+        <S.BrandItem key={index} span={24}>
+          <br />
+          <Skeleton.Button active />
+        </S.BrandItem>
+      ));
+    }
     return categoryList.data.map((item) => {
       return (
         <S.BrandItem key={item.id} span={24}>
@@ -108,11 +116,11 @@ function ProductList() {
         </S.BrandItem>
       );
     });
-  }, [categoryList.data]);
+  }, [categoryList.data, categoryList.loading]);
 
   const renderProductList = useMemo(() => {
     if (loading) {
-      return data.map((_, index) => {
+      return [...Array(8)].map((_, index) => {
         return (
           <S.ProductItem xs={24} sm={12} md={12} lg={6} key={index}>
             <Skeleton.Image style={{ width: "120px" }} active />
@@ -194,16 +202,12 @@ function ProductList() {
         <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
           <Col lg={5} md={6} xs={24}>
             <S.filterBrands title="Bộ lọc" size="small" bordered={false}>
-              {categoryList.loading ? (
-                <Skeleton active />
-              ) : (
-                <S.CheckBoxFilter.Group
-                  onChange={(values) => handleFilter("categoryId", values)}
-                  value={filterParams.categoryId}
-                >
-                  <S.BrandList>{renderCategoryList}</S.BrandList>
-                </S.CheckBoxFilter.Group>
-              )}
+              <S.CheckBoxFilter.Group
+                onChange={(values) => handleFilter("categoryId", values)}
+                value={filterParams.categoryId}
+              >
+                <S.BrandList>{renderCategoryList}</S.BrandList>
+              </S.CheckBoxFilter.Group>
             </S.filterBrands>
           </Col>
           <Col lg={19} md={18} xs={24}>
@@ -226,23 +230,22 @@ function ProductList() {
                     >
                       Mới Nhất
                     </S.Ctime>
-                    <S.SelectArrangePrice
-                      placeholder="Giá"
-                      bordered={false}
-                      active={
-                        searchParams.sortOrder === "currentPrice.asc" ||
-                        searchParams.sortOrder === "currentPrice.desc"
+                    <S.PriceASC
+                      active={searchParams.sortOrder === "currentPrice.asc"}
+                      onClick={() =>
+                        handleFilter("sortOrder", "currentPrice.asc")
                       }
-                      allowClear
-                      onChange={(value) => handleFilter("sortOrder", value)}
                     >
-                      <S.SelectOptionArrangePrice value="currentPrice.asc">
-                        Giá tăng dần
-                      </S.SelectOptionArrangePrice>
-                      <S.SelectOptionArrangePrice value="currentPrice.desc">
-                        Giá giảm dần
-                      </S.SelectOptionArrangePrice>
-                    </S.SelectArrangePrice>
+                      Giá tăng dần
+                    </S.PriceASC>
+                    <S.PriceDESC
+                      active={searchParams.sortOrder === "currentPrice.desc"}
+                      onClick={() =>
+                        handleFilter("sortOrder", "currentPrice.desc")
+                      }
+                    >
+                      Giá giảm dần
+                    </S.PriceDESC>
                   </S.Arrange>
                 </Col>
                 <Col lg={4} md={0} sm={0} xs={0} style={{ textAlign: "right" }}>

@@ -76,6 +76,15 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   };
 
   const renderBrandsList = useMemo(() => {
+    if (categoryList.loading) {
+      return [...Array(6)].map((_, index) => {
+        return (
+          <S.MenuItem key={index}>
+            <Skeleton.Button active />;
+          </S.MenuItem>
+        );
+      });
+    }
     return categoryList.data.map((item, index) => (
       <S.MenuItem
         isHiddenMenu={isHiddenMenu}
@@ -93,7 +102,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         {item.name.toUpperCase()}
       </S.MenuItem>
     ));
-  }, [categoryList.data, isHiddenMenu]);
+  }, [categoryList.data, isHiddenMenu, categoryList.loading]);
 
   return (
     <S.HeaderWrapper>
@@ -226,16 +235,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             value={searchKey}
           ></S.InputSearch>
         </S.SearchColumn>
-        {categoryList.loading ? (
-          <Space>
-            <Skeleton.Button active />
-            <Skeleton.Button active />
-            <Skeleton.Button active />
-            <Skeleton.Button active />
-          </Space>
-        ) : (
-          <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
-        )}
+        <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
         <S.MenuModal
           open={!isHiddenMenu}
           onCancel={() => setIsHiddenMenu(true)}

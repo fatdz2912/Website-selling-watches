@@ -36,70 +36,26 @@ function SpecialOffer() {
     if (loading) {
       return (
         <S.DiscountList gutter={[16, 16]}>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.ProductDiscountItem>
-          <S.ProductDiscountItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.ProductDiscountItem>
+          {[
+            ...Array(4).map((_, index) => (
+              <S.ProductDiscountItem key={index} md={6} sm={12} xs={12}>
+                <Skeleton.Image style={{ width: "120px" }} active />
+                <br />
+                <br />
+                <Skeleton.Button active />
+                <br />
+                <br />
+                <Skeleton.Input block active />
+                <br />
+                <Skeleton.Input block active />
+                <br />
+                <Space>
+                  <Skeleton.Button active />
+                  <Skeleton.Button active />
+                </Space>
+              </S.ProductDiscountItem>
+            )),
+          ]}
         </S.DiscountList>
       );
     } else {

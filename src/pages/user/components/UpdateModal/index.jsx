@@ -1,68 +1,76 @@
 import { Button, Col, Form, Input, Modal, Radio, Row, Select } from "antd";
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import {
   getCityListRequest,
   getDistrictListRequest,
   getWardListRequest,
 } from "redux/slicers/location.slice";
-import {
-  createAddressRequest,
-  updateAddressRequest,
-  deleteAddressRequest,
-} from "redux/slicers/address.slice";
-function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
+import { updateAddressRequest } from "redux/slicers/address.slice";
+function UpdateModal({
+  isShowUpdateAddress,
+  setIsShowUpdateAddress,
+  updateData,
+  addressListData,
+}) {
+  const { userInfo } = useSelector((state) => state.auth);
   const [addressDefault, setAddressDefault] = useState(true);
   const { cityList, districtList, wardList } = useSelector(
     (state) => state.location
   );
-  const { userInfo } = useSelector((state) => state.auth);
 
-  const [createForm] = Form.useForm();
+  const [updateForm] = Form.useForm();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCityListRequest());
   }, []);
   useEffect(() => {
-    if (isShowCreateAddress) {
-      createForm.resetFields();
-    }
-  }, [isShowCreateAddress]);
+    const { cityName, districtName, wardName } = updateData;
+    const cityData = cityList.data.find((item) => item.name === cityName);
+    const districtData = districtList.data.find(
+      (item) => item.name === districtName
+    );
+    const wardData = wardList.data.find((item) => item.name === wardName);
+    dispatch(getDistrictListRequest({ cityCode: districtData?.code }));
+    dispatch(getWardListRequest({ districtCode: wardData?.code }));
 
-  const handleCreateAddress = (values) => {
-    const {
-      cityCode,
-      districtCode,
-      wardCode,
-      address,
-      phone,
-      name,
-      specificAddress,
-    } = values;
+    if (isShowUpdateAddress) {
+      updateForm.setFieldsValue({
+        name: updateData.name,
+        phone: updateData.phone,
+        specificAddress: updateData.specificAddress,
+        cityCode: cityData?.code,
+        districtCode: districtData?.code,
+        wardCode: wardData?.code,
+      });
+    }
+  }, [isShowUpdateAddress]);
+
+  const handleUpdateAddress = (values) => {
+    const address = addressListData.find((item) => item === updateData);
+    const { cityCode, districtCode, wardCode, ...rest } = values;
     const cityData = cityList.data.find((item) => item.code === cityCode);
     const districtData = districtList.data.find(
       (item) => item.code === districtCode
     );
     const wardData = wardList.data.find((item) => item.code === wardCode);
+
     dispatch(
-      createAddressRequest({
+      updateAddressRequest({
         data: {
-          name: name,
-          cityName: cityData?.name,
-          districtName: districtData?.name,
-          wardName: wardData?.name,
-          userId: userInfo.data.id,
-          addressDefault: addressDefault,
-          address: address,
-          phone: phone,
-          specificAddress: specificAddress,
+          cityName: cityData?.name || updateData.cityName,
+          districtName: districtData?.name || updateData.districtName,
+          wardName: wardData?.name || updateData.wardName,
+          ...rest,
+          id: address.id,
         },
+        addressDefault: addressDefault,
+        userId: userInfo?.data?.id,
       })
     );
-    setIsShowCreateAddress(false);
+    setIsShowUpdateAddress(false);
   };
   // render city
   const renderCityOptions = useMemo(() => {
@@ -73,7 +81,7 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
         </Select.Option>
       );
     });
-  }, [cityList.data]);
+  }, [cityList.data, updateData]);
 
   // render Disctrict
   const renderDistrictOptions = useMemo(() => {
@@ -84,7 +92,7 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
         </Select.Option>
       );
     });
-  }, [districtList.data]);
+  }, [districtList.data, updateData]);
 
   // render Ward
   const renderWardListOptions = useMemo(() => {
@@ -95,20 +103,20 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
         </Select.Option>
       );
     });
-  }, [wardList.data]);
+  }, [wardList.data, updateData]);
   return (
     <Modal
-      title="Thêm địa chỉ"
-      open={isShowCreateAddress}
-      onCancel={() => setIsShowCreateAddress(false)}
+      title="Cập nhật địa chỉ"
+      open={isShowUpdateAddress}
+      onCancel={() => setIsShowUpdateAddress(false)}
       footer={null}
       width={700}
     >
       <Form
-        form={createForm}
-        name="createUser"
+        form={updateForm}
+        name="UpdateAddress"
         layout="vertical"
-        onFinish={(values) => handleCreateAddress(values)}
+        onFinish={(values) => handleUpdateAddress(values)}
       >
         <Row gutter={[8, 8]}>
           <Col span={12}>
@@ -158,7 +166,7 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
                 placeholder="Chọn Tỉnh/Thành"
                 onChange={(value) => {
                   dispatch(getDistrictListRequest({ cityCode: value }));
-                  createForm.setFieldsValue({
+                  updateForm.setFieldsValue({
                     districtCode: undefined,
                     wardCode: undefined,
                   });
@@ -178,11 +186,11 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
                 placeholder="Chọn Quận/Huyện"
                 onChange={(value) => {
                   dispatch(getWardListRequest({ districtCode: value }));
-                  createForm.setFieldsValue({
+                  updateForm.setFieldsValue({
                     wardCode: undefined,
                   });
                 }}
-                disabled={!createForm.getFieldValue("cityCode")}
+                disabled={!updateForm.getFieldValue("cityCode")}
               >
                 {renderDistrictOptions}
               </Select>
@@ -196,7 +204,7 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
             >
               <Select
                 placeholder="Chọn Phường/Xã"
-                disabled={!createForm.getFieldValue("districtCode")}
+                disabled={!updateForm.getFieldValue("districtCode")}
               >
                 {renderWardListOptions}
               </Select>
@@ -217,10 +225,9 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
             </Form.Item>
           </Col>
           <Col span={24}>
-            <Form.Item label="Đặt làm địa chỉ mặc định:" name="addressDefault">
+            <Form.Item label="Đặt làm địa chỉ mặc định:">
               <Radio.Group
                 defaultValue={addressDefault}
-                value={addressDefault}
                 onChange={(e) => setAddressDefault(e.target.value)}
               >
                 <Radio value={true}>Có</Radio>
@@ -229,12 +236,12 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Button type="primary" block onClick={() => createForm.submit()}>
-              Thêm
+            <Button type="primary" block onClick={() => updateForm.submit()}>
+              Cập Nhật
             </Button>
           </Col>
           <Col span={12}>
-            <Button block onClick={() => setIsShowCreateAddress(false)}>
+            <Button block onClick={() => setIsShowUpdateAddress(false)}>
               Trở lại
             </Button>
           </Col>
@@ -244,4 +251,4 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
   );
 }
 
-export default CreateModal;
+export default UpdateModal;

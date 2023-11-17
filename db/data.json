@@ -10,7 +10,8 @@
       "isDelete": false,
       "updatedAt": 1698478445048,
       "id": 1,
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "addressDefaultId": null
     },
     {
       "email": "ngovantri1111@gmail.com",
@@ -20,9 +21,10 @@
       "role": "admin",
       "createdAt": 1698830892505,
       "isDelete": false,
-      "updatedAt": 1698830892505,
+      "updatedAt": 1700188805138,
       "id": 2,
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "addressDefaultId": 3
     },
     {
       "email": "Guestt@gmail.com",
@@ -46,7 +48,8 @@
       "createdAt": 1700041187310,
       "updatedAt": 1700041187310,
       "isDelete": false,
-      "id": 4
+      "id": 4,
+      "addressDefaultId": null
     }
   ],
   "reviews": [
@@ -1500,7 +1503,6 @@
       "isDelete": false,
       "id": 15
     },
-
     {
       "productId": "22",
       "userId": 4,
@@ -1508,36 +1510,67 @@
       "updatedAt": 1700054597755,
       "isDelete": false,
       "id": 25
+    },
+    {
+      "productId": 26,
+      "userId": 2,
+      "createdAt": 1700148871809,
+      "updatedAt": 1700148871809,
+      "isDelete": false,
+      "id": 26
     }
   ],
   "addresses": [
     {
-      "name": "Ngô Văn Trị",
-      "cityName": "Tỉnh Quảng Nam",
-      "districtName": "Huyện Nông Sơn",
-      "wardName": "Xã Quế Trung",
+      "name": "Dạ Thảo",
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Cẩm Lệ",
+      "wardName": "Phường Hòa Thọ Tây",
       "userId": 2,
-      "addressDefault": false,
-      "phone": "0377460815",
-      "createdAt": 1699890680553,
-      "updatedAt": 1700036807764,
+      "phone": "0912683524",
+      "specificAddress": "12123123",
+      "createdAt": 1700151362486,
+      "updatedAt": 1700188994516,
       "isDelete": false,
-      "id": 1,
-      "specificAddress": "Tổ Phước Viên"
+      "id": 2,
+      "cityCode": "48",
+      "districtCode": "495",
+      "wardCode": "20311",
+      "addressDefault": false
     },
     {
-      "name": "Ngô Văn Trị",
-      "cityName": "Thành phố Đà Nẵng",
-      "districtName": "Quận Thanh Khê",
-      "wardName": "Phường Xuân Hà",
+      "name": "trqqw",
+      "cityName": "Thành phố Hồ Chí Minh",
+      "districtName": "Quận Bắc Từ Liêm",
+      "wardName": "Phường Liên Mạc",
       "userId": 2,
-      "addressDefault": true,
-      "phone": "0377460815",
-      "createdAt": 1699891421602,
-      "updatedAt": 1700036807836,
+      "phone": "0906231723",
+      "specificAddress": "123312",
+      "createdAt": 1700151383972,
+      "updatedAt": 1700188994552,
       "isDelete": false,
       "id": 3,
-      "specificAddress": "435/53 Trần Cao Vân"
+      "addressDefault": false,
+      "cityCode": "79",
+      "districtCode": "771",
+      "wardCode": "27190"
+    },
+    {
+      "name": "aaaa",
+      "cityName": "Thành phố Cần Thơ",
+      "districtName": "Quận Ninh Kiều",
+      "wardName": "Phường An Hội",
+      "userId": 2,
+      "phone": "0905451221",
+      "specificAddress": "123213211",
+      "createdAt": 1700151429640,
+      "updatedAt": 1700188994600,
+      "isDelete": false,
+      "id": 4,
+      "addressDefault": true,
+      "cityCode": "92",
+      "districtCode": "916",
+      "wardCode": "31132"
     }
   ],
   "categories": [

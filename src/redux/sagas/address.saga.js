@@ -16,14 +16,11 @@ import {
   updateAddressDefaultRequest,
   updateAddressDefaultSuccess,
   updateAddressDefaultFailure,
-  getAddressDefaultRequest,
-  getAddressDefaultSuccess,
-  getAddressDefaultFailure,
 } from "../slicers/address.slice";
 
 function* getAddressListSaga(action) {
   try {
-    const { userId } = action.payload;
+    const { userId, addressDefaultId } = action.payload;
     const result = yield axios.get("http://localhost:4000/addresses", {
       params: {
         userId: userId,
@@ -31,38 +28,47 @@ function* getAddressListSaga(action) {
         _expand: "user",
       },
     });
-    yield put(getAddressListSuccess({ data: result.data }));
+    yield put(getAddressListSuccess({ data: result.data, addressDefaultId }));
   } catch (e) {
     yield put(getAddressListFailure({ error: "Lỗi" }));
   }
 }
 function* createAddressSaga(action) {
   try {
-    const { data } = action.payload;
+    const { data, quantityAddress, addressDefault } = action.payload;
     const result = yield axios.post("http://localhost:4000/addresses", data);
     yield put(
       createAddressSuccess({
         data: result?.data,
       })
     );
-    yield put(getAddressListRequest({ userId: result?.data.userId }));
+    if (quantityAddress === 0 || addressDefault) {
+      yield axios.patch(`http://localhost:4000/users/${data.userId}`, {
+        addressDefaultId: result.data.id,
+      });
+    }
   } catch (e) {
     yield put(createAddressFailure({ error: "Lỗi" }));
   }
 }
 function* updateAddressSaga(action) {
   try {
-    const { data } = action.payload;
+    const { data, addressDefault, userId } = action.payload;
     const result = yield axios.patch(
       `http://localhost:4000/addresses/${data.id}`,
       data
     );
+    if (addressDefault) {
+      yield axios.patch(`http://localhost:4000/users/${userId}`, {
+        addressDefaultId: result.data.id,
+      });
+    }
     yield put(
       updateAddressSuccess({
-        data: result?.data,
+        data: result.data,
       })
     );
-    yield put(getAddressListRequest({ userId: result?.data.userId }));
+    yield put(getAddressListRequest({ userId: userId }));
   } catch (e) {
     yield put(updateAddressFailure({ error: "Lỗi" }));
   }
@@ -77,18 +83,6 @@ function* deleteAddressSaga(action) {
     yield put(deleteAddressFailure({ error: "Lỗi" }));
   }
 }
-function* getAddressDefaultSaga(action) {
-  try {
-    const result = yield axios.get(`http://localhost:4000/addresses`, {
-      params: {
-        addressDefault: true,
-      },
-    });
-    yield put(getAddressDefaultSuccess({ data: result.data[0] }));
-  } catch (e) {
-    yield put(getAddressDefaultFailure({ error: "Lỗi" }));
-  }
-}
 function* updateAddressDefaultSaga(action) {
   try {
     const { id, userId, addressDataList } = action.payload;
@@ -101,9 +95,12 @@ function* updateAddressDefaultSaga(action) {
           }
         );
       } else {
-        yield axios.patch(`http://localhost:4000/addresses/${i + 1}`, {
-          addressDefault: false,
-        });
+        yield axios.patch(
+          `http://localhost:4000/addresses/${addressDataList[i].id}`,
+          {
+            addressDefault: false,
+          }
+        );
       }
     }
     yield put(updateAddressDefaultSuccess());
@@ -118,5 +115,4 @@ export default function* orderSaga() {
   yield takeEvery(updateAddressRequest, updateAddressSaga);
   yield takeEvery(deleteAddressRequest, deleteAddressSaga);
   yield takeEvery(updateAddressDefaultRequest, updateAddressDefaultSaga);
-  yield takeEvery(getAddressDefaultRequest, getAddressDefaultSaga);
 }

@@ -36,9 +36,11 @@ function Product({
 
   const isFavorite = useMemo(
     () =>
-      productDetail.data.favorites?.some(
-        (item) => item.userId === userInfo.data.id
-      ),
+      productDetail.data.favorites
+        ? productDetail.data.favorites.some(
+            (item) => item.userId === userInfo.data.id
+          )
+        : false,
     [productDetail.data.favorites, userInfo.data.id]
   );
   const handleBuyNow = () => {
@@ -71,7 +73,6 @@ function Product({
       });
     }
   };
-  useEffect(() => {}, [isFavorite]);
   return (
     <S.ProductDetail gutter={[16, 16]}>
       <Col xs={24} sm={24} md={24} lg={14}>

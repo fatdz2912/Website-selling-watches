@@ -2,6 +2,7 @@ import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
+import ChangeAddressDefaultModal from "./components/ChangeAddressModal";
 
 import {
   Form,
@@ -16,7 +17,7 @@ import {
   Table,
   Breadcrumb,
 } from "antd";
-import { FaHome, FaShoppingCart } from "react-icons/fa";
+import { FaHome, FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
 
 import { ROUTES } from "constants/routes";
 
@@ -26,68 +27,73 @@ import {
   getWardListRequest,
 } from "redux/slicers/location.slice";
 import { orderProductRequest } from "redux/slicers/order.slice";
-import {
-  getAddressListRequest,
-  getAddressDefaultRequest,
-} from "redux/slicers/address.slice";
+import { getAddressListRequest } from "redux/slicers/address.slice";
 
 import * as S from "./style";
 import { GUEST_ID } from "constants/guest";
+import { color } from "themes/color";
+import { useState } from "react";
 
 function Checkout() {
+  const [isShowChangeAddress, setIsShowChangeAddress] = useState(false);
+
   const [checkoutForm] = Form.useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { cityList, districtList, wardList } = useSelector(
-    (state) => state.location
+    (state) => state?.location
   );
   const { productBuyList } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
-  const { addressList, getDefaultAddress } = useSelector(
-    (state) => state?.address
-  );
-
+  const { addressList } = useSelector((state) => state?.address);
   const totalPrice = productBuyList.reduce(
     (total, item) => total + item.currentPrice * item.quantity,
     0
   );
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
+    // window.scrollTo({
+    //   top: 0,
+    // });
     document.title = "Checkout Page";
     dispatch(getCityListRequest());
-    dispatch(getAddressDefaultRequest());
     dispatch(getAddressListRequest({ userId: userInfo?.data?.id }));
   }, []);
 
   useEffect(() => {
-    if (getDefaultAddress.data) {
-      const { cityName, districtName, wardName, name, phone, specificAddress } =
-        getDefaultAddress.data;
-      const cityData = cityList.data.find((item) => item.name === cityName);
-      const districtData = districtList.data.find(
-        (item) => item.name === districtName
+    const defaultAddress = addressList.data.find(
+      (item) => item.id === userInfo?.data?.addressDefaultId
+    );
+    if (defaultAddress?.districtName) {
+      dispatch(getDistrictListRequest({ name: defaultAddress?.districtName }));
+    }
+    if (defaultAddress?.wardName) {
+      dispatch(getWardListRequest({ name: defaultAddress?.wardName }));
+    }
+    if (defaultAddress) {
+      const cityData = cityList.data.find(
+        (item) => item.name === defaultAddress.cityName
       );
-      const wardData = wardList.data.find((item) => item.name === wardName);
-
-      dispatch(getDistrictListRequest({ cityCode: districtData?.code }));
-      dispatch(getWardListRequest({ districtCode: wardData?.code }));
+      const districtData = districtList.data.find(
+        (item) => item.name === defaultAddress.districtName
+      );
+      const wardData = wardList.data.find(
+        (item) => item.name === defaultAddress.wardName
+      );
       if (userInfo.data.id) {
         checkoutForm.setFieldsValue({
-          fullName: name,
+          fullName: defaultAddress?.name,
           email: userInfo.data.email,
-          phoneNumber: phone,
-          specificAddress: specificAddress,
+          phoneNumber: defaultAddress?.phone,
+          specificAddress: defaultAddress?.specificAddress,
           cityCode: cityData?.code,
           districtCode: districtData?.code,
           wardCode: wardData?.code,
         });
       }
     }
-  }, [userInfo.data, getDefaultAddress.data]);
+  }, [userInfo.data, addressList.data]);
 
   const tableColumn = [
     {
@@ -285,7 +291,24 @@ function Checkout() {
                 <Row gutter={[16, 16]}>
                   <Col span={24}>
                     <S.SubHeading>II.THÔNG TIN KHÁCH HÀNG</S.SubHeading>
-                    <S.DefaultAddress>Chọn địa chỉ mặc định</S.DefaultAddress>
+                    {addressList?.data && (
+                      <S.Address>
+                        <h3>
+                          <FaMapMarkerAlt color={color.outstanding} /> Địa chỉ
+                          nhận hàng
+                        </h3>
+                        <S.ChangeDefaultAddress
+                          onClick={() => setIsShowChangeAddress(true)}
+                          type="primary"
+                        >
+                          Thay đổi
+                        </S.ChangeDefaultAddress>
+                        <ChangeAddressDefaultModal
+                          isShowChangeAddress={isShowChangeAddress}
+                          setIsShowChangeAddress={setIsShowChangeAddress}
+                        />
+                      </S.Address>
+                    )}
                     <Form.Item
                       label="Họ và tên"
                       name="fullName"

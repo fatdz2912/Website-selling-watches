@@ -29,70 +29,24 @@ function SearchTop() {
     if (loading) {
       return (
         <S.SearchTopList gutter={[16, 16]}>
-          <S.SearchTopsItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
+          {[...Array(4)].map((_, index) => (
+            <S.SearchTopsItem key={index} md={6} sm={12} xs={12}>
+              <Skeleton.Image style={{ width: "120px" }} active />
+              <br />
+              <br />
               <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.SearchTopsItem>
-          <S.SearchTopsItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.SearchTopsItem>
-          <S.SearchTopsItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.SearchTopsItem>
-          <S.SearchTopsItem md={6} sm={12} xs={12}>
-            <Skeleton.Image style={{ width: "120px" }} active />
-            <br />
-            <br />
-            <Skeleton.Button active />
-            <br />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Skeleton.Input block active />
-            <br />
-            <Space>
-              <Skeleton.Button active />
-              <Skeleton.Button active />
-            </Space>
-          </S.SearchTopsItem>
+              <br />
+              <br />
+              <Skeleton.Input block active />
+              <br />
+              <Skeleton.Input block active />
+              <br />
+              <Space>
+                <Skeleton.Button active />
+                <Skeleton.Button active />
+              </Space>
+            </S.SearchTopsItem>
+          ))}
         </S.SearchTopList>
       );
     } else {

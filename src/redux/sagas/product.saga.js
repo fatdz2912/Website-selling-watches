@@ -112,17 +112,16 @@ function* deleteProductSaga(action) {
 function* getProductDetailSaga(action) {
   try {
     const { id } = action.payload;
-    const result = yield axios.get("http://localhost:4000/products", {
+    const result = yield axios.get(`http://localhost:4000/products/${id}`, {
       params: {
         _expand: "category",
         _embed: "favorites",
-        id: id,
         isDelete: false,
       },
     });
     yield put(
       getProductDetailSuccess({
-        data: result.data[0],
+        data: result.data,
       })
     );
   } catch (e) {

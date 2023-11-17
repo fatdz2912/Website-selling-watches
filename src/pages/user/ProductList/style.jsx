@@ -71,6 +71,26 @@ export const Ctime = styled.span`
       background-color: rgb(238, 77, 45);
     `}
 `;
+export const PriceDESC = styled.span`
+  background-color: #f5f5f5;
+  padding: 8px;
+  ${({ active }) =>
+    active &&
+    css`
+      color: ${color.primaryText};
+      background-color: rgb(238, 77, 45);
+    `}
+`;
+export const PriceASC = styled.span`
+  background-color: #f5f5f5;
+  padding: 8px;
+  ${({ active }) =>
+    active &&
+    css`
+      color: ${color.primaryText};
+      background-color: rgb(238, 77, 45);
+    `}
+`;
 // ProductList
 export const ProductList = styled(Row)`
   display: flex !important;

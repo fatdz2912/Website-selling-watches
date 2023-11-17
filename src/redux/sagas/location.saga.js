@@ -23,12 +23,21 @@ function* getCityListSaga(action) {
 }
 function* getDistrictListSaga(action) {
   try {
-    const { cityCode } = action.payload;
-    const result = yield axios.get("http://localhost:4000/districts", {
-      params: {
-        parentcode: cityCode,
-      },
-    });
+    const { cityCode, name } = action.payload;
+    let result;
+    if (cityCode) {
+      result = yield axios.get("http://localhost:4000/districts", {
+        params: {
+          parentcode: cityCode,
+        },
+      });
+    } else {
+      result = yield axios.get("http://localhost:4000/districts", {
+        params: {
+          name: name,
+        },
+      });
+    }
     yield put(getDistrictListSuccess({ data: result.data }));
   } catch (e) {
     yield put(getDistrictListFailure({ error: "Lỗi" }));
@@ -36,12 +45,21 @@ function* getDistrictListSaga(action) {
 }
 function* getWardListSaga(action) {
   try {
-    const { districtCode } = action.payload;
-    const result = yield axios.get("http://localhost:4000/wards", {
-      params: {
-        parentcode: districtCode,
-      },
-    });
+    const { districtCode, name } = action.payload;
+    let result;
+    if (districtCode) {
+      result = yield axios.get("http://localhost:4000/wards", {
+        params: {
+          parentcode: districtCode,
+        },
+      });
+    } else {
+      result = yield axios.get("http://localhost:4000/wards", {
+        params: {
+          name: name,
+        },
+      });
+    }
     yield put(getWardListSuccess({ data: result.data }));
   } catch (e) {
     yield put(getWardListFailure({ error: "Lỗi" }));
