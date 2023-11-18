@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 
@@ -41,9 +41,77 @@ import UpdateProduct from "pages/admin/UpdateProduct";
 
 import Successpay from "pages/user/PaySuccess";
 
+import * as S from "./style";
+import { useState } from "react";
+
 function App() {
   const dispatch = useDispatch();
-
+  const [isShowLoading, setIsShowLoading] = useState(false);
+  const { cityList, districtList, wardList } = useSelector(
+    (state) => state.location
+  );
+  const { addressList, createAddress, updateAddress } = useSelector(
+    (state) => state.address
+  );
+  const { changePassword, updateUserInfoData, changeAvatarData } = useSelector(
+    (state) => state.auth
+  );
+  const { favoriteList } = useSelector((state) => state.favorite);
+  const { orderList, orderProductData } = useSelector((state) => state.order);
+  const { reviewList, createReviewData } = useSelector((state) => state.review);
+  const {
+    productList,
+    productDiscountList,
+    productDetail,
+    addProductData,
+    updateProductData,
+    deleteProductData,
+  } = useSelector((state) => state.product);
+  useEffect(() => {
+    setIsShowLoading(
+      cityList.loading ||
+        districtList.loading ||
+        wardList.loading ||
+        addressList.loading ||
+        createAddress.loading ||
+        updateAddress.loading ||
+        changePassword.loading ||
+        updateUserInfoData.loading ||
+        changeAvatarData.loading ||
+        favoriteList.loading ||
+        orderList.loading ||
+        orderProductData.loading ||
+        productList.loading ||
+        productDiscountList.loading ||
+        productDetail.loading ||
+        addProductData.loading ||
+        updateProductData.loading ||
+        deleteProductData.loading ||
+        reviewList.loading ||
+        createReviewData.loading
+    );
+  }, [
+    cityList.loading,
+    districtList.loading,
+    wardList.loading,
+    createAddress.loading,
+    addressList.loading,
+    updateAddress.loading,
+    changePassword.loading,
+    updateUserInfoData.loading,
+    changeAvatarData.loading,
+    favoriteList.loading,
+    orderList.loading,
+    orderProductData.loading,
+    productList.loading,
+    productDiscountList.loading,
+    productDetail.loading,
+    addProductData.loading,
+    updateProductData.loading,
+    deleteProductData.loading,
+    reviewList.loading,
+    createReviewData.loading,
+  ]);
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
@@ -56,64 +124,90 @@ function App() {
     }
   }, []);
   return (
-    <Routes>
-      <Route element={<UserLayout />}>
-        <Route path="/" element={<Navigate to={ROUTES.USER.HOME} />}></Route>
-        <Route path={ROUTES.USER.HOME} element={<Home />} />
-        <Route path={ROUTES.USER.PRODUCT_LIST} element={<ProductList />} />
-        <Route path={ROUTES.USER.PRODUCT_DETAIL} element={<ProductDetail />} />
-        <Route path={ROUTES.USER.CART} element={<Cart />} />
-        <Route path={ROUTES.USER.CHECKOUT} element={<Checkout />} />
-        <Route path={ROUTES.USER.ABOUT} element={<About />} />
-        <Route path={ROUTES.USER.NEWS} element={<News />} />
-        <Route path={ROUTES.USER.GENEGAL} element={<Genegal />} />
-        <Route path={ROUTES.USER.MAINTENANCE} element={<Maintenance />} />
-        <Route path={ROUTES.USER.PRIVACY_POLICY} element={<PrivaryPolicy />} />
-        <Route path={ROUTES.USER.CONTACT} element={<Contact />} />
-        <Route
-          path={ROUTES.USER.DELIVERY_PAYMENT}
-          element={<DeliveryPayment />}
-        />
+    <>
+      <S.LoadingWrapper isShowLoading={isShowLoading}>
+        <S.Loading className="loading">
+          <S.Dot style={{ "--value": 1 }}></S.Dot>
+          <S.Dot style={{ "--value": 2 }}></S.Dot>
+          <S.Dot style={{ "--value": 3 }}></S.Dot>
+          <S.Dot style={{ "--value": 4 }}></S.Dot>
+          <S.Dot style={{ "--value": 5 }}></S.Dot>
+          <S.Dot style={{ "--value": 6 }}></S.Dot>
+          <S.Dot style={{ "--value": 7 }}></S.Dot>
+          <S.Dot style={{ "--value": 8 }}></S.Dot>
+        </S.Loading>
+      </S.LoadingWrapper>
+      <Routes>
+        <Route element={<UserLayout />}>
+          <Route path="/" element={<Navigate to={ROUTES.USER.HOME} />}></Route>
+          <Route path={ROUTES.USER.HOME} element={<Home />} />
+          <Route path={ROUTES.USER.PRODUCT_LIST} element={<ProductList />} />
+          <Route
+            path={ROUTES.USER.PRODUCT_DETAIL}
+            element={<ProductDetail />}
+          />
+          <Route path={ROUTES.USER.CART} element={<Cart />} />
+          <Route path={ROUTES.USER.CHECKOUT} element={<Checkout />} />
+          <Route path={ROUTES.USER.ABOUT} element={<About />} />
+          <Route path={ROUTES.USER.NEWS} element={<News />} />
+          <Route path={ROUTES.USER.GENEGAL} element={<Genegal />} />
+          <Route path={ROUTES.USER.MAINTENANCE} element={<Maintenance />} />
+          <Route
+            path={ROUTES.USER.PRIVACY_POLICY}
+            element={<PrivaryPolicy />}
+          />
+          <Route path={ROUTES.USER.CONTACT} element={<Contact />} />
+          <Route
+            path={ROUTES.USER.DELIVERY_PAYMENT}
+            element={<DeliveryPayment />}
+          />
 
-        <Route
-          path={ROUTES.USER.SHIPPING_POLICY}
-          element={<ShippingPolicy />}
-        />
+          <Route
+            path={ROUTES.USER.SHIPPING_POLICY}
+            element={<ShippingPolicy />}
+          />
 
-        <Route element={<ProfileLayout />}>
-          <Route
-            path={ROUTES.USER.ORDER_HISTORY}
-            element={<OrderHistories />}
-          />
-          <Route
-            path={ROUTES.USER.PROFILE}
-            element={<Navigate to={ROUTES.USER.USERINFO} />}
-          />
-          <Route path={ROUTES.USER.USERINFO} element={<UserInfo />} />
-          <Route path={ROUTES.USER.ADDRESS} element={<Address />} />
-          <Route
-            path={ROUTES.USER.CHANGS_PASSWORD}
-            element={<ChangePassword />}
-          />
-          <Route path={ROUTES.USER.FAVORITE} element={<Favorite />} />
+          <Route element={<ProfileLayout />}>
+            <Route
+              path={ROUTES.USER.ORDER_HISTORY}
+              element={<OrderHistories />}
+            />
+            <Route
+              path={ROUTES.USER.PROFILE}
+              element={<Navigate to={ROUTES.USER.USERINFO} />}
+            />
+            <Route path={ROUTES.USER.USERINFO} element={<UserInfo />} />
+            <Route path={ROUTES.USER.ADDRESS} element={<Address />} />
+            <Route
+              path={ROUTES.USER.CHANGS_PASSWORD}
+              element={<ChangePassword />}
+            />
+            <Route path={ROUTES.USER.FAVORITE} element={<Favorite />} />
+          </Route>
         </Route>
-      </Route>
-      <Route element={<AdminLayout />}>
-        <Route path={ROUTES.ADMIN.DASHBOARD} element={<Dashboard />} />
-        <Route
-          path={ROUTES.ADMIN.PRODUCT_MANAGER}
-          element={<ManagerProduct />}
-        />
-        <Route path={ROUTES.ADMIN.CREATE_PRODUCT} element={<CreateProduct />} />
-        <Route path={ROUTES.ADMIN.UPDATE_PRODUCT} element={<UpdateProduct />} />
-      </Route>
-      <Route element={<AuthLayout />}>
-        <Route path={ROUTES.LOGIN} element={<Login />} />
-        <Route path={ROUTES.REGISTER} element={<Register />} />
-      </Route>
-      <Route path={ROUTES.USER.SUCCESSPAY} element={<Successpay />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+        <Route element={<AdminLayout />}>
+          <Route path={ROUTES.ADMIN.DASHBOARD} element={<Dashboard />} />
+          <Route
+            path={ROUTES.ADMIN.PRODUCT_MANAGER}
+            element={<ManagerProduct />}
+          />
+          <Route
+            path={ROUTES.ADMIN.CREATE_PRODUCT}
+            element={<CreateProduct />}
+          />
+          <Route
+            path={ROUTES.ADMIN.UPDATE_PRODUCT}
+            element={<UpdateProduct />}
+          />
+        </Route>
+        <Route element={<AuthLayout />}>
+          <Route path={ROUTES.LOGIN} element={<Login />} />
+          <Route path={ROUTES.REGISTER} element={<Register />} />
+        </Route>
+        <Route path={ROUTES.USER.SUCCESSPAY} element={<Successpay />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 }
 

@@ -18,7 +18,7 @@ import { getProductDetailRequest } from "../slicers/product.slice";
 function* getFavoriteListSaga(action) {
   try {
     const { userId, page, limit } = action.payload;
-    const result = yield axios.get("http://localhost:4000/favourites", {
+    const result = yield axios.get("http://localhost:4000/favorites", {
       params: {
         isDelete: false,
         userId: userId,
@@ -87,7 +87,7 @@ function* unFavoriteProductSaga(action) {
   }
 }
 
-export default function* favouriteSaga() {
+export default function* favoriteSaga() {
   yield takeEvery(getFavoriteListRequest, getFavoriteListSaga);
   yield takeEvery(favoriteProductRequest, favoriteProductSaga);
   yield takeEvery(unFavoriteProductRequest, unFavoriteProductSaga);

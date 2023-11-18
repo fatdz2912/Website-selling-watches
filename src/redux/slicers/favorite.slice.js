@@ -1,65 +1,65 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  favouriteList: {
+  favoriteList: {
     data: [],
     loading: false,
     error: null,
   },
-  favouriteProduct: {
+  favoriteProduct: {
     loading: false,
     error: null,
   },
 };
 
-export const favouriteSlice = createSlice({
+export const favoriteSlice = createSlice({
   name: "favorite",
   initialState,
   reducers: {
     // getFavoriteList
     getFavoriteListRequest: (state, action) => {
-      state.favouriteList.loading = true;
-      state.favouriteList.error = null;
+      state.favoriteList.loading = true;
+      state.favoriteList.error = null;
     },
     getFavoriteListSuccess: (state, action) => {
       const { data } = action.payload;
-      state.favouriteList.data = data;
-      state.favouriteList.loading = false;
+      state.favoriteList.data = data;
+      state.favoriteList.loading = false;
     },
     getFavoriteListFailure: (state, action) => {
       const { error } = action.payload;
-      state.favouriteList.loading = false;
-      state.favouriteList.error = error;
+      state.favoriteList.loading = false;
+      state.favoriteList.error = error;
     },
     // favoriteProduct
     favoriteProductRequest: (state, action) => {
-      state.favouriteProduct.loading = true;
-      state.favouriteProduct.error = null;
+      state.favoriteProduct.loading = true;
+      state.favoriteProduct.error = null;
     },
     favoriteProductSuccess: (state, action) => {
       const { data } = action.payload;
-      state.favouriteProduct.data = data;
-      state.favouriteProduct.loading = false;
+      state.favoriteProduct.data = data;
+      state.favoriteProduct.loading = false;
     },
     favoriteProductFailure: (state, action) => {
       const { error } = action.payload;
-      state.favouriteProduct.loading = false;
-      state.favouriteProduct.error = error;
+      state.favoriteProduct.loading = false;
+      state.favoriteProduct.error = error;
     },
     // unFavoriteProduct
     unFavoriteProductRequest: (state, action) => {
-      state.favouriteList.loading = true;
-      state.favouriteList.error = null;
+      state.favoriteList.loading = true;
+      state.favoriteList.error = null;
     },
     unFavoriteProductSuccess: (state, action) => {
       const { data } = action.payload;
-      state.favouriteList.data = data;
-      state.favouriteList.loading = false;
+      state.favoriteList.data = data;
+      state.favoriteList.loading = false;
     },
     unFavoriteProductFailure: (state, action) => {
       const { error } = action.payload;
-      state.favouriteList.loading = false;
-      state.favouriteList.error = error;
+      state.favoriteList.loading = false;
+      state.favoriteList.error = error;
     },
   },
 });
@@ -74,6 +74,6 @@ export const {
   unFavoriteProductRequest,
   unFavoriteProductSuccess,
   unFavoriteProductFailure,
-} = favouriteSlice.actions;
+} = favoriteSlice.actions;
 
-export default favouriteSlice.reducer;
+export default favoriteSlice.reducer;
