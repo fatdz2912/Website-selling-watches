@@ -56,32 +56,35 @@ function* favoriteProductSaga(action) {
 }
 function* unFavoriteProductSaga(action) {
   try {
-    const { id, userId } = action.payload;
+    const { id, userId, page, limit } = action.payload;
     yield axios.delete(`http://localhost:4000/favorites/${id}`);
-    if (userId) {
-      const { favoriteList } = yield select((state) => state.favorite);
-      if (
-        favoriteList.meta.total - 1 <=
-        (favoriteList.meta.page - 1) * favoriteList.meta.limit
-      ) {
-        yield put(
-          getFavoriteListRequest({
-            userId: userId,
-            page: favoriteList.meta.page - 1,
-            limit: favoriteList.meta.limit,
-          })
-        );
-      } else {
-        yield put(
-          getFavoriteListRequest({
-            userId: userId,
-            page: favoriteList.meta.page,
-            limit: favoriteList.meta.limit,
-          })
-        );
-      }
-    }
+    // if (userId) {
+    //  const { favoriteList } = yield select((state) => state.favorite);
+    // if (
+    //   favoriteList.meta.total - 1 <=
+    //   (favoriteList.meta.page - 1) * favoriteList.meta.limit
+    // ) {
+    //   yield put(
+    //     getFavoriteListRequest({
+    //       userId: userId,
+    //       page: favoriteList.meta.page - 1,
+    //       limit: favoriteList.meta.limit,
+    //     })
+    //   );
+    // } else {
+    //   yield put(
+    //     getFavoriteListRequest({
+    //       userId: userId,
+    //       page: favoriteList.meta.page,
+    //       limit: favoriteList.meta.limit,
+    //     })
+    //   );
+    // }
+    // }
     yield put(unFavoriteProductSuccess({ id: id }));
+    yield put(
+      getFavoriteListRequest({ userId: userId, page: page, limit: limit })
+    );
   } catch (e) {
     yield put(unFavoriteProductFailure({ error: "Lỗi" }));
   }

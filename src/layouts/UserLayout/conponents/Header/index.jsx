@@ -80,7 +80,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
       return [...Array(6)].map((_, index) => {
         return (
           <S.MenuItem key={index}>
-            <Skeleton.Button active />;
+            <Skeleton.Button active />
           </S.MenuItem>
         );
       });

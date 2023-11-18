@@ -23,9 +23,8 @@ import {
 } from "../slicers/auth.slice";
 function* loginSaga(action) {
   try {
-    const { data, callback } = action.payload;
+    const { data } = action.payload;
     const result = yield axios.post("http://localhost:4000/login", data);
-    yield callback(result.data.user.role);
     yield localStorage.setItem("accessToken", result.data.accessToken);
     yield put(loginSuccess({ data: result.data.user }));
   } catch (e) {

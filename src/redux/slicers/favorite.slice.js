@@ -52,8 +52,6 @@ export const favoriteSlice = createSlice({
       state.favoriteList.error = null;
     },
     unFavoriteProductSuccess: (state, action) => {
-      const { data } = action.payload;
-      state.favoriteList.data = data;
       state.favoriteList.loading = false;
     },
     unFavoriteProductFailure: (state, action) => {

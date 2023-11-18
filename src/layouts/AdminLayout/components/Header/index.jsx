@@ -23,7 +23,6 @@ import { logoutRequest } from "redux/slicers/auth.slice";
 
 function Header({ isShowSidebar, setIsShowSidebar }) {
   const [searchKey, setSearchKey] = useState("");
-  const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
   const { cartList } = useSelector((state) => state.cart);
 
@@ -155,7 +154,10 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
                   {
                     key: "3",
                     label: "Đăng xuất",
-                    onClick: () => dispatch(logoutRequest()),
+                    onClick: () => {
+                      dispatch(logoutRequest());
+                      navigate(ROUTES.USER.HOME);
+                    },
                     icon: <FaSignOutAlt />,
                   },
                 ],
