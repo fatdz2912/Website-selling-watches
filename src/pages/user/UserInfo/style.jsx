@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { color } from "themes/color";
-import { Row, Col } from "antd";
+import { Row } from "antd";
 export const UserInfoWrapper = styled(Row)`
   width: 100%;
   background-color: ${color.primaryText};
@@ -27,12 +27,10 @@ export const Avatar = styled.img`
   border-radius: 50%;
   width: 100%;
 `;
-export const Profile = styled(Row)``;
-export const Left = styled(Col)`
-  margin-top: 30px;
+export const Profile = styled.div`
+  margin: 0 auto;
+  width: 100%;
 `;
-export const Right = styled(Col)``;
-
 export const InfoUser = styled.div`
   margin-top: 2vh;
   gap: 2em;

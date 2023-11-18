@@ -8,7 +8,7 @@ function DELIVERY_PAYMENT() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "DeliveryPayment Page";
+    document.title = "Vận chuyển và thanh toán";
   }, []);
   return (
     <>

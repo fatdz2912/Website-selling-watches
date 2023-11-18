@@ -1,11 +1,10 @@
-import { Button, Col, Modal, Row } from "antd";
+import { Modal, Popconfirm, Radio, Row } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useMemo } from "react";
 
 import * as S from "./style";
 import {
   deleteAddressRequest,
-  getAddressListRequest,
   updateAddressDefaultRequest,
 } from "redux/slicers/address.slice";
 
@@ -13,6 +12,8 @@ import UpdateModal from "pages/user/components/UpdateModal";
 import CreateModal from "pages/user/components/CreateModal";
 function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
   const [updateData, setUpdateData] = useState([]);
+  const [addressId, setAddressId] = useState(undefined);
+
   const [isShowCreateAddress, setIsShowCreateAddress] = useState(false);
   const [isShowUpdateAddress, setIsShowUpdateAddress] = useState(false);
 
@@ -20,6 +21,7 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
   const { userInfo } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
+
   const renderAddressList = useMemo(() => {
     if (addressList.data[0] != null) {
       return addressList.data.map((item, index) => {
@@ -48,35 +50,8 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
                 >
                   Cập nhật
                 </S.Update>
-                {index !== 0 && (
-                  <S.Delete
-                    onClick={() => {
-                      dispatch(
-                        deleteAddressRequest({
-                          id: item.id,
-                          userId: userInfo?.data?.id,
-                        })
-                      );
-                    }}
-                  >
-                    Xóa
-                  </S.Delete>
-                )}
               </S.UpdateAndDeleteWrapper>
-              <S.EstablishDefault
-                onClick={() =>
-                  dispatch(
-                    updateAddressDefaultRequest({
-                      id: item.id,
-                      userId: userInfo?.data?.id,
-                      addressDataList: addressList.data,
-                    })
-                  )
-                }
-                disabled={index === 0}
-              >
-                Chọn
-              </S.EstablishDefault>
+              <S.EstablishDefault value={item.id}>Chọn</S.EstablishDefault>
             </S.Right>
           </S.AddressItem>
         );
@@ -93,21 +68,38 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
       footer={null}
       width={700}
     >
-      {renderAddressList}
-      <Button onClick={() => setIsShowCreateAddress(true)}>
-        Thêm địa chỉ mới
-      </Button>
-      <Row gutter={[16, 16]}>
-        <Button
-          onClick={() => {
-            setIsShowChangeAddress(false);
-            dispatch(getAddressListRequest({ userId: userInfo.data.id }));
-          }}
+      <S.ChangeAddressWrapper>
+        <Radio.Group
+          value={addressId}
+          defaultValue={userInfo.data.addressDefaultId}
+          onChange={(e) => setAddressId(e.target.value)}
         >
-          Xác Nhận
-        </Button>
-        <Button>Hủy</Button>
-      </Row>
+          {renderAddressList}
+        </Radio.Group>
+        <S.BtCreateAddress onClick={() => setIsShowCreateAddress(true)}>
+          Thêm địa chỉ mới
+        </S.BtCreateAddress>
+        {addressList.data[0] != null && (
+          <Row justify="end">
+            <S.BtSubmit
+              type="primary"
+              onClick={() => {
+                setIsShowChangeAddress(false);
+                dispatch(
+                  updateAddressDefaultRequest({
+                    addressId: addressId,
+                  })
+                );
+              }}
+            >
+              Xác Nhận
+            </S.BtSubmit>
+            <S.BtCancel onClick={() => setIsShowChangeAddress(false)}>
+              Hủy
+            </S.BtCancel>
+          </Row>
+        )}
+      </S.ChangeAddressWrapper>
       <CreateModal
         isShowCreateAddress={isShowCreateAddress}
         setIsShowCreateAddress={setIsShowCreateAddress}

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notification } from "antd";
 
 const initialState = {
   addressList: {
@@ -59,10 +60,15 @@ export const addressSlice = createSlice({
       state.createAddress.error = null;
     },
     createAddressSuccess: (state, action) => {
-      const { data } = action.payload;
-      state.addressList.data = [...state.addressList.data, data];
+      const { data, addressDefault } = action.payload;
+      if (addressDefault) {
+        state.addressList.data.unshift(data);
+      } else {
+        state.addressList.data = [...state.addressList.data, data];
+      }
       state.createAddress.loading = false;
       state.createAddress.error = null;
+      notification.success({ message: "Thêm địa chỉ thành công!" });
     },
     createAddressFailure: (state, action) => {
       const { error } = action.payload;
@@ -74,18 +80,14 @@ export const addressSlice = createSlice({
       state.updateAddress.error = null;
     },
     updateAddressSuccess: (state, action) => {
-      // const { data } = action.payload;
+      const { data } = action.payload;
       state.updateAddress.loading = false;
       state.updateAddress.error = null;
-      // const index = state.addressList.data.findIndex(
-      //   (item) => item.id === data.id
-      // );
-      // const { id, ...rest } = data;
-      // const newUser = {
-      //   id: id,
-      //   ...rest,
-      // };
-      // state.addressList.data.splice(index, 1, newUser);
+      const index = state.addressList.data.findIndex(
+        (item) => item.id === data.id
+      );
+      state.addressList.data.splice(index, 1, data);
+      notification.success({ message: "Cập nhật địa chỉ thành công!" });
     },
     updateAddressFailure: (state, action) => {
       const { error } = action.payload;
@@ -112,6 +114,15 @@ export const addressSlice = createSlice({
       state.updateAddressDefault.error = null;
     },
     updateAddressDefaultSuccess: (state, action) => {
+      const { addressId } = action.payload;
+      const newArray = [...state.addressList.data];
+      const index = state.addressList.data.findIndex(
+        (item) => item.id === addressId
+      );
+      console.log("🚀 ~ file: address.slice.js:115 ~ index:", index);
+      newArray.splice(index, 1);
+      newArray.unshift(state.addressList.data[index]);
+      state.addressList.data = newArray;
       state.updateAddressDefault.loading = false;
       state.updateAddressDefault.error = null;
     },
@@ -156,9 +167,6 @@ export const {
   updateAddressDefaultRequest,
   updateAddressDefaultSuccess,
   updateAddressDefaultFailure,
-  getAddressDefaultRequest,
-  getAddressDefaultSuccess,
-  getAddressDefaultFailure,
 } = addressSlice.actions;
 
 export default addressSlice.reducer;

@@ -122,10 +122,9 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
                   message: "Tên là bắt buộc!",
                 },
                 {
-                  min: 3,
-                  max: 16,
-                  type: "string",
-                  message: "Tên phải từ 3 đến 16 kí tự",
+                  max: 40,
+                  min: 6,
+                  message: "Điền từ 6 -> 40 kí tự",
                 },
               ]}
             >

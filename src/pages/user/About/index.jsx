@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function About() {
   useEffect(() => {
-    document.title = "About Page";
+    document.title = "Giới thiệu";
     window.scrollTo({
       top: 0,
     });

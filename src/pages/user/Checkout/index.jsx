@@ -53,12 +53,17 @@ function Checkout() {
   );
 
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    // });
-    document.title = "Checkout Page";
+    window.scrollTo({
+      top: 0,
+    });
+    dispatch(
+      getAddressListRequest({
+        userId: userInfo?.data?.id,
+        addressDefaultId: userInfo.data.addressDefaultId,
+      })
+    );
+    document.title = "Thanh toán";
     dispatch(getCityListRequest());
-    dispatch(getAddressListRequest({ userId: userInfo?.data?.id }));
   }, []);
 
   useEffect(() => {

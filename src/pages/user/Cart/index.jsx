@@ -7,6 +7,7 @@ import {
   Space,
   Breadcrumb,
   Skeleton,
+  Popconfirm,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -32,7 +33,7 @@ function CartPage() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Cart Page";
+    document.title = "Trang giỏ hàng";
   }, []);
 
   const handleChangeQuantity = (productId, value) => {
@@ -107,9 +108,15 @@ function CartPage() {
       dataIndex: "action",
       key: "action",
       render: (_, item) => (
-        <Button onClick={() => handleDeleteCartItem(item.productId)}>
-          Xóa
-        </Button>
+        <Popconfirm
+          title="Xóa sản phẩm"
+          description="Bạn có chắn chắn muốn xóa?"
+          okText="Có"
+          cancelText="Không"
+          onConfirm={() => handleDeleteCartItem(item.productId)}
+        >
+          <Button>Xóa</Button>
+        </Popconfirm>
       ),
     },
   ];

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Contact() {
   useEffect(() => {
-    document.title = "Contact Page";
+    document.title = "Liên hệ";
     window.scrollTo({
       top: 0,
     });

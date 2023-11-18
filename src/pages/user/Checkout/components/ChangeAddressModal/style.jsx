@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { color } from "themes/color";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Radio } from "antd";
 export const Left = styled(Col)`
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 export const AddressItem = styled(Row)`
   border-top: 1px solid #ccc;
@@ -29,7 +29,6 @@ export const PhoneNumber = styled.span`
   color: rgba(0, 0, 0, 0.54);
 `;
 export const InfoAddress = styled.div`
-  margin-top: 10px;
   color: rgba(0, 0, 0, 0.54);
 `;
 export const AddressDefault = styled.div`
@@ -43,9 +42,24 @@ export const AddressDefault = styled.div`
   justify-content: center;
   border-radius: 4px;
 `;
+export const BtCreateAddress = styled(Button)`
+  margin-bottom: 15px;
+  width: 20%;
+  min-width: 140px;
+`;
+export const BtSubmit = styled(Button)`
+  margin-right: 15px;
+  width: 20%;
+  min-width: 90px;
+`;
+export const BtCancel = styled(Button)`
+  width: 20%;
+  width: 20%;
+  min-width: 90px;
+`;
 export const Right = styled(Col)`
   text-align: right;
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 export const UpdateAndDeleteWrapper = styled.div`
   display: flex;
@@ -56,9 +70,9 @@ export const UpdateAndDeleteWrapper = styled.div`
 export const Update = styled.div`
   color: ${color.outstanding};
 `;
-export const Delete = styled.div`
-  color: ${color.outstanding};
-`;
-export const EstablishDefault = styled(Button)`
+export const EstablishDefault = styled(Radio)`
   margin-top: 15px;
+`;
+export const ChangeAddressWrapper = styled(Row)`
+  flex-direction: column;
 `;

@@ -8,7 +8,7 @@ function ShippingPolicy() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "ShippingPolicy Page";
+    document.title = "Chính sách vận chuyển";
   }, []);
   return (
     <>

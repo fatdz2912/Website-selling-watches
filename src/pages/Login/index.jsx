@@ -43,7 +43,10 @@ function Login() {
     dispatch(
       loginRequest({
         data: values,
-        callback: () => navigate(ROUTES.USER.HOME),
+        callback: (role) => {
+          if (role === "admin") return navigate(ROUTES.ADMIN.DASHBOARD);
+          return navigate(ROUTES.USER.HOME);
+        },
       })
     );
   };

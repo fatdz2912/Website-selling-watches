@@ -8,7 +8,7 @@ function News() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "News Page";
+    document.title = "Tin tức";
   }, []);
   return (
     <>

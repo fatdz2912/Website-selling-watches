@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Popconfirm } from "antd";
 import { useMemo } from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,7 +27,7 @@ function Address() {
     // window.scrollTo({
     //   top: 0,
     // });
-    document.title = "Address page";
+    document.title = "Trang địa chỉ";
     dispatch(
       getAddressListRequest({
         userId: userInfo?.data?.id,
@@ -68,8 +68,11 @@ function Address() {
                   Cập nhật
                 </S.Update>
                 {index !== 0 && (
-                  <S.Delete
-                    onClick={() => {
+                  <Popconfirm
+                    description="Bạn có chắc chắn muốn xóa địa chỉ?"
+                    cancelText="trở lại"
+                    okText="Xóa"
+                    onConfirm={() => {
                       dispatch(
                         deleteAddressRequest({
                           id: item.id,
@@ -78,17 +81,16 @@ function Address() {
                       );
                     }}
                   >
-                    Xóa
-                  </S.Delete>
+                    <S.Delete>Xóa</S.Delete>
+                  </Popconfirm>
                 )}
               </S.UpdateAndDeleteWrapper>
               <S.EstablishDefault
                 onClick={() =>
                   dispatch(
                     updateAddressDefaultRequest({
-                      id: item.id,
+                      addressId: item.id,
                       userId: userInfo?.data?.id,
-                      addressDataList: addressList.data,
                     })
                   )
                 }

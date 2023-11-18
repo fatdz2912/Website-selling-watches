@@ -51,7 +51,7 @@ function ProductDetail() {
     window.scrollTo({
       top: 0,
     });
-    document.title = `ProductDetail Page - ${id}`;
+    document.title = `Sản phẩm chi tiết`;
   }, [id]);
 
   const handleDecreaseQuantity = () => {
@@ -75,7 +75,6 @@ function ProductDetail() {
         },
       })
     );
-    notification.success({ message: "Bỏ vào giỏ thành công" });
   };
 
   return (

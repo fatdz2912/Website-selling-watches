@@ -21,6 +21,10 @@ import {
 function* getAddressListSaga(action) {
   try {
     const { userId, addressDefaultId } = action.payload;
+    console.log(
+      "🚀 ~ file: address.saga.js:24 ~ function*getAddressListSaga ~ addressDefaultId:",
+      addressDefaultId
+    );
     const result = yield axios.get("http://localhost:4000/addresses", {
       params: {
         userId: userId,
@@ -37,38 +41,33 @@ function* createAddressSaga(action) {
   try {
     const { data, quantityAddress, addressDefault } = action.payload;
     const result = yield axios.post("http://localhost:4000/addresses", data);
-    yield put(
-      createAddressSuccess({
-        data: result?.data,
-      })
-    );
     if (quantityAddress === 0 || addressDefault) {
       yield axios.patch(`http://localhost:4000/users/${data.userId}`, {
         addressDefaultId: result.data.id,
       });
     }
+    yield put(
+      createAddressSuccess({
+        data: result?.data,
+        addressDefault: addressDefault,
+      })
+    );
   } catch (e) {
     yield put(createAddressFailure({ error: "Lỗi" }));
   }
 }
 function* updateAddressSaga(action) {
   try {
-    const { data, addressDefault, userId } = action.payload;
+    const { data } = action.payload;
     const result = yield axios.patch(
       `http://localhost:4000/addresses/${data.id}`,
       data
     );
-    if (addressDefault) {
-      yield axios.patch(`http://localhost:4000/users/${userId}`, {
-        addressDefaultId: result.data.id,
-      });
-    }
     yield put(
       updateAddressSuccess({
         data: result.data,
       })
     );
-    yield put(getAddressListRequest({ userId: userId }));
   } catch (e) {
     yield put(updateAddressFailure({ error: "Lỗi" }));
   }
@@ -85,26 +84,13 @@ function* deleteAddressSaga(action) {
 }
 function* updateAddressDefaultSaga(action) {
   try {
-    const { id, userId, addressDataList } = action.payload;
-    for (let i = 0; i < addressDataList.length; i++) {
-      if (addressDataList[i].id === id) {
-        yield axios.patch(
-          `http://localhost:4000/addresses/${addressDataList[i].id}`,
-          {
-            addressDefault: true,
-          }
-        );
-      } else {
-        yield axios.patch(
-          `http://localhost:4000/addresses/${addressDataList[i].id}`,
-          {
-            addressDefault: false,
-          }
-        );
-      }
+    const { addressId, userId } = action.payload;
+    if (userId) {
+      yield axios.patch(`http://localhost:4000/users/${userId}`, {
+        addressDefaultId: addressId,
+      });
     }
-    yield put(updateAddressDefaultSuccess());
-    yield put(getAddressListRequest({ userId: userId }));
+    yield put(updateAddressDefaultSuccess({ addressId: addressId }));
   } catch (e) {
     yield put(updateAddressDefaultFailure({ error: "Lỗi" }));
   }

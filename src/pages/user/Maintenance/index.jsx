@@ -8,7 +8,7 @@ function Maintenance() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Maintenance Page";
+    document.title = "Bảo hành";
   }, []);
   return (
     <>

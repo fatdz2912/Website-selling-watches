@@ -8,7 +8,7 @@ function PrivaryPolicy() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "PrivaryPolicy Page";
+    document.title = "Chính sách bảo mật";
   }, []);
   return (
     <>

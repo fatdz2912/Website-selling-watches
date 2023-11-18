@@ -2,7 +2,7 @@ import { Button, Col, Row, Space, Rate, Breadcrumb, notification } from "antd";
 import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import {  useMemo,  } from "react";
 
 import {
   favoriteProductRequest,

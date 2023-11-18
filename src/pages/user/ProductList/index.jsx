@@ -45,7 +45,7 @@ function ProductList() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "ProductList Page";
+    document.title = "Danh sách sản phẩm";
     dispatch(getCategoryListRequest());
   }, []);
 

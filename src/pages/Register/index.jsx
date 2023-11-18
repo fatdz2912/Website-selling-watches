@@ -32,6 +32,7 @@ function Register() {
     dispatch(
       registerRequest({
         data: {
+          addressDefaultId: undefined,
           ...rest,
           role: "user",
           avatar:
@@ -69,9 +70,9 @@ function Register() {
                     message: "Vui lòng nhập tên đăng nhập!",
                   },
                   {
-                    max: 25,
+                    max: 20,
                     min: 6,
-                    message: "Điền từ 6 -> 25 kí tự",
+                    message: "Điền từ 6 -> 20 kí tự",
                   },
                 ]}
               >

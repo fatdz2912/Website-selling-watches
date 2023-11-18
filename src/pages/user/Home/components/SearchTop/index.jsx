@@ -15,6 +15,7 @@ function SearchTop() {
   const { data, loading } = productList;
 
   useEffect(() => {
+    document.title = "Trang chủ";
     dispatch(
       getProductListRequest({
         limit: PRODUCT_DISCOUNT,

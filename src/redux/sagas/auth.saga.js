@@ -14,12 +14,18 @@ import {
   changePasswordRequest,
   changePasswordSuccess,
   changePasswordFailure,
+  updateUserInfoRequest,
+  updateUserInfoSuccess,
+  updateUserInfoFailure,
+  changeAvatarRequest,
+  changeAvatarSuccess,
+  changeAvatarFailure,
 } from "../slicers/auth.slice";
 function* loginSaga(action) {
   try {
     const { data, callback } = action.payload;
     const result = yield axios.post("http://localhost:4000/login", data);
-    yield callback();
+    yield callback(result.data.user.role);
     yield localStorage.setItem("accessToken", result.data.accessToken);
     yield put(loginSuccess({ data: result.data.user }));
   } catch (e) {
@@ -57,19 +63,42 @@ function* getUserInfoSaga(action) {
 }
 function* changePasswordSaga(action) {
   try {
-    const { data, reset } = action.payload;
-    const result = yield axios.post("http://localhost:4000/login", data);
-    yield localStorage.setItem("accessToken", result.data.accessToken);
-    yield put(changePasswordSuccess({ data: result.data.user }));
+    const { data, reset, userId } = action.payload;
+    yield axios.post("http://localhost:4000/login", data);
+    const result = yield axios.patch(`http://localhost:4000/users/${userId}`, {
+      password: data.newPassword,
+    });
+    yield put(changePasswordSuccess({ data: result.data }));
     yield reset();
     notification.success({ message: "Thay đổi mật khẩu thành công" });
   } catch (e) {
     yield put(changePasswordFailure({ error: "Mật khẩu không đúng!" }));
   }
 }
-export default function* categorySaga() {
+function* updateUserInfoSaga(action) {
+  try {
+    const { id, data } = action.payload;
+    const result = yield axios.patch(`http://localhost:4000/users/${id}`, data);
+    yield put(updateUserInfoSuccess({ data: result.data }));
+  } catch (e) {
+    yield put(updateUserInfoFailure({ error: "Lỗi" }));
+  }
+}
+
+function* changeAvatarSaga(action) {
+  try {
+    const { id, avatar } = action.payload;
+    yield axios.patch(`http://localhost:4000/users/${id}`, { avatar: avatar });
+    yield put(changeAvatarSuccess({ avatar: avatar }));
+  } catch (e) {
+    yield put(changeAvatarFailure({ error: "Lỗi" }));
+  }
+}
+export default function* authSaga() {
   yield takeEvery(loginRequest, loginSaga);
   yield takeEvery(registerRequest, registerSaga);
   yield takeEvery(getUserInfoRequest, getUserInfoSaga);
   yield takeEvery(changePasswordRequest, changePasswordSaga);
+  yield takeEvery(updateUserInfoRequest, updateUserInfoSaga);
+  yield takeEvery(changeAvatarRequest, changeAvatarSaga);
 }

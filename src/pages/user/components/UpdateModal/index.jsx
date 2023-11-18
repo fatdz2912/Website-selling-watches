@@ -1,5 +1,5 @@
-import { Button, Col, Form, Input, Modal, Radio, Row, Select } from "antd";
-import { useEffect, useMemo, useState } from "react";
+import { Button, Col, Form, Input, Modal, Row, Select } from "antd";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -14,8 +14,6 @@ function UpdateModal({
   updateData,
   addressListData,
 }) {
-  const { userInfo } = useSelector((state) => state.auth);
-  const [addressDefault, setAddressDefault] = useState(true);
   const { cityList, districtList, wardList } = useSelector(
     (state) => state.location
   );
@@ -66,8 +64,6 @@ function UpdateModal({
           ...rest,
           id: address.id,
         },
-        addressDefault: addressDefault,
-        userId: userInfo?.data?.id,
       })
     );
     setIsShowUpdateAddress(false);
@@ -129,10 +125,9 @@ function UpdateModal({
                   message: "Tên là bắt buộc!",
                 },
                 {
-                  min: 3,
-                  max: 16,
-                  type: "string",
-                  message: "Tên phải từ 3 đến 16 kí tự",
+                  max: 40,
+                  min: 6,
+                  message: "Điền từ 6 -> 40 kí tự",
                 },
               ]}
             >
@@ -222,17 +217,6 @@ function UpdateModal({
               ]}
             >
               <Input placeholder="Địa chỉ cụ thể" />
-            </Form.Item>
-          </Col>
-          <Col span={24}>
-            <Form.Item label="Đặt làm địa chỉ mặc định:">
-              <Radio.Group
-                defaultValue={addressDefault}
-                onChange={(e) => setAddressDefault(e.target.value)}
-              >
-                <Radio value={true}>Có</Radio>
-                <Radio value={false}>Không</Radio>
-              </Radio.Group>
             </Form.Item>
           </Col>
           <Col span={12}>

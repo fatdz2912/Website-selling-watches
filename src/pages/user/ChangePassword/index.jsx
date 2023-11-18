@@ -16,7 +16,7 @@ function ChangsPassword() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Change Password Page";
+    document.title = "Đổi mật khẩu";
   }, []);
 
   useEffect(() => {
@@ -38,6 +38,7 @@ function ChangsPassword() {
           ...values,
         },
         reset: () => changePasswordForm.resetFields(),
+        userId: userInfo.data.id,
       })
     );
   };

@@ -177,7 +177,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             <S.ImageLogo src="https://www.jomashop.com/dist/file/jomashop_logo.7c0762d85d36b44f0c59.png"></S.ImageLogo>
           </a>
         </S.HeaderLogo>
-        <S.SearchColumn sm={0} xs={0} md={0} xl={15}>
+        <S.SearchColumn sm={0} xs={0} md={0} xl={14}>
           <S.InputSearch
             prefix={<FaSearchengin size={25} />}
             placeholder="Tìm kiếm sản phẩm hoặc thương hiệu "
@@ -186,7 +186,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             value={searchKey}
           ></S.InputSearch>
         </S.SearchColumn>
-        <S.LoginAndCart sm={11} xs={12} md={12} xl={5}>
+        <S.LoginAndCart sm={11} xs={12} md={12} xl={6}>
           <Link to={ROUTES.USER.CART}>
             <Badge count={cartList.length}>
               <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
@@ -198,18 +198,13 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
                 items: [
                   {
                     key: "1",
-                    label: <Link to={ROUTES.ADMIN.DASHBOARD}>Dashboard</Link>,
-                    icon: <FaUserAlt />,
-                  },
-                  {
-                    key: "2",
                     label: (
                       <Link to={ROUTES.USER.USERINFO}>Thông tin cá nhân</Link>
                     ),
                     icon: <FaUserAlt />,
                   },
                   {
-                    key: "3",
+                    key: "2",
                     label: "Đăng xuất",
                     onClick: () => dispatch(logoutRequest()),
                     icon: <FaSignOutAlt />,

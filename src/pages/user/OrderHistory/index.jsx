@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { Col, Row, Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import dayjs from "dayjs";
@@ -16,7 +16,7 @@ function OrderHistories() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Order History Page";
+    document.title = "Lịch sử mua hàng";
     if (userInfo.data.id) {
       dispatch(getOrderListRequest({ userId: userInfo.data.id }));
     }

@@ -23,7 +23,20 @@ function AccountUserLayout() {
     return PROFILE_MENU.find((item) => item.path === pathname)?.label;
   }, [pathname]);
   if (accessToken && userInfo.loading) {
-    return "loading...";
+    return (
+      <S.LoadingWrapper>
+        <S.Loading className="loading">
+          <S.Dot style={{ "--value": 1 }}></S.Dot>
+          <S.Dot style={{ "--value": 2 }}></S.Dot>
+          <S.Dot style={{ "--value": 3 }}></S.Dot>
+          <S.Dot style={{ "--value": 4 }}></S.Dot>
+          <S.Dot style={{ "--value": 5 }}></S.Dot>
+          <S.Dot style={{ "--value": 6 }}></S.Dot>
+          <S.Dot style={{ "--value": 7 }}></S.Dot>
+          <S.Dot style={{ "--value": 8 }}></S.Dot>
+        </S.Loading>
+      </S.LoadingWrapper>
+    );
   } else {
     return (
       <S.LayoutWrapper>

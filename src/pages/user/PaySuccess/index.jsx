@@ -10,7 +10,7 @@ function Successpay() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Successpay Page";
+    document.title = "Thanh toán thành công";
   }, []);
   const navigate = useNavigate();
   return (

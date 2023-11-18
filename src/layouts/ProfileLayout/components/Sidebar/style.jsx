@@ -35,15 +35,56 @@ export const ProfileMenuItem = styled.div`
     `}
 `;
 export const AvatarWrapper = styled.div`
-  width: 50px;
-  max-width: 20%;
+  width: 80px;
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 `;
-export const Username = styled.span`
+export const Username = styled.div`
   font-size: 1rem;
   color: ${color.primary};
+  text-align: center;
 `;
 
 export const Avatar = styled.img`
   border-radius: 50%;
   width: 100%;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  height: 100%;
+`;
+export const AvatarEdit = styled.div`
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  z-index: 1;
+
+  & > input {
+    display: none;
+  }
+
+  & > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #ffffff;
+    border: 1px solid #e3e4e6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1f1f1;
+      border-color: #d6d6d6;
+    }
+  }
 `;

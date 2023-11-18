@@ -8,7 +8,7 @@ function Genegal() {
     window.scrollTo({
       top: 0,
     });
-    document.title = "Genegal Page";
+    document.title = "Quy định chung";
   }, []);
   return (
     <>
