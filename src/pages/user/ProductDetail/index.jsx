@@ -41,7 +41,6 @@ function ProductDetail() {
     oldPrice,
     currentPrice,
   } = productDetail.data;
-
   useEffect(() => {
     dispatch(
       getProductDetailRequest({

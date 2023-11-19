@@ -20,6 +20,9 @@ import {
   deleteProductRequest,
   deleteProductFailure,
   deleteProductSuccess,
+  updateProductDetailRequest,
+  updateProductDetailFailure,
+  updateProductDetailSuccess,
 } from "../slicers/product.slice";
 
 function* getProductListSaga(action) {
@@ -124,8 +127,22 @@ function* getProductDetailSaga(action) {
         data: result.data,
       })
     );
+    yield put(
+      updateProductDetailRequest({ id: id, searchTop: result.data.searchTop })
+    );
   } catch (e) {
     yield put(getProductDetailFailure({ error: "Lỗi" }));
+  }
+}
+function* updateProductDetailSaga(action) {
+  try {
+    const { id, searchTop } = action.payload;
+    yield axios.patch(`http://localhost:4000/products/${id}`, {
+      searchTop: searchTop + 1,
+    });
+    yield put(updateProductDetailSuccess());
+  } catch (e) {
+    yield put(updateProductDetailFailure({ error: "Lỗi" }));
   }
 }
 
@@ -160,6 +177,7 @@ function* getProductDiscountListSaga(action) {
 export default function* productSaga() {
   yield takeEvery(getProductListRequest, getProductListSaga);
   yield takeEvery(getProductDetailRequest, getProductDetailSaga);
+  yield takeEvery(updateProductDetailRequest, updateProductDetailSaga);
   yield takeEvery(addProductRequest, addProductSaga);
   yield takeEvery(getDiscountProductListRequest, getProductDiscountListSaga);
   yield takeEvery(updateProductRequest, updateProductSaga);

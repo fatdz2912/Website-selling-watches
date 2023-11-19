@@ -200,17 +200,17 @@ function Checkout() {
     return productBuyList.map((item) => {
       return (
         <S.CartItem>
-          <Col md={12} xs={12} lg={12}>
+          <Col md={12} xs={6} lg={12}>
             <Row>
-              <S.ImageCartWrapper xs={5} md={5} lg={5}>
+              <S.ImageCartWrapper xs={24} md={5} lg={5}>
                 <S.ImageCart src={item.image}></S.ImageCart>
               </S.ImageCartWrapper>
-              <S.Name xs={19} md={19} lg={19}>
+              <S.Name xs={24} md={19} lg={19}>
                 <div>{item.name}</div>
               </S.Name>
             </Row>
           </Col>
-          <S.Price md={4} xs={4} lg={4}>
+          <S.Price md={4} xs={7} lg={4}>
             <div>
               {item.currentPrice.toLocaleString()}
               <S.Unit>₫</S.Unit>
@@ -219,7 +219,7 @@ function Checkout() {
           <S.Quantity md={4} xs={4} lg={4}>
             <div>{item.quantity}</div>
           </S.Quantity>
-          <S.IntoMoney md={4} xs={4} lg={4}>
+          <S.IntoMoney md={4} xs={7} lg={4}>
             <div>
               {(item.quantity * item.currentPrice).toLocaleString()}
               <S.Unit>₫</S.Unit>
@@ -268,16 +268,16 @@ function Checkout() {
             <span>Ấn vào đây để nhập mã</span>
           </Row>
           <S.CartListDetailWrapper gutter={[16, 16]}>
-            <S.Title md={12} xs={12} lg={12}>
+            <S.Title md={12} xs={6} lg={12}>
               SẢN PHẨM
             </S.Title>
-            <S.Title md={4} xs={4} lg={4}>
+            <S.Title md={4} xs={7} lg={4}>
               GIÁ
             </S.Title>
             <S.Title md={4} xs={4} lg={4}>
-              SỐ LƯỢNG
+              SL
             </S.Title>
-            <S.Title md={4} xs={4} lg={4}>
+            <S.Title md={4} xs={7} lg={4}>
               THÀNH TIỀN
             </S.Title>
             {renderCartListDetail}
@@ -420,14 +420,6 @@ function Checkout() {
                     </Col>
                   </Row>
                 </Row>
-                <Row gutter={[16, 16]} justify="space-between">
-                  <Button onClick={() => navigate(ROUTES.USER.CART)}>
-                    Trở lại
-                  </Button>
-                  <S.Order type="primary" htmlType="submit">
-                    Đặt Hàng
-                  </S.Order>
-                </Row>
               </Col>
               <Col xs={24} sm={24} md={10} xl={10}>
                 <Row>
@@ -456,6 +448,18 @@ function Checkout() {
                   </Row>
                 </Row>
               </Col>
+            </Row>
+            <Row
+              gutter={[16, 16]}
+              justify="space-between"
+              style={{ marginTop: "15px" }}
+            >
+              <Button onClick={() => navigate(ROUTES.USER.CART)}>
+                Trở lại
+              </Button>
+              <S.Order type="primary" htmlType="submit">
+                Đặt Hàng
+              </S.Order>
             </Row>
           </Form>
         </Col>

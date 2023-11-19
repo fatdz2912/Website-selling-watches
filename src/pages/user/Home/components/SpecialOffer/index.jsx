@@ -17,9 +17,9 @@ function SpecialOffer() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    // });
+    window.scrollTo({
+      top: 0,
+    });
     dispatch(
       getDiscountProductListRequest({
         limit: PRODUCT_DISCOUNT,
@@ -31,7 +31,6 @@ function SpecialOffer() {
   for (let i = 0; i < data.length; i += 4) {
     groupSpecialOffer.push(data.slice(i, i + 4));
   }
-
   const renderSpecialOffer = useMemo(() => {
     if (loading) {
       return (

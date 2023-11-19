@@ -12,37 +12,18 @@ export const ProductListWrapper = styled.div`
 // Filter
 export const filterBrands = styled(Card)`
   position: sticky;
-  top: 24vh;
+  top: 175px;
   z-index: 1;
+  @media screen and (max-width: 1200px) {
+    top: 210px;
+  }
 `;
 export const BrandList = styled(Row)``;
 export const BrandItem = styled(Col)``;
 export const CheckBoxFilter = styled(Checkbox)`
   font-size: 1.1rem;
 `;
-// SelectArange
-export const SelectArrangePrice = styled(Select)`
-  width: 160px;
-  background-color: #f5f5f5;
-  display: block;
-  height: 37px;
 
-  ${({ active }) =>
-    active &&
-    css`
-      &
-        > :where(
-          .css-dev-only-do-not-override-j19ufn
-        ).ant-select-single.ant-select-show-arrow
-        .ant-select-selection-item,
-      :where(
-          .css-dev-only-do-not-override-j19ufn
-        ).ant-select-single.ant-select-show-arrow
-        .ant-select-selection-placeholder {
-        color: red;
-      }
-    `}
-`;
 export const SelectOptionArrangePrice = styled(Select.Option)``;
 export const Arrange = styled.div`
   width: 100%;
@@ -60,6 +41,14 @@ export const Relevancy = styled.span`
       color: ${color.primaryText};
       background-color: rgb(238, 77, 45);
     `}
+
+  @media screen and (max-width:550px) {
+    min-height: 62.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 export const Ctime = styled.span`
   background-color: #f5f5f5;
@@ -70,6 +59,13 @@ export const Ctime = styled.span`
       color: ${color.primaryText};
       background-color: rgb(238, 77, 45);
     `}
+  @media screen and (max-width:550px) {
+    min-height: 62.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 export const PriceDESC = styled.span`
   background-color: #f5f5f5;
@@ -80,6 +76,13 @@ export const PriceDESC = styled.span`
       color: ${color.primaryText};
       background-color: rgb(238, 77, 45);
     `}
+  @media screen and (max-width:550px) {
+    min-height: 62.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 export const PriceASC = styled.span`
   background-color: #f5f5f5;
@@ -90,6 +93,14 @@ export const PriceASC = styled.span`
       color: ${color.primaryText};
       background-color: rgb(238, 77, 45);
     `}
+  @media screen and (max-width:550px) {
+    min-height: 62.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-align: center;
+  }
 `;
 // ProductList
 export const ProductList = styled(Row)`

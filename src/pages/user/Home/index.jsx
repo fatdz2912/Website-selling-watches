@@ -7,7 +7,7 @@ import * as S from "./style";
 import { ROUTES } from "constants/routes";
 
 import SpecialOffer from "./components/SpecialOffer";
-import TrendingNow from "./components/SearchTop";
+import SearchTop from "./components/SearchTop";
 import Hero from "components/Hero";
 function Home() {
   const navigate = useNavigate();
@@ -89,7 +89,7 @@ function Home() {
         {renderTypeClocksMobile}
       </S.TypeClockMobile>
       <SpecialOffer />
-      <TrendingNow />
+      <SearchTop />
     </S.HomeWrapper>
   );
 }

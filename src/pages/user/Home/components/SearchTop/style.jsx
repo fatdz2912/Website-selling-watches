@@ -131,6 +131,9 @@ export const FullBox = styled.div`
     color: ${color.primaryText};
     font-weight: 600;
   }
+  @media screen and (max-width: 769px) {
+    width: 109px;
+  }
 `;
 export const Price = styled.div`
   margin-top: 1em;
@@ -145,7 +148,7 @@ export const Price = styled.div`
 export const Discount = styled.div`
   z-index: 1;
   top: 3%;
-  left: 4%;
+  left: 7%;
   position: absolute;
   width: 45px;
   height: 45px;
@@ -154,7 +157,10 @@ export const Discount = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-
+  @media screen and (max-width: 769px) {
+    width: 35px;
+    height: 35px;
+  }
   & > p {
     color: ${color.primaryText};
     font-weight: 600;

@@ -166,7 +166,7 @@ function CartPage() {
         />
         <Row justify="end" style={{ margin: "24px 0" }}>
           <Col span={8}>
-            <Card size="small" title="Tổng tiền phải thanh toán">
+            <Card size="small" title="Tổng tiền">
               <S.TotalPrice>
                 {totalPrice.toLocaleString()} <S.Unit>₫</S.Unit>
               </S.TotalPrice>
