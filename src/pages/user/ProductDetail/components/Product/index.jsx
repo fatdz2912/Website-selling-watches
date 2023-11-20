@@ -2,7 +2,7 @@ import { Button, Col, Row, Space, Rate, Breadcrumb, notification } from "antd";
 import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import {  useMemo,  } from "react";
+import { useMemo, useState } from "react";
 
 import {
   favoriteProductRequest,
@@ -18,21 +18,24 @@ function Product({
   handleDecreaseQuantity,
   handleIncreaseQuantity,
   quantity,
-  image,
+  imagePrevious,
   name,
   category,
   discount,
   oldPrice,
+  imageHozontal,
   currentPrice,
+  imageBehind,
   averageRate,
   handleAddToCart,
   productId,
 }) {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  const [image, setImage] = useState(imagePrevious);
   const { productDetail } = useSelector((state) => state.product);
   const { userInfo } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const isFavorite = useMemo(
     () =>
@@ -44,7 +47,9 @@ function Product({
     [productDetail.data.favorites, userInfo.data.id]
   );
   const handleBuyNow = () => {
-    const selectedRows = [{ quantity, name, currentPrice, productId, image }];
+    const selectedRows = [
+      { quantity, name, currentPrice, productId, imagePrevious },
+    ];
     dispatch(updateProductBuy({ selectedRows }));
     navigate(ROUTES.USER.CHECKOUT);
   };
@@ -75,7 +80,21 @@ function Product({
   };
   return (
     <S.ProductDetail gutter={[16, 16]}>
-      <Col xs={24} sm={24} md={24} lg={14}>
+      <Col xs={6} sm={6} md={6} lg={3}>
+        <S.ImageDetails
+          onMouseEnter={() => setImage(imagePrevious)}
+          src={imagePrevious}
+        ></S.ImageDetails>
+        <S.ImageDetails
+          onMouseEnter={() => setImage(imageHozontal)}
+          src={imageHozontal}
+        ></S.ImageDetails>
+        <S.ImageDetails
+          onMouseEnter={() => setImage(imageBehind)}
+          src={imageBehind}
+        ></S.ImageDetails>
+      </Col>
+      <Col xs={18} sm={18} md={18} lg={11}>
         <S.ImageWrapper>
           <S.Discount>
             <p>-{discount}%</p>
@@ -83,7 +102,7 @@ function Product({
           <S.FullBox>
             <p>MỚI - FULLBOX 100%</p>
           </S.FullBox>
-          <S.Image src={image} />
+          <S.ImageDefault src={image || imagePrevious} />
         </S.ImageWrapper>
       </Col>
       <Col sm={24} md={24} lg={10}>
@@ -119,7 +138,8 @@ function Product({
             <S.Name>{name}</S.Name>
             <S.Preview>
               <Col xs={12} md={12} lg={12}>
-                <Rate value={averageRate} allowHalf disabled />({averageRate})
+                <Rate value={parseFloat(averageRate)} allowHalf disabled />(
+                {averageRate})
               </Col>
               <Col span={12}>
                 <S.Heart>
@@ -192,16 +212,16 @@ function Product({
               </S.Desc>
             </S.Info>
           </Col>
-          <Col md={24} lg={24} xs={24}>
-            <Row gutter={[16, 16]} style={{ width: "100%" }}>
-              <S.AddCart type="primary" onClick={() => handleAddToCart()}>
-                <FaShoppingCart size={30} style={{ marginRight: 15 }} />
-                Thêm vào giỏ
-              </S.AddCart>
-              <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
-            </Row>
-          </Col>
         </Row>
+      </Col>
+      <Col md={12} lg={12} xs={12}>
+        <S.AddCart type="primary" onClick={() => handleAddToCart()}>
+          <FaShoppingCart size={30} style={{ marginRight: 15 }} />
+          Thêm vào giỏ
+        </S.AddCart>
+      </Col>
+      <Col md={12} lg={12} xs={12}>
+        <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
       </Col>
     </S.ProductDetail>
   );

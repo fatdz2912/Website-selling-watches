@@ -264,8 +264,32 @@ function UpdateProduct() {
           <Select placeholder="Chọn loại SP">{renderProductOptions}</Select>
         </Form.Item>
         <Form.Item
-          label="Ảnh"
-          name="image"
+          label="Ảnh Trước"
+          name="imagePrevious"
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng thêm ảnh!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Ảnh Ngang"
+          name="imageHozontal"
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng thêm ảnh!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Ảnh Sau"
+          name="imageBehind"
           rules={[
             {
               required: true,

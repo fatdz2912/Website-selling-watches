@@ -203,7 +203,7 @@ function Checkout() {
           <Col md={12} xs={6} lg={12}>
             <Row>
               <S.ImageCartWrapper xs={24} md={5} lg={5}>
-                <S.ImageCart src={item.image}></S.ImageCart>
+                <S.ImageCart src={item.imagePrevious}></S.ImageCart>
               </S.ImageCartWrapper>
               <S.Name xs={24} md={19} lg={19}>
                 <div>{item.name}</div>

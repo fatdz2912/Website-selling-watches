@@ -25,7 +25,7 @@ export const ProfileMenuItem = styled.div`
   ${({ active }) =>
     active &&
     css`
-      border-right: 5px solid #000;
+      border-right: 5px solid ${color.outstanding};
       background-color: ${color.primary};
       color: ${color.primaryText};
       &:hover {

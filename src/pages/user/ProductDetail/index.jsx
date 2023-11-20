@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
-import { Col, notification } from "antd";
+import { Col } from "antd";
 
 import Product from "./components/Product";
 import Preview from "./components/Review";
@@ -34,12 +34,14 @@ function ProductDetail() {
 
   const {
     description,
-    image,
+    imagePrevious,
     name,
     category,
     discount,
     oldPrice,
     currentPrice,
+    imageHozontal,
+    imageBehind,
   } = productDetail.data;
   useEffect(() => {
     dispatch(
@@ -70,7 +72,7 @@ function ProductDetail() {
           name: productDetail.data.name,
           currentPrice: productDetail.data.currentPrice,
           quantity: quantity,
-          image: image,
+          imagePrevious: imagePrevious,
         },
       })
     );
@@ -82,12 +84,14 @@ function ProductDetail() {
       <S.ProductDetailWrapper>
         <Product
           averageRate={averageRate}
-          image={image}
+          imagePrevious={imagePrevious}
           name={name}
           category={category}
           discount={discount}
           oldPrice={oldPrice}
+          imageHozontal={imageHozontal}
           currentPrice={currentPrice}
+          imageBehind={imageBehind}
           handleDecreaseQuantity={handleDecreaseQuantity}
           handleIncreaseQuantity={handleIncreaseQuantity}
           quantity={quantity}

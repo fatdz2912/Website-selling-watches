@@ -69,7 +69,14 @@ function Review({ id, averageRate }) {
             <Form.Item
               label="Đánh giá sao"
               name="rate"
-              rules={[{ required: true, message: "Đánh giá sao là bắt buộc" }]}
+              rules={[
+                { required: true },
+                {
+                  min: 1,
+                  type: "number",
+                  message: "Đánh giá sao là bắt buộc",
+                },
+              ]}
             >
               <Rate />
             </Form.Item>
@@ -130,7 +137,7 @@ function Review({ id, averageRate }) {
           <S.RatingPeak> trên 5</S.RatingPeak>
         </S.RatingOverviewScore>
         <S.Stars>
-          <Rate value={averageRate} allowHalf disabled />
+          <Rate value={parseFloat(averageRate)} allowHalf disabled />
         </S.Stars>
       </Col>
       <Col xs={18} md={18} xl={18}>

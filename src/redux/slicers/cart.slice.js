@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notification } from "antd";
 
 const initialState = {
   cartList: JSON.parse(localStorage.getItem("cartList")) || [],
@@ -25,6 +26,7 @@ export const cartSlice = createSlice({
       }
       localStorage.setItem("cartList", JSON.stringify(newCartList));
       state.cartList = newCartList;
+      notification.success({ message: "Thêm vào giỏ thành công!" });
     },
     updateCart: (state, action) => {
       const {

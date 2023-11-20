@@ -17,14 +17,9 @@ import {
   updateAddressDefaultSuccess,
   updateAddressDefaultFailure,
 } from "../slicers/address.slice";
-
 function* getAddressListSaga(action) {
   try {
     const { userId, addressDefaultId } = action.payload;
-    console.log(
-      "🚀 ~ file: address.saga.js:24 ~ function*getAddressListSaga ~ addressDefaultId:",
-      addressDefaultId
-    );
     const result = yield axios.get("http://localhost:4000/addresses", {
       params: {
         userId: userId,

@@ -113,6 +113,9 @@ function ProductManager() {
       title: "Giảm giá",
       dataIndex: "discount",
       key: "discount",
+      render: (discount) => (
+        <p style={{ textAlign: "center" }}>{discount.toLocaleString()}%</p>
+      ),
     },
 
     {

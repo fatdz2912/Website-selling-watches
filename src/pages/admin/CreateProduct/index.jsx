@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, Input, Select, InputNumber, notification } from "antd";
+import { Form, Input, Select, InputNumber, notification, Upload } from "antd";
 // import { PlusOutlined } from "@ant-design/icons";
 // import ReactQuill from "react-quill";
 import { v4 as uuid } from "uuid";
@@ -11,6 +11,8 @@ import { getCategoryListRequest } from "redux/slicers/category.slice";
 
 import * as S from "./style";
 import { ROUTES } from "constants/routes";
+import { FaCamera } from "react-icons/fa";
+import { convertImageToBase64 } from "utils/files";
 
 function CreateProduct() {
   const { categoryList } = useSelector((state) => state.category);
@@ -24,19 +26,32 @@ function CreateProduct() {
     dispatch(getCategoryListRequest());
   }, []);
 
-  const handleAddProduct = (values) => {
-    dispatch(
+  const handleAddProduct = async (values) => {
+    const { imageHozontal, imagePrevious, imageBehind } = values;
+    const imageHozontalBase64 = await convertImageToBase64(
+      imageHozontal[0].originFileObj
+    );
+    const imagePreviousBase64 = await convertImageToBase64(
+      imagePrevious[0].originFileObj
+    );
+    const imageBehindBase64 = await convertImageToBase64(
+      imageBehind[0].originFileObj
+    );
+    await dispatch(
       addProductRequest({
         data: {
           id: uuid(),
           ...values,
           currentPrice:
             values.oldPrice - (values.oldPrice * values.discount) / 100,
+          imageHozontal: imageHozontalBase64,
+          imagePrevious: imagePreviousBase64,
+          imageBehind: imageBehindBase64,
         },
         callback: () => navigate(ROUTES.ADMIN.PRODUCT_MANAGER),
       })
     );
-    notification.success({ message: "Thêm sản phẩm thành công" });
+    await notification.success({ message: "Thêm sản phẩm thành công" });
   };
 
   const renderProductOptions = useMemo(() => {
@@ -81,6 +96,30 @@ function CreateProduct() {
           <Input />
         </Form.Item>
         <Form.Item
+          label="Giới Tính"
+          name="gender"
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng chọn giới tính",
+            },
+          ]}
+        >
+          <Select
+            placeholder="Chọn giới tính"
+            options={[
+              {
+                value: "Nam",
+                label: "Nam",
+              },
+              {
+                value: "Nữ",
+                label: "Nữ",
+              },
+            ]}
+          ></Select>
+        </Form.Item>
+        <Form.Item
           label="Giá"
           name="oldPrice"
           rules={[
@@ -102,28 +141,7 @@ function CreateProduct() {
             style={{ width: "100%" }}
           />
         </Form.Item>
-        <Form.Item
-          label="Dự Trữ Điện"
-          name="powerReserve"
-          rules={[
-            {
-              required: true,
-              message: "Vui lòng nhập Dự Trữ Điện!",
-              type: "number",
-            },
-            {
-              type: "number",
-              min: 1,
-              message: "vui lòng nhập từ 1 trở lên!",
-            },
-          ]}
-        >
-          <InputNumber
-            formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
-            style={{ width: "100%" }}
-          />
-        </Form.Item>
+
         <Form.Item
           label="Kích Thước"
           name="size"
@@ -191,6 +209,81 @@ function CreateProduct() {
           />
         </Form.Item>
         <Form.Item
+          label="Ảnh trước"
+          name="imagePrevious"
+          valuePropName="fileList"
+          getValueFromEvent={(e) => {
+            return e?.fileList;
+          }}
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng thêm ảnh trước của đồng hồ!",
+            },
+          ]}
+        >
+          <Upload
+            listType="picture-card"
+            beforeUpload={Upload.LIST_IGNORE}
+            maxCount={1}
+          >
+            <div>
+              <FaCamera />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </div>
+          </Upload>
+        </Form.Item>
+        <Form.Item
+          label="Ảnh ngang"
+          name="imageHozontal"
+          valuePropName="fileList"
+          getValueFromEvent={(e) => {
+            return e?.fileList;
+          }}
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng thêm ảnh ngang của đồng hồ!",
+            },
+          ]}
+        >
+          <Upload
+            listType="picture-card"
+            beforeUpload={Upload.LIST_IGNORE}
+            maxCount={1}
+          >
+            <div>
+              <FaCamera />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </div>
+          </Upload>
+        </Form.Item>
+        <Form.Item
+          label="Ảnh đằng sau"
+          name="imageBehind"
+          valuePropName="fileList"
+          getValueFromEvent={(e) => {
+            return e?.fileList;
+          }}
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng thêm ảnh sau của đồng hồ!",
+            },
+          ]}
+        >
+          <Upload
+            listType="picture-card"
+            beforeUpload={Upload.LIST_IGNORE}
+            maxCount={1}
+          >
+            <div>
+              <FaCamera />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </div>
+          </Upload>
+        </Form.Item>
+        <Form.Item
           label="Series"
           name="series"
           rules={[
@@ -215,28 +308,26 @@ function CreateProduct() {
           <Input />
         </Form.Item>
         <Form.Item
-          label="Giới Tính"
-          name="gender"
+          label="Dự Trữ Điện"
+          name="powerReserve"
           rules={[
             {
               required: true,
-              message: "Vui lòng chọn giới tính",
+              message: "Vui lòng nhập Dự Trữ Điện!",
+              type: "number",
+            },
+            {
+              type: "number",
+              min: 1,
+              message: "vui lòng nhập từ 1 trở lên!",
             },
           ]}
         >
-          <Select
-            placeholder="Chọn giới tính"
-            options={[
-              {
-                value: "Nam",
-                label: "Nam",
-              },
-              {
-                value: "Nữ",
-                label: "Nữ",
-              },
-            ]}
-          ></Select>
+          <InputNumber
+            formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
+            style={{ width: "100%" }}
+          />
         </Form.Item>
         <Form.Item
           label="Hình dạng"
@@ -273,18 +364,6 @@ function CreateProduct() {
           ]}
         >
           <Select placeholder="Chọn loại SP">{renderProductOptions}</Select>
-        </Form.Item>
-        <Form.Item
-          label="Ảnh"
-          name="image"
-          rules={[
-            {
-              required: true,
-              message: "Vui lòng thêm ảnh!",
-            },
-          ]}
-        >
-          <Input />
         </Form.Item>
         <Form.Item
           label="Mô tả"

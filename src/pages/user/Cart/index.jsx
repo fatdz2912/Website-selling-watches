@@ -60,11 +60,11 @@ function CartPage() {
     },
     {
       title: "Hình ảnh",
-      dataIndex: "image",
-      key: "image",
+      dataIndex: "imagePrevious",
+      key: "imagePrevious",
       render: (_, record) => (
         <img
-          src={record.image}
+          src={record.imagePrevious}
           alt={record.name}
           style={{ width: "60px", height: "50px" }}
         />

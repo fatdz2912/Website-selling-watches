@@ -12,15 +12,24 @@ export const ImageWrapper = styled.div`
   height: auto;
   position: relative;
 `;
-export const Image = styled.img`
+export const ImageDefault = styled.img`
   width: 100%;
   filter: brightness(0.8);
-  height: 100%;
   object-fit: contain;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin: 0 auto;
   object-fit: cover;
+`;
+export const ImageDetails = styled.img`
+  width: 100%;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 auto;
+  object-fit: cover;
+  margin-top: 10px;
+  cursor: pointer;
 `;
 export const Brands = styled.div`
   border-radius: 4px;

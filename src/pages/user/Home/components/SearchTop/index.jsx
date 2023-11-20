@@ -74,7 +74,10 @@ function SearchTop() {
                       <p>MỚI - FULLBOX 100%</p>
                     </S.FullBox>
                     <S.ImageWrapper>
-                      <S.Image src={item.image} alt={item.name}></S.Image>
+                      <S.Image
+                        src={item.imagePrevious}
+                        alt={item.name}
+                      ></S.Image>
                     </S.ImageWrapper>
                     <S.Information>
                       <S.Name>

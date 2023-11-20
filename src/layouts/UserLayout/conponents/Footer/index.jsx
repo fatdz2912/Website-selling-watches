@@ -38,17 +38,21 @@ function Footer() {
           </Link>
         </S.Information>
         <S.Information xs={24} xl={8}>
-          <S.Heading>CONNECT</S.Heading>
-          <S.ConnectFB>
-            <FaFacebook size={30} />
-            <span>Fanpage Facebook</span>
-          </S.ConnectFB>
-          <S.ConnectZalo>
-            <S.ImageZaloWrapper>
-              <S.ImageZalo src={imageZalo} alt="Image Zalo" />
-            </S.ImageZaloWrapper>
-            <span>Zalo Chat official</span>
-          </S.ConnectZalo>
+          <S.Heading>KẾT NỐI</S.Heading>
+          <Link to="https://www.facebook.com/Fatdz2912">
+            <S.ConnectFB>
+              <FaFacebook size={30} />
+              <span>Fanpage Facebook</span>
+            </S.ConnectFB>
+          </Link>
+          <Link to="https://zalo.me/0377460815">
+            <S.ConnectZalo>
+              <S.ImageZaloWrapper>
+                <S.ImageZalo src={imageZalo} alt="Image Zalo" />
+              </S.ImageZaloWrapper>
+              <span>Zalo Chat official</span>
+            </S.ConnectZalo>
+          </Link>
         </S.Information>
       </S.Footer>
     </S.FooterWrapper>

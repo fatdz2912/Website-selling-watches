@@ -29,7 +29,7 @@ function Favorite() {
       return (
         <S.FavoriteItem key={item.id}>
           <S.ImageWrapper span={4}>
-            <img src={item.product.image}></img>
+            <img src={item.product.imagePrevious}></img>
           </S.ImageWrapper>
           <S.Name span={16}>{item.product.name}</S.Name>
           <S.Heart span={4}>
@@ -55,7 +55,7 @@ function Favorite() {
   return (
     <S.FavoriteWrapper>
       <S.Heading>
-        <FaRegStar /> FAVORITE-3
+        <FaRegStar /> FAVORITE-{favoriteList.data.length}
       </S.Heading>
       <S.FavoriteList>{renderProductFavorite}</S.FavoriteList>
     </S.FavoriteWrapper>

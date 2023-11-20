@@ -115,10 +115,12 @@ export const ProductItem = styled(Col)`
 export const ImageWrapper = styled.div`
   width: 100%;
   height: auto;
+  position: relative;
 `;
 export const Image = styled.img`
   filter: brightness(0.97);
   width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: all 0.3s;
   border-radius: 4px;
@@ -127,6 +129,21 @@ export const Image = styled.img`
 
   &:hover {
     cursor: pointer;
+  }
+`;
+export const ImageHover = styled.img`
+  filter: brightness(0.97);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  ${ImageWrapper}:hover & {
+    opacity: 1;
   }
 `;
 export const Discount = styled.div`
