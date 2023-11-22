@@ -127,7 +127,7 @@ function Checkout() {
   ];
 
   const handleSubmitCheckoutForm = (values) => {
-    const { cityCode, districtCode, wardCode, address } = values;
+    const { cityCode, districtCode, wardCode, specificAddress } = values;
     const cityData = cityList.data.find((item) => item.code === cityCode);
     const districtData = districtList.data.find(
       (item) => item.code === districtCode
@@ -146,7 +146,7 @@ function Checkout() {
           districtName: districtData?.name,
           wardName: wardData?.name,
           totalPrice: totalPrice,
-          address: address,
+          specificAddress: specificAddress,
           note: values.note,
           userId: userInfo.data.id || GUEST_ID,
         },

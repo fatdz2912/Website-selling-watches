@@ -12,7 +12,7 @@ export const TitleDESC = styled.div`
   color: ${color.primary};
 `;
 export const Description = styled(Col)`
-  margin-top: 3em;
+  margin-top: 1em;
   text-align: justify;
 `;
 export const DESC = styled.div`

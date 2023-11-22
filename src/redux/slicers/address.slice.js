@@ -119,7 +119,6 @@ export const addressSlice = createSlice({
       const index = state.addressList.data.findIndex(
         (item) => item.id === addressId
       );
-      console.log("🚀 ~ file: address.slice.js:115 ~ index:", index);
       newArray.splice(index, 1);
       newArray.unshift(state.addressList.data[index]);
       state.addressList.data = newArray;

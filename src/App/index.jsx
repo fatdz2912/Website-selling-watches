@@ -59,14 +59,9 @@ function App() {
   const { favoriteList } = useSelector((state) => state.favorite);
   const { orderList, orderProductData } = useSelector((state) => state.order);
   const { reviewList, createReviewData } = useSelector((state) => state.review);
-  const {
-    productList,
-    productDiscountList,
-    productDetail,
-    addProductData,
-    updateProductData,
-    deleteProductData,
-  } = useSelector((state) => state.product);
+  const { addProductData, updateProductData, deleteProductData } = useSelector(
+    (state) => state.product
+  );
   useEffect(() => {
     setIsShowLoading(
       cityList.loading ||
@@ -81,9 +76,6 @@ function App() {
         favoriteList.loading ||
         orderList.loading ||
         orderProductData.loading ||
-        productList.loading ||
-        productDiscountList.loading ||
-        productDetail.loading ||
         addProductData.loading ||
         updateProductData.loading ||
         deleteProductData.loading ||
@@ -103,9 +95,6 @@ function App() {
     favoriteList.loading,
     orderList.loading,
     orderProductData.loading,
-    productList.loading,
-    productDiscountList.loading,
-    productDetail.loading,
     addProductData.loading,
     updateProductData.loading,
     deleteProductData.loading,

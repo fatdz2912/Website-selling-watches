@@ -22,7 +22,8 @@ function Successpay() {
           Mã số đơn hàng của bạn là <S.Number>833831882</S.Number>
         </S.OrderNumber>
         <S.OrderNumber>
-          Bạn có thể xem chi tiết trong <Link>Đơn hàng của tôi.</Link>
+          Bạn có thể xem chi tiết trong
+          <Link to={ROUTES.USER.ORDER_HISTORY}> Đơn hàng của tôi.</Link>
         </S.OrderNumber>
         <S.Revert onClick={() => navigate(ROUTES.USER.HOME)}>
           QUAY LẠI TRANG CHỦ

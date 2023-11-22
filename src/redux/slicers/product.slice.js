@@ -16,6 +16,21 @@ const initialState = {
     loading: false,
     error: null,
   },
+  searchSuggestions: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  searchHistories: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  searchHistory: {
+    data: [],
+    loading: false,
+    error: null,
+  },
   productDetail: {
     data: {},
     loading: false,
@@ -153,12 +168,60 @@ export const productSlice = createSlice({
       state.productList.data = state.productList.data.filter(
         (item) => item.id !== action.payload.id
       );
-      console.log(action.payload);
     },
     deleteProductFailure: (state, action) => {
       const { error } = action.payload;
       state.deleteProductData.loading = false;
       state.deleteProductData.error = error;
+    },
+    // getSearchSuggestion
+    getSearchSuggestionRequest: (state, action) => {
+      state.searchSuggestions.loading = true;
+      state.searchSuggestions.error = null;
+    },
+    getSearchSuggestionSuccess: (state, action) => {
+      const { data, searchKey } = action.payload;
+      if (searchKey !== "") {
+        state.searchSuggestions.data = data;
+      } else {
+        state.searchSuggestions.data = [];
+      }
+      state.searchSuggestions.loading = false;
+    },
+    getSearchSuggestionFailure: (state, action) => {
+      const { error } = action.payload;
+      state.searchSuggestions.loading = false;
+      state.searchSuggestions.error = error;
+    },
+    // createSearchHistory
+    createSearchHistoryRequest: (state, action) => {
+      state.searchHistory.loading = true;
+      state.searchHistory.error = null;
+    },
+    createSearchHistorySuccess: (state, action) => {
+      const { data } = action.payload;
+      state.searchHistory.data = [...state.searchHistory.data, data];
+      state.searchHistory.loading = false;
+    },
+    createSearchHistoryFailure: (state, action) => {
+      const { error } = action.payload;
+      state.searchSuggestions.loading = false;
+      state.searchSuggestions.error = error;
+    },
+    // getSearchHistory
+    getSearchHistoryRequest: (state, action) => {
+      state.searchHistories.loading = true;
+      state.searchHistories.error = null;
+    },
+    getSearchHistorySuccess: (state, action) => {
+      const { data } = action.payload;
+      state.searchHistories.data = data;
+      state.searchHistories.loading = false;
+    },
+    getSearchHistoryFailure: (state, action) => {
+      const { error } = action.payload;
+      state.searchHistories.loading = false;
+      state.searchHistories.error = error;
     },
   },
   extraReducers: {
@@ -198,6 +261,15 @@ export const {
   updateProductDetailRequest,
   updateProductDetailFailure,
   updateProductDetailSuccess,
+  getSearchSuggestionRequest,
+  getSearchSuggestionFailure,
+  getSearchSuggestionSuccess,
+  createSearchHistoryRequest,
+  createSearchHistorySuccess,
+  createSearchHistoryFailure,
+  getSearchHistoryRequest,
+  getSearchHistorySuccess,
+  getSearchHistoryFailure,
 } = productSlice.actions;
 
 export default productSlice.reducer;

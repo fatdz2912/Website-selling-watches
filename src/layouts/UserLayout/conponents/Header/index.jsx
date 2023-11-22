@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { Button, Dropdown, Badge, Skeleton, Space } from "antd";
 import {
   FaUserAlt,
@@ -21,17 +21,28 @@ import { ROUTES } from "constants/routes";
 
 import { getCategoryListRequest } from "redux/slicers/category.slice";
 import { logoutRequest } from "redux/slicers/auth.slice";
+import {
+  getSearchSuggestionRequest,
+  createSearchHistoryRequest,
+  getSearchHistoryRequest,
+} from "redux/slicers/product.slice";
 
 function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const [isHiddenAngleUp, setIsHiddenAngleUp] = useState(false);
   const [searchKey, setSearchKey] = useState("");
+  const [isSHowSearchSuggestions, setIsSHowSearchSuggestions] = useState(false);
+
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
   const { cartList } = useSelector((state) => state.cart);
-
+  const { searchSuggestions, searchHistories } = useSelector(
+    (state) => state.product
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
+
+  const indexSearchSuggestion = useRef(-1);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -40,6 +51,12 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (userInfo.data.id) {
+      dispatch(getSearchHistoryRequest({ userId: userInfo.data.id, limit: 8 }));
+    }
+  }, [userInfo.data.id]);
 
   useEffect(() => {
     const searchParams = qs.parse(search, {
@@ -68,10 +85,66 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         sortOrder: searchParams.sortOrder,
         searchKey: searchKey,
       };
+      if (searchKey !== "") {
+        dispatch(
+          createSearchHistoryRequest({
+            data: {
+              userId: userInfo.data.id,
+              searchKey: searchKey,
+            },
+          })
+        );
+      }
+      setIsSHowSearchSuggestions(false);
       navigate({
         pathname: ROUTES.USER.PRODUCT_LIST,
         search: qs.stringify(newFilterParams),
       });
+    }
+  };
+  const handleGetSearchSuggestions = (e) => {
+    if (
+      (e.which >= 65 && e.which <= 90) ||
+      (e.which >= 97 && e.which <= 122) ||
+      (e.which >= 48 && e.which <= 57) ||
+      e.which === 8
+    ) {
+      indexSearchSuggestion.current = -1;
+      dispatch(
+        getSearchSuggestionRequest({
+          page: 1,
+          limit: 8,
+          searchKey: e.target.value,
+        })
+      );
+    }
+    if (
+      e.which === 40 &&
+      (indexSearchSuggestion.current < searchSuggestions.data.length - 1 ||
+        indexSearchSuggestion.current < searchHistories.data.length - 1)
+    ) {
+      indexSearchSuggestion.current = indexSearchSuggestion.current + 1;
+      if (searchSuggestions.data.name) {
+        setSearchKey(
+          searchSuggestions.data[indexSearchSuggestion.current]?.name
+        );
+      } else {
+        setSearchKey(
+          searchHistories.data[indexSearchSuggestion.current].searchKey
+        );
+      }
+    }
+    if (e.which === 38 && indexSearchSuggestion.current > 0) {
+      indexSearchSuggestion.current = indexSearchSuggestion.current - 1;
+      if (searchSuggestions.data.name) {
+        setSearchKey(
+          searchSuggestions.data[indexSearchSuggestion.current].name
+        );
+      } else {
+        setSearchKey(
+          searchHistories.data[indexSearchSuggestion.current]?.searchKey
+        );
+      }
     }
   };
 
@@ -104,6 +177,34 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
     ));
   }, [categoryList.data, isHiddenMenu, categoryList.loading]);
 
+  const renderSearchSuggestions = useMemo(() => {
+    if (searchKey !== "") {
+      return searchSuggestions?.data.map((item) => {
+        return (
+          <S.TextSuggestions
+            key={item.id}
+            onClick={() => {
+              console.log(item.name);
+              // navigate({
+              //   pathname: ROUTES.USER.PRODUCT_LIST,
+              //   search: qs.stringify({
+              //     searchKey: item.name,
+              //   }),
+              // });
+            }}
+          >
+            {item.name}
+          </S.TextSuggestions>
+        );
+      });
+    } else {
+      return searchHistories?.data.map((item) => {
+        return (
+          <S.TextSuggestions key={item.id}>{item.searchKey}</S.TextSuggestions>
+        );
+      });
+    }
+  }, [searchSuggestions?.data, searchHistories?.data]);
   return (
     <S.HeaderWrapper>
       <S.HeaderTopWrapper>
@@ -172,21 +273,49 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         >
           <FaBars size={25} color={color.primary} />
         </S.NavMenu>
-        <S.HeaderLogo sm={11} xs={10} md={12} xl={4}>
+        <S.HeaderLogo sm={11} xs={10} md={6} xl={4}>
           <a href={ROUTES.USER.HOME}>
             <S.ImageLogo src="https://www.jomashop.com/dist/file/jomashop_logo.7c0762d85d36b44f0c59.png"></S.ImageLogo>
           </a>
         </S.HeaderLogo>
-        <S.SearchColumn sm={0} xs={0} md={0} xl={14}>
+        <S.SearchColumn
+          onClick={() => {
+            setIsSHowSearchSuggestions(true);
+          }}
+          onBlur={() => {
+            setIsSHowSearchSuggestions(false);
+          }}
+          sm={0}
+          xs={0}
+          md={11}
+          xl={14}
+        >
           <S.InputSearch
             prefix={<FaSearchengin size={25} />}
             placeholder="Tìm kiếm sản phẩm hoặc thương hiệu "
-            onChange={(e) => setSearchKey(e.target.value)}
+            onChange={(e) => {
+              setSearchKey(e.target.value);
+              if (!isSHowSearchSuggestions) {
+                setIsSHowSearchSuggestions(true);
+              }
+            }}
             onKeyDown={(e) => handleSearchKeyWord(e)}
+            onKeyUp={(e) => handleGetSearchSuggestions(e)}
             value={searchKey}
           ></S.InputSearch>
+          <S.SearchSuggestions
+            isSHowSearchSuggestions={isSHowSearchSuggestions}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <S.HeadingSearch>
+              Tìm kiếm {searchKey} trong JOMASHOP
+            </S.HeadingSearch>
+            {renderSearchSuggestions}
+          </S.SearchSuggestions>
         </S.SearchColumn>
-        <S.LoginAndCart sm={11} xs={12} md={12} xl={6}>
+        <S.LoginAndCart sm={11} xs={12} md={7} xl={6}>
           <Link to={ROUTES.USER.CART}>
             <Badge count={cartList.length}>
               <FaCartPlus cursor={"pointer"} size={30} color={color.primary} />
@@ -221,7 +350,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             <Button onClick={() => navigate(ROUTES.LOGIN)}>Đăng nhập</Button>
           )}
         </S.LoginAndCart>
-        <S.SearchColumn sm={24} xs={24} md={24} xl={0}>
+        <S.SearchColumn sm={24} xs={24} md={0} xl={0}>
           <S.InputSearch
             prefix={<FaSearchengin size={25} color={color.primary} />}
             placeholder="Search for product or brands"

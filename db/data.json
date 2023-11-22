@@ -77,6 +77,19 @@
       "updatedAt": 1700470229039,
       "isDelete": false,
       "id": 6
+    },
+    {
+      "email": "nguyenthidathao11112000@gmail.com",
+      "password": "$2a$10$ctWwyq1V8kwZoJgW3IGUXegwIYk.41o59noUows/v0sdpZB7MPWz6",
+      "fullName": "Nguyễn thị dạ thảo",
+      "agree": true,
+      "role": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "createdAt": 1700556638737,
+      "updatedAt": 1700557074340,
+      "isDelete": false,
+      "id": 7,
+      "addressDefaultId": 9
     }
   ],
   "reviews": [
@@ -198,12 +211,12 @@
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/o/m/omega-speedmaster-racing-automatic-chronograph-men_s-watch-326.30.40.50.01.001.jpg?width=350&height=350",
       "imageHozontal": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/o/m/omega-speedmaster-racing-automatic-chronograph-men_s-watch-326.30.40.50.01.001_2.jpg?width=546&height=546",
       "imageBehind": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/o/m/omega-speedmaster-racing-automatic-chronograph-men_s-watch-326.30.40.50.01.001_3.jpg?width=546&height=546",
-      "name": "Đồng hồ nam bấm giờ tự động.Đua xe tốc độ",
+      "name": "Đồng hồ nam bấm giờ tự động",
       "oldPrice": 120000000,
       "currentPrice": 85200000,
       "limited": false,
       "discount": 29,
-      "searchTop": 41,
+      "searchTop": 88,
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền cố định bằng thép không gỉ với vòng trên bằng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động tự động Omega calibre 3330 với khả năng dự trữ năng lượng trong 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 40 mm. Độ dày vỏ: 15 mm. Hình dạng vỏ tròn. Chiều rộng dải: 19 mm. Chiều dài dây: 8,5 inch. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ, máy đo tốc độ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mẫu mã: 326 30 40 50 01 001, 326-30-40-50-01-001, 326/30/40/50/01/001, 32630405001001. Đồng hồ nam Chronograph tự động Omega Speedmaster Racing 326.30.40.50.01.001",
       "series": "Speedmaster Racing",
       "gender": "Nam",
@@ -216,7 +229,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700471980081,
+      "updatedAt": 1700590513375,
       "params": {
         "searchTop": 11
       }
@@ -227,7 +240,7 @@
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-submariner-automatic-chronometer-black-dial-mens-watch-124060bkso.jpg?width=350&height=350",
       "imageHozontal": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/r/o/rolex-gmtmaster-ii-gmt-black-dial-batman-bezel-mens-watch-126710blnr_2.jpg?width=546&height=546",
       "imageBehind": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/r/o/rolex-gmtmaster-ii-gmt-black-dial-batman-bezel-mens-watch-126710blnr_3.jpg?width=546&height=546",
-      "name": "Đồng hồ nam mặt số đen tự động.Đồng hồ bấm giờ tàu ngầm ",
+      "name": "Đồng hồ nam mặt số đen tự động.Đồng hồ bấm giờ tàu ngầm",
       "oldPrice": 125000000,
       "currentPrice": 118750000,
       "limited": false,
@@ -258,7 +271,7 @@
       "currentPrice": 5440000,
       "limited": false,
       "discount": 66,
-      "searchTop": 11,
+      "searchTop": 12,
       "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Khóa triển khai. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Couturier mặt đen tự động T035.407.16.051.03",
       "series": "Couturier",
       "gender": "Nam",
@@ -271,7 +284,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700465452995
+      "updatedAt": 1700637572366
     },
     {
       "id": 19,
@@ -284,7 +297,7 @@
       "currentPrice": 114000000,
       "limited": false,
       "discount": 24,
-      "searchTop": 22,
+      "searchTop": 27,
       "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền thép không gỉ màu xanh xoay một chiều. Mặt số tông màu bạc với kim màu xanh lam và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt bạc tự động Breitling Superocean A17375E71G1A1.",
       "series": "Superocean",
       "gender": "Nam",
@@ -297,7 +310,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700469566585
+      "updatedAt": 1700633719141
     },
     {
       "id": 25,
@@ -440,7 +453,7 @@
       "currentPrice": 276760000,
       "limited": false,
       "discount": 26,
-      "searchTop": 11,
+      "searchTop": 14,
       "description": "Stainless steel case with a brown leather strap. Fixed stainless steel bezel. #049f04 dial with luminous silver-tone hands and Arabic numeral hour markers. Minute markers. Arabic numeral minute markers (at 5 minute intervals). Tachymeter markings around the outer rim. Dial Type: Analog. Luminescent hands and markers. Chronograph - two sub-dials displaying: 60 second and 30 minute. Breitling Calibre B09 hand wind movement with a 70-hour power reserve. Scratch resistant sapphire crystal. Pull / push crown. Transparent case back. Round case shape, case size: 40 mm, case thickness: 13 mm. Band width: 20 mm / 18 mm. Fold over clasp. Water resistant at 100 meters / 330 feet. Functions: chronograph, hour, minute, second. Premier Series. Dress watch style. Watch label: Swiss Made. Breitling Premier Chronograph Hand Wind #049f04 Dial Men's Watch AB0930D31L1P1.",
       "series": "Premier",
       "gender": "Nam",
@@ -453,7 +466,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259721,
       "isDelete": false,
-      "updatedAt": 1700451436397
+      "updatedAt": 1700633107270
     },
     {
       "id": 26,
@@ -544,7 +557,7 @@
       "currentPrice": 673870000,
       "limited": false,
       "discount": 21,
-      "searchTop": 15,
+      "searchTop": 16,
       "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ.",
       "series": "GMT-Master II",
       "gender": "Nam",
@@ -557,7 +570,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259130,
       "isDelete": false,
-      "updatedAt": 1700469511589
+      "updatedAt": 1700556705390
     },
     {
       "id": 15,
@@ -674,7 +687,7 @@
       "currentPrice": 352600000,
       "limited": false,
       "discount": 18,
-      "searchTop": 10,
+      "searchTop": 11,
       "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Cố định bằng thép không gỉ tông màu bạc với viền vòng nhôm màu đen dát. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ máy tự động Omega Calibre 3861, dựa trên Lemania 1873, chứa 26 viên Ngọc, hoạt động ở tần số 21600 vph và có khả năng dự trữ năng lượng khoảng 50 giờ. Tinh thể pha lê hesalite chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm, độ dày vỏ: 13,58 mm. Khóa triển khai. Chống nước ở độ sâu 50 mét / 165 feet. Chức năng: đồng hồ bấm giờ, giờ, phút, giây. Thông tin thêm: nguyên hộp, sách hướng dẫn (đầy đủ phụ kiện). Dòng Speedmaster. Phong cách đồng hồ lặn. Nhãn đồng hồ: Swiss Made. Đồng hồ đeo tay nam Omega Speedmaster Chronograph Hand Wind Black Dial 310.30.42.50.01.001.",
       "series": "Speedmaster",
       "gender": "Nam",
@@ -687,7 +700,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259718,
       "isDelete": false,
-      "updatedAt": 1699716259718
+      "updatedAt": 1700557718338
     },
     {
       "id": 9,
@@ -1318,7 +1331,7 @@
       "oldPrice": 23000000,
       "currentPrice": 16560000,
       "discount": 28,
-      "searchTop": 10,
+      "searchTop": 11,
       "gender": "Nữ",
       "categoryId": 5,
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/t/u/tudor-royal-automatic-black-dial-ladies-watch-m284000003.jpg?width=546&height=546",
@@ -1327,7 +1340,7 @@
       "description": "Vỏ thép 316L với dây đeo bằng thép 316L. Cố định khung thép 316L. Mặt số màu đen với kim màu bạc sáng và vạch số giờ La Mã. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Tudor calibre T601, dựa trên ETA 2824, chứa 25 viên Ngọc, hoạt động ở tần số 28800 vph và có khả năng dự trữ năng lượng khoảng 38 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 34 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hoàng Gia. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nữ mặt số màu đen tự động Tudor Royal M28400-0003.",
       "createdAt": 1699068030318,
       "isDelete": false,
-      "updatedAt": 1699068030318,
+      "updatedAt": 1700557694570,
       "limited": false,
       "series": "GMT-Master II",
       "engine": "Longines Calibre L888",
@@ -1370,7 +1383,7 @@
       "oldPrice": 457000000,
       "currentPrice": 425010000,
       "discount": 7,
-      "searchTop": 10,
+      "searchTop": 11,
       "gender": "Nữ",
       "categoryId": 2,
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/p/r/preowned-rolex-oyster-perpetual-automatic-chronometer-white-dial-ladies-watch-177200wblro.jpg?width=546&height=546",
@@ -1379,7 +1392,7 @@
       "description": "Vỏ thép không gỉ tông màu bạc với dây đeo bằng thép không gỉ rolex tông màu bạc. Viền thép không gỉ tông màu bạc hình vòm cố định. Mặt số màu trắng với kim màu bạc và vạch số giờ La Mã. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bộ chuyển động tự động Rolex Calibre 2231, chứa 31 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 48 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 31 mm. Chiều dài băng tần: 6 1/2. Khóa Oysterlock. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: giờ, phút, giây, Chronometer. Dòng sản phẩm Oyster vĩnh viễn. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nữ Rolex Oyster Perpetual Chronometer mặt số màu trắng đã qua sử dụng 177200WBLRO.",
       "createdAt": 1699070786158,
       "isDelete": false,
-      "updatedAt": 1699070786158,
+      "updatedAt": 1700557646036,
       "limited": false,
       "series": "GMT-Master II",
       "engine": "Longines Calibre L888",
@@ -1491,105 +1504,118 @@
   ],
   "orders": [
     {
-      "cityName": "Tỉnh Quảng Nam",
-      "districtName": "Huyện Nông Sơn",
-      "wardName": "Xã Quế Trung",
-      "totalPrice": 250000000,
-      "address": "Tổ Phước Viên",
-      "userId": 2,
-      "createdAt": 1699694785351,
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường Thanh Khê Đông",
+      "totalPrice": 3952000000,
+      "specificAddress": "1349 nguyễn tất thành,thanh khê đông",
+      "userId": 7,
+      "createdAt": 1700557834217,
+      "updatedAt": 1700557834217,
       "isDelete": false,
-      "updatedAt": 1699694785351,
+      "id": 1
+    }
+  ],
+  "searchHistories": [
+    {
+      "userId": 2,
+      "searchKey": "đồng hồ nam",
+      "createdAt": 1700590547330,
+      "updatedAt": 1700590547330,
+      "isDelete": false,
       "id": 1
     },
     {
-      "cityName": "Tỉnh Quảng Nam",
-      "districtName": "Huyện Nông Sơn",
-      "wardName": "Xã Quế Trung",
-      "totalPrice": 1089650000,
-      "address": "Tổ Trung Nam",
       "userId": 2,
-      "createdAt": 1699768692916,
-      "updatedAt": 1699768692916,
+      "searchKey": "đồng hồ nữ",
+      "createdAt": 1700590747936,
+      "updatedAt": 1700590747936,
       "isDelete": false,
       "id": 2
+    },
+    {
+      "userId": 2,
+      "searchKey": "nam",
+      "createdAt": 1700590779124,
+      "updatedAt": 1700590779124,
+      "isDelete": false,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "searchKey": "Đồng hồ nam bấm giờ tự động",
+      "createdAt": 1700590868419,
+      "updatedAt": 1700590868419,
+      "isDelete": false,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "searchKey": "Đồng hồ Unisex mặt số màu xanh thạch anh PRX",
+      "createdAt": 1700591783215,
+      "updatedAt": 1700591783216,
+      "isDelete": false,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "searchKey": "Đồng hồ Unisex mặt số màu xanh thạch anh PRX",
+      "createdAt": 1700635730777,
+      "updatedAt": 1700635730777,
+      "isDelete": false,
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "searchKey": "Đồng hồ nam bấm giờ tự động",
+      "createdAt": 1700635770658,
+      "updatedAt": 1700635770658,
+      "isDelete": false,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "searchKey": "nam",
+      "createdAt": 1700635783599,
+      "updatedAt": 1700635783599,
+      "isDelete": false,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "searchKey": "đồng hồ nam",
+      "createdAt": 1700635911726,
+      "updatedAt": 1700635911726,
+      "isDelete": false,
+      "id": 11
     }
   ],
   "orderDetails": [
     {
-      "productId": "2",
-      "name": "Đồng hồ nam mặt số đen tự động.Đồng hồ bấm giờ tàu ngầm 124060BKSO",
-      "currentPrice": 125000000,
-      "quantity": 2,
-      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-submariner-automatic-chronometer-black-dial-mens-watch-124060bkso.jpg?width=350&height=350",
-      "imageHozontal": "",
-      "imageBehind": "",
+      "productId": "8",
+      "name": "Đồng hồ nam Speedmaster Chronograph Hand Wind Black Dial",
+      "currentPrice": 352600000,
+      "quantity": 10,
+      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/o/m/omega-speedmaster-chronograph-hand-wind-black-dial-mens-watch-31030425001001-31030425001001_1.jpg?width=350&height=350",
       "orderId": 1,
-      "uuid": "ecc400f4-9131-4b6c-85bb-12a37cb7dce5",
-      "createdAt": 1699694785390,
+      "uuid": "b968cdc6-b40d-43cc-8c9f-2382bb921a8a",
+      "createdAt": 1700557834286,
+      "updatedAt": 1700557834286,
       "isDelete": false,
-      "updatedAt": 1699694785390,
       "id": 1
     },
     {
       "productId": "1",
-      "name": "Đồng hồ nam bấm giờ tự động.Đua xe tốc độ 326.30.40.50.01.001",
+      "name": "Đồng hồ nam bấm giờ tự động.Đua xe tốc độ",
       "currentPrice": 85200000,
-      "quantity": 1,
+      "quantity": 5,
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/o/m/omega-speedmaster-racing-automatic-chronograph-men_s-watch-326.30.40.50.01.001.jpg?width=350&height=350",
-      "imageHozontal": "",
-      "imageBehind": "",
-      "orderId": 2,
-      "uuid": "318cd9c9-8587-47e5-939f-3aaf04eecf2c",
-      "createdAt": 1699694896783,
+      "orderId": 1,
+      "uuid": "b968cdc6-b40d-43cc-8c9f-2382bb921a8a",
+      "createdAt": 1700557834406,
+      "updatedAt": 1700557834406,
       "isDelete": false,
-      "updatedAt": 1699694896784,
       "id": 2
-    },
-    {
-      "productId": "33",
-      "name": "Đồng hồ nam mặt bạc Conquest mặt nâu 43mm L37604765",
-      "currentPrice": 38500000,
-      "quantity": 1,
-      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/l/o/longines-conquest-silver-dial-brown-leather-men_s-watch-l37604765.jpg?width=350&height=350",
-      "imageHozontal": "",
-      "imageBehind": "",
-      "orderId": 2,
-      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
-      "createdAt": 1699768692958,
-      "updatedAt": 1699768692958,
-      "isDelete": false,
-      "id": 4
-    },
-    {
-      "productId": "22",
-      "name": "Đồng hồ nam Chronometer tự động Superocean A17375211B1S1",
-      "currentPrice": 466200000,
-      "quantity": 2,
-      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/b/r/breitling-superocean-automatic-chronometer-mens-watch-a17375211b1s1.jpg?width=350&height=350",
-      "imageHozontal": "",
-      "imageBehind": "",
-      "orderId": 2,
-      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
-      "createdAt": 1699768693001,
-      "updatedAt": 1699768693001,
-      "isDelete": false,
-      "id": 5
-    },
-    {
-      "productId": "2",
-      "name": "Đồng hồ nam mặt số đen tự động.Đồng hồ bấm giờ tàu ngầm 124060BKSO",
-      "currentPrice": 118750000,
-      "quantity": 1,
-      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-submariner-automatic-chronometer-black-dial-mens-watch-124060bkso.jpg?width=350&height=350",
-      "imageHozontal": "",
-      "imageBehind": "",
-      "orderId": 2,
-      "uuid": "d18ba873-52bd-40af-8106-1db0996a61d5",
-      "createdAt": 1699768693050,
-      "updatedAt": 1699768693050,
-      "isDelete": false,
-      "id": 6
     }
   ],
   "favorites": [
@@ -1776,6 +1802,22 @@
       "updatedAt": 1700466535988,
       "isDelete": false,
       "id": 47
+    },
+    {
+      "productId": 19,
+      "userId": 2,
+      "createdAt": 1700488783235,
+      "updatedAt": 1700488783235,
+      "isDelete": false,
+      "id": 48
+    },
+    {
+      "productId": 3,
+      "userId": 2,
+      "createdAt": 1700637580109,
+      "updatedAt": 1700637580109,
+      "isDelete": false,
+      "id": 49
     }
   ],
   "addresses": [
@@ -1868,6 +1910,32 @@
       "updatedAt": 1700242781535,
       "isDelete": false,
       "id": 7
+    },
+    {
+      "name": "dạ thảo",
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường Thanh Khê Đông",
+      "userId": 7,
+      "phone": "0912683524",
+      "specificAddress": "1349 nguyễn tất thành,thanh khê đông",
+      "createdAt": 1700556963430,
+      "updatedAt": 1700556984556,
+      "isDelete": false,
+      "id": 8
+    },
+    {
+      "name": "ngô văn trị",
+      "cityName": "Tỉnh Quảng Nam",
+      "districtName": "Huyện Nông Sơn",
+      "wardName": "Xã Quế Trung",
+      "userId": 7,
+      "phone": "0377460815",
+      "specificAddress": "cafe phố núi",
+      "createdAt": 1700557070909,
+      "updatedAt": 1700557070909,
+      "isDelete": false,
+      "id": 9
     }
   ],
   "categories": [

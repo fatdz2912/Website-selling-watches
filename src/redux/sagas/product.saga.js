@@ -23,6 +23,15 @@ import {
   updateProductDetailRequest,
   updateProductDetailFailure,
   updateProductDetailSuccess,
+  getSearchSuggestionRequest,
+  getSearchSuggestionFailure,
+  getSearchSuggestionSuccess,
+  createSearchHistoryRequest,
+  createSearchHistorySuccess,
+  createSearchHistoryFailure,
+  getSearchHistoryRequest,
+  getSearchHistorySuccess,
+  getSearchHistoryFailure,
 } from "../slicers/product.slice";
 
 function* getProductListSaga(action) {
@@ -74,7 +83,26 @@ function* getProductListSaga(action) {
     yield put(getProductListFailure({ error: "Lỗi" }));
   }
 }
+function* getSearchSuggestionsSaga(action) {
+  try {
+    const { limit, searchKey } = action.payload;
+    const result = yield axios.get("http://localhost:4000/products", {
+      params: {
+        _limit: limit,
+        q: searchKey,
+      },
+    });
 
+    yield put(
+      getSearchSuggestionSuccess({
+        data: result.data,
+        searchKey: searchKey,
+      })
+    );
+  } catch (e) {
+    yield put(getSearchSuggestionFailure({ error: "Lỗi" }));
+  }
+}
 function* addProductSaga(action) {
   try {
     const { data, callback } = action.payload;
@@ -174,6 +202,42 @@ function* getProductDiscountListSaga(action) {
     yield put(getDiscountProductListFailure({ error: "Lỗi" }));
   }
 }
+function* createSearchHistorySaga(action) {
+  try {
+    const { data } = action.payload;
+    yield axios.post("http://localhost:4000/searchHistories", data);
+    yield put(
+      getProductListRequest({
+        sortOrder: "createdAt.desc",
+      })
+    );
+    yield put(createSearchHistorySuccess({ data }));
+  } catch (e) {
+    yield put(createSearchHistoryFailure({ error: "Lỗi" }));
+  }
+}
+function* getSearchHistorySaga(action) {
+  try {
+    const { limit, userId } = action.payload;
+    const result = yield axios.get(`http://localhost:4000/searchHistories/`, {
+      params: {
+        _limit: limit,
+        _sort: "createdAt",
+        _order: "desc",
+        isDelete: false,
+        userId: userId,
+      },
+    });
+
+    yield put(
+      getSearchHistorySuccess({
+        data: result.data,
+      })
+    );
+  } catch (e) {
+    yield put(getSearchHistoryFailure({ error: "Lỗi" }));
+  }
+}
 export default function* productSaga() {
   yield takeEvery(getProductListRequest, getProductListSaga);
   yield takeEvery(getProductDetailRequest, getProductDetailSaga);
@@ -182,4 +246,7 @@ export default function* productSaga() {
   yield takeEvery(getDiscountProductListRequest, getProductDiscountListSaga);
   yield takeEvery(updateProductRequest, updateProductSaga);
   yield takeEvery(deleteProductRequest, deleteProductSaga);
+  yield takeEvery(getSearchSuggestionRequest, getSearchSuggestionsSaga);
+  yield takeEvery(createSearchHistoryRequest, createSearchHistorySaga);
+  yield takeEvery(getSearchHistoryRequest, getSearchHistorySaga);
 }

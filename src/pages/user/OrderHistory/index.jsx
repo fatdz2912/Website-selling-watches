@@ -43,10 +43,10 @@ function OrderHistories() {
     },
     {
       title: "Địa chỉ giao hàng",
-      dataIndex: "address",
-      key: "address",
-      render: (address, item) =>
-        `${address}, ${item?.wardName}, ${item?.districtName}, ${item?.cityName}`,
+      dataIndex: "specificAddress",
+      key: "specificAddress",
+      render: (specificAddress, item) =>
+        `${item.specificAddress}, ${item?.wardName}, ${item?.districtName}, ${item?.cityName}`,
     },
     {
       title: "Tổng tiền",

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Row, Col } from "antd";
 import { color } from "themes/color";
 export const DetailWrapper = styled(Row)`
-  margin-top: 3em;
+  margin-top: 1.3em;
   width: 100%;
 `;
 export const TitleMoreDetail = styled(Col)`

@@ -197,14 +197,6 @@ function Product({
             </S.Info>
             <S.Info gutter={[8, 8]}>
               <S.Title xs={12} md={12} lg={12}>
-                KHO
-              </S.Title>
-              <S.Desc xs={12} md={12} lg={12}>
-                Có sẵn
-              </S.Desc>
-            </S.Info>
-            <S.Info gutter={[8, 8]}>
-              <S.Title xs={12} md={12} lg={12}>
                 PHÍ VẬN CHUYỂN
               </S.Title>
               <S.Desc xs={12} md={12} lg={12}>
@@ -212,16 +204,16 @@ function Product({
               </S.Desc>
             </S.Info>
           </Col>
+          <Col md={12} lg={12} xs={12}>
+            <S.AddCart type="primary" onClick={() => handleAddToCart()}>
+              <FaShoppingCart size={30} style={{ marginRight: 15 }} />
+              Thêm vào giỏ hàng
+            </S.AddCart>
+          </Col>
+          <Col md={12} lg={12} xs={12}>
+            <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
+          </Col>
         </Row>
-      </Col>
-      <Col md={12} lg={12} xs={12}>
-        <S.AddCart type="primary" onClick={() => handleAddToCart()}>
-          <FaShoppingCart size={30} style={{ marginRight: 15 }} />
-          Thêm vào giỏ
-        </S.AddCart>
-      </Col>
-      <Col md={12} lg={12} xs={12}>
-        <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
       </Col>
     </S.ProductDetail>
   );

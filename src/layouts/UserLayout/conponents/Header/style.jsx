@@ -12,9 +12,6 @@ export const HeaderWrapper = styled.div`
   z-index: 3;
   padding-bottom: 16px;
   box-shadow: 0 1px #ccc;
-  @media screen and (min-width: 769px) and (max-width: 1199px) {
-    height: 30vh;
-  }
 `;
 
 export const HeaderTopWrapper = styled.div`
@@ -99,9 +96,31 @@ export const ImageLogo = styled.img`
     height: 18px;
   }
 `;
-export const SearchColumn = styled(Col)``;
+export const SearchColumn = styled(Col)`
+  position: relative;
+`;
 export const InputSearch = styled(Input)`
   padding: 4px 8px;
+`;
+export const SearchSuggestions = styled.div`
+  display: ${(props) => (props.isSHowSearchSuggestions ? "block" : "none")};
+  width: calc(100% - 16px);
+  background-color: #fff;
+  position: absolute;
+  top: 2.4em;
+  left: 8px;
+  min-height: 30px;
+  border: 1px solid #ccc;
+`;
+export const HeadingSearch = styled.div`
+  padding: 8px;
+  font-size: 1rem;
+  color: #b3acac;
+`;
+export const TextSuggestions = styled.div`
+  padding: 8px;
+  font-size: 1rem;
+  color: #000;
 `;
 export const LoginAndCart = styled(Col)`
   display: flex;

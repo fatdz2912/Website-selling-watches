@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { Row, Col, Button } from "antd";
 import { color } from "themes/color";
-export const ProductDetail = styled(Row)`
-  min-height: 70vh;
-`;
+export const ProductDetail = styled(Row)``;
 export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -186,8 +184,7 @@ export const Transport = styled.div`
   }
 `;
 export const AddCart = styled(Button)`
-  margin-top: 1em;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   min-height: 8vh;
   width: 100%;
   display: flex;
@@ -204,8 +201,7 @@ export const AddCart = styled(Button)`
   }
 `;
 export const Buy = styled(Button)`
-  margin-top: 1em;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   min-height: 8vh;
   width: 100%;
   @media screen and (max-width: 768px) {
