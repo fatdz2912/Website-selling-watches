@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, generatePath, useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import ChangeAddressDefaultModal from "./components/ChangeAddressModal";
 
@@ -46,7 +46,7 @@ function Checkout() {
   );
   const { productBuyList } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
-  const { addressList } = useSelector((state) => state?.address);
+  const { addressList } = useSelector((state) => state.address);
   const totalPrice = productBuyList.reduce(
     (total, item) => total + item.currentPrice * item.quantity,
     0
@@ -56,35 +56,29 @@ function Checkout() {
     window.scrollTo({
       top: 0,
     });
+    document.title = "Thanh toán";
+    dispatch(getCityListRequest());
+  }, []);
+  useEffect(() => {
     dispatch(
       getAddressListRequest({
         userId: userInfo?.data?.id,
         addressDefaultId: userInfo.data.addressDefaultId,
       })
     );
-    document.title = "Thanh toán";
-    dispatch(getCityListRequest());
-  }, []);
+  }, [userInfo?.data?.id]);
 
   useEffect(() => {
     const defaultAddress = addressList.data.find(
       (item) => item.id === userInfo?.data?.addressDefaultId
     );
-    if (defaultAddress?.districtName) {
-      dispatch(getDistrictListRequest({ name: defaultAddress?.districtName }));
-    }
-    if (defaultAddress?.wardName) {
-      dispatch(getWardListRequest({ name: defaultAddress?.wardName }));
-    }
     if (defaultAddress) {
+      dispatch(getDistrictListRequest({ name: defaultAddress.districtName }));
+      if (districtList.data[0]?.code) {
+        dispatch(getWardListRequest({ name: defaultAddress.wardName }));
+      }
       const cityData = cityList.data.find(
         (item) => item.name === defaultAddress.cityName
-      );
-      const districtData = districtList.data.find(
-        (item) => item.name === defaultAddress.districtName
-      );
-      const wardData = wardList.data.find(
-        (item) => item.name === defaultAddress.wardName
       );
       if (userInfo.data.id) {
         checkoutForm.setFieldsValue({
@@ -93,12 +87,17 @@ function Checkout() {
           phoneNumber: defaultAddress?.phone,
           specificAddress: defaultAddress?.specificAddress,
           cityCode: cityData?.code,
-          districtCode: districtData?.code,
-          wardCode: wardData?.code,
+          districtCode: districtList.data[0]?.code,
+          wardCode: wardList.data[0]?.code,
         });
       }
     }
-  }, [userInfo.data, addressList.data]);
+  }, [
+    userInfo.data,
+    addressList.data,
+    districtList.data[0]?.code,
+    wardList.data[0]?.code,
+  ]);
 
   const tableColumn = [
     {
@@ -152,33 +151,34 @@ function Checkout() {
         },
         productBuyList: productBuyList,
         orderId: id,
-        callback: () => navigate(ROUTES.USER.SUCCESSPAY),
+        callback: () =>
+          navigate(generatePath(ROUTES.USER.SUCCESSPAY, { id: id })),
       })
     );
   };
 
   const renderCityOptions = useMemo(() => {
-    return cityList.data.map((item) => {
+    return cityList.data.map((item, index) => {
       return (
-        <Select.Option key={item.id} value={item.code}>
+        <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
       );
     });
   }, [cityList.data]);
   const renderDistrictOptions = useMemo(() => {
-    return districtList.data.map((item) => {
+    return districtList.data.map((item, index) => {
       return (
-        <Select.Option key={item.id} value={item.code}>
+        <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
       );
     });
   }, [districtList.data]);
   const renderWardListOptions = useMemo(() => {
-    return wardList.data.map((item) => {
+    return wardList.data.map((item, index) => {
       return (
-        <Select.Option key={item.id} value={item.code}>
+        <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
       );
@@ -191,15 +191,15 @@ function Checkout() {
         size="small"
         columns={tableColumn}
         dataSource={productBuyList}
-        rowKey="id"
+        rowKey="productId"
         pagination={false}
       />
     );
   }, [productBuyList]);
   const renderCartListDetail = useMemo(() => {
-    return productBuyList.map((item) => {
+    return productBuyList.map((item, index) => {
       return (
-        <S.CartItem>
+        <S.CartItem key={index}>
           <Col md={12} xs={6} lg={12}>
             <Row>
               <S.ImageCartWrapper xs={24} md={5} lg={5}>
@@ -263,10 +263,10 @@ function Checkout() {
       <Row gutter={[16, 16]}>
         <Col md={24} xl={24} xs={24}>
           <S.SubHeading>I.CHI TIẾT ĐƠN HÀNG</S.SubHeading>
-          <Row>
+          {/* <Row>
             <div>Bạn có mã ưu đãi?</div>
             <span>Ấn vào đây để nhập mã</span>
-          </Row>
+          </Row> */}
           <S.CartListDetailWrapper gutter={[16, 16]}>
             <S.Title md={12} xs={6} lg={12}>
               SẢN PHẨM

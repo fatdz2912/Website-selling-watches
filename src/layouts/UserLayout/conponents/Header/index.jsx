@@ -9,6 +9,7 @@ import {
   FaAngleUp,
   FaPhoneSquareAlt,
   FaCommentDots,
+  FaHistory,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation, Link } from "react-router-dom";
@@ -26,11 +27,13 @@ import {
   createSearchHistoryRequest,
   getSearchHistoryRequest,
 } from "redux/slicers/product.slice";
-
+import {
+  showSearchSuggestion,
+  hiddenSearchSuggestion,
+} from "redux/slicers/searchSuggestion.slice";
 function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const [isHiddenAngleUp, setIsHiddenAngleUp] = useState(false);
   const [searchKey, setSearchKey] = useState("");
-  const [isSHowSearchSuggestions, setIsSHowSearchSuggestions] = useState(false);
 
   const { categoryList } = useSelector((state) => state.category);
   const { userInfo } = useSelector((state) => state.auth);
@@ -38,6 +41,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const { searchSuggestions, searchHistories } = useSelector(
     (state) => state.product
   );
+  const { isSHowSearchSuggestions } = useSelector((state) => state.search);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -86,16 +90,21 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         searchKey: searchKey,
       };
       if (searchKey !== "") {
-        dispatch(
-          createSearchHistoryRequest({
-            data: {
-              userId: userInfo.data.id,
-              searchKey: searchKey,
-            },
-          })
+        const indexEmpty = searchHistories.data.findIndex(
+          (item) => item.searchKey === searchKey
         );
+        if (indexEmpty === -1) {
+          dispatch(
+            createSearchHistoryRequest({
+              data: {
+                userId: userInfo.data.id,
+                searchKey: searchKey,
+              },
+            })
+          );
+        }
       }
-      setIsSHowSearchSuggestions(false);
+      dispatch(hiddenSearchSuggestion());
       navigate({
         pathname: ROUTES.USER.PRODUCT_LIST,
         search: qs.stringify(newFilterParams),
@@ -124,19 +133,19 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
         indexSearchSuggestion.current < searchHistories.data.length - 1)
     ) {
       indexSearchSuggestion.current = indexSearchSuggestion.current + 1;
-      if (searchSuggestions.data.name) {
+      if (searchSuggestions.data[0]?.name) {
         setSearchKey(
           searchSuggestions.data[indexSearchSuggestion.current]?.name
         );
       } else {
         setSearchKey(
-          searchHistories.data[indexSearchSuggestion.current].searchKey
+          searchHistories.data[indexSearchSuggestion.current]?.searchKey
         );
       }
     }
     if (e.which === 38 && indexSearchSuggestion.current > 0) {
       indexSearchSuggestion.current = indexSearchSuggestion.current - 1;
-      if (searchSuggestions.data.name) {
+      if (searchSuggestions.data[0]?.name) {
         setSearchKey(
           searchSuggestions.data[indexSearchSuggestion.current].name
         );
@@ -184,13 +193,13 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           <S.TextSuggestions
             key={item.id}
             onClick={() => {
-              console.log(item.name);
-              // navigate({
-              //   pathname: ROUTES.USER.PRODUCT_LIST,
-              //   search: qs.stringify({
-              //     searchKey: item.name,
-              //   }),
-              // });
+              dispatch(hiddenSearchSuggestion());
+              navigate({
+                pathname: ROUTES.USER.PRODUCT_LIST,
+                search: qs.stringify({
+                  searchKey: item.name,
+                }),
+              });
             }}
           >
             {item.name}
@@ -200,7 +209,20 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
     } else {
       return searchHistories?.data.map((item) => {
         return (
-          <S.TextSuggestions key={item.id}>{item.searchKey}</S.TextSuggestions>
+          <S.TextSuggestions
+            onClick={() => {
+              dispatch(hiddenSearchSuggestion());
+              navigate({
+                pathname: ROUTES.USER.PRODUCT_LIST,
+                search: qs.stringify({
+                  searchKey: item.searchKey,
+                }),
+              });
+            }}
+            key={item.id}
+          >
+            <FaHistory size={10} /> {item.searchKey}
+          </S.TextSuggestions>
         );
       });
     }
@@ -279,11 +301,9 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           </a>
         </S.HeaderLogo>
         <S.SearchColumn
-          onClick={() => {
-            setIsSHowSearchSuggestions(true);
-          }}
-          onBlur={() => {
-            setIsSHowSearchSuggestions(false);
+          onClick={(e) => {
+            e.stopPropagation();
+            dispatch(showSearchSuggestion());
           }}
           sm={0}
           xs={0}
@@ -296,7 +316,7 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             onChange={(e) => {
               setSearchKey(e.target.value);
               if (!isSHowSearchSuggestions) {
-                setIsSHowSearchSuggestions(true);
+                dispatch(showSearchSuggestion());
               }
             }}
             onKeyDown={(e) => handleSearchKeyWord(e)}
@@ -309,9 +329,14 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
               e.stopPropagation();
             }}
           >
-            <S.HeadingSearch>
-              Tìm kiếm {searchKey} trong JOMASHOP
-            </S.HeadingSearch>
+            {searchKey !== "" && (
+              <S.HeadingSearch>
+                Tìm kiếm {searchKey} trong JOMASHOP
+              </S.HeadingSearch>
+            )}
+            {searchKey === "" && (
+              <S.HeadingSearch>Lịch sử tìm kiếm</S.HeadingSearch>
+            )}
             {renderSearchSuggestions}
           </S.SearchSuggestions>
         </S.SearchColumn>
@@ -350,14 +375,45 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
             <Button onClick={() => navigate(ROUTES.LOGIN)}>Đăng nhập</Button>
           )}
         </S.LoginAndCart>
-        <S.SearchColumn sm={24} xs={24} md={0} xl={0}>
+        <S.SearchColumn
+          onClick={(e) => {
+            e.stopPropagation();
+            dispatch(showSearchSuggestion());
+          }}
+          sm={24}
+          xs={24}
+          md={0}
+          xl={0}
+        >
           <S.InputSearch
             prefix={<FaSearchengin size={25} color={color.primary} />}
-            placeholder="Search for product or brands"
-            onChange={(e) => setSearchKey(e.target.value)}
+            placeholder="Tìm kiếm sản phẩm hoặc thương hiệu!"
+            onChange={(e) => {
+              setSearchKey(e.target.value);
+              if (!isSHowSearchSuggestions) {
+                dispatch(showSearchSuggestion());
+              }
+            }}
             onKeyDown={(e) => handleSearchKeyWord(e)}
+            onKeyUp={(e) => handleGetSearchSuggestions(e)}
             value={searchKey}
           ></S.InputSearch>
+          <S.SearchSuggestions
+            isSHowSearchSuggestions={isSHowSearchSuggestions}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            {searchKey !== "" && (
+              <S.HeadingSearch>
+                Tìm kiếm {searchKey} trong JOMASHOP
+              </S.HeadingSearch>
+            )}
+            {searchKey === "" && (
+              <S.HeadingSearch>Lịch sử tìm kiếm</S.HeadingSearch>
+            )}
+            {renderSearchSuggestions}
+          </S.SearchSuggestions>
         </S.SearchColumn>
         <S.MenuDeskWrapper>{renderBrandsList}</S.MenuDeskWrapper>
         <S.MenuModal

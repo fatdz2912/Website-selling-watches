@@ -10,6 +10,7 @@ import locationReducer from "./redux/slicers/location.slice";
 import orderReducer from "./redux/slicers/order.slice";
 import favoriteReducer from "./redux/slicers/favorite.slice";
 import addressReducer from "./redux/slicers/address.slice";
+import searchSuggestionReducer from "redux/slicers/searchSuggestion.slice";
 
 import rootSaga from "./redux/sagas/index";
 
@@ -25,6 +26,7 @@ const store = configureStore({
     order: orderReducer,
     favorite: favoriteReducer,
     address: addressReducer,
+    search: searchSuggestionReducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({

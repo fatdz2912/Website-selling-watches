@@ -111,6 +111,7 @@ export const SearchSuggestions = styled.div`
   left: 8px;
   min-height: 30px;
   border: 1px solid #ccc;
+  border-radius: 4px;
 `;
 export const HeadingSearch = styled.div`
   padding: 8px;
@@ -120,7 +121,12 @@ export const HeadingSearch = styled.div`
 export const TextSuggestions = styled.div`
   padding: 8px;
   font-size: 1rem;
-  color: #000;
+  color: ${color.primary};
+  border-radius: 8px;
+  &:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
 `;
 export const LoginAndCart = styled(Col)`
   display: flex;

@@ -1,12 +1,9 @@
-import { Modal, Popconfirm, Radio, Row } from "antd";
+import { Modal, Radio, Row } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useMemo } from "react";
 
 import * as S from "./style";
-import {
-  deleteAddressRequest,
-  updateAddressDefaultRequest,
-} from "redux/slicers/address.slice";
+import { updateAddressDefaultRequest } from "redux/slicers/address.slice";
 
 import UpdateModal from "pages/user/components/UpdateModal";
 import CreateModal from "pages/user/components/CreateModal";
@@ -38,7 +35,7 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
                   {item?.wardName},{item?.districtName},{item?.cityName}
                 </p>
               </S.InfoAddress>
-              {index == 0 && <S.AddressDefault>Mặc định</S.AddressDefault>}
+              {index === 0 && <S.AddressDefault>Mặc định</S.AddressDefault>}
             </S.Left>
             <S.Right xs={12} md={8} sm={10} lg={6}>
               <S.UpdateAndDeleteWrapper>

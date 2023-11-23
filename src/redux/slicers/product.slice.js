@@ -27,7 +27,6 @@ const initialState = {
     error: null,
   },
   searchHistory: {
-    data: [],
     loading: false,
     error: null,
   },
@@ -200,13 +199,13 @@ export const productSlice = createSlice({
     },
     createSearchHistorySuccess: (state, action) => {
       const { data } = action.payload;
-      state.searchHistory.data = [...state.searchHistory.data, data];
-      state.searchHistory.loading = false;
+      state.searchHistories.data.unshift(data);
+      state.searchHistories.loading = false;
     },
     createSearchHistoryFailure: (state, action) => {
       const { error } = action.payload;
-      state.searchSuggestions.loading = false;
-      state.searchSuggestions.error = error;
+      state.searchHistories.loading = false;
+      state.searchHistories.error = error;
     },
     // getSearchHistory
     getSearchHistoryRequest: (state, action) => {

@@ -205,13 +205,8 @@ function* getProductDiscountListSaga(action) {
 function* createSearchHistorySaga(action) {
   try {
     const { data } = action.payload;
-    yield axios.post("http://localhost:4000/searchHistories", data);
-    yield put(
-      getProductListRequest({
-        sortOrder: "createdAt.desc",
-      })
-    );
-    yield put(createSearchHistorySuccess({ data }));
+    const result = yield axios.post(`http://localhost:4000/searches`, data);
+    yield put(createSearchHistorySuccess({ data: result.data }));
   } catch (e) {
     yield put(createSearchHistoryFailure({ error: "Lỗi" }));
   }
@@ -219,7 +214,7 @@ function* createSearchHistorySaga(action) {
 function* getSearchHistorySaga(action) {
   try {
     const { limit, userId } = action.payload;
-    const result = yield axios.get(`http://localhost:4000/searchHistories/`, {
+    const result = yield axios.get(`http://localhost:4000/searches`, {
       params: {
         _limit: limit,
         _sort: "createdAt",

@@ -24,9 +24,9 @@ function Address() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    // });
+    window.scrollTo({
+      top: 0,
+    });
     document.title = "Trang địa chỉ";
     dispatch(
       getAddressListRequest({
