@@ -339,7 +339,13 @@ function Checkout() {
                     <Form.Item
                       label="Số điện thoại"
                       name="phoneNumber"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[
+                        { required: true, message: "Required!" },
+                        {
+                          pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
+                          message: "Vui lòng nhập đúng định dạng",
+                        },
+                      ]}
                     >
                       <Input placeholder="Nhập số điện thoại" />
                     </Form.Item>

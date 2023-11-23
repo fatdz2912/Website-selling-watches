@@ -453,7 +453,7 @@
       "currentPrice": 276760000,
       "limited": false,
       "discount": 26,
-      "searchTop": 16,
+      "searchTop": 17,
       "description": "Stainless steel case with a brown leather strap. Fixed stainless steel bezel. #049f04 dial with luminous silver-tone hands and Arabic numeral hour markers. Minute markers. Arabic numeral minute markers (at 5 minute intervals). Tachymeter markings around the outer rim. Dial Type: Analog. Luminescent hands and markers. Chronograph - two sub-dials displaying: 60 second and 30 minute. Breitling Calibre B09 hand wind movement with a 70-hour power reserve. Scratch resistant sapphire crystal. Pull / push crown. Transparent case back. Round case shape, case size: 40 mm, case thickness: 13 mm. Band width: 20 mm / 18 mm. Fold over clasp. Water resistant at 100 meters / 330 feet. Functions: chronograph, hour, minute, second. Premier Series. Dress watch style. Watch label: Swiss Made. Breitling Premier Chronograph Hand Wind #049f04 Dial Men's Watch AB0930D31L1P1.",
       "series": "Premier",
       "gender": "Nam",
@@ -466,7 +466,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259721,
       "isDelete": false,
-      "updatedAt": 1700726650957
+      "updatedAt": 1700729215803
     },
     {
       "id": 26,
@@ -661,7 +661,7 @@
       "currentPrice": 38500000,
       "limited": false,
       "discount": 30,
-      "searchTop": 10,
+      "searchTop": 13,
       "description": "Vỏ thép không gỉ với dây đeo bằng da màu nâu. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Chữ số Ả Rập đánh dấu vị trí 6 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ máy thạch anh Longines calibre 157. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 43 mm. Độ dày vỏ: 11,5 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Khóa triển khai. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam da nâu mặt bạc Longines Conquest L37604765.",
       "series": "Hydroconquest",
       "gender": "Nam",
@@ -674,7 +674,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259228,
       "isDelete": false,
-      "updatedAt": 1699716259228
+      "updatedAt": 1700728270816
     },
     {
       "id": 8,

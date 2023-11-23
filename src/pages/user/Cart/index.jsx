@@ -88,6 +88,11 @@ function CartPage() {
         <InputNumber
           value={item.quantity}
           min={1}
+          onKeyDown={(e) => {
+            if (e.which === 8) {
+              e.preventDefault();
+            }
+          }}
           onChange={(value) => handleChangeQuantity(item.productId, value)}
         />
       ),
