@@ -7,10 +7,7 @@ import {
   getDistrictListRequest,
   getWardListRequest,
 } from "redux/slicers/location.slice";
-import {
-  getAddressListRequest,
-  createAddressRequest,
-} from "redux/slicers/address.slice";
+import { createAddressRequest } from "redux/slicers/address.slice";
 function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
   const [addressDefault, setAddressDefault] = useState(true);
   const { cityList, districtList, wardList } = useSelector(
@@ -24,7 +21,6 @@ function CreateModal({ isShowCreateAddress, setIsShowCreateAddress }) {
 
   useEffect(() => {
     dispatch(getCityListRequest());
-    dispatch(getAddressListRequest({ userId: userInfo?.data?.id }));
   }, []);
   useEffect(() => {
     if (isShowCreateAddress) {

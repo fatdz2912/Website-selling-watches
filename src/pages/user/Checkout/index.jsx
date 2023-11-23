@@ -60,12 +60,14 @@ function Checkout() {
     dispatch(getCityListRequest());
   }, []);
   useEffect(() => {
-    dispatch(
-      getAddressListRequest({
-        userId: userInfo?.data?.id,
-        addressDefaultId: userInfo.data.addressDefaultId,
-      })
-    );
+    if (userInfo.data.id) {
+      dispatch(
+        getAddressListRequest({
+          userId: userInfo?.data?.id,
+          addressDefaultId: userInfo.data.addressDefaultId,
+        })
+      );
+    }
   }, [userInfo?.data?.id]);
 
   useEffect(() => {
@@ -302,12 +304,14 @@ function Checkout() {
                           <FaMapMarkerAlt color={color.outstanding} /> Địa chỉ
                           nhận hàng
                         </h3>
-                        <S.ChangeDefaultAddress
-                          onClick={() => setIsShowChangeAddress(true)}
-                          type="primary"
-                        >
-                          Thay đổi
-                        </S.ChangeDefaultAddress>
+                        {userInfo.data.id && (
+                          <S.ChangeDefaultAddress
+                            onClick={() => setIsShowChangeAddress(true)}
+                            type="primary"
+                          >
+                            Thay đổi
+                          </S.ChangeDefaultAddress>
+                        )}
                         <ChangeAddressDefaultModal
                           isShowChangeAddress={isShowChangeAddress}
                           setIsShowChangeAddress={setIsShowChangeAddress}
