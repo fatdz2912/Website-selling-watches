@@ -35,6 +35,7 @@ export const Arrange = styled.div`
 export const Relevancy = styled.span`
   background-color: #f5f5f5;
   padding: 8px;
+  cursor: pointer;
   ${({ active }) =>
     active &&
     css`
@@ -53,6 +54,7 @@ export const Relevancy = styled.span`
 export const Ctime = styled.span`
   background-color: #f5f5f5;
   padding: 8px;
+  cursor: pointer;
   ${({ active }) =>
     active &&
     css`
@@ -70,6 +72,7 @@ export const Ctime = styled.span`
 export const PriceDESC = styled.span`
   background-color: #f5f5f5;
   padding: 8px;
+  cursor: pointer;
   ${({ active }) =>
     active &&
     css`
@@ -86,6 +89,7 @@ export const PriceDESC = styled.span`
 `;
 export const PriceASC = styled.span`
   background-color: #f5f5f5;
+  cursor: pointer;
   padding: 8px;
   ${({ active }) =>
     active &&
