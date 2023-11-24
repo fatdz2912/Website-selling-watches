@@ -13,6 +13,10 @@ function Sidebar({ isShowSidebar }) {
       label: "Quản lý sản phẩm",
       path: ROUTES.ADMIN.PRODUCT_MANAGER,
     },
+    {
+      label: "Quản lý đơn hàng",
+      path: ROUTES.ADMIN.ORDER_MANAGER,
+    },
   ];
   return (
     <S.SidebarWrapper isShowSidebar={isShowSidebar}>

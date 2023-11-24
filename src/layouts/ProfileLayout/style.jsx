@@ -15,7 +15,7 @@ export const NavMenu = styled(Col)`
 `;
 export const ProfileMainWrapper = styled(Row)`
   max-width: 1200px;
-  width: 95%;
+  width: 100%;
   flex: 1;
   margin: 0 auto !important;
   padding: 20px 0;

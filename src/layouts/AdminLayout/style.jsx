@@ -16,7 +16,7 @@ export const LayoutAdminWrapper = styled.div`
 `;
 export const MainContainer = styled.div`
   margin-left: ${(props) => (props.isShowSidebar ? "250px" : "0px")};
-  width: 100%;
+  width: ${(props) => (props.isShowSidebar ? "calc(100% - 250px)" : "100%")};
   transition: all 0.3s;
 `;
 export const Loading = styled.div`

@@ -166,10 +166,10 @@ function Product({
           </S.Report>
           <S.Price sm={24} md={24}>
             <S.OldPrice discount={discount}>
-              ${oldPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
+              {oldPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.OldPrice>
             <S.CurrentPrice>
-              ${currentPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
+              {currentPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
             </S.CurrentPrice>
           </S.Price>
           <S.QuantityWrapper md={24} lg={24} xs={24}>
@@ -204,13 +204,13 @@ function Product({
               </S.Desc>
             </S.Info>
           </Col>
-          <Col md={12} lg={12} xs={12}>
+          <Col md={24} lg={24} xs={24} xl={12}>
             <S.AddCart type="primary" onClick={() => handleAddToCart()}>
               <FaShoppingCart size={30} style={{ marginRight: 15 }} />
               Thêm vào giỏ hàng
             </S.AddCart>
           </Col>
-          <Col md={12} lg={12} xs={12}>
+          <Col md={24} lg={24} xs={24} xl={12}>
             <S.Buy onClick={() => handleBuyNow()}>Mua ngay</S.Buy>
           </Col>
         </Row>

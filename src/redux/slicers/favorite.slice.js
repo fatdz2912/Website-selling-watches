@@ -5,6 +5,7 @@ const initialState = {
     data: [],
     loading: false,
     error: null,
+    meta: {},
   },
   favoriteProduct: {
     loading: false,
@@ -22,8 +23,11 @@ export const favoriteSlice = createSlice({
       state.favoriteList.error = null;
     },
     getFavoriteListSuccess: (state, action) => {
-      const { data } = action.payload;
-      state.favoriteList.data = data;
+      const { data, meta, more } = action.payload;
+      state.favoriteList.data = more
+        ? [...state.favoriteList.data, ...data]
+        : data;
+      state.favoriteList.meta = meta;
       state.favoriteList.loading = false;
     },
     getFavoriteListFailure: (state, action) => {

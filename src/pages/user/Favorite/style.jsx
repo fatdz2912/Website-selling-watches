@@ -39,8 +39,14 @@ export const ImageWrapper = styled(Col)`
 `;
 export const Name = styled(Col)`
   width: 100%;
+  color: ${color.primary};
 `;
 export const Heart = styled(Col)`
   width: 100%;
   text-align: center;
+`;
+export const ShowMore = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

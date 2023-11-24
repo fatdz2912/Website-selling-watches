@@ -17,7 +17,7 @@ import { getProductDetailRequest } from "../slicers/product.slice";
 
 function* getFavoriteListSaga(action) {
   try {
-    const { userId, page, limit } = action.payload;
+    const { userId, page, limit, more } = action.payload;
     const result = yield axios.get("http://localhost:4000/favorites", {
       params: {
         isDelete: false,
@@ -35,6 +35,7 @@ function* getFavoriteListSaga(action) {
           limit: limit,
           total: parseInt(result.headers["x-total-count"]),
         },
+        more,
       })
     );
   } catch (e) {

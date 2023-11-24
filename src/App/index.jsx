@@ -38,6 +38,7 @@ import Dashboard from "pages/admin/Dashboard";
 import ManagerProduct from "pages/admin/ManagerProduct";
 import CreateProduct from "pages/admin/CreateProduct";
 import UpdateProduct from "pages/admin/UpdateProduct";
+import OrderManager from "pages/admin/OrderManager";
 
 import Successpay from "pages/user/PaySuccess";
 
@@ -188,6 +189,7 @@ function App() {
             path={ROUTES.ADMIN.UPDATE_PRODUCT}
             element={<UpdateProduct />}
           />
+          <Route path={ROUTES.ADMIN.ORDER_MANAGER} element={<OrderManager />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path={ROUTES.LOGIN} element={<Login />} />

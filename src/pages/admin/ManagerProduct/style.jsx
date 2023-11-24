@@ -10,7 +10,7 @@ export const FilterWrapper = styled.div`
 `;
 export const ProductManager = styled(Row)`
   max-width: 1000px;
-  margin: 25px auto;
+  margin: 25px auto !important;
 `;
 export const ProductManagerWrapper = styled.div`
   display: flex;

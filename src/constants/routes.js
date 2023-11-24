@@ -29,6 +29,7 @@ export const ROUTES = {
     UPDATE_PRODUCT: "/admin/update-product/:id",
     PRODUCT_MANAGER: "/admin/products",
     ORDER_LIST: "/admin/orders",
+    ORDER_MANAGER: "/admin/order-manager",
   },
   LOGIN: "/login",
   REGISTER: "/register",

@@ -150,6 +150,7 @@ function Checkout() {
           specificAddress: specificAddress,
           note: values.note,
           userId: userInfo.data.id || GUEST_ID,
+          status: "processing",
         },
         productBuyList: productBuyList,
         orderId: id,

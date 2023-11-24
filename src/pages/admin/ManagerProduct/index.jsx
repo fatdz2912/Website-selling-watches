@@ -23,6 +23,7 @@ import {
 import { PRODUCT_TABLE_LIMIT } from "constants/paging";
 import { ROUTES } from "constants/routes";
 import { useMemo } from "react";
+import { color } from "themes/color";
 function ProductManager() {
   const [filterParams, setFilterParams] = useState({
     categoryId: [],
@@ -144,19 +145,20 @@ function ProductManager() {
       ),
     },
     {
-      title: "Action",
+      title: "Chỉnh sửa",
       dataIndex: "action",
       key: "action",
       render: (_, item) => (
         <Space size={16}>
           <Button
+            type="primary"
             onClick={() =>
               navigate(
                 generatePath(ROUTES.ADMIN.UPDATE_PRODUCT, { id: item.id })
               )
             }
           >
-            Update
+            Cập nhật
           </Button>
           <Popconfirm
             title="Delete user"
@@ -165,7 +167,14 @@ function ProductManager() {
             cancelText="No"
             onConfirm={() => handleDeleteUser(item.id)}
           >
-            <Button>Delete</Button>
+            <Button
+              style={{
+                backgroundColor: `${color.outstanding}`,
+                color: `${color.primaryText}`,
+              }}
+            >
+              Xóa
+            </Button>
           </Popconfirm>
         </Space>
       ),
@@ -209,7 +218,7 @@ function ProductManager() {
                   placeholder="Tên sản phẩm"
                 />
               </Col>
-              <Col span={8}>
+              <Col span={7}>
                 <Select
                   mode="multiple"
                   allowClear
@@ -220,8 +229,9 @@ function ProductManager() {
                   {renderProductOptions}
                 </Select>
               </Col>
-              <Col span={4}>
+              <Col span={5}>
                 <Select
+                  style={{ width: "100%" }}
                   placeholder="Sắp xếp theo"
                   onChange={(value) => handleFilter("sortOrder", value)}
                   allowClear
@@ -245,6 +255,7 @@ function ProductManager() {
             </Row>
           </S.FilterWrapper>
           <Table
+            scroll={{ x: 500 }}
             dataSource={productList.data}
             columns={columns}
             pagination={false}

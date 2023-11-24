@@ -7,7 +7,7 @@ import {
   getCategoryListFailure,
 } from "../slicers/category.slice";
 
-function* getCategoryListSaga(action) {
+function* getCategoryListSaga() {
   try {
     const result = yield axios.get("http://localhost:4000/categories", {
       params: {

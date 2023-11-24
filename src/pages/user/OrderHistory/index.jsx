@@ -6,6 +6,8 @@ import dayjs from "dayjs";
 import * as S from "./style";
 
 import { getOrderListRequest } from "redux/slicers/order.slice";
+import { color } from "themes/color";
+import { ORDER_LIMIT } from "constants/paging";
 
 function OrderHistories() {
   const dispatch = useDispatch();
@@ -18,7 +20,13 @@ function OrderHistories() {
     });
     document.title = "Lịch sử mua hàng";
     if (userInfo.data.id) {
-      dispatch(getOrderListRequest({ userId: userInfo.data.id }));
+      dispatch(
+        getOrderListRequest({
+          userId: userInfo.data.id,
+          page: 1,
+          limit: ORDER_LIMIT,
+        })
+      );
     }
   }, [userInfo.data.id]);
 
@@ -45,7 +53,7 @@ function OrderHistories() {
       title: "Địa chỉ giao hàng",
       dataIndex: "specificAddress",
       key: "specificAddress",
-      render: (specificAddress, item) =>
+      render: (_, item) =>
         `${item.specificAddress}, ${item?.wardName}, ${item?.districtName}, ${item?.cityName}`,
     },
     {
@@ -54,9 +62,27 @@ function OrderHistories() {
       key: "totalPrice",
       render: (totalPrice, item) => `${totalPrice.toLocaleString()} VNĐ`,
     },
+    {
+      title: "Tình trạng",
+      dataIndex: "status",
+      key: "status",
+      render: (_, item) => {
+        switch (item.status) {
+          case "processing":
+            return <p style={{ color: `${color.outstanding}` }}>Đang xử lý</p>;
+          case "confirm":
+            return <p style={{ color: `${color.outstanding}` }}>Đang giao</p>;
+          case "cancel":
+            return <p style={{ color: `${color.outstanding}` }}>Đã hủy</p>;
+          default:
+            return <p style={{ color: `${color.outstanding}` }}>Đã giao</p>;
+        }
+      },
+    },
   ];
   return (
     <Table
+      style={{ width: "100%" }}
       scroll={{ x: 500 }}
       columns={tableColumns}
       dataSource={orderList.data}

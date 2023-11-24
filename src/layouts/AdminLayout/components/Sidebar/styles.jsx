@@ -13,7 +13,7 @@ const SidebarWrapper = styled.ul`
 const SidebarItem = styled.li`
   background-color: ${color.background_Color};
   color: #000;
-
+  border: 1px solid #211f1f;
   &:hover {
     background-color: #7272f4;
     color: #000;
