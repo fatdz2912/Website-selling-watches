@@ -60,7 +60,19 @@ function OrderHistories() {
       title: "Tổng tiền",
       dataIndex: "totalPrice",
       key: "totalPrice",
-      render: (totalPrice, item) => `${totalPrice.toLocaleString()} VNĐ`,
+      render: (totalPrice, item) => (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: `${color.primary}`,
+          }}
+        >
+          {totalPrice.toLocaleString()}
+          <S.Unit>₫</S.Unit>
+        </div>
+      ),
     },
     {
       title: "Tình trạng",
@@ -69,7 +81,9 @@ function OrderHistories() {
       render: (_, item) => {
         switch (item.status) {
           case "processing":
-            return <p style={{ color: `${color.outstanding}` }}>Đang xử lý</p>;
+            return (
+              <p style={{ color: `${color.outstanding}` }}>Chờ xác nhận</p>
+            );
           case "confirm":
             return <p style={{ color: `${color.outstanding}` }}>Đang giao</p>;
           case "cancel":

@@ -22,7 +22,7 @@ function Hero() {
           })
         }
       >
-        SHOW NOW
+        SHOP NOW
       </S.ShopNow>
     </S.Hero>
   );

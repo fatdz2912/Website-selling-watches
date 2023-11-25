@@ -310,7 +310,7 @@ function Checkout() {
                             onClick={() => setIsShowChangeAddress(true)}
                             type="primary"
                           >
-                            Thay đổi
+                            Chọn địa chỉ
                           </S.ChangeDefaultAddress>
                         )}
                         <ChangeAddressDefaultModal
@@ -322,7 +322,7 @@ function Checkout() {
                     <Form.Item
                       label="Họ và tên"
                       name="fullName"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[{ required: true, message: "Bắt buộc!" }]}
                     >
                       <Input placeholder="Nhập họ và tên" />
                     </Form.Item>
@@ -331,7 +331,13 @@ function Checkout() {
                     <Form.Item
                       label="Email"
                       name="email"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[
+                        { required: true, message: "Bắt buộc!" },
+                        {
+                          type: "email",
+                          message: "Vui lòng điền đúng định dạng email",
+                        },
+                      ]}
                     >
                       <Input placeholder="Nhập gmail của bạn" />
                     </Form.Item>
@@ -341,7 +347,7 @@ function Checkout() {
                       label="Số điện thoại"
                       name="phoneNumber"
                       rules={[
-                        { required: true, message: "Required!" },
+                        { required: true, message: "Bắt buộc!" },
                         {
                           pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
                           message: "Vui lòng nhập đúng định dạng",
@@ -355,7 +361,7 @@ function Checkout() {
                     <Form.Item
                       label="Tỉnh/Thành"
                       name="cityCode"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[{ required: true, message: "Bắt buộc!" }]}
                     >
                       <Select
                         placeholder="Chọn Tỉnh/Thành"
@@ -375,7 +381,7 @@ function Checkout() {
                     <Form.Item
                       label="Quận/Huyện"
                       name="districtCode"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[{ required: true, message: "Bắt buộc!" }]}
                     >
                       <Select
                         placeholder="Chọn Quận/Huyện"
@@ -395,7 +401,7 @@ function Checkout() {
                     <Form.Item
                       label="Phường/Xã"
                       name="wardCode"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[{ required: true, message: "Bắt buộc!" }]}
                     >
                       <Select
                         placeholder="Chọn Phường/Xã"
@@ -409,7 +415,7 @@ function Checkout() {
                     <Form.Item
                       label="Địa chỉ"
                       name="specificAddress"
-                      rules={[{ required: true, message: "Required!" }]}
+                      rules={[{ required: true, message: "Bắt buộc!" }]}
                     >
                       <Input />
                     </Form.Item>
@@ -424,7 +430,7 @@ function Checkout() {
                         <Radio.Group>
                           <Space direction="vertical">
                             <Radio value="pod">Thanh toán khi nhận hàng</Radio>
-                            <Radio value="atm">ATM</Radio>
+                            <Radio value="atm">Thanh toán bằng Paypal</Radio>
                           </Space>
                         </Radio.Group>
                       </Form.Item>

@@ -7,6 +7,7 @@ import { updateAddressDefaultRequest } from "redux/slicers/address.slice";
 
 import UpdateModal from "pages/user/components/UpdateModal";
 import CreateModal from "pages/user/components/CreateModal";
+import { FaPlusCircle } from "react-icons/fa";
 function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
   const [updateData, setUpdateData] = useState([]);
   const [addressId, setAddressId] = useState(undefined);
@@ -59,7 +60,7 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
   }, [addressList.data]);
   return (
     <Modal
-      title="Thêm địa chỉ"
+      title="Chọn địa chỉ đặt hàng"
       open={isShowChangeAddress}
       onCancel={() => setIsShowChangeAddress(false)}
       footer={null}
@@ -73,8 +74,16 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
         >
           {renderAddressList}
         </Radio.Group>
-        <S.BtCreateAddress onClick={() => setIsShowCreateAddress(true)}>
-          Thêm địa chỉ mới
+        <S.BtCreateAddress
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 5,
+          }}
+          onClick={() => setIsShowCreateAddress(true)}
+        >
+            Thêm địa chỉ mới
         </S.BtCreateAddress>
         {addressList.data[0] != null && (
           <Row justify="end">

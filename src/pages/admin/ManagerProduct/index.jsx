@@ -33,6 +33,10 @@ function ProductManager() {
   });
   const navigate = useNavigate();
   const { productList } = useSelector((state) => state.product);
+  console.log(
+    "🚀 ~ file: index.jsx:36 ~ ProductManager ~ productList:",
+    productList.data
+  );
   const { categoryList } = useSelector((state) => state.category);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -70,7 +74,7 @@ function ProductManager() {
       })
     );
   };
-  const handleDeleteUser = (id) => {
+  const handleDeleteProduct = (id) => {
     dispatch(
       deleteProductRequest({
         data: {
@@ -161,11 +165,10 @@ function ProductManager() {
             Cập nhật
           </Button>
           <Popconfirm
-            title="Delete user"
-            description="Are you sure to delete this user?"
+            description="Bạn có chắn chắn muốn xóa sản phẩm?"
             okText="Yes"
             cancelText="No"
-            onConfirm={() => handleDeleteUser(item.id)}
+            onConfirm={() => handleDeleteProduct(item.id)}
           >
             <Button
               style={{

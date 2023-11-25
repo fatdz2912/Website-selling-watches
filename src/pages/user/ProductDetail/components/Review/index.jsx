@@ -142,8 +142,9 @@ function Review({ id, averageRate }) {
       </Col>
       <Col xs={18} md={18} xl={18}>
         <S.SearchOfOverview>
-          <S.QuantityComment>Bình luận(?)</S.QuantityComment>
-          <S.ImageAndVideo>Hình Ảnh/Video(?)</S.ImageAndVideo>
+          <S.QuantityComment>
+            Bình luận({reviewList.data.length})
+          </S.QuantityComment>
         </S.SearchOfOverview>
       </Col>
       <Col md={24} xs={24}>

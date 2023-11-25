@@ -34,6 +34,12 @@ function OrderManager() {
       render: (_, item) => `${item.orderDetails[0].uuid.toUpperCase()}`,
     },
     {
+      title: "Mã KH",
+      dataIndex: "userId",
+      key: "userId",
+      render: (_, item) => `${item.userId}`,
+    },
+    {
       title: "Ngày đặt hàng",
       dataIndex: "createdAt",
       key: "createdAt",

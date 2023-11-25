@@ -87,6 +87,11 @@ function Profile() {
             rules={[
               {
                 required: true,
+                message: "Vui lòng nhập số điện thoại!",
+              },
+              {
+                pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
+                message: "Vui lòng nhập đúng định dạng",
               },
             ]}
           >

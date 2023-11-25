@@ -13,6 +13,7 @@ import {
 } from "redux/slicers/address.slice";
 
 import * as S from "./style";
+import { FaPlusCircle } from "react-icons/fa";
 function Address() {
   const [isShowCreateAddress, setIsShowCreateAddress] = useState(false);
   const [isShowUpdateAddress, setIsShowUpdateAddress] = useState(false);
@@ -110,8 +111,17 @@ function Address() {
     <S.AddressWrapper>
       <S.Heading>
         <S.SubHeading>Địa chỉ của tôi</S.SubHeading>
-        <Button type="primary" onClick={() => setIsShowCreateAddress(true)}>
-          + Thêm
+        <Button
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 5,
+          }}
+          type="primary"
+          onClick={() => setIsShowCreateAddress(true)}
+        >
+          <FaPlusCircle /> Thêm
         </Button>
       </S.Heading>
       <S.AddressList>{renderAddressList}</S.AddressList>
