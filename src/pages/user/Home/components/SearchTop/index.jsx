@@ -90,7 +90,7 @@ function SearchTop() {
                           {item.oldPrice.toLocaleString()} <S.Unit>₫</S.Unit>
                         </S.OldPrice>
                         <S.CurrentPrice discount={item.discount}>
-                          {item.currentPrice.toLocaleString()}{" "}
+                          {item.currentPrice.toLocaleString()}
                           <S.Unit>₫</S.Unit>
                         </S.CurrentPrice>
                       </S.Price>
@@ -114,7 +114,7 @@ function SearchTop() {
         autoplay
         dots
         dotPosition={"top"}
-        autoplaySpeed={1500}
+        autoplaySpeed={2000}
       >
         {renderSearchTop}
       </Carousel>

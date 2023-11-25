@@ -76,6 +76,7 @@ function ProductList() {
     const newFilterParams = {
       ...filterParams,
       [key]: values,
+      ...(key === "sortOrder" && { discountOrder: undefined }),
     };
     setFilterParams(newFilterParams);
     navigate({
