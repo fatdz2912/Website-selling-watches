@@ -13,10 +13,11 @@ const SidebarWrapper = styled.ul`
 const SidebarItem = styled.li`
   background-color: ${color.background_Color};
   color: #000;
-  border: 1px solid #211f1f;
+  border-bottom: 1px solid #a1eaa1;
+  padding: 4px 8px;
   &:hover {
-    background-color: #7272f4;
-    color: #000;
+    background-color: #23239e;
+    color: #fff;
   }
   ${({ active }) =>
     active &&

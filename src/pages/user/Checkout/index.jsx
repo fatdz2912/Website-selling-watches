@@ -75,31 +75,23 @@ function Checkout() {
       (item) => item.id === userInfo?.data?.addressDefaultId
     );
     if (defaultAddress) {
-      dispatch(getDistrictListRequest({ name: defaultAddress.districtName }));
+      dispatch(getDistrictListRequest({ code: defaultAddress.districtCode }));
       if (districtList.data[0]?.code) {
-        dispatch(getWardListRequest({ name: defaultAddress.wardName }));
+        dispatch(getWardListRequest({ code: defaultAddress.wardCode }));
       }
-      const cityData = cityList.data.find(
-        (item) => item.name === defaultAddress.cityName
-      );
       if (userInfo.data.id) {
         checkoutForm.setFieldsValue({
           fullName: defaultAddress?.name,
           email: userInfo.data.email,
           phoneNumber: defaultAddress?.phone,
           specificAddress: defaultAddress?.specificAddress,
-          cityCode: cityData?.code,
-          districtCode: districtList.data[0]?.code,
-          wardCode: wardList.data[0]?.code,
+          cityCode: defaultAddress.cityCode,
+          districtCode: defaultAddress?.districtCode,
+          wardCode: defaultAddress.wardCode,
         });
       }
     }
-  }, [
-    userInfo.data,
-    addressList.data,
-    districtList.data[0]?.code,
-    wardList.data[0]?.code,
-  ]);
+  }, [userInfo.data, addressList.data, districtList.data[0]?.code]);
 
   const tableColumn = [
     {

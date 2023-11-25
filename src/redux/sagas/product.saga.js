@@ -155,18 +155,16 @@ function* getProductDetailSaga(action) {
         data: result.data,
       })
     );
-    yield put(
-      updateProductDetailRequest({ id: id, searchTop: result.data.searchTop })
-    );
+    yield put(updateProductDetailRequest({ id: id, view: result.data.view }));
   } catch (e) {
     yield put(getProductDetailFailure({ error: "Lỗi" }));
   }
 }
 function* updateProductDetailSaga(action) {
   try {
-    const { id, searchTop } = action.payload;
+    const { id, view } = action.payload;
     yield axios.patch(`http://localhost:4000/products/${id}`, {
-      searchTop: searchTop + 1,
+      view: view + 1,
     });
     yield put(updateProductDetailSuccess());
   } catch (e) {

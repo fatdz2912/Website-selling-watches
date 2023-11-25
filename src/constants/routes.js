@@ -30,6 +30,7 @@ export const ROUTES = {
     PRODUCT_MANAGER: "/admin/products",
     ORDER_LIST: "/admin/orders",
     ORDER_MANAGER: "/admin/order-manager",
+    ACCOUNT_MANAGER: "/admin/account-manager",
   },
   LOGIN: "/login",
   REGISTER: "/register",

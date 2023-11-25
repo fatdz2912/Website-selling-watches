@@ -21,7 +21,7 @@ import { clearCart } from "../slicers/cart.slice";
 
 function* getOrderListSaga(action) {
   try {
-    const { userId, page, limit, more } = action.payload;
+    const { userId, page, limit, more, searchKey } = action.payload;
     let result;
     if (userId) {
       result = yield axios.get("http://localhost:4000/orders", {
@@ -41,6 +41,7 @@ function* getOrderListSaga(action) {
           isDelete: false,
           _sort: "createdAt",
           _order: "desc",
+          ...(searchKey && { q: searchKey }),
         },
       });
     }

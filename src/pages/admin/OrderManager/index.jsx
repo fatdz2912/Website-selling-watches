@@ -1,5 +1,14 @@
 import { useEffect } from "react";
-import { Button, Col, Pagination, Popconfirm, Row, Space, Table } from "antd";
+import {
+  Button,
+  Col,
+  Input,
+  Pagination,
+  Popconfirm,
+  Row,
+  Space,
+  Table,
+} from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import dayjs from "dayjs";
 
@@ -114,7 +123,22 @@ function OrderManager() {
     );
   };
   return (
-    <>
+    <S.OrderManager>
+      <Col md={24}>
+        <S.Heading>QUẢN LÝ ĐƠN HÀNG</S.Heading>
+      </Col>
+      <S.FilterWrapper>
+        <Row gutter={[16, 16]} style={{ marginTop: 4 }}>
+          <Col span={24}>
+            <Input
+              onChange={(e) =>
+                dispatch(getOrderListRequest({ searchKey: e.target.value }))
+              }
+              placeholder="Tìm kiếm đơn hàng"
+            />
+          </Col>
+        </Row>
+      </S.FilterWrapper>
       <Table
         scroll={{ x: 1200 }}
         columns={tableColumns}
@@ -180,7 +204,7 @@ function OrderManager() {
           style={{ margin: "16px auto 0" }}
         />
       </Row>
-    </>
+    </S.OrderManager>
   );
 }
 export default OrderManager;

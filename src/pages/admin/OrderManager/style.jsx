@@ -8,6 +8,10 @@ export const CartListDetailWrapper = styled(Row)`
   background-color: #f5f5f5;
   padding: 16px;
 `;
+export const OrderManager = styled(Row)`
+  max-width: 1000px;
+  margin: 25px auto !important;
+`;
 export const CartItem = styled(Row)`
   width: 100%;
   margin-top: 8px;
@@ -42,6 +46,13 @@ export const Price = styled(Col)`
     height: 100%;
   }
 `;
+export const FilterWrapper = styled.div`
+  margin: 16px 0;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #ccc;
+  width: 100%;
+`;
 export const Quantity = styled(Col)`
   & > div {
     display: flex;
@@ -50,6 +61,10 @@ export const Quantity = styled(Col)`
     width: 100%;
     height: 100%;
   }
+`;
+export const Heading = styled.h1`
+  color: ${color.primary};
+  text-align: center;
 `;
 export const IntoMoney = styled(Col)`
   & > div {

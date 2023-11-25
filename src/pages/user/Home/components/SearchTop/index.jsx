@@ -19,7 +19,7 @@ function SearchTop() {
     dispatch(
       getProductListRequest({
         limit: PRODUCT_DISCOUNT,
-        sortOrder: "searchTop.desc",
+        sortOrder: "view.desc",
       })
     );
   }, []);

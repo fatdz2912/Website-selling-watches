@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notification } from "antd";
 
 const initialState = {
   orderList: {
@@ -35,7 +36,7 @@ export const orderSlice = createSlice({
       state.orderList.error = null;
     },
     getOrderListSuccess: (state, action) => {
-      const { data } = action.payload;
+      const { data, page, limit, more } = action.payload;
       state.orderList.data = data;
       state.orderList.loading = false;
     },
@@ -65,6 +66,7 @@ export const orderSlice = createSlice({
     },
     updateOrderSuccess: (state, action) => {
       state.updateOrderData.loading = false;
+      notification.success({ message: "Đã xác nhận đơn hàng!" });
     },
     updateOrderFailure: (state, action) => {
       const { error } = action.payload;
@@ -78,6 +80,7 @@ export const orderSlice = createSlice({
     },
     cancelOrderSuccess: (state, action) => {
       state.cancelOrderData.loading = false;
+      notification.success({ message: "Hủy đơn hàng thành công" });
     },
     cancelOrderFailure: (state, action) => {
       const { error } = action.payload;
@@ -91,6 +94,7 @@ export const orderSlice = createSlice({
     },
     completeOrderSuccess: (state, action) => {
       state.completeOrderData.loading = false;
+      notification.success({ message: "Đơn hàng đã hoàn tất!" });
     },
     completeOrderFailure: (state, action) => {
       const { error } = action.payload;

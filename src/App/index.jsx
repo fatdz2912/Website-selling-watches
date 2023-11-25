@@ -39,6 +39,7 @@ import ManagerProduct from "pages/admin/ManagerProduct";
 import CreateProduct from "pages/admin/CreateProduct";
 import UpdateProduct from "pages/admin/UpdateProduct";
 import OrderManager from "pages/admin/OrderManager";
+import AccountManager from "pages/admin/AccountManager";
 
 import Successpay from "pages/user/PaySuccess";
 
@@ -190,6 +191,10 @@ function App() {
             element={<UpdateProduct />}
           />
           <Route path={ROUTES.ADMIN.ORDER_MANAGER} element={<OrderManager />} />
+          <Route
+            path={ROUTES.ADMIN.ACCOUNT_MANAGER}
+            element={<AccountManager />}
+          />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path={ROUTES.LOGIN} element={<Login />} />

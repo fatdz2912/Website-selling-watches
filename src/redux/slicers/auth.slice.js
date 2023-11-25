@@ -4,10 +4,17 @@ import {
   updateAddressDefaultSuccess,
   createAddressSuccess,
 } from "./address.slice";
+import { notification } from "antd";
 
 const initialState = {
   userInfo: {
     data: {},
+    loading: true,
+    error: null,
+  },
+  userList: {
+    data: [],
+    meta: {},
     loading: true,
     error: null,
   },
@@ -31,6 +38,14 @@ const initialState = {
     loadding: false,
     error: null,
   },
+  lockAccount: {
+    loadding: false,
+    error: null,
+  },
+  openAccount: {
+    loadding: false,
+    error: null,
+  },
 };
 
 export const authSlice = createSlice({
@@ -47,6 +62,10 @@ export const authSlice = createSlice({
       state.userInfo.data = data;
       state.loginData.loading = false;
       state.userInfo.loading = false;
+    },
+    loginLock: (state, action) => {
+      state.loginData.error = null;
+      state.loginData.loading = false;
     },
     loginFailure: (state, action) => {
       const { error } = action.payload;
@@ -85,6 +104,21 @@ export const authSlice = createSlice({
       const { error } = action.payload;
       state.userInfo.loading = false;
       state.userInfo.error = error;
+    },
+    // getUserList
+    getUserListRequest: (state, action) => {
+      state.userList.loading = true;
+      state.userList.error = null;
+    },
+    getUserListSuccess: (state, action) => {
+      const { data } = action.payload;
+      state.userList.data = data;
+      state.userList.loading = false;
+    },
+    getUserListFailure: (state, action) => {
+      const { error } = action.payload;
+      state.userList.loading = false;
+      state.userList.error = error;
     },
     // Change password
     changePasswordRequest: (state, action) => {
@@ -129,6 +163,34 @@ export const authSlice = createSlice({
       state.changeAvatarData.loading = false;
       state.changeAvatarData.error = error;
     },
+    // lockAccount
+    lockAccountRequest: (state, action) => {
+      state.lockAccount.loading = true;
+      state.lockAccount.error = null;
+    },
+    lockAccountSuccess: (state, action) => {
+      state.lockAccount.loading = false;
+      notification.success({ message: "Khóa tài khoản thành công" });
+    },
+    lockAccountFailure: (state, action) => {
+      const { error } = action.payload;
+      state.lockAccount.loading = false;
+      state.lockAccount.error = error;
+    },
+    // openAccount
+    openAccountRequest: (state, action) => {
+      state.openAccount.loading = true;
+      state.openAccount.error = null;
+    },
+    openAccountSuccess: (state, action) => {
+      state.openAccount.loading = false;
+      notification.success({ message: "Mở tài khoản thành công" });
+    },
+    openAccountFailure: (state, action) => {
+      const { error } = action.payload;
+      state.openAccount.loading = false;
+      state.openAccount.error = error;
+    },
   },
   extraReducers: {
     [updateAddressDefaultSuccess]: (state, action) => {
@@ -147,6 +209,7 @@ export const authSlice = createSlice({
 export const {
   loginRequest,
   loginSuccess,
+  loginLock,
   loginFailure,
   registerRequest,
   registerFailure,
@@ -164,6 +227,15 @@ export const {
   changeAvatarRequest,
   changeAvatarSuccess,
   changeAvatarFailure,
+  getUserListRequest,
+  getUserListSuccess,
+  getUserListFailure,
+  lockAccountRequest,
+  lockAccountSuccess,
+  lockAccountFailure,
+  openAccountRequest,
+  openAccountSuccess,
+  openAccountFailure,
 } = authSlice.actions;
 
 export default authSlice.reducer;

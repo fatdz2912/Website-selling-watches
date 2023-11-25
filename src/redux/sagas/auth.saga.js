@@ -5,6 +5,7 @@ import {
   loginRequest,
   loginSuccess,
   loginFailure,
+  loginLock,
   registerRequest,
   registerFailure,
   registerSuccess,
@@ -20,13 +21,29 @@ import {
   changeAvatarRequest,
   changeAvatarSuccess,
   changeAvatarFailure,
+  getUserListRequest,
+  getUserListSuccess,
+  getUserListFailure,
+  lockAccountRequest,
+  lockAccountSuccess,
+  lockAccountFailure,
+  openAccountRequest,
+  openAccountSuccess,
+  openAccountFailure,
 } from "../slicers/auth.slice";
 function* loginSaga(action) {
   try {
     const { data } = action.payload;
     const result = yield axios.post("http://localhost:4000/login", data);
-    yield localStorage.setItem("accessToken", result.data.accessToken);
-    yield put(loginSuccess({ data: result.data.user }));
+    if (result.data.user.isDelete) {
+      yield notification.error({
+        message: "Tài khoản đã bị khóa,vui lòng LH:0377460815!",
+      });
+      yield put(loginLock({}));
+    } else {
+      yield localStorage.setItem("accessToken", result.data.accessToken);
+      yield put(loginSuccess({ data: result.data.user }));
+    }
   } catch (e) {
     yield put(loginFailure({ error: "Email hoặc mật khẩu không đúng!" }));
   }
@@ -58,6 +75,19 @@ function* getUserInfoSaga(action) {
     yield put(getUserInfoSuccess({ data: result.data }));
   } catch (e) {
     yield put(getUserInfoFailure({ error: "Lỗi" }));
+  }
+}
+function* getUserListSaga(action) {
+  try {
+    const { page, limit, more, searchKey } = action.payload;
+    const result = yield axios.get(`http://localhost:4000/users`, {
+      params: {
+        ...(searchKey && { q: searchKey }),
+      },
+    });
+    yield put(getUserListSuccess({ data: result.data, page, limit, more }));
+  } catch (e) {
+    yield put(getUserListFailure({ error: "Lỗi" }));
   }
 }
 function* changePasswordSaga(action) {
@@ -93,6 +123,30 @@ function* changeAvatarSaga(action) {
     yield put(changeAvatarFailure({ error: "Lỗi" }));
   }
 }
+function* lockAccountSaga(action) {
+  try {
+    const { id } = action.payload;
+    yield axios.patch(`http://localhost:4000/users/${id}`, {
+      isDelete: true,
+    });
+    yield put(lockAccountSuccess());
+    yield put(getUserListRequest({}));
+  } catch (e) {
+    yield put(lockAccountFailure({ error: "Lỗi" }));
+  }
+}
+function* openAccountSaga(action) {
+  try {
+    const { id } = action.payload;
+    yield axios.patch(`http://localhost:4000/users/${id}`, {
+      isDelete: false,
+    });
+    yield put(openAccountSuccess());
+    yield put(getUserListRequest({}));
+  } catch (e) {
+    yield put(openAccountFailure({ error: "Lỗi" }));
+  }
+}
 export default function* authSaga() {
   yield takeEvery(loginRequest, loginSaga);
   yield takeEvery(registerRequest, registerSaga);
@@ -100,4 +154,7 @@ export default function* authSaga() {
   yield takeEvery(changePasswordRequest, changePasswordSaga);
   yield takeEvery(updateUserInfoRequest, updateUserInfoSaga);
   yield takeEvery(changeAvatarRequest, changeAvatarSaga);
+  yield takeEvery(getUserListRequest, getUserListSaga);
+  yield takeEvery(lockAccountRequest, lockAccountSaga);
+  yield takeEvery(openAccountRequest, openAccountSaga);
 }
