@@ -5,7 +5,7 @@ export const Unit = styled.span`
   font-size: 0.75rem;
 `;
 export const AccountManager = styled(Row)`
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 25px auto !important;
   width: 100%;
 `;

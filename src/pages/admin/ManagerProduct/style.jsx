@@ -9,7 +9,7 @@ export const FilterWrapper = styled.div`
   background-color: #ccc;
 `;
 export const ProductManager = styled(Row)`
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 25px auto !important;
 `;
 export const ProductManagerWrapper = styled.div`

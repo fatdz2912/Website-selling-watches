@@ -113,7 +113,7 @@ function AccountManager() {
         />
       </S.FilterWrapper>
       <Table
-        scroll={{ x: 1000 }}
+        scroll={{ x: 1200 }}
         columns={tableColumns}
         dataSource={userList.data}
         rowKey="id"

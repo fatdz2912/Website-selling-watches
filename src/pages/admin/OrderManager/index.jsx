@@ -43,10 +43,16 @@ function OrderManager() {
       render: (_, item) => `${item.orderDetails[0].uuid.toUpperCase()}`,
     },
     {
-      title: "Mã KH",
-      dataIndex: "userId",
-      key: "userId",
-      render: (_, item) => `${item.userId}`,
+      title: "Tên KH",
+      dataIndex: "fullName",
+      key: "fullName",
+      render: (_, item) => `${item.user.fullName}`,
+    },
+    {
+      title: "SDT",
+      dataIndex: "phone",
+      key: "phone",
+      render: (_, item) => `${item.user.phoneNumber}`,
     },
     {
       title: "Ngày đặt hàng",
@@ -140,7 +146,7 @@ function OrderManager() {
         </Row>
       </S.FilterWrapper>
       <Table
-        scroll={{ x: 1200 }}
+        scroll={{ x: 1000 }}
         columns={tableColumns}
         dataSource={orderList.data}
         rowKey="id"
@@ -195,15 +201,13 @@ function OrderManager() {
           ),
         }}
       />
-      <Row>
-        <Pagination
-          current={orderList.meta.page}
-          pageSize={ORDER_LIMIT}
-          total={orderList.meta.total}
-          onChange={(page) => handleChangePage(page)}
-          style={{ margin: "16px auto 0" }}
-        />
-      </Row>
+      <Pagination
+        current={orderList.meta.page}
+        pageSize={ORDER_LIMIT}
+        total={orderList.meta.total}
+        onChange={(page) => handleChangePage(page)}
+        style={{ margin: "16px auto 0" }}
+      />
     </S.OrderManager>
   );
 }

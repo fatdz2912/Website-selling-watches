@@ -99,12 +99,12 @@
       "role": "user",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
       "createdAt": 1700924566532,
-      "updatedAt": 1700925170912,
+      "updatedAt": 1700926787789,
       "isDelete": false,
       "id": 8,
       "phoneNumber": "0976236609",
       "birthday": 1700924767588,
-      "addressDefaultId": 5
+      "addressDefaultId": 6
     }
   ],
   "reviews": [
@@ -237,6 +237,16 @@
       "updatedAt": 1700919490190,
       "isDelete": false,
       "id": 13
+    },
+    {
+      "rate": 5,
+      "comment": "Sản phẩm tốt",
+      "userId": 8,
+      "productId": "1",
+      "createdAt": 1700926996044,
+      "updatedAt": 1700926996044,
+      "isDelete": false,
+      "id": 14
     }
   ],
   "products": [
@@ -251,7 +261,7 @@
       "currentPrice": 85200000,
       "limited": false,
       "discount": 29,
-      "view": 96,
+      "view": 97,
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền cố định bằng thép không gỉ với vòng trên bằng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động tự động Omega calibre 3330 với khả năng dự trữ năng lượng trong 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 40 mm. Độ dày vỏ: 15 mm. Hình dạng vỏ tròn. Chiều rộng dải: 19 mm. Chiều dài dây: 8,5 inch. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ, máy đo tốc độ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mẫu mã: 326 30 40 50 01 001, 326-30-40-50-01-001, 326/30/40/50/01/001, 32630405001001. Đồng hồ nam Chronograph tự động Omega Speedmaster Racing 326.30.40.50.01.001",
       "series": "Speedmaster Racing",
       "gender": "Nam",
@@ -264,7 +274,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700903383977
+      "updatedAt": 1700926953156
     },
     {
       "id": 2,
@@ -433,7 +443,7 @@
       "currentPrice": 477000000,
       "limited": false,
       "discount": 10,
-      "view": 15,
+      "view": 16,
       "description": "126710 tỷ. Vỏ thép không gỉ với vòng đeo tay Rolex Jubilee bằng thép không gỉ. Viền bằng thép không gỉ xoay hai chiều với vòng màu đen và xanh lam (Batman) hiển thị vạch 24 giờ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Rolex calibre 3285 với khả năng dự trữ năng lượng trong 70 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Móc khóa có thể gập lại. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây, 24 giờ, GMT. Thông tin bổ sung: 126710blro-0001, m126710blro-0001. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam tự động Rolex GMT-Master II 'Batman' màu đen và xanh Jubilee 126710BKSJ.",
       "series": "GMT-Master II",
       "gender": "Nam",
@@ -446,7 +456,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700923630174
+      "updatedAt": 1700927014079
     },
     {
       "id": 14,
@@ -1621,9 +1631,9 @@
       "totalPrice": 562200000,
       "specificAddress": "Tổ Phước Viên",
       "userId": 2,
-      "status": "processing",
+      "status": "confirm",
       "createdAt": 1700850263452,
-      "updatedAt": 1700850263452,
+      "updatedAt": 1700928192847,
       "isDelete": false,
       "id": 9
     },
@@ -1639,6 +1649,32 @@
       "updatedAt": 1700851626215,
       "isDelete": false,
       "id": 10
+    },
+    {
+      "cityName": "Thành phố Hồ Chí Minh",
+      "districtName": "Quận Tân Phú",
+      "wardName": "Phường Tân Thành",
+      "totalPrice": 15200000,
+      "specificAddress": "81 nguyễn thế truyện",
+      "userId": 8,
+      "status": "complete",
+      "createdAt": 1700926849742,
+      "updatedAt": 1700926930640,
+      "isDelete": true,
+      "id": 11
+    },
+    {
+      "cityName": "Thành phố Hồ Chí Minh",
+      "districtName": "Quận Tân Phú",
+      "wardName": "Phường Tân Thành",
+      "totalPrice": 954000000,
+      "specificAddress": "81 nguyễn thế truyện",
+      "userId": 8,
+      "status": "confirm",
+      "createdAt": 1700927030547,
+      "updatedAt": 1700928186149,
+      "isDelete": false,
+      "id": 12
     }
   ],
   "orderDetails": [
@@ -1810,6 +1846,32 @@
       "updatedAt": 1700851626288,
       "isDelete": false,
       "id": 13
+    },
+    {
+      "productId": "17",
+      "name": "Đồng hồ mặt số bạc tự động Couturier",
+      "currentPrice": 7600000,
+      "quantity": 2,
+      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/t/i/tissot-couturier-automatic-silver-dial-watch-t0354071103101-t0354071103101.jpg?width=350&height=350",
+      "orderId": 11,
+      "uuid": "82112e69-f3ce-49e2-a308-923048a3d0ab",
+      "createdAt": 1700926849836,
+      "updatedAt": 1700926849836,
+      "isDelete": false,
+      "id": 14
+    },
+    {
+      "quantity": 2,
+      "name": "Đồng hồ nam GMT-Master II GMT mặt đen",
+      "currentPrice": 477000000,
+      "productId": "5",
+      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/r/o/rolex-gmtmaster-ii-gmt-black-dial-batman-bezel-mens-watch-126710blnr.jpg?width=350&height=350",
+      "orderId": 12,
+      "uuid": "d9b82c98-4d8b-4a47-94fa-1fc1473dcc87",
+      "createdAt": 1700927030645,
+      "updatedAt": 1700927030645,
+      "isDelete": false,
+      "id": 15
     }
   ],
   "searches": [
@@ -2070,6 +2132,22 @@
       "updatedAt": 1700747137246,
       "isDelete": false,
       "id": 52
+    },
+    {
+      "productId": 1,
+      "userId": 8,
+      "createdAt": 1700926959478,
+      "updatedAt": 1700926959478,
+      "isDelete": false,
+      "id": 53
+    },
+    {
+      "productId": 5,
+      "userId": 8,
+      "createdAt": 1700927016238,
+      "updatedAt": 1700927016238,
+      "isDelete": false,
+      "id": 54
     }
   ],
   "addresses": [
@@ -2122,20 +2200,36 @@
       "wardCode": "31132"
     },
     {
-      "name": "Hiếuuu",
-      "cityName": "Thành phố Hồ Chí Minh",
-      "districtName": "Quận 1",
-      "wardName": "Phường Bến Thành",
+      "name": "Lê Văn Hiếu",
+      "cityName": "Tỉnh Quảng Nam",
+      "districtName": "Huyện Nông Sơn",
+      "wardName": "Xã Quế Trung",
       "userId": 8,
-      "phone": "0912512341",
-      "specificAddress": "Oke",
+      "phone": "0976236609",
+      "specificAddress": "Thị trấn trung phước1",
       "cityCode": "79",
       "districtCode": "760",
       "wardCode": "26743",
       "createdAt": 1700925170799,
-      "updatedAt": 1700925170799,
+      "updatedAt": 1700926687172,
       "isDelete": false,
       "id": 5
+    },
+    {
+      "name": "Hiếu Lê ",
+      "cityName": "Thành phố Hồ Chí Minh",
+      "districtName": "Quận Tân Phú",
+      "wardName": "Phường Tân Thành",
+      "userId": 8,
+      "phone": "0964063251",
+      "specificAddress": "81 nguyễn thế truyện",
+      "cityCode": "79",
+      "districtCode": "767",
+      "wardCode": "27022",
+      "createdAt": 1700926774344,
+      "updatedAt": 1700926774344,
+      "isDelete": false,
+      "id": 6
     }
   ],
   "categories": [
