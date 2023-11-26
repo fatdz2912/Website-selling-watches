@@ -5,7 +5,6 @@ import { color } from "themes/color";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { changePasswordRequest } from "redux/slicers/auth.slice";
-import { render } from "@testing-library/react";
 function ChangsPassword() {
   const { changePassword, userInfo } = useSelector((state) => state.auth);
 

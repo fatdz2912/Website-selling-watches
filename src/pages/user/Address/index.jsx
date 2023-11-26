@@ -36,6 +36,7 @@ function Address() {
       })
     );
   }, []);
+
   const renderAddressList = useMemo(() => {
     if (addressList.data[0] != null) {
       return addressList.data.map((item, index) => {

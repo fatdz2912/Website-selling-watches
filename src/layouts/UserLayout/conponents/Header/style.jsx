@@ -12,6 +12,9 @@ export const HeaderWrapper = styled.div`
   z-index: 3;
   padding-bottom: 16px;
   box-shadow: 0 1px #ccc;
+  @media screen and (min-width: 767px) and (max-width: 1024px) {
+    height: auto;
+  }
 `;
 
 export const HeaderTopWrapper = styled.div`

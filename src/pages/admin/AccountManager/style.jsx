@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Row } from "antd";
 import styled from "styled-components";
 import { color } from "themes/color";
 export const Unit = styled.span`

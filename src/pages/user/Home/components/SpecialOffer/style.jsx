@@ -8,7 +8,11 @@ export const DiscountListWrapper = styled.div`
   background-color: #f6f6f6;
   padding: 22px 18px;
   @media screen and (max-width: 768px) {
-    margin-top: 2vh;
+    margin-top: 0;
+  }
+  box-shadow: 0 1px #ccc;
+  @media screen and (min-width: 819px) and (max-width: 1024px) {
+    margin-top: 8vh;
   }
 `;
 export const HeadingDiscountList = styled.div`

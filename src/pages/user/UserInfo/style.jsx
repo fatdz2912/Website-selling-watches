@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { color } from "themes/color";
-import { Row } from "antd";
+import { Button, Row } from "antd";
 export const UserInfoWrapper = styled(Row)`
   width: 100%;
   background-color: ${color.primaryText};
@@ -49,3 +49,12 @@ export const Value = styled.div`
   color: ${color.primary};
 `;
 export const Changs = styled.div``;
+export const Update = styled(Button)`
+  width: 100%;
+  max-width: 66.66%;
+  margin-left: 33.33%;
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+    margin-left: 0;
+  }
+`;

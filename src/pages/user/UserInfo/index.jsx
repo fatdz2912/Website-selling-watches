@@ -108,18 +108,13 @@ function Profile() {
           >
             <DatePicker placeholder="Chọn ngày" />
           </Form.Item>
-          <Button
+          <S.Update
             type="primary"
             htmlType="submit"
-            style={{
-              width: "100%",
-              maxWidth: "66.6666666%",
-              marginLeft: "33.333333%",
-            }}
             loading={updateUserInfoData.loading}
           >
             Cập nhật
-          </Button>
+          </S.Update>
         </Form>
       </S.Profile>
     </S.UserInfoWrapper>

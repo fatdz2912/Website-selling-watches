@@ -23,8 +23,24 @@ export const MoreDetailContent = styled.div`
 export const MoreDetailLabel = styled.span`
   margin-right: 10px;
   font-weight: 500;
+  font-size: 1rem;
+  min-width: 100px;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+  @media screen and (max-width: 376px) {
+    font-size: 0.7rem;
+    min-width: 60px;
+  }
 `;
 export const MoreDetailValue = styled.span`
   font-size: 1rem;
   color: ${color.primary};
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 376px) {
+    font-size: 0.6rem;
+  }
 `;

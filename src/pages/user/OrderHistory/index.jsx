@@ -10,25 +10,10 @@ import { color } from "themes/color";
 import { ORDER_LIMIT } from "constants/paging";
 
 function OrderHistories() {
-  const dispatch = useDispatch();
-
   const { userInfo } = useSelector((state) => state.auth);
   const { orderList } = useSelector((state) => state.order);
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-    document.title = "Lịch sử mua hàng";
-    if (userInfo.data.id) {
-      dispatch(
-        getOrderListRequest({
-          userId: userInfo.data.id,
-          page: 1,
-          limit: ORDER_LIMIT,
-        })
-      );
-    }
-  }, [userInfo.data.id]);
+
+  const dispatch = useDispatch();
 
   const tableColumns = [
     {
@@ -94,6 +79,23 @@ function OrderHistories() {
       },
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    document.title = "Lịch sử mua hàng";
+    if (userInfo.data.id) {
+      dispatch(
+        getOrderListRequest({
+          userId: userInfo.data.id,
+          page: 1,
+          limit: ORDER_LIMIT,
+        })
+      );
+    }
+  }, [userInfo.data.id]);
+
   return (
     <Table
       style={{ width: "100%" }}

@@ -38,6 +38,7 @@ function Checkout() {
   const [isShowChangeAddress, setIsShowChangeAddress] = useState(false);
 
   const [checkoutForm] = Form.useForm();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,6 +52,32 @@ function Checkout() {
     (total, item) => total + item.currentPrice * item.quantity,
     0
   );
+
+  const tableColumn = [
+    {
+      title: "Tên sản phẩm",
+      dataIndex: "name",
+      key: "name",
+      render: (_, record) => (
+        <div>
+          {record.name} x{record.quantity}
+        </div>
+      ),
+    },
+    {
+      title: "Thành tiền",
+      dataIndex: "intoMoney",
+      key: "intoMoney",
+      render: (_, item) => (
+        <S.IntoMoney>
+          <div>
+            {(item.currentPrice * item.quantity).toLocaleString()}
+            <S.Unit>₫</S.Unit>,
+          </div>
+        </S.IntoMoney>
+      ),
+    },
+  ];
 
   useEffect(() => {
     window.scrollTo({
@@ -92,32 +119,6 @@ function Checkout() {
       }
     }
   }, [userInfo.data, addressList.data, districtList.data[0]?.code]);
-
-  const tableColumn = [
-    {
-      title: "Tên sản phẩm",
-      dataIndex: "name",
-      key: "name",
-      render: (_, record) => (
-        <div>
-          {record.name} x{record.quantity}
-        </div>
-      ),
-    },
-    {
-      title: "Thành tiền",
-      dataIndex: "intoMoney",
-      key: "intoMoney",
-      render: (_, item) => (
-        <S.IntoMoney>
-          <div>
-            {(item.currentPrice * item.quantity).toLocaleString()}
-            <S.Unit>₫</S.Unit>,
-          </div>
-        </S.IntoMoney>
-      ),
-    },
-  ];
 
   const handleSubmitCheckoutForm = (values) => {
     const { cityCode, districtCode, wardCode, specificAddress } = values;

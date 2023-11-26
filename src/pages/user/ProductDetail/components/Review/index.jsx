@@ -131,7 +131,7 @@ function Review({ id, averageRate }) {
       <S.ReviewHead md={24} xs={24}>
         ĐÁNH GIÁ SẢN PHẨM
       </S.ReviewHead>
-      <Col xs={6} md={6} xl={6}>
+      <Col xs={10} md={8} xl={6}>
         <S.RatingOverviewScore>
           <S.RatingOverview>{averageRate}</S.RatingOverview>
           <S.RatingPeak> trên 5</S.RatingPeak>
@@ -140,7 +140,7 @@ function Review({ id, averageRate }) {
           <Rate value={parseFloat(averageRate)} allowHalf disabled />
         </S.Stars>
       </Col>
-      <Col xs={18} md={18} xl={18}>
+      <Col xs={14} md={16} xl={18}>
         <S.SearchOfOverview>
           <S.QuantityComment>
             Bình luận({reviewList.data.length})

@@ -24,9 +24,10 @@ import { color } from "themes/color";
 import { ORDER_LIMIT } from "constants/paging";
 
 function OrderManager() {
+  const { orderList } = useSelector((state) => state.order);
+
   const dispatch = useDispatch();
 
-  const { orderList } = useSelector((state) => state.order);
   useEffect(() => {
     window.scrollTo({
       top: 0,

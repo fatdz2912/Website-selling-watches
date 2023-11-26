@@ -46,6 +46,7 @@ function Product({
         : false,
     [productDetail.data.favorites, userInfo.data.id]
   );
+
   const handleBuyNow = () => {
     const selectedRows = [
       { quantity, name, currentPrice, productId, imagePrevious },

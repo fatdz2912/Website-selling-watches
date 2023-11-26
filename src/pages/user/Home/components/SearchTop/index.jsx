@@ -10,9 +10,12 @@ import { Link, generatePath } from "react-router-dom";
 import { ROUTES } from "constants/routes";
 
 function SearchTop() {
-  const dispatch = useDispatch();
+  const groupSearchTop = [];
+
   const { productList } = useSelector((state) => state.product);
   const { data, loading } = productList;
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     document.title = "Trang chủ";
@@ -23,10 +26,11 @@ function SearchTop() {
       })
     );
   }, []);
-  const groupSearchTop = [];
+
   for (let i = 0; i < data.length; i += 4) {
     groupSearchTop.push(data.slice(i, i + 4));
   }
+
   const renderSearchTop = useMemo(() => {
     if (loading) {
       return (
@@ -114,7 +118,7 @@ function SearchTop() {
         autoplay
         dots
         dotPosition={"top"}
-        autoplaySpeed={2000}
+        autoplaySpeed={2500}
       >
         {renderSearchTop}
       </Carousel>

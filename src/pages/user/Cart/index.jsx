@@ -28,30 +28,6 @@ function CartPage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-    document.title = "Trang giỏ hàng";
-  }, []);
-
-  const handleChangeQuantity = (productId, value) => {
-    dispatch(
-      updateCart({
-        productId: productId,
-        quantity: value,
-        selectedRows,
-        setTotalPrice,
-        setSelectedRows,
-      })
-    );
-  };
-
-  const handleDeleteCartItem = (productId) => {
-    dispatch(deleteCart({ productId: productId }));
-  };
-
   const tableColumn = [
     {
       title: "Tên sản phẩm",
@@ -125,6 +101,29 @@ function CartPage() {
       ),
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    document.title = "Trang giỏ hàng";
+  }, []);
+
+  const handleChangeQuantity = (productId, value) => {
+    dispatch(
+      updateCart({
+        productId: productId,
+        quantity: value,
+        selectedRows,
+        setTotalPrice,
+        setSelectedRows,
+      })
+    );
+  };
+
+  const handleDeleteCartItem = (productId) => {
+    dispatch(deleteCart({ productId: productId }));
+  };
 
   return (
     <S.CartListWrapper>

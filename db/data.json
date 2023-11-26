@@ -261,7 +261,7 @@
       "currentPrice": 85200000,
       "limited": false,
       "discount": 29,
-      "view": 97,
+      "view": 98,
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền cố định bằng thép không gỉ với vòng trên bằng nhôm màu đen hiển thị các vạch đo tốc độ. Mặt số màu đen với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Chronograph - ba mặt số phụ hiển thị: 60 giây, 30 phút và 12 giờ. Bộ chuyển động tự động Omega calibre 3330 với khả năng dự trữ năng lượng trong 52 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Kích thước vỏ: 40 mm. Độ dày vỏ: 15 mm. Hình dạng vỏ tròn. Chiều rộng dải: 19 mm. Chiều dài dây: 8,5 inch. Triển khai khóa bằng nút nhấn. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: đồng hồ bấm giờ, ngày, giờ, phút, giây, đồng hồ bấm giờ, máy đo tốc độ. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Mẫu mã: 326 30 40 50 01 001, 326-30-40-50-01-001, 326/30/40/50/01/001, 32630405001001. Đồng hồ nam Chronograph tự động Omega Speedmaster Racing 326.30.40.50.01.001",
       "series": "Speedmaster Racing",
       "gender": "Nam",
@@ -274,7 +274,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700926953156
+      "updatedAt": 1700967763171
     },
     {
       "id": 2,
@@ -313,7 +313,7 @@
       "currentPrice": 5440000,
       "limited": false,
       "discount": 66,
-      "view": 14,
+      "view": 20,
       "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Khóa triển khai. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Couturier mặt đen tự động T035.407.16.051.03",
       "series": "Couturier",
       "gender": "Nam",
@@ -326,7 +326,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700897906692
+      "updatedAt": 1700968921648
     },
     {
       "id": 19,
@@ -1067,7 +1067,7 @@
       "currentPrice": 5700000,
       "limited": false,
       "discount": 62,
-      "view": 10,
+      "view": 13,
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ cố định. Mặt số màu bạc với kim màu bạc sáng và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Hiển thị ngày phía trên vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Khóa bướm. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ mặt bạc tự động Tissot Couturier T0354071103101.",
       "series": "Couturier",
       "gender": "Nam",
@@ -1080,7 +1080,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259121,
       "isDelete": false,
-      "updatedAt": 1699716259121
+      "updatedAt": 1700966757509
     },
     {
       "id": 24,
@@ -1244,7 +1244,7 @@
       "oldPrice": 32000000,
       "currentPrice": 4160000,
       "discount": 87,
-      "view": 12,
+      "view": 14,
       "gender": "Nữ",
       "categoryId": 3,
       "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/fde19e4197824625333be074956e7640/i/c/icewatch-quartz-silver-dial-unisex-watch-020384.jpg?width=546&height=546",
@@ -1253,7 +1253,7 @@
       "description": "Vỏ thép không gỉ với dây đeo cao su màu trắng. Viền thép không gỉ cố định. Mặt số màu bạc với kim đồng sáng và vạch chỉ giờ bằng pha lê. Điểm đánh dấu chỉ số ở vị trí 3, 6 và 9 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay phát quang. Chuyển động thạch anh. Tinh thể khoáng chống trầy xước. Kéo/đẩy vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 40 mm. Chiều rộng dải: 19 mm. Tang kẹp. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, giờ, phút, giây. Phong cách đồng hồ giản dị. Đồng hồ đeo tay Unisex mặt bạc thạch anh Ice-Watch 020384.",
       "createdAt": 1699067244611,
       "isDelete": false,
-      "updatedAt": 1700926270956,
+      "updatedAt": 1700968036293,
       "limited": false,
       "series": "GMT-Master II",
       "engine": "Longines Calibre L888",
@@ -2148,6 +2148,14 @@
       "updatedAt": 1700927016238,
       "isDelete": false,
       "id": 54
+    },
+    {
+      "productId": 18,
+      "userId": 2,
+      "createdAt": 1700966382385,
+      "updatedAt": 1700966382385,
+      "isDelete": false,
+      "id": 55
     }
   ],
   "addresses": [

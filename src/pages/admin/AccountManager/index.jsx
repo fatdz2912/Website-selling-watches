@@ -1,14 +1,5 @@
 import { useEffect } from "react";
-import {
-  Button,
-  Col,
-  Input,
-  Pagination,
-  Popconfirm,
-  Row,
-  Space,
-  Table,
-} from "antd";
+import { Button, Input, Pagination, Popconfirm, Space, Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import dayjs from "dayjs";
 
@@ -23,9 +14,10 @@ import { color } from "themes/color";
 import { PRODUCT_TABLE_LIMIT } from "constants/paging";
 
 function AccountManager() {
+  const { userList } = useSelector((state) => state.auth);
+
   const dispatch = useDispatch();
 
-  const { userList } = useSelector((state) => state.auth);
   useEffect(() => {
     window.scrollTo({
       top: 0,

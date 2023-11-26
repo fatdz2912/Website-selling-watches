@@ -77,6 +77,7 @@ export const Heart = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-width: 150px;
   @media screen and (max-width: 576px) {
     font-size: 0.8rem;
   }
