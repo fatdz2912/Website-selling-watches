@@ -5,6 +5,8 @@ import {
   createAddressSuccess,
 } from "./address.slice";
 import { notification } from "antd";
+import { Navigate } from "react-router-dom";
+import { ROUTES } from "constants/routes";
 
 const initialState = {
   userInfo: {
@@ -86,7 +88,7 @@ export const authSlice = createSlice({
       state.registerData.error = error;
     },
     // logout
-    logoutRequest: (state, action) => {
+    logoutRequest: (state) => {
       state.userInfo.data = {};
       localStorage.removeItem("accessToken");
     },

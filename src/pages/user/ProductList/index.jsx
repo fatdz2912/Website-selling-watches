@@ -33,11 +33,12 @@ function ProductList() {
   const { productList } = useSelector((state) => state.product);
   const { categoryList } = useSelector((state) => state.category);
   const { data, loading } = productList;
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
 
-  const searchParams = qs.parse(search, {
+  const searchParams = qs.parse(search, { 
     ignoreQueryPrefix: true,
   });
 
@@ -254,12 +255,26 @@ function ProductList() {
                   <Segmented
                     options={[
                       {
-                        value: "card",
-                        icon: <FaSortAmountDown />,
+                        value: "desc",
+                        icon: (
+                          <FaSortAmountDown
+                            onClick={() =>
+                              handleFilter("sortOrder", "currentPrice.desc")
+                            }
+                          />
+                        ),
+                        onClick: () =>
+                          handleFilter("sortOrder", "currentPrice.desc"),
                       },
                       {
-                        value: "list",
-                        icon: <FaSortAmountUp />,
+                        value: "asc",
+                        icon: (
+                          <FaSortAmountUp
+                            onClick={() =>
+                              handleFilter("sortOrder", "currentPrice.asc")
+                            }
+                          />
+                        ),
                       },
                     ]}
                   />

@@ -146,8 +146,8 @@ function Register() {
                 ]}
               >
                 <Checkbox>
-                  Tôi đồng ý với shop về <a>Điều khoản dịch vụ</a> &{" "}
-                  <a>Chính sách bảo mật</a>{" "}
+                  Tôi đồng ý với shop về <a>Điều khoản dịch vụ</a> &
+                  <a>Chính sách bảo mật</a>
                 </Checkbox>
               </Form.Item>
               <Form.Item

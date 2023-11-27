@@ -32,6 +32,8 @@ import {
   hiddenSearchSuggestion,
 } from "redux/slicers/searchSuggestion.slice";
 function Header({ isHiddenMenu, setIsHiddenMenu }) {
+  const indexSearchSuggestion = useRef(-1);
+
   const [isHiddenAngleUp, setIsHiddenAngleUp] = useState(false);
   const [searchKey, setSearchKey] = useState("");
 
@@ -45,8 +47,6 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { search } = useLocation();
-
-  const indexSearchSuggestion = useRef(-1);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);

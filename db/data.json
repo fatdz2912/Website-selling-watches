@@ -8,10 +8,10 @@
       "role": "user",
       "createdAt": 1698478445048,
       "isDelete": false,
-      "updatedAt": 1700919450142,
+      "updatedAt": 1700981654909,
       "id": 1,
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
-      "addressDefaultId": null
+      "addressDefaultId": 7
     },
     {
       "email": "ngovantri1111@gmail.com",
@@ -105,6 +105,30 @@
       "phoneNumber": "0976236609",
       "birthday": 1700924767588,
       "addressDefaultId": 6
+    },
+    {
+      "email": "vtri2912@gmail.com",
+      "password": "$2a$10$tijT3Kp8tYkYLlM5CC0Lp.PgMRFEVv4WMLduxUYxKNVdbjgJgIsLG",
+      "fullName": "Văn Trị",
+      "agree": false,
+      "role": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "createdAt": 1700980209417,
+      "updatedAt": 1700980209417,
+      "isDelete": false,
+      "id": 9
+    },
+    {
+      "email": "n@gmail.com",
+      "password": "$2a$10$F7HwZuOHCqxwzav0n5yHz.4xqk3EeBcHyxRoPjKVWqZzsetNODHDa",
+      "fullName": "gfgfggg",
+      "agree": false,
+      "role": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZRHHcRuOyLqUlNqrvsA6jUy6j_KJwbJaOQrEoE-f&s",
+      "createdAt": 1700980290105,
+      "updatedAt": 1700980290105,
+      "isDelete": false,
+      "id": 10
     }
   ],
   "reviews": [
@@ -313,7 +337,7 @@
       "currentPrice": 5440000,
       "limited": false,
       "discount": 66,
-      "view": 20,
+      "view": 21,
       "description": "Vỏ thép không gỉ với dây đeo bằng da màu đen. Viền thép không gỉ cố định. Mặt số màu đen với kim màu bạc và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 6 giờ. Hiển thị ngày trong tuần tập trung ở vị trí 12 giờ. Bộ chuyển động tự động Powermatic 80 với khả năng dự trữ năng lượng trong 80 giờ. Tinh thể sapphire chống trầy xước. Kéo/đẩy vương miện. Mặt sau trong suốt. Kích thước vỏ: 39 mm. Độ dày vỏ: 10,8 mm. Hình dạng vỏ tròn. Chiều rộng dải: 22 mm. Chiều dài băng tần: 8 inch. Khóa triển khai. Chống nước ở độ sâu 100 mét / 330 feet. Chức năng: ngày, thứ, giờ, phút, giây. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam Tissot Couturier mặt đen tự động T035.407.16.051.03",
       "series": "Couturier",
       "gender": "Nam",
@@ -326,7 +350,7 @@
       "back": "Trong suốt",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700968921648
+      "updatedAt": 1700981664937
     },
     {
       "id": 19,
@@ -339,7 +363,7 @@
       "currentPrice": 114000000,
       "limited": false,
       "discount": 24,
-      "view": 29,
+      "view": 30,
       "description": "Vỏ và dây đeo bằng thép không gỉ tông màu bạc. Viền thép không gỉ màu xanh xoay một chiều. Mặt số tông màu bạc với kim màu xanh lam và vạch chỉ giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Bộ chuyển động tự động Breitling Calibre 17, dựa trên ETA 2824-2, chứa 25 viên Ngọc, hoạt động ở tốc độ 28800 vph và có khả năng dự trữ năng lượng khoảng 42 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Kiểu dáng vỏ tròn, kích thước vỏ: 42 mm. Triển khai với khóa nhả nút nhấn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: giờ, phút, giây, Chronometer. Thông tin bổ sung: nguyên hộp, thẻ bảo hành quốc tế, sách hướng dẫn (đầy đủ phụ kiện). Dòng siêu đại dương. Kiểu dáng đồng hồ sang trọng. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt bạc tự động Breitling Superocean A17375E71G1A1.",
       "series": "Superocean",
       "gender": "Nam",
@@ -352,7 +376,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1700919478359
+      "updatedAt": 1700981584645
     },
     {
       "id": 25,
@@ -391,7 +415,7 @@
       "currentPrice": 53200000,
       "limited": false,
       "discount": 30,
-      "view": 10,
+      "view": 11,
       "description": "Vỏ thép không gỉ với vòng thép không gỉ. Viền thép không gỉ xoay một chiều với vòng gốm màu xanh lam. Mặt số màu xanh lam với kim màu bạc sáng và vạch chỉ giờ dạng chấm. Chữ số Ả Rập xuất hiện ở vị trí 6, 9 và 12 giờ. Điểm đánh dấu phút xung quanh vành ngoài. Loại quay số: Analog. Bàn tay và điểm đánh dấu phát quang. Hiển thị ngày ở vị trí 3 giờ. Bộ chuyển động tự động Longines calibre L888, dựa trên ETA A31.L11, chứa 21 viên Ngọc, hoạt động ở tốc độ 25200 vph và có khả năng dự trữ năng lượng khoảng 64 giờ. Tinh thể sapphire chống trầy xước. Vít xuống vương miện. Vỏ sau chắc chắn. Hình dạng vỏ tròn. Kích thước vỏ: 43 mm. Chiều rộng vòng tay: 21 mm. Gấp qua khóa bằng chốt an toàn. Chống nước ở độ sâu 300 mét / 1000 feet. Chức năng: ngày, giờ, phút, giây. Dòng Hydroconquest. Phong cách đồng hồ giản dị. Nhãn đồng hồ: Swiss Made. Đồng hồ nam mặt số xanh tự động Longines HydroConquest L3.782.4.96.6",
       "series": "HydroConquest",
       "gender": "Nam",
@@ -404,7 +428,7 @@
       "back": "Chất rắn",
       "createdAt": 1699716259728,
       "isDelete": false,
-      "updatedAt": 1699716259728
+      "updatedAt": 1701067588901
     },
     {
       "id": 4,
@@ -1675,6 +1699,19 @@
       "updatedAt": 1700928186149,
       "isDelete": false,
       "id": 12
+    },
+    {
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường Xuân Hà",
+      "totalPrice": 5440000,
+      "specificAddress": "435 Trần Cao Vân",
+      "userId": 1,
+      "status": "processing",
+      "createdAt": 1700981670245,
+      "updatedAt": 1700981670245,
+      "isDelete": false,
+      "id": 13
     }
   ],
   "orderDetails": [
@@ -1872,6 +1909,19 @@
       "updatedAt": 1700927030645,
       "isDelete": false,
       "id": 15
+    },
+    {
+      "quantity": 1,
+      "name": "Đồng hồ nam mặt đen tự động Couturier",
+      "currentPrice": 5440000,
+      "productId": "3",
+      "imagePrevious": "https://cdn2.jomashop.com/media/catalog/product/cache/df24c858758eb768757877f23cd17493/t/i/tissot-couturier-black-dial-automatic-men_s-watch-t035.407.16.051.03.jpg?width=350&height=350",
+      "orderId": 13,
+      "uuid": "0d5908d5-76c4-4d32-944a-b64567fac0fc",
+      "createdAt": 1700981670338,
+      "updatedAt": 1700981670338,
+      "isDelete": false,
+      "id": 16
     }
   ],
   "searches": [
@@ -2238,6 +2288,22 @@
       "updatedAt": 1700926774344,
       "isDelete": false,
       "id": 6
+    },
+    {
+      "name": "Ngô Văn Trị",
+      "cityName": "Thành phố Đà Nẵng",
+      "districtName": "Quận Thanh Khê",
+      "wardName": "Phường Xuân Hà",
+      "userId": 1,
+      "phone": "0912683524",
+      "specificAddress": "435 Trần Cao Vân",
+      "cityCode": "48",
+      "districtCode": "491",
+      "wardCode": "20209",
+      "createdAt": 1700981654841,
+      "updatedAt": 1700981654841,
+      "isDelete": false,
+      "id": 7
     }
   ],
   "categories": [

@@ -156,7 +156,6 @@ function Header({ isShowSidebar, setIsShowSidebar }) {
                     label: "Đăng xuất",
                     onClick: () => {
                       dispatch(logoutRequest());
-                      navigate(ROUTES.USER.HOME);
                     },
                     icon: <FaSignOutAlt />,
                   },
