@@ -29,6 +29,7 @@ function Product({
   averageRate,
   handleAddToCart,
   productId,
+  prodductAvailable,
 }) {
   const [image, setImage] = useState(imagePrevious);
   const { productDetail } = useSelector((state) => state.product);
@@ -175,9 +176,12 @@ function Product({
           </S.Price>
           <S.QuantityWrapper md={24} lg={24} xs={24}>
             <S.Quantity>Số Lượng:</S.Quantity>
-            <Button onClick={() => handleDecreaseQuantity()}>-</Button>
-            <Button>{quantity}</Button>
-            <Button onClick={() => handleIncreaseQuantity()}>+</Button>
+            <S.ContentQuantity>
+              <Button onClick={() => handleDecreaseQuantity()}>-</Button>
+              <Button>{quantity}</Button>
+              <Button onClick={() => handleIncreaseQuantity()}>+</Button>
+              <p>Có sẵn {prodductAvailable} sản phẩm</p>
+            </S.ContentQuantity>
           </S.QuantityWrapper>
           <Col md={24} lg={24} xs={24}>
             <S.Info gutter={[8, 8]}>

@@ -243,6 +243,12 @@ export const Quantity = styled.span`
   font-weight: 500;
   margin-right: 1.5em;
 `;
+export const ContentQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+`;
 export const Discount = styled.div`
   z-index: 1;
   top: 2%;

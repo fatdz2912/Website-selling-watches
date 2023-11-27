@@ -78,7 +78,12 @@ function Checkout() {
       ),
     },
   ];
-
+  useEffect(() => {
+    if (!userInfo.data.id) {
+      navigate(ROUTES.USER.CHECKOUT);
+      checkoutForm.resetFields();
+    }
+  }, [userInfo.data.id]);
   useEffect(() => {
     window.scrollTo({
       top: 0,

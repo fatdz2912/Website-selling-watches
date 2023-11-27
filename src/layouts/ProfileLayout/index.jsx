@@ -1,4 +1,4 @@
-import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -10,14 +10,21 @@ import { FaHome, FaBars } from "react-icons/fa";
 import { Breadcrumb, Space } from "antd";
 import { useMemo } from "react";
 import { PROFILE_MENU } from "./constant";
-import { color } from "themes/color";
+import { useEffect } from "react";
 
-function AccountUserLayout() {
+function ProfileLayout() {
   const [avatar, setAvatar] = useState("");
   const { userInfo } = useSelector((state) => state.auth);
   const accessToken = localStorage.getItem("accessToken");
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userInfo.data.id) {
+      navigate(ROUTES.USER.HOME);
+    }
+  }, [userInfo.data.id]);
 
   const profileLabel = useMemo(() => {
     return PROFILE_MENU.find((item) => item.path === pathname)?.label;
@@ -59,15 +66,6 @@ function AccountUserLayout() {
           ]}
         />
         <S.ProfileMainWrapper gutter={[16, 16]} justify={"center"}>
-          {/* <S.NavMenu
-            sm={2}
-            xs={2}
-            md={0}
-            xl={0}
-            onClick={() => setIsShowSidebar(!isShowSidebar)}
-          >
-            <FaBars size={25} color={color.primary} />
-          </S.NavMenu> */}
           <Sidebar avatar={avatar} setAvatar={setAvatar} />
           <S.ProfileMainContainer xs={24} sm={16} md={17} xl={19}>
             <Outlet />
@@ -77,4 +75,4 @@ function AccountUserLayout() {
     );
   }
 }
-export default AccountUserLayout;
+export default ProfileLayout;

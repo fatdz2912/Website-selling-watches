@@ -48,7 +48,6 @@ import { useState } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  const nagigate = useNavigate();
   const [isShowLoading, setIsShowLoading] = useState(false);
   const { cityList, districtList, wardList } = useSelector(
     (state) => state.location
@@ -59,18 +58,12 @@ function App() {
   const { changePassword, updateUserInfoData, changeAvatarData } = useSelector(
     (state) => state.auth
   );
-  const { userInfo } = useSelector((state) => state.auth);
   const { favoriteList } = useSelector((state) => state.favorite);
   const { orderList, orderProductData } = useSelector((state) => state.order);
   const { reviewList, createReviewData } = useSelector((state) => state.review);
   const { addProductData, updateProductData, deleteProductData } = useSelector(
     (state) => state.product
   );
-  useEffect(() => {
-    if (!userInfo.data.id) {
-      nagigate(ROUTES.USER.HOME);
-    }
-  }, [userInfo.data.id]);
   useEffect(() => {
     setIsShowLoading(
       cityList.loading ||

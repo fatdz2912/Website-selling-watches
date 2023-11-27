@@ -6,7 +6,6 @@ import {
   Card,
   Space,
   Breadcrumb,
-  Skeleton,
   Popconfirm,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,6 +63,7 @@ function CartPage() {
         <InputNumber
           value={item.quantity}
           min={1}
+          max={parseInt(item.prodductAvailable)}
           onKeyDown={(e) => {
             if (e.which === 8) {
               e.preventDefault();

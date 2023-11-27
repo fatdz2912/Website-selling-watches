@@ -54,14 +54,15 @@ function ProductDetail() {
     });
     document.title = `Sản phẩm chi tiết`;
   }, [id]);
-
   const handleDecreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
   const handleIncreaseQuantity = () => {
-    setQuantity(quantity + 1);
+    if (quantity < productDetail.data.quantity) {
+      setQuantity(quantity + 1);
+    }
   };
 
   const handleAddToCart = () => {
@@ -73,6 +74,7 @@ function ProductDetail() {
           currentPrice: productDetail.data.currentPrice,
           quantity: quantity,
           imagePrevious: imagePrevious,
+          prodductAvailable: productDetail?.data?.quantity,
         },
       })
     );
@@ -98,6 +100,7 @@ function ProductDetail() {
           quantityData={reviewList.data.length}
           handleAddToCart={handleAddToCart}
           productId={id}
+          prodductAvailable={productDetail.data?.quantity}
         />
         <S.Description md={24} xs={24} lg={12}>
           <S.TitleDESC>MÔ TẢ SẢN PHẨM:</S.TitleDESC>
