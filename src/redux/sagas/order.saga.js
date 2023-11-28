@@ -37,7 +37,6 @@ function* getOrderListSaga(action) {
     } else {
       result = yield axios.get("http://localhost:4000/orders", {
         params: {
-          _expand: "user",
           _embed: "orderDetails",
           isDelete: false,
           _sort: "createdAt",

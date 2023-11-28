@@ -87,9 +87,10 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
           ? searchParams.categoryId.map((id) => parseInt(id))
           : [],
         sortOrder: searchParams.sortOrder,
+        gender: searchParams.gender,
         searchKey: searchKey,
       };
-      if (searchKey !== "") {
+      if (searchKey !== "" && userInfo.data.id) {
         const indexEmpty = searchHistories.data.findIndex(
           (item) => item.searchKey === searchKey
         );
@@ -119,11 +120,18 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
       e.which === 8
     ) {
       indexSearchSuggestion.current = -1;
+      const searchParams = qs.parse(search, {
+        ignoreQueryPrefix: true,
+      });
       dispatch(
         getSearchSuggestionRequest({
           page: 1,
           limit: 8,
           searchKey: e.target.value,
+          gender: searchParams.gender,
+          categoryId: searchParams.categoryId
+            ? searchParams.categoryId.map((id) => parseInt(id))
+            : [],
         })
       );
     }

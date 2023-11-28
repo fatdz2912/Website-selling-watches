@@ -1,16 +1,25 @@
 import { ROUTES } from "constants/routes";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import * as S from "./style";
+import { useEffect } from "react";
 
 function AdminLayout() {
   const [isShowSidebar, setIsShowSidebar] = useState(true);
   const { userInfo } = useSelector((state) => state.auth);
   const accessToken = localStorage.getItem("accessToken");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userInfo.data.id) {
+      navigate(ROUTES.LOGIN);
+    }
+  }, [userInfo.data.id]);
   if (accessToken && userInfo.loading) {
     return (
       <S.LoadingWrapper>

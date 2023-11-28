@@ -48,6 +48,7 @@ function* getProductListSaga(action) {
     } = action.payload;
     const result = yield axios.get("http://localhost:4000/products", {
       params: {
+        isDelete: false,
         _expand: "category",
         _page: page,
         _limit: limit,
@@ -56,7 +57,6 @@ function* getProductListSaga(action) {
         ...(sortOrder && {
           _sort: sortOrder.split(".")[0],
           _order: sortOrder.split(".")[1],
-          isDelete: false,
         }),
         ...(discountOrder && {
           _sort: "discount",
@@ -85,11 +85,16 @@ function* getProductListSaga(action) {
 }
 function* getSearchSuggestionsSaga(action) {
   try {
-    const { limit, searchKey } = action.payload;
+    const { limit, searchKey, gender, categoryId } = action.payload;
     const result = yield axios.get("http://localhost:4000/products", {
       params: {
+        isDelete: false,
         _limit: limit,
         q: searchKey,
+        ...(gender && {
+          gender: gender,
+        }),
+        categoryId: categoryId,
       },
     });
 

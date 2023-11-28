@@ -47,13 +47,13 @@ function OrderManager() {
       title: "Tên KH",
       dataIndex: "fullName",
       key: "fullName",
-      render: (_, item) => `${item.user.fullName}`,
+      render: (_, item) => `${item.fullName}`,
     },
     {
       title: "SDT",
       dataIndex: "phone",
       key: "phone",
-      render: (_, item) => `${item.user.phoneNumber}`,
+      render: (_, item) => `${item.phoneNumber}`,
     },
     {
       title: "Ngày đặt hàng",
@@ -100,7 +100,7 @@ function OrderManager() {
               Hoàn tất
             </Button>
           )}
-          {item.status === "processing" && (
+          {(item.status === "processing" || item.status === "confirm") && (
             <Popconfirm
               description="Bạn chắn chắn muốn hủy?"
               okText="Yes"

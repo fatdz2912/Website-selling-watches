@@ -3,6 +3,7 @@ import {
   favoriteProductSuccess,
   unFavoriteProductSuccess,
 } from "./favorite.slice";
+import { notification } from "antd";
 const initialState = {
   productList: {
     data: [],
@@ -164,9 +165,11 @@ export const productSlice = createSlice({
       state.deleteProductData.error = null;
     },
     deleteProductSuccess: (state, action) => {
+      state.deleteProductData.loading = false;
       state.productList.data = state.productList.data.filter(
         (item) => item.id !== action.payload.id
       );
+      notification.success({ message: "xóa sản phẩm thành công!" });
     },
     deleteProductFailure: (state, action) => {
       const { error } = action.payload;

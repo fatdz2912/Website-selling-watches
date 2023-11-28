@@ -18,6 +18,7 @@ import { deleteCart, updateCart } from "redux/slicers/cart.slice";
 import { updateProductBuy } from "redux/slicers/cart.slice";
 
 import * as S from "./style";
+import { type } from "@testing-library/user-event/dist/type";
 
 function CartPage() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -65,7 +66,8 @@ function CartPage() {
           min={1}
           max={parseInt(item.prodductAvailable)}
           onKeyDown={(e) => {
-            if (e.which === 8) {
+            const isNumericOrAlphabetic = e.key >= "0" && e.key <= "9";
+            if (!isNumericOrAlphabetic || e.which === 8) {
               e.preventDefault();
             }
           }}

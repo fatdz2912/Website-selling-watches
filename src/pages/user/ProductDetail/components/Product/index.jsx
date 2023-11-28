@@ -31,7 +31,7 @@ function Product({
   productId,
   prodductAvailable,
 }) {
-  const [image, setImage] = useState(imagePrevious);
+  const [image, setImage] = useState(null);
   const { productDetail } = useSelector((state) => state.product);
   const { userInfo } = useSelector((state) => state.auth);
 

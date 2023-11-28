@@ -33,10 +33,6 @@ function ProductManager() {
   });
   const navigate = useNavigate();
   const { productList } = useSelector((state) => state.product);
-  console.log(
-    "🚀 ~ file: index.jsx:36 ~ ProductManager ~ productList:",
-    productList.data
-  );
   const { categoryList } = useSelector((state) => state.category);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -78,7 +74,7 @@ function ProductManager() {
     dispatch(
       deleteProductRequest({
         data: {
-          id,
+          id: id,
         },
       })
     );
