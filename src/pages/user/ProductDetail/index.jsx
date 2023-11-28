@@ -74,7 +74,7 @@ function ProductDetail() {
           currentPrice: productDetail.data.currentPrice,
           quantity: quantity,
           imagePrevious: imagePrevious,
-          prodductAvailable: productDetail?.data?.quantity,
+          productAvailable: productDetail?.data?.quantity,
         },
       })
     );
@@ -100,7 +100,7 @@ function ProductDetail() {
           quantityData={reviewList.data.length}
           handleAddToCart={handleAddToCart}
           productId={id}
-          prodductAvailable={productDetail.data?.quantity}
+          productAvailable={productDetail.data?.quantity}
         />
         <S.Description md={24} xs={24} lg={12}>
           <S.TitleDESC>MÔ TẢ SẢN PHẨM:</S.TitleDESC>

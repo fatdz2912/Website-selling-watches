@@ -29,7 +29,7 @@ function Product({
   averageRate,
   handleAddToCart,
   productId,
-  prodductAvailable,
+  productAvailable,
 }) {
   const [image, setImage] = useState(null);
   const { productDetail } = useSelector((state) => state.product);
@@ -180,7 +180,7 @@ function Product({
               <Button onClick={() => handleDecreaseQuantity()}>-</Button>
               <Button>{quantity}</Button>
               <Button onClick={() => handleIncreaseQuantity()}>+</Button>
-              <p>Có sẵn {prodductAvailable} sản phẩm</p>
+              <p>Có sẵn {productAvailable} sản phẩm</p>
             </S.ContentQuantity>
           </S.QuantityWrapper>
           <Col md={24} lg={24} xs={24}>

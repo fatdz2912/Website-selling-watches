@@ -19,7 +19,11 @@ export const cartSlice = createSlice({
       if (productExistIndex !== -1) {
         newCartList.splice(productExistIndex, 1, {
           ...state.cartList[productExistIndex],
-          quantity: state.cartList[productExistIndex].quantity + data.quantity,
+          quantity:
+            state.cartList[productExistIndex].quantity + data.quantity >
+            state.cartList[productExistIndex].productAvailable
+              ? state.cartList[productExistIndex].productAvailable
+              : state.cartList[productExistIndex].quantity + data.quantity,
         });
       } else {
         newCartList = [data, ...state.cartList];

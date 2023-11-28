@@ -144,6 +144,7 @@ export const authSlice = createSlice({
       const { data } = action.payload;
       state.updateUserInfoData.data = data;
       state.updateUserInfoData.loading = false;
+      notification.success({ message: "cập nhật thành công!" });
     },
     updateUserInfoFailure: (state, action) => {
       const { error } = action.payload;

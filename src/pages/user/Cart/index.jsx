@@ -64,7 +64,7 @@ function CartPage() {
         <InputNumber
           value={item.quantity}
           min={1}
-          max={parseInt(item.prodductAvailable)}
+          max={parseInt(item.productAvailable)}
           onKeyDown={(e) => {
             const isNumericOrAlphabetic = e.key >= "0" && e.key <= "9";
             if (!isNumericOrAlphabetic || e.which === 8) {
