@@ -1,63 +1,42 @@
-import { useEffect, useMemo } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, generatePath, useNavigate } from "react-router-dom";
-import { v4 } from "uuid";
-import ChangeAddressDefaultModal from "./components/ChangeAddressModal";
+import { useEffect, useMemo } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link, generatePath, useNavigate } from 'react-router-dom'
+import { v4 } from 'uuid'
+import ChangeAddressDefaultModal from './components/ChangeAddressModal'
 
-import {
-  Form,
-  Button,
-  Input,
-  Select,
-  Radio,
-  Row,
-  Col,
-  Card,
-  Space,
-  Table,
-  Breadcrumb,
-} from "antd";
-import { FaHome, FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
+import { Form, Button, Input, Select, Radio, Row, Col, Card, Space, Table, Breadcrumb } from 'antd'
+import { FaHome, FaMapMarkerAlt, FaShoppingCart } from 'react-icons/fa'
 
-import { ROUTES } from "constants/routes";
+import { ROUTES } from 'constants/routes'
 
-import {
-  getCityListRequest,
-  getDistrictListRequest,
-  getWardListRequest,
-} from "redux/slicers/location.slice";
-import { orderProductRequest } from "redux/slicers/order.slice";
-import { getAddressListRequest } from "redux/slicers/address.slice";
+import { getCityListRequest, getDistrictListRequest, getWardListRequest } from 'redux/slicers/location.slice'
+import { orderProductRequest } from 'redux/slicers/order.slice'
+import { getAddressListRequest } from 'redux/slicers/address.slice'
 
-import * as S from "./style";
-import { GUEST_ID } from "constants/guest";
-import { color } from "themes/color";
-import { useState } from "react";
+import * as S from './style'
+import { GUEST_ID } from 'constants/guest'
+import { color } from 'themes/color'
+import { useState } from 'react'
 
 function Checkout() {
-  const [isShowChangeAddress, setIsShowChangeAddress] = useState(false);
+  const [isShowChangeAddress, setIsShowChangeAddress] = useState(false)
 
-  const [checkoutForm] = Form.useForm();
+  const [checkoutForm] = Form.useForm()
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const { cityList, districtList, wardList } = useSelector(
-    (state) => state?.location
-  );
-  const { productBuyList } = useSelector((state) => state.cart);
-  const { userInfo } = useSelector((state) => state.auth);
-  const { addressList } = useSelector((state) => state.address);
-  const totalPrice = productBuyList.reduce(
-    (total, item) => total + item.currentPrice * item.quantity,
-    0
-  );
+  const { cityList, districtList, wardList } = useSelector((state) => state?.location)
+  const { productBuyList } = useSelector((state) => state.cart)
+  const { userInfo } = useSelector((state) => state.auth)
+  const { addressList } = useSelector((state) => state.address)
+  const totalPrice = productBuyList.reduce((total, item) => total + item.currentPrice * item.quantity, 0)
 
   const tableColumn = [
     {
-      title: "Tên sản phẩm",
-      dataIndex: "name",
-      key: "name",
+      title: 'Tên sản phẩm',
+      dataIndex: 'name',
+      key: 'name',
       render: (_, record) => (
         <div>
           {record.name} x{record.quantity}
@@ -65,26 +44,26 @@ function Checkout() {
       ),
     },
     {
-      title: "Thành tiền",
-      dataIndex: "intoMoney",
-      key: "intoMoney",
+      title: 'Thành tiền',
+      dataIndex: 'intoMoney',
+      key: 'intoMoney',
       render: (_, item) => (
         <S.IntoMoney>
           <div>
             {(item.currentPrice * item.quantity).toLocaleString()}
-            <S.Unit>₫</S.Unit>,
+            <S.Unit>₫</S.Unit>
           </div>
         </S.IntoMoney>
       ),
     },
-  ];
+  ]
   useEffect(() => {
     window.scrollTo({
       top: 0,
-    });
-    document.title = "Thanh toán";
-    dispatch(getCityListRequest());
-  }, []);
+    })
+    document.title = 'Thanh toán'
+    dispatch(getCityListRequest())
+  }, [])
   useEffect(() => {
     if (userInfo.data?.id) {
       dispatch(
@@ -92,18 +71,16 @@ function Checkout() {
           userId: userInfo?.data?.id,
           addressDefaultId: userInfo.data.addressDefaultId,
         })
-      );
+      )
     }
-  }, [userInfo?.data?.id]);
+  }, [userInfo?.data?.id])
 
   useEffect(() => {
-    const defaultAddress = addressList.data.find(
-      (item) => item.id === userInfo?.data?.addressDefaultId
-    );
+    const defaultAddress = addressList.data.find((item) => item.id === userInfo?.data?.addressDefaultId)
     if (defaultAddress) {
-      dispatch(getDistrictListRequest({ code: defaultAddress.districtCode }));
+      dispatch(getDistrictListRequest({ code: defaultAddress.districtCode }))
       if (districtList.data[0]?.code) {
-        dispatch(getWardListRequest({ code: defaultAddress.wardCode }));
+        dispatch(getWardListRequest({ code: defaultAddress.wardCode }))
       }
       if (userInfo.data.id) {
         checkoutForm.setFieldsValue({
@@ -114,31 +91,19 @@ function Checkout() {
           cityCode: defaultAddress.cityCode,
           districtCode: defaultAddress?.districtCode,
           wardCode: defaultAddress.wardCode,
-        });
+        })
       }
     }
-  }, [userInfo.data, addressList.data, districtList.data[0]?.code]);
+  }, [userInfo.data, addressList.data, districtList.data[0]?.code])
 
   const handleSubmitCheckoutForm = (values) => {
-    const {
-      cityCode,
-      districtCode,
-      wardCode,
-      specificAddress,
-      fullName,
-      phoneNumber,
-    } = values;
-    const cityData = cityList.data.find((item) => item.code === cityCode);
-    const districtData = districtList.data.find(
-      (item) => item.code === districtCode
-    );
-    const wardData = wardList.data.find((item) => item.code === wardCode);
+    const { cityCode, districtCode, wardCode, specificAddress, fullName, phoneNumber } = values
+    const cityData = cityList.data.find((item) => item.code === cityCode)
+    const districtData = districtList.data.find((item) => item.code === districtCode)
+    const wardData = wardList.data.find((item) => item.code === wardCode)
 
-    const totalPrice = productBuyList.reduce(
-      (total, item) => total + item.currentPrice * item.quantity,
-      0
-    );
-    const id = v4();
+    const totalPrice = productBuyList.reduce((total, item) => total + item.currentPrice * item.quantity, 0)
+    const id = v4()
     dispatch(
       orderProductRequest({
         orderData: {
@@ -149,17 +114,16 @@ function Checkout() {
           specificAddress: specificAddress,
           note: values.note,
           userId: userInfo.data.id || GUEST_ID,
-          status: "processing",
+          status: 'processing',
           fullName,
           phoneNumber,
         },
         productBuyList: productBuyList,
         orderId: id,
-        callback: () =>
-          navigate(generatePath(ROUTES.USER.SUCCESSPAY, { id: id })),
+        callback: () => navigate(generatePath(ROUTES.USER.SUCCESSPAY, { id: id })),
       })
-    );
-  };
+    )
+  }
 
   const renderCityOptions = useMemo(() => {
     return cityList.data.map((item, index) => {
@@ -167,39 +131,33 @@ function Checkout() {
         <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
-      );
-    });
-  }, [cityList.data]);
+      )
+    })
+  }, [cityList.data])
   const renderDistrictOptions = useMemo(() => {
     return districtList.data.map((item, index) => {
       return (
         <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
-      );
-    });
-  }, [districtList.data]);
+      )
+    })
+  }, [districtList.data])
   const renderWardListOptions = useMemo(() => {
     return wardList.data.map((item, index) => {
       return (
         <Select.Option key={index} value={item.code}>
           {item.name}
         </Select.Option>
-      );
-    });
-  }, [wardList.data]);
+      )
+    })
+  }, [wardList.data])
 
   const renderTableProductBuyList = useMemo(() => {
     return (
-      <Table
-        size="small"
-        columns={tableColumn}
-        dataSource={productBuyList}
-        rowKey="productId"
-        pagination={false}
-      />
-    );
-  }, [productBuyList]);
+      <Table size="small" columns={tableColumn} dataSource={productBuyList} rowKey="productId" pagination={false} />
+    )
+  }, [productBuyList])
   const renderCartListDetail = useMemo(() => {
     return productBuyList.map((item, index) => {
       return (
@@ -230,9 +188,9 @@ function Checkout() {
             </div>
           </S.IntoMoney>
         </S.CartItem>
-      );
-    });
-  }, [productBuyList]);
+      )
+    })
+  }, [productBuyList])
   return (
     <S.CheckoutWrapper>
       <Breadcrumb
@@ -259,7 +217,7 @@ function Checkout() {
           },
 
           {
-            title: "Thanh Toán",
+            title: 'Thanh Toán',
           },
         ]}
       />
@@ -299,14 +257,10 @@ function Checkout() {
                     {addressList?.data && (
                       <S.Address>
                         <h3>
-                          <FaMapMarkerAlt color={color.outstanding} /> Địa chỉ
-                          nhận hàng
+                          <FaMapMarkerAlt color={color.outstanding} /> Địa chỉ nhận hàng
                         </h3>
                         {userInfo.data.id && (
-                          <S.ChangeDefaultAddress
-                            onClick={() => setIsShowChangeAddress(true)}
-                            type="primary"
-                          >
+                          <S.ChangeDefaultAddress onClick={() => setIsShowChangeAddress(true)} type="primary">
                             Chọn địa chỉ
                           </S.ChangeDefaultAddress>
                         )}
@@ -316,11 +270,7 @@ function Checkout() {
                         />
                       </S.Address>
                     )}
-                    <Form.Item
-                      label="Họ và tên"
-                      name="fullName"
-                      rules={[{ required: true, message: "Bắt buộc!" }]}
-                    >
+                    <Form.Item label="Họ và tên" name="fullName" rules={[{ required: true, message: 'Bắt buộc!' }]}>
                       <Input placeholder="Nhập họ và tên" />
                     </Form.Item>
                   </Col>
@@ -329,10 +279,10 @@ function Checkout() {
                       label="Email"
                       name="email"
                       rules={[
-                        { required: true, message: "Bắt buộc!" },
+                        { required: true, message: 'Bắt buộc!' },
                         {
-                          type: "email",
-                          message: "Vui lòng điền đúng định dạng email",
+                          type: 'email',
+                          message: 'Vui lòng điền đúng định dạng email',
                         },
                       ]}
                     >
@@ -344,10 +294,10 @@ function Checkout() {
                       label="Số điện thoại"
                       name="phoneNumber"
                       rules={[
-                        { required: true, message: "Bắt buộc!" },
+                        { required: true, message: 'Bắt buộc!' },
                         {
                           pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-                          message: "Vui lòng nhập đúng định dạng",
+                          message: 'Vui lòng nhập đúng định dạng',
                         },
                       ]}
                     >
@@ -355,19 +305,15 @@ function Checkout() {
                     </Form.Item>
                   </Col>
                   <Col lg={8} md={8} xs={24}>
-                    <Form.Item
-                      label="Tỉnh/Thành"
-                      name="cityCode"
-                      rules={[{ required: true, message: "Bắt buộc!" }]}
-                    >
+                    <Form.Item label="Tỉnh/Thành" name="cityCode" rules={[{ required: true, message: 'Bắt buộc!' }]}>
                       <Select
                         placeholder="Chọn Tỉnh/Thành"
                         onChange={(value) => {
-                          dispatch(getDistrictListRequest({ cityCode: value }));
+                          dispatch(getDistrictListRequest({ cityCode: value }))
                           checkoutForm.setFieldsValue({
                             districtCode: undefined,
                             wardCode: undefined,
-                          });
+                          })
                         }}
                       >
                         {renderCityOptions}
@@ -378,32 +324,25 @@ function Checkout() {
                     <Form.Item
                       label="Quận/Huyện"
                       name="districtCode"
-                      rules={[{ required: true, message: "Bắt buộc!" }]}
+                      rules={[{ required: true, message: 'Bắt buộc!' }]}
                     >
                       <Select
                         placeholder="Chọn Quận/Huyện"
                         onChange={(value) => {
-                          dispatch(getWardListRequest({ districtCode: value }));
+                          dispatch(getWardListRequest({ districtCode: value }))
                           checkoutForm.setFieldsValue({
                             wardCode: undefined,
-                          });
+                          })
                         }}
-                        disabled={!checkoutForm.getFieldValue("cityCode")}
+                        disabled={!checkoutForm.getFieldValue('cityCode')}
                       >
                         {renderDistrictOptions}
                       </Select>
                     </Form.Item>
                   </Col>
                   <Col lg={8} md={8} xs={24}>
-                    <Form.Item
-                      label="Phường/Xã"
-                      name="wardCode"
-                      rules={[{ required: true, message: "Bắt buộc!" }]}
-                    >
-                      <Select
-                        placeholder="Chọn Phường/Xã"
-                        disabled={!checkoutForm.getFieldValue("districtCode")}
-                      >
+                    <Form.Item label="Phường/Xã" name="wardCode" rules={[{ required: true, message: 'Bắt buộc!' }]}>
+                      <Select placeholder="Chọn Phường/Xã" disabled={!checkoutForm.getFieldValue('districtCode')}>
                         {renderWardListOptions}
                       </Select>
                     </Form.Item>
@@ -412,7 +351,7 @@ function Checkout() {
                     <Form.Item
                       label="Địa chỉ"
                       name="specificAddress"
-                      rules={[{ required: true, message: "Bắt buộc!" }]}
+                      rules={[{ required: true, message: 'Bắt buộc!' }]}
                     >
                       <Input />
                     </Form.Item>
@@ -422,7 +361,7 @@ function Checkout() {
                       <Form.Item
                         label="Phương thức thanh toán"
                         name="paymentMethod"
-                        rules={[{ required: true, message: "Required!" }]}
+                        rules={[{ required: true, message: 'Required!' }]}
                       >
                         <Radio.Group>
                           <Space direction="vertical">
@@ -439,23 +378,16 @@ function Checkout() {
                 <Row>
                   <S.SubHeading>III.ĐƠN HÀNG CỦA BẠN</S.SubHeading>
                   {renderTableProductBuyList}
-                  <Row gutter={[16, 16]} style={{ width: "100%" }}>
+                  <Row gutter={[16, 16]} style={{ width: '100%' }}>
                     <Col lg={24} md={24} sm={24} xs={24}>
                       <S.SubHeading>IV.GHI CHÚ</S.SubHeading>
                       <Form.Item name="note">
-                        <Input.TextArea
-                          rows={5}
-                          placeholder="Nhập ghi chú cho đơn hàng"
-                        />
+                        <Input.TextArea rows={5} placeholder="Nhập ghi chú cho đơn hàng" />
                       </Form.Item>
-                      <Card
-                        size="small"
-                        style={{ marginTop: "2em" }}
-                        title="Tổng tiền"
-                      >
+                      <Card size="small" style={{ marginTop: '2em' }} title="Tổng tiền">
                         <S.TotalPrice>
                           {totalPrice.toLocaleString()}
-                          <S.Unit>₫</S.Unit>,
+                          <S.Unit>₫</S.Unit>
                         </S.TotalPrice>
                       </Card>
                     </Col>
@@ -463,14 +395,8 @@ function Checkout() {
                 </Row>
               </Col>
             </Row>
-            <Row
-              gutter={[16, 16]}
-              justify="space-between"
-              style={{ marginTop: "15px" }}
-            >
-              <Button onClick={() => navigate(ROUTES.USER.CART)}>
-                Trở lại
-              </Button>
+            <Row gutter={[16, 16]} justify="space-between" style={{ marginTop: '15px' }}>
+              <Button onClick={() => navigate(ROUTES.USER.CART)}>Trở lại</Button>
               <S.Order type="primary" htmlType="submit">
                 Đặt Hàng
               </S.Order>
@@ -479,7 +405,7 @@ function Checkout() {
         </Col>
       </Row>
     </S.CheckoutWrapper>
-  );
+  )
 }
 
-export default Checkout;
+export default Checkout

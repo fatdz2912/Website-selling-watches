@@ -1,12 +1,12 @@
-import { color } from "themes/color";
-import styled, { css } from "styled-components";
-import { Row, Col, Input, Modal, Card } from "antd";
+import { color } from 'themes/color'
+import styled, { css } from 'styled-components'
+import { Row, Col, Input, Modal, Card } from 'antd'
 // Header Top wrapper
-const primaryText = color.primaryText;
-const primary = color.primary;
+const primaryText = color.primaryText
+const primary = color.primary
 export const HeaderWrapper = styled.div`
   background-color: ${color.primaryText};
-  height: 22vh;
+  height: 160px;
   position: sticky;
   top: 0;
   z-index: 300;
@@ -15,34 +15,34 @@ export const HeaderWrapper = styled.div`
   @media screen and (min-width: 767px) and (max-width: 1024px) {
     height: auto;
   }
-`;
+`
 
 export const HeaderTopWrapper = styled.div`
   background-color: ${color.primary};
   color: ${primaryText};
-  height: 6vh;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 export const HeaderTopBlock = styled(Row)`
   height: 100%;
   width: 95%;
   max-width: 1200px;
   position: relative;
-`;
+`
 export const AngleUp = styled.div`
   top: 60vh;
-  right: 2vh;
+  right: 32px;
   position: absolute;
   width: 10px;
   cursor: pointer;
   padding: 10px;
-  display: ${(props) => (props.isHiddenAngleUp ? "block" : "none")};
+  display: ${(props) => (props.isHiddenAngleUp ? 'block' : 'none')};
   @media screen and (max-width: 1024px) {
     display: none;
   }
-`;
+`
 export const HeaderDiscount = styled.div`
   display: flex;
   gap: 1em;
@@ -52,9 +52,9 @@ export const HeaderDiscount = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: center;
   }
-`;
-export const HeaderTopLeft = styled(Col)``;
-export const HeaderTopRight = styled(Col)``;
+`
+export const HeaderTopLeft = styled(Col)``
+export const HeaderTopRight = styled(Col)``
 
 export const LinkDiscount = styled.div`
   color: #ff0000;
@@ -64,32 +64,32 @@ export const LinkDiscount = styled.div`
   &:hover {
     cursor: pointer;
   }
-`;
+`
 export const ChatCall = styled.div`
   display: flex;
   align-items: center;
   justify-content: right;
   gap: 1em;
   cursor: pointer;
-`;
+`
 export const IconMessage = styled.div`
   margin-top: 0.5rem;
-`;
+`
 // Header Tool Bar
 export const HeaderToolBar = styled(Row)`
   width: 95%;
   max-width: 1200px;
   margin: 3vh auto 0 !important;
-`;
+`
 
 export const HeaderLogo = styled(Col)`
   display: flex;
   align-items: center;
   cursor: pointer;
-`;
+`
 export const NavMenu = styled(Col)`
   cursor: pointer;
-`;
+`
 export const ImageLogo = styled.img`
   width: 182px;
   height: 22px;
@@ -98,15 +98,15 @@ export const ImageLogo = styled.img`
     width: 135px;
     height: 18px;
   }
-`;
+`
 export const SearchColumn = styled(Col)`
   position: relative;
-`;
+`
 export const InputSearch = styled(Input)`
   padding: 4px 8px;
-`;
+`
 export const SearchSuggestions = styled.div`
-  display: ${(props) => (props.isSHowSearchSuggestions ? "block" : "none")};
+  display: ${(props) => (props.isSHowSearchSuggestions ? 'block' : 'none')};
   width: calc(100% - 16px);
   background-color: #fff;
   position: absolute;
@@ -115,12 +115,12 @@ export const SearchSuggestions = styled.div`
   min-height: 30px;
   border: 1px solid #ccc;
   border-radius: 4px;
-`;
+`
 export const HeadingSearch = styled.div`
   padding: 8px;
   font-size: 1rem;
   color: #b3acac;
-`;
+`
 export const TextSuggestions = styled.div`
   padding: 8px;
   font-size: 1rem;
@@ -130,22 +130,22 @@ export const TextSuggestions = styled.div`
     background-color: #f5f5f5;
     cursor: pointer;
   }
-`;
+`
 export const LoginAndCart = styled(Col)`
   display: flex;
   align-items: center;
   gap: 2em;
   justify-content: right;
-`;
+`
 export const Login = styled(Col)`
   display: flex;
   align-items: center;
   cursor: pointer;
-`;
+`
 export const HeadingLogin = styled(Col)`
   font-size: 1rem;
   color: ${color.primary};
-`;
+`
 // Menu Wrapper
 export const MenuDeskWrapper = styled.ul`
   display: flex;
@@ -165,7 +165,7 @@ export const MenuDeskWrapper = styled.ul`
   @media screen and (max-width: 767px) {
     display: none;
   }
-`;
+`
 export const MenuMobileAndTabletWrapper = styled.ul`
   display: none;
   align-items: center;
@@ -179,7 +179,7 @@ export const MenuMobileAndTabletWrapper = styled.ul`
   @media screen and (max-width: 768px) {
     display: flex;
   }
-`;
+`
 export const MenuModal = styled(Modal)`
   position: absolute;
   top: 6vh;
@@ -189,8 +189,8 @@ export const MenuModal = styled(Modal)`
   min-width: 300px;
   background-color: #f8f8f8;
   padding: 0 !important;
-`;
-export const CardMenuMobileAndTablet = styled(Card)``;
+`
+export const CardMenuMobileAndTablet = styled(Card)``
 export const MenuItem = styled.li`
   font-size: 1.1rem;
   font-weight: 470;
@@ -213,4 +213,4 @@ export const MenuItem = styled.li`
     cursor: pointer;
     border-bottom: 3px ${primary} solid;
   }
-`;
+`
