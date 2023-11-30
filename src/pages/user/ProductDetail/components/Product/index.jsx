@@ -1,18 +1,15 @@
-import { Button, Col, Row, Space, Rate, Breadcrumb, notification } from "antd";
-import { FaShoppingCart, FaHome, FaHeart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { useMemo, useState } from "react";
+import { Button, Col, Row, Space, Rate, Breadcrumb, Flex, notification } from 'antd'
+import { FaShoppingCart, FaHome, FaHeart } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { useMemo, useState } from 'react'
 
-import {
-  favoriteProductRequest,
-  unFavoriteProductRequest,
-} from "redux/slicers/favorite.slice";
-import { updateProductBuy } from "redux/slicers/cart.slice";
+import { favoriteProductRequest, unFavoriteProductRequest } from 'redux/slicers/favorite.slice'
+import { updateProductBuy } from 'redux/slicers/cart.slice'
 
-import { ROUTES } from "constants/routes";
-import { color } from "themes/color";
-import * as S from "./style";
+import { ROUTES } from 'constants/routes'
+import { color } from 'themes/color'
+import * as S from './style'
 
 function Product({
   handleDecreaseQuantity,
@@ -31,70 +28,55 @@ function Product({
   productId,
   productAvailable,
 }) {
-  const [image, setImage] = useState(null);
-  const { productDetail } = useSelector((state) => state.product);
-  const { userInfo } = useSelector((state) => state.auth);
+  const [image, setImage] = useState(null)
+  const { productDetail } = useSelector((state) => state.product)
+  const { userInfo } = useSelector((state) => state.auth)
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const isFavorite = useMemo(
     () =>
       productDetail.data.favorites
-        ? productDetail.data.favorites.some(
-            (item) => item.userId === userInfo.data.id
-          )
+        ? productDetail.data.favorites.some((item) => item.userId === userInfo.data.id)
         : false,
     [productDetail.data.favorites, userInfo.data.id]
-  );
+  )
 
   const handleBuyNow = () => {
-    const selectedRows = [
-      { quantity, name, currentPrice, productId, imagePrevious },
-    ];
-    dispatch(updateProductBuy({ selectedRows }));
-    navigate(ROUTES.USER.CHECKOUT);
-  };
+    const selectedRows = [{ quantity, name, currentPrice, productId, imagePrevious }]
+    dispatch(updateProductBuy({ selectedRows }))
+    navigate(ROUTES.USER.CHECKOUT)
+  }
   const handleToggleFavorite = () => {
     if (userInfo.data.id) {
       if (isFavorite) {
-        const favoriteData = productDetail.data.favorites?.find(
-          (item) => item.userId === userInfo.data.id
-        );
+        const favoriteData = productDetail.data.favorites?.find((item) => item.userId === userInfo.data.id)
         dispatch(
           unFavoriteProductRequest({
             id: favoriteData.id,
           })
-        );
+        )
       } else {
         dispatch(
           favoriteProductRequest({
             productId: productDetail.data.id,
             userId: userInfo.data.id,
           })
-        );
+        )
       }
     } else {
       notification.error({
-        message: "Vui lòng đăng nhập để thực hiện chức năng này!",
-      });
+        message: 'Vui lòng đăng nhập để thực hiện chức năng này!',
+      })
     }
-  };
+  }
   return (
-    <S.ProductDetail gutter={[16, 16]}>
+    <S.ProductDetail gutter={[24, 24]}>
       <Col xs={6} sm={6} md={6} lg={3}>
-        <S.ImageDetails
-          onMouseEnter={() => setImage(imagePrevious)}
-          src={imagePrevious}
-        ></S.ImageDetails>
-        <S.ImageDetails
-          onMouseEnter={() => setImage(imageHozontal)}
-          src={imageHozontal}
-        ></S.ImageDetails>
-        <S.ImageDetails
-          onMouseEnter={() => setImage(imageBehind)}
-          src={imageBehind}
-        ></S.ImageDetails>
+        <S.ImageDetails onMouseEnter={() => setImage(imagePrevious)} src={imagePrevious}></S.ImageDetails>
+        <S.ImageDetails onMouseEnter={() => setImage(imageHozontal)} src={imageHozontal}></S.ImageDetails>
+        <S.ImageDetails onMouseEnter={() => setImage(imageBehind)} src={imageBehind}></S.ImageDetails>
       </Col>
       <Col xs={18} sm={18} md={18} lg={11}>
         <S.ImageWrapper>
@@ -108,64 +90,40 @@ function Product({
         </S.ImageWrapper>
       </Col>
       <Col sm={24} md={24} lg={10}>
-        <Breadcrumb
-          items={[
-            {
-              title: (
-                <Link to={ROUTES.USER.HOME}>
-                  <Space>
-                    <FaHome />
-                    <span>Trang chủ</span>
-                  </Space>
-                </Link>
-              ),
-            },
-            {
-              title: (
-                <Link to={ROUTES.USER.PRODUCT_LIST}>
-                  <Space>
-                    <span>Danh sách sản phẩm</span>
-                  </Space>
-                </Link>
-              ),
-            },
-            {
-              title: "Chi tiết sản phẩm",
-            },
-          ]}
-        />
-        <Row gutter={[16, 16]} style={{ marginTop: "1em" }}>
+        <Row gutter={[16, 16]}>
           <Col md={18} xs={18}>
-            <S.Brands>{category?.name.toUpperCase()}</S.Brands>
+            <Flex>
+              <S.Brands>{category?.name.toUpperCase()}</S.Brands>
+            </Flex>
+          </Col>
+          <S.Report md={6} xs={6}>
+            Tố cáo
+          </S.Report>
+        </Row>
+        <Row gutter={[16, 16]}>
+          <Col md={24} xs={24}>
             <S.Name>{name}</S.Name>
-            <S.Preview>
-              <Col xs={12} md={12} lg={12}>
-                <Rate value={parseFloat(averageRate)} allowHalf disabled />(
-                {averageRate})
+            <S.Preview align="middle">
+              <Col xs={16} md={16} lg={16}>
+                <Space>
+                  <Rate value={parseFloat(averageRate)} allowHalf disabled style={{ fontSize: 24 }} />
+                  <div>{`(${averageRate || 'Chưa có đánh giá'})`}</div>
+                </Space>
               </Col>
-              <Col span={12}>
+              <Col span={8}>
                 <S.Heart>
                   <Button
                     size="large"
                     type="text"
                     danger={isFavorite}
-                    icon={
-                      isFavorite ? (
-                        <FaHeart size={24} color={color.outstanding} />
-                      ) : (
-                        <FaHeart size={24} />
-                      )
-                    }
+                    icon={isFavorite ? <FaHeart size={24} color={color.outstanding} /> : <FaHeart size={24} />}
                     onClick={() => handleToggleFavorite()}
                   ></Button>
-                  {productDetail?.data?.favorites?.length} Lượt Thích
+                  {productDetail?.data?.favorites?.length} lượt thích
                 </S.Heart>
               </Col>
             </S.Preview>
           </Col>
-          <S.Report md={6} xs={6}>
-            Tố cáo
-          </S.Report>
           <S.Price sm={24} md={24}>
             <S.OldPrice discount={discount}>
               {oldPrice?.toLocaleString()} <S.Unit>₫</S.Unit>
@@ -175,7 +133,7 @@ function Product({
             </S.CurrentPrice>
           </S.Price>
           <S.QuantityWrapper md={24} lg={24} xs={24}>
-            <S.Quantity>Số Lượng:</S.Quantity>
+            <S.Quantity>Số lượng:</S.Quantity>
             <S.ContentQuantity>
               <Button onClick={() => handleDecreaseQuantity()}>-</Button>
               <Button>{quantity}</Button>
@@ -184,25 +142,25 @@ function Product({
             </S.ContentQuantity>
           </S.QuantityWrapper>
           <Col md={24} lg={24} xs={24}>
-            <S.Info gutter={[8, 8]}>
+            <S.Info gutter={[8, 8]} align="middle">
               <S.Title xs={12} md={12} lg={12}>
-                TRẠNG THÁI
+                Trạng thái
               </S.Title>
               <S.Desc xs={12} md={12} lg={12}>
                 NEW
               </S.Desc>
             </S.Info>
-            <S.Info gutter={[8, 8]}>
+            <S.Info gutter={[8, 8]} align="middle">
               <S.Title xs={12} md={12} lg={12}>
-                XUẤT XỨ
+                Xuất xứ
               </S.Title>
               <S.Desc xs={12} md={12} lg={12}>
                 Thụy Sỹ
               </S.Desc>
             </S.Info>
-            <S.Info gutter={[8, 8]}>
+            <S.Info gutter={[8, 8]} align="middle">
               <S.Title xs={12} md={12} lg={12}>
-                PHÍ VẬN CHUYỂN
+                Phí vận chuyển
               </S.Title>
               <S.Desc xs={12} md={12} lg={12}>
                 FREE
@@ -221,7 +179,7 @@ function Product({
         </Row>
       </Col>
     </S.ProductDetail>
-  );
+  )
 }
 
-export default Product;
+export default Product
