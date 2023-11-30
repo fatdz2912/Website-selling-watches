@@ -12,7 +12,7 @@ export const LoginWrapper = styled.div`
 
 export const Login = styled(Row)`
   position: sticky;
-  z-index: 2;
+  z-index: 200;
   margin: 0 auto !important;
   max-width: 1000px;
   width: 80%;
@@ -106,7 +106,7 @@ export const Square = styled.div`
   position: absolute;
   top: 8vh;
   left: 60%;
-  z-index: 3;
+  z-index: 300;
   transform: rotate(-45deg);
 `;
 export const Triangle = styled.div`

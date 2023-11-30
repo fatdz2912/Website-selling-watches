@@ -81,6 +81,11 @@ export const UpdateAndDeleteWrapper = styled.div`
 `;
 export const Update = styled.div`
   color: ${color.outstanding};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
 `;
 export const Delete = styled.div`
   color: ${color.outstanding};

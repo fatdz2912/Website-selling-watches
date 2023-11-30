@@ -13,7 +13,7 @@ export const ProductListWrapper = styled.div`
 export const filterBrands = styled(Card)`
   position: sticky;
   top: 175px;
-  z-index: 1;
+  z-index: 100;
   @media screen and (max-width: 1200px) {
     top: 210px;
   }
@@ -151,7 +151,7 @@ export const ImageHover = styled.img`
   }
 `;
 export const Discount = styled.div`
-  z-index: 1;
+  z-index: 100;
   top: 3%;
   left: 4%;
   position: absolute;
@@ -171,7 +171,7 @@ export const Discount = styled.div`
 export const FullBox = styled.div`
   font-size: 0.7rem;
   border-radius: 2px;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   right: 0;
   position: absolute;

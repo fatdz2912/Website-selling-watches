@@ -8,6 +8,7 @@ import {
   getWardListRequest,
 } from "redux/slicers/location.slice";
 import { updateAddressRequest } from "redux/slicers/address.slice";
+import { FaEdit } from "react-icons/fa";
 function UpdateModal({
   isShowUpdateAddress,
   setIsShowUpdateAddress,
@@ -220,8 +221,18 @@ function UpdateModal({
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Button type="primary" block onClick={() => updateForm.submit()}>
-              Cập Nhật
+            <Button
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "5px",
+              }}
+              type="primary"
+              block
+              onClick={() => updateForm.submit()}
+            >
+              Cập Nhật <FaEdit />
             </Button>
           </Col>
           <Col span={12}>

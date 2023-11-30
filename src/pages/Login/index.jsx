@@ -57,7 +57,7 @@ function Login() {
             <S.Content>
               <S.HeadingLeft>Chào Mừng Bạn Trở Lại!</S.HeadingLeft>
               <S.SubHeadingLeft>
-                Để duy trì kết nối vói chúng tôi,vui lòng đăng nhập bằng thông
+                Để duy trì kết nối với chúng tôi,vui lòng đăng nhập bằng thông
                 tin cá nhân của bạn!
               </S.SubHeadingLeft>
             </S.Content>

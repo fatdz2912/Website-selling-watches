@@ -62,7 +62,7 @@ function AccountManager() {
               type="primary"
               onClick={() => dispatch(openAccountRequest({ id: item.id }))}
             >
-              Mở khóa
+              <div>Mở khóa</div>
             </Button>
           ) : (
             <Popconfirm

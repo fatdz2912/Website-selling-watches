@@ -118,7 +118,7 @@ export const Name = styled.div`
 export const FullBox = styled.div`
   font-size: 0.7rem;
   border-radius: 2px;
-  z-index: 1;
+  z-index: 100;
   top: 0%;
   right: 0;
   position: absolute;
@@ -146,7 +146,7 @@ export const Price = styled.div`
   gap: 1em;
 `;
 export const Discount = styled.div`
-  z-index: 1;
+  z-index: 100;
   top: 3%;
   left: 7%;
   position: absolute;

@@ -79,12 +79,6 @@ function Checkout() {
     },
   ];
   useEffect(() => {
-    if (!userInfo.data.id) {
-      navigate(ROUTES.USER.CHECKOUT);
-      checkoutForm.resetFields();
-    }
-  }, [userInfo.data.id]);
-  useEffect(() => {
     window.scrollTo({
       top: 0,
     });
@@ -92,7 +86,7 @@ function Checkout() {
     dispatch(getCityListRequest());
   }, []);
   useEffect(() => {
-    if (userInfo.data.id) {
+    if (userInfo.data?.id) {
       dispatch(
         getAddressListRequest({
           userId: userInfo?.data?.id,
@@ -273,10 +267,6 @@ function Checkout() {
       <Row gutter={[16, 16]}>
         <Col md={24} xl={24} xs={24}>
           <S.SubHeading>I.CHI TIẾT ĐƠN HÀNG</S.SubHeading>
-          {/* <Row>
-            <div>Bạn có mã ưu đãi?</div>
-            <span>Ấn vào đây để nhập mã</span>
-          </Row> */}
           <S.CartListDetailWrapper gutter={[16, 16]}>
             <S.Title md={12} xs={6} lg={12}>
               SẢN PHẨM

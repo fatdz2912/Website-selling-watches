@@ -23,6 +23,7 @@ import {
 import { getCategoryListRequest } from "redux/slicers/category.slice";
 
 import { ROUTES } from "constants/routes";
+import { FaEdit } from "react-icons/fa";
 
 function UpdateProduct() {
   const prams = useParams();
@@ -45,7 +46,7 @@ function UpdateProduct() {
       ...productDetail.data,
     });
 
-  const handleUpdateUser = (values) => {
+  const handleUpdateProduct = (values) => {
     dispatch(
       updateProductRequest({
         data: {
@@ -77,7 +78,9 @@ function UpdateProduct() {
           type="primary"
           onClick={() => updateForm.submit()}
         >
-          Cập Nhật
+          <S.Update>
+            Cập nhật <FaEdit />
+          </S.Update>
         </S.BTSubmit>
       </S.TopWrapper>
       <S.UpdateForm
@@ -85,7 +88,7 @@ function UpdateProduct() {
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 20 }}
         size="large"
-        onFinish={handleUpdateUser}
+        onFinish={handleUpdateProduct}
       >
         <Form.Item
           label="Tên SP"
@@ -164,6 +167,28 @@ function UpdateProduct() {
             {
               required: true,
               message: "Vui lòng nhập giảm giá!",
+              type: "number",
+            },
+            {
+              type: "number",
+              min: 0,
+              message: "vui lòng nhập từ 0 trở lên!",
+            },
+          ]}
+        >
+          <InputNumber
+            formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
+            style={{ width: "100%" }}
+          />
+        </Form.Item>
+        <Form.Item
+          label="SL"
+          name="quantity"
+          rules={[
+            {
+              required: true,
+              message: "Vui lòng nhập số lượng!",
               type: "number",
             },
             {

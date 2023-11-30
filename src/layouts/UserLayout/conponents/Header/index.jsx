@@ -10,6 +10,7 @@ import {
   FaPhoneSquareAlt,
   FaCommentDots,
   FaHistory,
+  FaUserEdit,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation, Link } from "react-router-dom";
@@ -368,14 +369,17 @@ function Header({ isHiddenMenu, setIsHiddenMenu }) {
                   {
                     key: "2",
                     label: "Đăng xuất",
-                    onClick: () => dispatch(logoutRequest()),
+                    onClick: () => {
+                      dispatch(logoutRequest());
+                      navigate(ROUTES.USER.HOME);
+                    },
                     icon: <FaSignOutAlt />,
                   },
                 ],
               }}
             >
               <S.Login>
-                <FaUserAlt color={color.primary} size={25} />
+                <FaUserEdit color={color.primary} size={30} />
                 <S.HeadingLogin>{userInfo.data.fullName}</S.HeadingLogin>
               </S.Login>
             </Dropdown>

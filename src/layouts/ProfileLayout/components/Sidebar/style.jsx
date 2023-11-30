@@ -62,7 +62,7 @@ export const AvatarEdit = styled.div`
   position: absolute;
   right: 4px;
   bottom: 4px;
-  z-index: 1;
+  z-index: 100;
 
   & > input {
     display: none;

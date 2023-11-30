@@ -103,7 +103,14 @@ function Favorite() {
       <S.Heading>
         <FaRegStar /> FAVORITE-{favoriteList.meta?.total}
       </S.Heading>
-      <S.FavoriteList>{renderProductFavorite}</S.FavoriteList>
+      <S.FavoriteList>
+        {renderProductFavorite}
+        {favoriteList.data.length === 0 && (
+          <p style={{ color: "red", fontSize: "1rem", textAlign: "center" }}>
+            Bạn chưa yêu thích bất kì sản phẩm nào
+          </p>
+        )}
+      </S.FavoriteList>
       {favoriteList.data.length !== favoriteList.meta.total && (
         <S.ShowMore>
           <Button onClick={() => handleShowMore()}>Hiển thị thêm</Button>

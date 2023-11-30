@@ -24,6 +24,7 @@ import { PRODUCT_TABLE_LIMIT } from "constants/paging";
 import { ROUTES } from "constants/routes";
 import { useMemo } from "react";
 import { color } from "themes/color";
+import { FaEdit } from "react-icons/fa";
 function ProductManager() {
   const [filterParams, setFilterParams] = useState({
     categoryId: [],
@@ -118,6 +119,12 @@ function ProductManager() {
         <p style={{ textAlign: "center" }}>{discount.toLocaleString()}%</p>
       ),
     },
+    {
+      title: "SL",
+      dataIndex: "quantity",
+      key: "quantity",
+      render: (quantity) => <p style={{ textAlign: "center" }}>{quantity}</p>,
+    },
 
     {
       title: "Giá",
@@ -158,7 +165,9 @@ function ProductManager() {
               )
             }
           >
-            Cập nhật
+            <S.Update>
+              Cập nhật <FaEdit />
+            </S.Update>
           </Button>
           <Popconfirm
             description="Bạn có chắn chắn muốn xóa sản phẩm?"

@@ -69,12 +69,11 @@ function* updateAddressSaga(action) {
 }
 function* deleteAddressSaga(action) {
   try {
-    const { id, userId } = action.payload;
+    const { id } = action.payload;
     yield axios.patch(`http://localhost:4000/addresses/${id}`, {
       isDelete: true,
     });
-    yield put(deleteAddressSuccess({}));
-    yield put(getAddressListRequest({ userId: userId }));
+    yield put(deleteAddressSuccess({ id: id }));
   } catch (e) {
     yield put(deleteAddressFailure({ error: "Lỗi" }));
   }

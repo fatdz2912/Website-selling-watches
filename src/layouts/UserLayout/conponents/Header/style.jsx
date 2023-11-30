@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   height: 22vh;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 300;
   padding-bottom: 16px;
   box-shadow: 0 1px #ccc;
   @media screen and (min-width: 767px) and (max-width: 1024px) {
@@ -136,9 +136,6 @@ export const LoginAndCart = styled(Col)`
   align-items: center;
   gap: 2em;
   justify-content: right;
-  @media screen and (max-width: 400px) {
-    gap: 5px;
-  }
 `;
 export const Login = styled(Col)`
   display: flex;
@@ -165,7 +162,7 @@ export const MenuDeskWrapper = styled.ul`
           text-align: center;
         `
       : css``};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;

@@ -3,6 +3,7 @@ import {
   favoriteProductSuccess,
   unFavoriteProductSuccess,
 } from "./favorite.slice";
+import { logoutRequest } from "./auth.slice";
 import { notification } from "antd";
 const initialState = {
   productList: {
@@ -237,6 +238,9 @@ export const productSlice = createSlice({
         state.productDetail.data.favorites =
           state.productDetail.data.favorites.filter((item) => item.id !== id);
       }
+    },
+    [logoutRequest]: (state, action) => {
+      state.searchHistories.data = [];
     },
   },
 });

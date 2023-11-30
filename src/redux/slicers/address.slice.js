@@ -100,8 +100,11 @@ export const addressSlice = createSlice({
       state.deleteAddress.error = null;
     },
     deleteAddressSuccess: (state, action) => {
+      const { id } = action.payload;
       state.deleteAddress.loading = false;
       state.deleteAddress.error = null;
+      const index = state.addressList.data.findIndex((item) => item.id === id);
+      state.addressList.data.splice(index, 1);
     },
     deleteAddressFailure: (state, action) => {
       const { error } = action.payload;

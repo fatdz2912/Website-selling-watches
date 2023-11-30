@@ -68,7 +68,12 @@ export const UpdateAndDeleteWrapper = styled.div`
   gap: 10px;
 `;
 export const Update = styled.div`
+  cursor: pointer;
   color: ${color.outstanding};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 `;
 export const EstablishDefault = styled(Radio)`
   margin-top: 15px;

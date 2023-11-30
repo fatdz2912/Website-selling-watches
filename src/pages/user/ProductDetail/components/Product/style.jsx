@@ -186,7 +186,7 @@ export const Transport = styled.div`
 `;
 export const AddCart = styled(Button)`
   font-size: 1.2rem;
-  min-height: 8vh;
+  padding: 24px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -203,8 +203,11 @@ export const AddCart = styled(Button)`
 `;
 export const Buy = styled(Button)`
   font-size: 1.2rem;
-  min-height: 8vh;
+  padding: 24px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 768px) {
     font-size: 1.3rem !important;
   }
@@ -250,7 +253,7 @@ export const ContentQuantity = styled.div`
   gap: 5px;
 `;
 export const Discount = styled.div`
-  z-index: 1;
+  z-index: 100;
   top: 2%;
   left: 1%;
   position: absolute;
@@ -279,7 +282,7 @@ export const Discount = styled.div`
 export const FullBox = styled.div`
   font-size: 1.4rem;
   border-radius: 4px;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   right: 0;
   position: absolute;

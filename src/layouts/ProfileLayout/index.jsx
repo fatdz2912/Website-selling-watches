@@ -6,11 +6,10 @@ import Sidebar from "./components/Sidebar";
 
 import * as S from "./style";
 import { ROUTES } from "constants/routes";
-import { FaHome, FaBars } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { Breadcrumb, Space } from "antd";
 import { useMemo } from "react";
 import { PROFILE_MENU } from "./constant";
-import { useEffect } from "react";
 
 function ProfileLayout() {
   const [avatar, setAvatar] = useState("");
@@ -18,14 +17,6 @@ function ProfileLayout() {
   const accessToken = localStorage.getItem("accessToken");
 
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!userInfo.data.id) {
-      navigate(ROUTES.USER.HOME);
-    }
-  }, [userInfo.data.id]);
-
   const profileLabel = useMemo(() => {
     return PROFILE_MENU.find((item) => item.path === pathname)?.label;
   }, [pathname]);

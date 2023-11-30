@@ -11,8 +11,8 @@ export const Hero = styled.div`
   justify-content: center;
   border-radius: 8px;
   gap: 0.5em;
-  @media screen and (max-width: 576px) {
-    height: 4vh;
+  @media screen and (max-width: 1024px) {
+    height: auto;
   }
 `;
 export const ImageHero = styled.img`

@@ -28,3 +28,9 @@ export const BTSubmit = styled(Button)`
   justify-content: center;
   font-size: 1rem;
 `;
+export const Update = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+`;

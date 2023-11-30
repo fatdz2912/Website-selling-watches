@@ -67,7 +67,7 @@ function CartPage() {
           max={parseInt(item.productAvailable)}
           onKeyDown={(e) => {
             const isNumericOrAlphabetic = e.key >= "0" && e.key <= "9";
-            if (!isNumericOrAlphabetic || e.which === 8) {
+            if (!isNumericOrAlphabetic) {
               e.preventDefault();
             }
           }}
@@ -98,7 +98,7 @@ function CartPage() {
           cancelText="Không"
           onConfirm={() => handleDeleteCartItem(item.productId)}
         >
-          <Button>Xóa</Button>
+          <Button type="primary">Xóa</Button>
         </Popconfirm>
       ),
     },

@@ -7,6 +7,7 @@ import { updateAddressDefaultRequest } from "redux/slicers/address.slice";
 
 import UpdateModal from "pages/user/components/UpdateModal";
 import CreateModal from "pages/user/components/CreateModal";
+import { FaEdit } from "react-icons/fa";
 function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
   const [updateData, setUpdateData] = useState([]);
   const [addressId, setAddressId] = useState(undefined);
@@ -45,7 +46,7 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
                     setIsShowUpdateAddress(true);
                   }}
                 >
-                  Cập nhật
+                  Cập nhật <FaEdit />
                 </S.Update>
               </S.UpdateAndDeleteWrapper>
               <S.EstablishDefault value={item.id}>Chọn</S.EstablishDefault>
@@ -90,11 +91,13 @@ function ChangeAddressModal({ isShowChangeAddress, setIsShowChangeAddress }) {
               type="primary"
               onClick={() => {
                 setIsShowChangeAddress(false);
-                dispatch(
-                  updateAddressDefaultRequest({
-                    addressId: addressId,
-                  })
-                );
+                if (addressId !== undefined) {
+                  dispatch(
+                    updateAddressDefaultRequest({
+                      addressId: addressId,
+                    })
+                  );
+                }
               }}
             >
               Xác Nhận

@@ -13,7 +13,7 @@ import {
 } from "redux/slicers/address.slice";
 
 import * as S from "./style";
-import { FaPlusCircle } from "react-icons/fa";
+import { FaEdit, FaPlusCircle } from "react-icons/fa";
 function Address() {
   const [isShowCreateAddress, setIsShowCreateAddress] = useState(false);
   const [isShowUpdateAddress, setIsShowUpdateAddress] = useState(false);
@@ -67,7 +67,7 @@ function Address() {
                     setIsShowUpdateAddress(true);
                   }}
                 >
-                  Cập nhật
+                  Cập nhật <FaEdit />
                 </S.Update>
                 {index !== 0 && (
                   <Popconfirm

@@ -5,8 +5,6 @@ import {
   createAddressSuccess,
 } from "./address.slice";
 import { notification } from "antd";
-import { Navigate } from "react-router-dom";
-import { ROUTES } from "constants/routes";
 
 const initialState = {
   userInfo: {
@@ -37,15 +35,15 @@ const initialState = {
     error: null,
   },
   changeAvatarData: {
-    loadding: false,
+    loading: false,
     error: null,
   },
   lockAccount: {
-    loadding: false,
+    loading: false,
     error: null,
   },
   openAccount: {
-    loadding: false,
+    loading: false,
     error: null,
   },
 };
@@ -142,7 +140,7 @@ export const authSlice = createSlice({
     },
     updateUserInfoSuccess: (state, action) => {
       const { data } = action.payload;
-      state.updateUserInfoData.data = data;
+      state.userInfo.data = data;
       state.updateUserInfoData.loading = false;
       notification.success({ message: "cập nhật thành công!" });
     },

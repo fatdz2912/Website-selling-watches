@@ -6,7 +6,7 @@ function Sidebar({ isShowSidebar }) {
   const { pathname } = useLocation();
   const renderSidebar = [
     {
-      label: "Dashboard",
+      label: "Biểu đồ sản phẩm",
       path: ROUTES.ADMIN.DASHBOARD,
     },
     {

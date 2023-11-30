@@ -6,7 +6,7 @@ export const TopRight = styled.div`
   width: 20.4530263158%;
   height: 53.2304109589vh;
   transform: rotate(42.541deg);
-  z-index: 1;
+  z-index: 100;
 `;
 export const BottomLeft = styled.div`
   left: -8%;
@@ -16,7 +16,7 @@ export const BottomLeft = styled.div`
   height: 500px;
   flex-shrink: 0;
   border-radius: 500px;
-  z-index: 3;
+  z-index: 300;
   background: linear-gradient(
     42deg,
     #fb0 26.61%,
@@ -27,7 +27,7 @@ export const BottomLeft = styled.div`
     height: 250px;
     border-radius: 250px;
     bottom: -5vh;
-    z-index: 1;
+    z-index: 100;
   }
   @media screen and (max-width: 1024px) {
     width: 250px;

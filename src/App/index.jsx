@@ -59,6 +59,7 @@ function App() {
     (state) => state.auth
   );
   const { favoriteList } = useSelector((state) => state.favorite);
+  const { lockAccount, openAccount } = useSelector((state) => state.auth);
   const { orderList, orderProductData } = useSelector((state) => state.order);
   const { reviewList, createReviewData } = useSelector((state) => state.review);
   const { addProductData, updateProductData, deleteProductData } = useSelector(
@@ -82,7 +83,9 @@ function App() {
         updateProductData.loading ||
         deleteProductData.loading ||
         reviewList.loading ||
-        createReviewData.loading
+        createReviewData.loading ||
+        lockAccount.loading ||
+        openAccount.loading
     );
   }, [
     cityList.loading,
@@ -102,6 +105,8 @@ function App() {
     deleteProductData.loading,
     reviewList.loading,
     createReviewData.loading,
+    lockAccount.loading,
+    openAccount.loading,
   ]);
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");

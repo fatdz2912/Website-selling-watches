@@ -33,3 +33,9 @@ export const TopWrapper = styled.div`
   padding: 20px 100px;
   background-color: #f5f5f5;
 `;
+export const Update = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
